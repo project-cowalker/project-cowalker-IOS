@@ -10,7 +10,6 @@ import UIKit
 class CreateNewViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var commentTextView: UITextView!
     
     @IBAction func closeFunction(_ sender: Any) {
         //        self.navigationController?.popViewController(animated: true)
@@ -21,6 +20,13 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         //titleTextField 받아오기
     }
     
+    
+    
+    @IBOutlet weak var commentOfIntro: UITextField!
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newLength = (textField.text?.characters.count)! + string.characters.count - range.length
+        return !(newLength > 25)
+    }
     
     
     var countForObjectFunc = 0
@@ -106,6 +112,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.commentOfIntro.delegate = self
         
         // Do any additional setup after loading the view.
     }

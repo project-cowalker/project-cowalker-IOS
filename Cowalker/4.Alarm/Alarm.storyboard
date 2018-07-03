@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -197,8 +198,72 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="182.15892053973016"/>
         </scene>
+        <!--메세지 사람 이름-->
+        <scene sceneID="QUZ-gs-B1B">
+            <objects>
+                <viewController id="npx-nz-NNS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JiW-JG-fWB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z6F-bQ-LGb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QY9-55-1fN">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QY9-55-1fN" id="7hI-u9-uEo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Gi8-iU-Knd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="메세지 사람 이름" id="Zs4-rb-MLj">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="iconCaretLeftDarkgray" id="25f-N8-TIf"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="icon_darkgray_letter" id="OWB-N4-aWj"/>
+                            <barButtonItem title="Item" image="iconTrashCanDarkgray" id="gzP-kw-tw7"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K7Q-3r-fTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2052" y="198.35082458770617"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JKR-rb-Ptm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iyl-mE-NMc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qm5-pb-F1f">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="npx-nz-NNS" kind="relationship" relationship="rootViewController" id="lLk-tF-07C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L0b-rP-Vps" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1134" y="198"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="iconCaretLeftDarkgray" width="24" height="24"/>
+        <image name="iconTrashCanDarkgray" width="24" height="24"/>
+        <image name="icon_darkgray_letter" width="19" height="23"/>
         <image name="iconsTabbar1Home" width="48" height="49"/>
         <image name="iconsTabbar2Search" width="48" height="49"/>
     </resources>
