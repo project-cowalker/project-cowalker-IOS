@@ -47,6 +47,7 @@
 		944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8320E8E00E00F5FE80 /* MyPageUpdateViewController.swift */; };
 		944A9F8820E8E03D00F5FE80 /* MyBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8720E8E03D00F5FE80 /* MyBagViewController.swift */; };
 		94EA8FEE20EB8263006EC50A /* SearchNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA8FED20EB8263006EC50A /* SearchNewViewController.swift */; };
+		94EA8FF020EBB055006EC50A /* ExtensionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA8FEF20EBB055006EC50A /* ExtensionController.swift */; };
 		94ECBF9320E953FE002F9F92 /* PagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBF9220E953FE002F9F92 /* PagingCollectionViewCell.swift */; };
 		94ECBF9520E95405002F9F92 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBF9420E95405002F9F92 /* ListCollectionViewCell.swift */; };
 		94ECBF9820E95E34002F9F92 /* ProjectIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBF9720E95E34002F9F92 /* ProjectIntroViewController.swift */; };
@@ -106,6 +107,7 @@
 		944A9F8320E8E00E00F5FE80 /* MyPageUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageUpdateViewController.swift; sourceTree = "<group>"; };
 		944A9F8720E8E03D00F5FE80 /* MyBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagViewController.swift; sourceTree = "<group>"; };
 		94EA8FED20EB8263006EC50A /* SearchNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewViewController.swift; sourceTree = "<group>"; };
+		94EA8FEF20EBB055006EC50A /* ExtensionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionController.swift; sourceTree = "<group>"; };
 		94ECBF9220E953FE002F9F92 /* PagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewCell.swift; sourceTree = "<group>"; };
 		94ECBF9420E95405002F9F92 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		94ECBF9720E95E34002F9F92 /* ProjectIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectIntroViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				944A9F4720E8AAF900F5FE80 /* Assets.xcassets */,
 				944A9F4920E8AAF900F5FE80 /* LaunchScreen.storyboard */,
 				944A9F4C20E8AAF900F5FE80 /* Info.plist */,
+				94EA8FEF20EBB055006EC50A /* ExtensionController.swift */,
 			);
 			path = Cowalker;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				94057B1820E9CCCF008875C5 /* CreateNewViewController.swift in Sources */,
 				9403DD0D20E8E4FC0049C497 /* chattingTableViewCell.swift in Sources */,
 				944A9F4120E8AAF900F5FE80 /* AppDelegate.swift in Sources */,
+				94EA8FF020EBB055006EC50A /* ExtensionController.swift in Sources */,
 				94ECBFA420E96A0E002F9F92 /* ProjectMemberViewController.swift in Sources */,
 				944A9F8020E8DFE100F5FE80 /* MyPageViewController.swift in Sources */,
 				94ECBF9520E95405002F9F92 /* ListCollectionViewCell.swift in Sources */,

@@ -5,8 +5,9 @@
 //  Created by 조예원 on 2018. 7. 1..
 //  Copyright © 2018년 조예원. All rights reserved.
 //
-
-import UIKit
+import Foundation
+import Alamofire
+import SwiftyJSON
 
 class JoinViewController: UIViewController, UITextFieldDelegate {
     
@@ -14,37 +15,44 @@ class JoinViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTf: UITextField!
     @IBOutlet weak var passwordTf2: UITextField!
     @IBOutlet weak var nameTf: UITextField!
-    
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
     @IBOutlet weak var view3: UIView!
     @IBOutlet weak var view4: UIView!
-    
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
-    
     @IBOutlet weak var joinBt: UIButton!
     var checkArray = [0,0,0,0]
+    //var checkNum = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         joinBt.isEnabled = false
+        emailTf.text = ""
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-
     @IBAction func checkEmailAction(_ sender: UIButton) {
-        //emailTf.text 검사
+        JoinService.overrideCheck(add: emailTf.text!) {  (message) in
+            if message == "Already Exists"{
+            // 알람띄우기
+                let dialog = UIAlertController(title: "중복확인 실패", message: "이메일을 확인해주세요", preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
+                dialog.addAction(action)
+                self.present(dialog, animated: true, completion: nil)
+              
+            }else if message == "success" {
+                print("successzzz")
+            }
+        }
     }
-    
     // tf 건들면 작동, 파란색으로
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == emailTf {
             view1.backgroundColor = UIColor(red: 100.0/255.0, green: 223.0/255.0, blue: 255.0/255.0, alpha: 1.0)
-            
         }else if textField == passwordTf {
             view2.backgroundColor = UIColor(red: 100.0/255.0, green: 223.0/255.0, blue: 255.0/255.0, alpha: 1.0)
             label1.isHidden = true
@@ -56,16 +64,13 @@ class JoinViewController: UIViewController, UITextFieldDelegate {
             label3.isHidden = true
         }
     }
-    
     // tf 건든 후 검사
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        
         if textField == emailTf {
             if emailTf.text == ""{ // 비어있거나 잘못 입력되면 빨간색
-                
                 view1.backgroundColor = UIColor(red: 255.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
                 checkArray[0] = 0}
-            else {
+            else {// 성공
                 checkArray[0] = 1
                 }
         }else if textField == passwordTf{
@@ -77,7 +82,6 @@ class JoinViewController: UIViewController, UITextFieldDelegate {
             else{
                 checkArray[1] = 1
             }
-                
         }else if textField == passwordTf2{
             if passwordTf2.text == ""{
                 label2.isHidden = false
@@ -96,10 +100,8 @@ class JoinViewController: UIViewController, UITextFieldDelegate {
             }
             else{
                 checkArray[3] = 1
-                
             }
         }
-        
         // 성공시
         if checkArray == [1,1,1,1] {
             joinBt.isEnabled = true
@@ -109,19 +111,20 @@ class JoinViewController: UIViewController, UITextFieldDelegate {
             joinBt.isEnabled = false
             joinBt.setBackgroundImage(#imageLiteral(resourceName: "btnInactive"), for: .normal)
             joinBt.setTitleColor(UIColor(red: 215.0/255.0, green: 215.0/255.0, blue: 215.0/255.0, alpha: 1.0), for: UIControlState.normal)
-            
         }
-    }
 
-    @IBAction func JoinButAct(_ sender: UIButton) {
-        print(0)
-        JoinService.joinInit(email: emailTf.text!, password: passwordTf.text!, name: nameTf.text!){ () in
-            print(00)
-            self.view1.isHidden = true
-            //self.dismiss(animated: true, completion: nil)}
-            //self.emailTf.text = ""
-            
-        }
     }
-    
+    @IBAction func JoinButAct(_ sender: UIButton) {
+        JoinService.joinInit(email: emailTf.text!, password: passwordTf.text!, name: nameTf.text!){ (message) in
+            if message == "please check email"{
+                let dialog = UIAlertController(title: "로그인 실패", message: "이메일과 비밀번호를 입력해주세요", preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
+                dialog.addAction(action)
+                self.present(dialog, animated: true, completion: nil)
+            }else if message == "success"{
+                self.dismiss(animated: true, completion: nil)}
+            }
+        }
+
+
 }
