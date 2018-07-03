@@ -304,15 +304,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ral-cY-Rgh">
-                                <rect key="frame" x="335" y="213" width="24" height="24"/>
+                                <rect key="frame" x="340" y="213" width="19" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="bhC-YI-kSV"/>
-                                    <constraint firstAttribute="width" constant="24" id="g3n-Pz-xY8"/>
+                                    <constraint firstAttribute="width" constant="19" id="g3n-Pz-xY8"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="icon_darkgray_letter"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBi-7n-BKJ">
-                                <rect key="frame" x="292" y="213" width="24" height="24"/>
+                                <rect key="frame" x="297" y="213" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="ua0-H1-bVg"/>
                                     <constraint firstAttribute="width" constant="24" id="zz3-S4-hOm"/>

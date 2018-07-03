@@ -58,6 +58,8 @@
 		94ECBFA220E96776002F9F92 /* ProjectPartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBFA120E96776002F9F92 /* ProjectPartDetailViewController.swift */; };
 		94ECBFA420E96A0E002F9F92 /* ProjectMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBFA320E96A0E002F9F92 /* ProjectMemberViewController.swift */; };
 		E41A8F6E20EA62900009F330 /* CreateImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A8F6D20EA62900009F330 /* CreateImageCollectionViewCell.swift */; };
+		E4692B2920EC14BB000F4A72 /* AlarmSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4692B2820EC14BB000F4A72 /* AlarmSecondViewController.swift */; };
+		E4692B2B20EC14F7000F4A72 /* messageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4692B2A20EC14F7000F4A72 /* messageTableViewCell.swift */; };
 		E473A9AB20EA5C8900B51830 /* CreateLastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E473A9AA20EA5C8900B51830 /* CreateLastViewController.swift */; };
 		E6231439F316A39B412F7A83 /* Pods_Cowalker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8749A2CEEC4B02DB346C00 /* Pods_Cowalker.framework */; };
 /* End PBXBuildFile section */
@@ -119,6 +121,8 @@
 		94ECBFA320E96A0E002F9F92 /* ProjectMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMemberViewController.swift; sourceTree = "<group>"; };
 		99AEF46B244E09E4EC0E1D36 /* Pods-Cowalker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cowalker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cowalker/Pods-Cowalker.release.xcconfig"; sourceTree = "<group>"; };
 		E41A8F6D20EA62900009F330 /* CreateImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4692B2820EC14BB000F4A72 /* AlarmSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSecondViewController.swift; sourceTree = "<group>"; };
+		E4692B2A20EC14F7000F4A72 /* messageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageTableViewCell.swift; sourceTree = "<group>"; };
 		E473A9AA20EA5C8900B51830 /* CreateLastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLastViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,6 +236,8 @@
 				944A9F7420E8B5EA00F5FE80 /* Alarm.storyboard */,
 				9403DD0820E8E45A0049C497 /* alarmTableViewCell.swift */,
 				9403DD0C20E8E4FC0049C497 /* chattingTableViewCell.swift */,
+				E4692B2820EC14BB000F4A72 /* AlarmSecondViewController.swift */,
+				E4692B2A20EC14F7000F4A72 /* messageTableViewCell.swift */,
 			);
 			path = 4.Alarm;
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 				9403DD1120E92B220049C497 /* DoingCollectionViewCell.swift in Sources */,
 				944A9F5E20E8B0D000F5FE80 /* JoinService.swift in Sources */,
 				94ECBF9E20E962D6002F9F92 /* ProjectPartViewController.swift in Sources */,
+				E4692B2920EC14BB000F4A72 /* AlarmSecondViewController.swift in Sources */,
 				944A9F8220E8DFF700F5FE80 /* MyProjectViewController.swift in Sources */,
 				94057B1A20E9DA85008875C5 /* CreateNaviViewController.swift in Sources */,
 				9403DD1E20E9306C0049C497 /* MyScrapViewController.swift in Sources */,
@@ -473,6 +480,7 @@
 				944A9F7E20E8DFCA00F5FE80 /* ProfileEditViewController.swift in Sources */,
 				94057B1820E9CCCF008875C5 /* CreateNewViewController.swift in Sources */,
 				9403DD0D20E8E4FC0049C497 /* chattingTableViewCell.swift in Sources */,
+				E4692B2B20EC14F7000F4A72 /* messageTableViewCell.swift in Sources */,
 				944A9F4120E8AAF900F5FE80 /* AppDelegate.swift in Sources */,
 				94EA8FF020EBB055006EC50A /* ExtensionController.swift in Sources */,
 				94ECBFA420E96A0E002F9F92 /* ProjectMemberViewController.swift in Sources */,
