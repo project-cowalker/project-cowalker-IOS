@@ -257,6 +257,11 @@
                                                 <constraint firstItem="7mb-po-Ujx" firstAttribute="top" secondItem="7hI-u9-uEo" secondAttribute="top" constant="17" id="wkE-Yw-eW6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="timeLabel" destination="7mb-po-Ujx" id="cMB-Qw-lmq"/>
+                                            <outlet property="userGotText" destination="uj1-Yg-Jsy" id="hzU-yA-IIG"/>
+                                            <outlet property="userLabel" destination="aXP-aM-nNU" id="JIJ-1g-b6p"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -282,6 +287,54 @@
             </objects>
             <point key="canvasLocation" x="2052" y="198.35082458770617"/>
         </scene>
+        <!--쪽지 보내기-->
+        <scene sceneID="Vy8-Oa-7d3">
+            <objects>
+                <viewController id="DRH-Nu-Fq8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Zz-I5-gRG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="COU-M7-w0o">
+                                <rect key="frame" x="20" y="96" width="336" height="278"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="336" id="alK-gS-noK"/>
+                                    <constraint firstAttribute="height" constant="278" id="g4r-cR-0fm"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30G-Ck-LWp">
+                                <rect key="frame" x="20" y="593" width="335" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="YcW-yy-ebd"/>
+                                    <constraint firstAttribute="width" constant="335" id="o1Y-Jo-SVq"/>
+                                </constraints>
+                                <state key="normal" title="전송" backgroundImage="btnNomal">
+                                    <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="30G-Ck-LWp" firstAttribute="top" secondItem="COU-M7-w0o" secondAttribute="bottom" constant="219" id="7HL-JV-r0l"/>
+                            <constraint firstItem="COU-M7-w0o" firstAttribute="leading" secondItem="Adh-4H-1X9" secondAttribute="leading" constant="20" id="Uor-Op-T4w"/>
+                            <constraint firstItem="30G-Ck-LWp" firstAttribute="leading" secondItem="Adh-4H-1X9" secondAttribute="leading" constant="20" id="c98-go-Fcw"/>
+                            <constraint firstItem="Adh-4H-1X9" firstAttribute="bottom" secondItem="30G-Ck-LWp" secondAttribute="bottom" constant="20" id="hjs-nF-3xD"/>
+                            <constraint firstItem="COU-M7-w0o" firstAttribute="top" secondItem="Adh-4H-1X9" secondAttribute="top" constant="32" id="l8n-MZ-g2d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Adh-4H-1X9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="쪽지 보내기" id="fBl-Gc-DeB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="iconCaretLeftDarkgray" id="35d-hV-sGY"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vb2-wZ-td8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2447.1999999999998" y="963.86806596701661"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="JKR-rb-Ptm">
             <objects>
@@ -305,8 +358,33 @@
             </objects>
             <point key="canvasLocation" x="1134" y="198"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vHb-9v-cYo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Ub-au-rQc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1b2-hV-cDA">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DRH-Nu-Fq8" kind="relationship" relationship="rootViewController" id="4DL-XX-qYV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rvx-P7-zVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1202" y="964"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="btnNomal" width="335" height="54"/>
         <image name="iconCaretLeftDarkgray" width="24" height="24"/>
         <image name="iconTrashCanDarkgray" width="24" height="24"/>
         <image name="icon_darkgray_letter" width="19" height="23"/>

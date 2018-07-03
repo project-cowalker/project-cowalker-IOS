@@ -20,5 +20,15 @@ class messageTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    @IBOutlet weak var userLabel: UILabel!
+    
+    @IBOutlet weak var userGotText: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    
+    
+    
+    
+    
 }
