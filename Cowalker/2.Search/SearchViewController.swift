@@ -14,7 +14,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidLoad()
         self.tabBarController?.tabBar.tintColor = UIColor (red: 100.0/255.0, green: 223.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.tabBarController?.tabBar.items![1].image = #imageLiteral(resourceName: "iconsTabbar2Search")
-        self.navigationController?.navigationBar.topItem?.title = "둘러보기"
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     // 임이 데이터
@@ -52,10 +52,12 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     @IBAction func filterBtnAct(_ sender: UIButton) {
-        
+        //필터뷰 오픈, 프리젠트
         
     }
-    
+    @IBAction func searchBtnAct(_ sender: UIButton) {
+        //서치 뷰
+    }
     
 }
 

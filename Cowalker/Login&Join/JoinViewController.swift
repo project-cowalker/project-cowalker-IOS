@@ -112,12 +112,16 @@ class JoinViewController: UIViewController, UITextFieldDelegate {
             
         }
     }
-    
-    
-    
+
     @IBAction func JoinButAct(_ sender: UIButton) {
-        
-        self.dismiss(animated: true, completion: nil)
+        print(0)
+        JoinService.joinInit(email: emailTf.text!, password: passwordTf.text!, name: nameTf.text!){ () in
+            print(00)
+            self.view1.isHidden = true
+            //self.dismiss(animated: true, completion: nil)}
+            //self.emailTf.text = ""
+            
+        }
     }
     
 }

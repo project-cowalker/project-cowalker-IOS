@@ -26,10 +26,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tfI-xn-6rI">
-                                <rect key="frame" x="0.0" y="133.5" width="375" height="533.5"/>
+                                <rect key="frame" x="0.0" y="267" width="375" height="400"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="533.5" id="O7f-iN-OvQ"/>
+                                    <constraint firstAttribute="height" constant="400" id="O7f-iN-OvQ"/>
                                     <constraint firstAttribute="width" constant="375" id="VjE-yz-EQJ"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dSc-qS-4jb">
@@ -95,50 +95,69 @@
                                     <outlet property="delegate" destination="sPB-dO-AWK" id="X3C-7T-GqH"/>
                                 </connections>
                             </collectionView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="관심있는 분야, 포지션을 검색" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hEM-h2-fLJ">
-                                <rect key="frame" x="20" y="40" width="250" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="JaO-d1-tbk"/>
-                                    <constraint firstAttribute="width" constant="250" id="mJv-TQ-gzt"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="sPB-dO-AWK" id="wE6-z9-B6i"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-SY-s8r">
-                                <rect key="frame" x="280" y="35" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Xih-EU-75P"/>
-                                    <constraint firstAttribute="width" constant="50" id="vnC-s1-nNd"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="iconsTabbar2Search"/>
-                                <connections>
-                                    <action selector="filterBtnAct:" destination="sPB-dO-AWK" eventType="touchUpInside" id="AMe-bN-ETx"/>
-                                    <segue destination="hNQ-ah-8A7" kind="showDetail" id="u9F-en-vjN"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이런 프로젝트는 어떠세요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvF-4V-ttx">
-                                <rect key="frame" x="20" y="100" width="179" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="이런 프로젝트는 어떠세요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvF-4V-ttx">
+                                <rect key="frame" x="20" y="234" width="179" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탐색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8q-SA-eO8">
+                                <rect key="frame" x="20" y="80" width="45" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8dF-4g-xNz"/>
+                                    <constraint firstAttribute="width" constant="45" id="lKq-qS-5gW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Da9-dm-Hne">
+                                <rect key="frame" x="20" y="125" width="254" height="41"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <state key="normal" title="관심있는 분야, 포지션 검색">
+                                    <color key="titleColor" red="0.7725490196" green="0.7725490196" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchBtnAct:" destination="sPB-dO-AWK" eventType="touchUpInside" id="K46-D2-hnu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6A-P5-1Gb">
+                                <rect key="frame" x="321" y="130.5" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XBx-tD-uTT"/>
+                                    <constraint firstAttribute="width" constant="30" id="kt4-aZ-ckN"/>
+                                </constraints>
+                                <state key="normal" title="But"/>
+                                <connections>
+                                    <action selector="searchBtnAct:" destination="sPB-dO-AWK" eventType="touchUpInside" id="vHV-Qt-TLC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYw-Bs-ty2">
+                                <rect key="frame" x="331" y="78.5" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="hrF-PY-8Lr"/>
+                                    <constraint firstAttribute="height" constant="24" id="x2q-nO-yof"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="iconsTabbar2Search"/>
+                                <connections>
+                                    <action selector="filterBtnAct:" destination="sPB-dO-AWK" eventType="touchUpInside" id="2do-Ht-5of"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hEM-h2-fLJ" firstAttribute="leading" secondItem="gSq-mc-fmu" secondAttribute="leading" constant="20" id="168-0V-9PY"/>
-                            <constraint firstItem="gnz-SY-s8r" firstAttribute="centerY" secondItem="hEM-h2-fLJ" secondAttribute="centerY" id="90u-0b-Xai"/>
+                            <constraint firstItem="gSq-mc-fmu" firstAttribute="trailing" secondItem="gYw-Bs-ty2" secondAttribute="trailing" constant="20" id="Cy5-AI-9PI"/>
                             <constraint firstItem="tfI-xn-6rI" firstAttribute="trailing" secondItem="gSq-mc-fmu" secondAttribute="trailing" id="HbL-nd-g3C"/>
-                            <constraint firstItem="hEM-h2-fLJ" firstAttribute="top" secondItem="gSq-mc-fmu" secondAttribute="top" constant="20" id="KEk-vi-lv7"/>
+                            <constraint firstItem="Da9-dm-Hne" firstAttribute="leading" secondItem="gSq-mc-fmu" secondAttribute="leading" constant="20" id="K9u-lx-KQt"/>
                             <constraint firstItem="tfI-xn-6rI" firstAttribute="bottom" secondItem="gSq-mc-fmu" secondAttribute="bottom" id="KJr-KX-vev"/>
+                            <constraint firstItem="X8q-SA-eO8" firstAttribute="top" secondItem="gSq-mc-fmu" secondAttribute="top" constant="60" id="KjQ-35-J6R"/>
+                            <constraint firstItem="gYw-Bs-ty2" firstAttribute="centerY" secondItem="X8q-SA-eO8" secondAttribute="centerY" id="SEO-2P-bwm"/>
+                            <constraint firstItem="X8q-SA-eO8" firstAttribute="leading" secondItem="gSq-mc-fmu" secondAttribute="leading" constant="20" id="VJW-W1-Cfw"/>
                             <constraint firstItem="tfI-xn-6rI" firstAttribute="top" secondItem="hvF-4V-ttx" secondAttribute="bottom" constant="12.5" id="XsS-Ua-9lY"/>
                             <constraint firstItem="tfI-xn-6rI" firstAttribute="leading" secondItem="gSq-mc-fmu" secondAttribute="leading" id="dVG-dO-C4t"/>
-                            <constraint firstItem="hvF-4V-ttx" firstAttribute="top" secondItem="hEM-h2-fLJ" secondAttribute="bottom" constant="20" id="f7e-18-QEd"/>
-                            <constraint firstItem="gnz-SY-s8r" firstAttribute="leading" secondItem="hEM-h2-fLJ" secondAttribute="trailing" constant="10" id="jPS-mF-yM2"/>
-                            <constraint firstItem="hvF-4V-ttx" firstAttribute="leading" secondItem="hEM-h2-fLJ" secondAttribute="leading" id="nJI-Zm-p2s"/>
+                            <constraint firstItem="Da9-dm-Hne" firstAttribute="top" secondItem="X8q-SA-eO8" secondAttribute="bottom" constant="24" id="ikU-f3-uGC"/>
+                            <constraint firstItem="gSq-mc-fmu" firstAttribute="trailing" secondItem="T6A-P5-1Gb" secondAttribute="trailing" constant="24" id="jPS-S2-Pwo"/>
+                            <constraint firstItem="T6A-P5-1Gb" firstAttribute="centerY" secondItem="Da9-dm-Hne" secondAttribute="centerY" id="mHx-NZ-LOO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gSq-mc-fmu"/>
                     </view>
@@ -148,7 +167,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zV7-ia-HN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258.39999999999998" y="168.6656671664168"/>
+            <point key="canvasLocation" x="-334" y="147"/>
+        </scene>
+        <!--Search New View Controller-->
+        <scene sceneID="Zq7-FV-zdF">
+            <objects>
+                <viewController restorationIdentifier="SearchNewViewController" storyboardIdentifier="SearchNewViewController" id="8yY-9D-60s" customClass="SearchNewViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JXo-Qe-ebd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="ZEE-rf-AEQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Alk-0r-yej" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-287" y="865"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="0Zk-aV-7OY">
@@ -452,6 +486,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ei4-zf-Xfn"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fg9-GZ-Zhf"/>
                     <size key="freeformSize" width="375" height="1200"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cel-Ve-EpK" userLabel="First Responder" sceneMemberID="firstResponder"/>

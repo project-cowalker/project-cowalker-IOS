@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateViewController: UIViewController {
+class CreateViewController: UIViewController, UIImagePickerControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,9 @@ class CreateViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateNaviViewController")
         self.present(vc!, animated: true, completion: nil)
     }
-
+    
+   
+    
+    
 
 }
