@@ -9,3 +9,15 @@
 import Foundation
 
 
+import Foundation
+
+
+protocol APIService {
+    
+}
+
+extension APIService {
+    static func url(_ path : String) -> String {
+        return "http://bghgu.tk:3000/api" + path
+    }
+}

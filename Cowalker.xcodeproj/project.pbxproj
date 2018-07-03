@@ -46,6 +46,7 @@
 		944A9F8220E8DFF700F5FE80 /* MyProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8120E8DFF700F5FE80 /* MyProjectViewController.swift */; };
 		944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8320E8E00E00F5FE80 /* MyPageUpdateViewController.swift */; };
 		944A9F8820E8E03D00F5FE80 /* MyBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8720E8E03D00F5FE80 /* MyBagViewController.swift */; };
+		94EA8FEE20EB8263006EC50A /* SearchNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA8FED20EB8263006EC50A /* SearchNewViewController.swift */; };
 		94ECBF9320E953FE002F9F92 /* PagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBF9220E953FE002F9F92 /* PagingCollectionViewCell.swift */; };
 		94ECBF9520E95405002F9F92 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBF9420E95405002F9F92 /* ListCollectionViewCell.swift */; };
 		94ECBF9820E95E34002F9F92 /* ProjectIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBF9720E95E34002F9F92 /* ProjectIntroViewController.swift */; };
@@ -104,6 +105,7 @@
 		944A9F8120E8DFF700F5FE80 /* MyProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectViewController.swift; sourceTree = "<group>"; };
 		944A9F8320E8E00E00F5FE80 /* MyPageUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageUpdateViewController.swift; sourceTree = "<group>"; };
 		944A9F8720E8E03D00F5FE80 /* MyBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagViewController.swift; sourceTree = "<group>"; };
+		94EA8FED20EB8263006EC50A /* SearchNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewViewController.swift; sourceTree = "<group>"; };
 		94ECBF9220E953FE002F9F92 /* PagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewCell.swift; sourceTree = "<group>"; };
 		94ECBF9420E95405002F9F92 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		94ECBF9720E95E34002F9F92 /* ProjectIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectIntroViewController.swift; sourceTree = "<group>"; };
@@ -198,11 +200,10 @@
 		944A9F5220E8AB7D00F5FE80 /* Login&Join */ = {
 			isa = PBXGroup;
 			children = (
+				94EA8FEC20EB7AF7006EC50A /* service */,
 				944A9F5720E8AED100F5FE80 /* Main.storyboard */,
 				944A9F5320E8AE6800F5FE80 /* LoginViewController.swift */,
-				944A9F5520E8AE8600F5FE80 /* LoginService.swift */,
 				944A9F5920E8AFE400F5FE80 /* JoinViewController.swift */,
-				944A9F5D20E8B0D000F5FE80 /* JoinService.swift */,
 			);
 			path = "Login&Join";
 			sourceTree = "<group>";
@@ -215,6 +216,7 @@
 				944A9F7920E8BB7700F5FE80 /* MyTabViewController.swift */,
 				94ECBF9220E953FE002F9F92 /* PagingCollectionViewCell.swift */,
 				94ECBF9420E95405002F9F92 /* ListCollectionViewCell.swift */,
+				94057B1520E99758008875C5 /* PartCollectionViewCell.swift */,
 				94ECBF9620E95E0D002F9F92 /* -project */,
 			);
 			path = 1.Home;
@@ -253,6 +255,7 @@
 				944A9F7020E8B5D900F5FE80 /* Search.storyboard */,
 				944A9F7B20E8D3CA00F5FE80 /* projectCollectionViewCell.swift */,
 				94057B1120E98EE3008875C5 /* FilterViewController.swift */,
+				94EA8FED20EB8263006EC50A /* SearchNewViewController.swift */,
 			);
 			path = 2.Search;
 			sourceTree = "<group>";
@@ -270,6 +273,15 @@
 			path = 3.Create;
 			sourceTree = "<group>";
 		};
+		94EA8FEC20EB7AF7006EC50A /* service */ = {
+			isa = PBXGroup;
+			children = (
+				944A9F5D20E8B0D000F5FE80 /* JoinService.swift */,
+				944A9F5520E8AE8600F5FE80 /* LoginService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		94ECBF9620E95E0D002F9F92 /* -project */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,7 +293,6 @@
 				94ECBFA120E96776002F9F92 /* ProjectPartDetailViewController.swift */,
 				94ECBFA320E96A0E002F9F92 /* ProjectMemberViewController.swift */,
 				94057B1320E9959F008875C5 /* ProjectCollectionViewCell.swift */,
-				94057B1520E99758008875C5 /* PartCollectionViewCell.swift */,
 			);
 			path = "-project";
 			sourceTree = "<group>";
@@ -447,6 +458,7 @@
 				94ECBF9320E953FE002F9F92 /* PagingCollectionViewCell.swift in Sources */,
 				944A9F8820E8E03D00F5FE80 /* MyBagViewController.swift in Sources */,
 				94057B1420E9959F008875C5 /* ProjectCollectionViewCell.swift in Sources */,
+				94EA8FEE20EB8263006EC50A /* SearchNewViewController.swift in Sources */,
 				94ECBF9C20E962CD002F9F92 /* ProjectFullViewController.swift in Sources */,
 				944A9F6920E8B58B00F5FE80 /* SearchViewController.swift in Sources */,
 				94ECBFA220E96776002F9F92 /* ProjectPartDetailViewController.swift in Sources */,
@@ -599,9 +611,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4VKDMR728W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Cowalker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PODS_ROOT2 = "${SRCROOT}/Pods";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gooil.Cowalker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -615,9 +628,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4VKDMR728W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Cowalker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PODS_ROOT2 = "${SRCROOT}/Pods";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gooil.Cowalker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
