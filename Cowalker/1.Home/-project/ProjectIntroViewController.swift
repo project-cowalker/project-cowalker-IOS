@@ -13,9 +13,7 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var barJoinBtn: UIBarButtonItem!
     @IBOutlet weak var projectCollectionView: UICollectionView!
     @IBOutlet weak var underBar: UIToolbar!
-    
     @IBOutlet weak var clickBtn: UIImageView!
-    
     
     @IBOutlet weak var partCollectionView: UICollectionView!
     var imageArray = [#imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar1HomeSelected"), #imageLiteral(resourceName: "iconsTabbar1Home")]
@@ -31,11 +29,23 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = true//상단 무
+        self.navigationController?.isNavigationBarHidden = false
+        
+        //self.navigationController?.navigationBar.barTintColor = default
+        //self.navigationController?.navigationBar.tintColor = UIColor.blueColor()
+       // self.navigationController?.navigationBar.isTranslucent = true
+        
+        //self.tabBarController?.tabBar.isHidden = true//상단 무
      /*
         let leftButton = UIBarButtonItem(title: "<Home", style: .plain, target: self, action: #selector(self.action))
         self.navigationItem.leftBarButtonItem = leftButton*/ //왼쪽버튼
     //self.navigationController?.isToolbarHidden = false 하단 없앵ㅁ
+        
+        
+        self.navigationController?.view.backgroundColor = .clear
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+        
         
                 constBtn.constant = -50
         
