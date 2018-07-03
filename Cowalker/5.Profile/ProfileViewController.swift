@@ -17,4 +17,17 @@ class ProfileViewController: UIViewController {
         self.tabBarController?.tabBar.items![4].image = #imageLiteral(resourceName: "iconsTabbar5Mypage")
     }
 
+    @IBAction func goToEditProfile(_ sender: Any) {
+        
+        if let secondVC = storyboard?.instantiateViewController(withIdentifier: "ProfileEditViewController") as? ProfileEditViewController{
+            
+            self.navigationController?.pushViewController(secondVC, animated: true)
+            
+            
+        }
+        
+    }
+    
+    
+    
 }
