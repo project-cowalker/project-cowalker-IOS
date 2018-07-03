@@ -20,13 +20,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7O1-vq-YbA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="22기_홈페이지로고" translatesAutoresizingMaskIntoConstraints="NO" id="7O1-vq-YbA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7O1-vq-YbA" secondAttribute="height" multiplier="15:8" id="iAh-1o-mHk"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G7y-Aa-VeI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cowalker" translatesAutoresizingMaskIntoConstraints="NO" id="G7y-Aa-VeI">
                                 <rect key="frame" x="20" y="160" width="81" height="81"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="G7y-Aa-VeI" secondAttribute="height" multiplier="1:1" id="fIU-1c-CjQ"/>
@@ -319,7 +319,6 @@
                             <constraint firstItem="qXQ-Ex-a6c" firstAttribute="leading" secondItem="Zb4-c9-r1y" secondAttribute="leading" id="Bup-0M-sCS"/>
                             <constraint firstItem="iAa-3u-0nQ" firstAttribute="top" secondItem="7O1-vq-YbA" secondAttribute="bottom" constant="10" id="E31-ai-Zuv"/>
                             <constraint firstItem="G7y-Aa-VeI" firstAttribute="top" secondItem="Vha-QO-Ikv" secondAttribute="top" constant="160" id="ECq-vw-VgV"/>
-                            <constraint firstItem="7O1-vq-YbA" firstAttribute="top" secondItem="Vha-QO-Ikv" secondAttribute="top" id="GFt-9h-fY1"/>
                             <constraint firstItem="MPO-iG-10W" firstAttribute="centerY" secondItem="VPg-e0-aAu" secondAttribute="centerY" id="HfT-W6-BPK"/>
                             <constraint firstItem="MPO-iG-10W" firstAttribute="trailing" secondItem="g0f-Bb-MTp" secondAttribute="trailing" id="JC9-3Z-El7"/>
                             <constraint firstItem="wyA-oZ-Vef" firstAttribute="centerY" secondItem="ns0-e0-Xa6" secondAttribute="centerY" id="Jfd-RE-RLG"/>
@@ -343,6 +342,7 @@
                             <constraint firstItem="sBi-7n-BKJ" firstAttribute="top" secondItem="7O1-vq-YbA" secondAttribute="bottom" constant="10" id="Y7i-7N-msf"/>
                             <constraint firstItem="9cD-Ul-LXP" firstAttribute="top" secondItem="U8X-l4-2w1" secondAttribute="bottom" constant="12" id="ZX0-rs-8Uz"/>
                             <constraint firstItem="lu6-kM-h5g" firstAttribute="leading" secondItem="U8X-l4-2w1" secondAttribute="trailing" constant="8" id="ZXU-z9-Hii"/>
+                            <constraint firstItem="V6f-B3-hGI" firstAttribute="top" secondItem="7O1-vq-YbA" secondAttribute="bottom" constant="-180" id="bDG-Fa-HnY"/>
                             <constraint firstItem="vch-0J-1L3" firstAttribute="top" secondItem="jUy-11-Qmh" secondAttribute="bottom" constant="20" id="cdx-a6-9rE"/>
                             <constraint firstItem="65q-YT-XKh" firstAttribute="leading" secondItem="NTh-Yw-VkJ" secondAttribute="leading" id="dCk-Xj-iya"/>
                             <constraint firstItem="CHP-G4-a6b" firstAttribute="top" secondItem="jUy-11-Qmh" secondAttribute="bottom" constant="20" id="doJ-sa-ubQ"/>
@@ -372,6 +372,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V6f-B3-hGI"/>
                     </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="G7y-Aa-VeI" id="O4S-va-PYl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOA-Ji-tUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -989,6 +992,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="22기_홈페이지로고" width="300" height="80"/>
+        <image name="cowalker" width="3064" height="3064"/>
         <image name="darkgray" width="24" height="24"/>
         <image name="iconBagDarkgray" width="24" height="24"/>
         <image name="iconEditDarkgray" width="24" height="24"/>
