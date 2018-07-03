@@ -16,6 +16,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var imageArray = [#imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar1Home")]
     var imageArray2 = [#imageLiteral(resourceName: "iconsTabbar2Search"),#imageLiteral(resourceName: "iconsTabbar1HomeSelected"), #imageLiteral(resourceName: "iconsTabbar2Search"),#imageLiteral(resourceName: "iconsTabbar1HomeSelected"), #imageLiteral(resourceName: "iconsTabbar2Search"), #imageLiteral(resourceName: "iconsTabbar2Search")]
     var label1 = ["1", "2", "3", "4", "5", "6"]
+   // var window: UIWindow?
+    
+    @IBAction func logoutBtnAct(_ sender: UIButton) {
+       // print("delete id, pwd")
+        UserDefaults.standard.removeObject(forKey: "email")
+        UserDefaults.standard.removeObject(forKey: "pwd")/*
+        // 데이터 삭제
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        vc.viewDidLoad()
+        // 화면전환
+        self.dismiss(animated: true, completion: nil)*/
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
