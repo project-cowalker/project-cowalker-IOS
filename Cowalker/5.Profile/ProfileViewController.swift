@@ -8,19 +8,24 @@
 
 import UIKit
 
+
 class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var profileImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.tintColor = UIColor (red: 100.0/255.0, green: 223.0/255.0, blue: 255.0/255.0, alpha: 1.0)
 
         self.tabBarController?.tabBar.items![4].image = #imageLiteral(resourceName: "iconsTabbar5Mypage")
         
-        profileImageView.layer.masksToBounds = true
-        profileImageView.layer.cornerRadius = profileImageView.layer.frame.width/2
-        profileImageView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        profileImageView.layer.borderWidth = 0.1
+        
+        
+        
+        circleButton.layer.masksToBounds = true
+        circleButton.layer.cornerRadius = circleButton.layer.frame.width/2
+        circleButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        circleButton.layer.borderWidth = 0.1
+        
+
     }
 
     @IBAction func goToEditProfile(_ sender: Any) {
@@ -34,6 +39,20 @@ class ProfileViewController: UIViewController {
         
     }
     
+    
+    
+    @IBOutlet weak var circleButton: UIButton!
+    
+    
+
+    @IBAction func mainPicFunc(_ sender: UIButton) {
+        //사진 바꾸기
+    }
+    
+    @IBAction func profilePicFunc(_ sender: UIButton) {
+        //사진 바꾸기
+        
+    }
     
     
     
