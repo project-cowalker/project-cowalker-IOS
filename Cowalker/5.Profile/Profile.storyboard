@@ -31,9 +31,6 @@
                                 <rect key="frame" x="273" y="172" width="95" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="설정버튼 이미지"/>
-                                <connections>
-                                    <segue destination="gwj-7N-G0A" kind="show" id="6qY-da-yKg"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjN-84-p6a">
                                 <rect key="frame" x="314" y="460" width="46" height="30"/>
@@ -768,7 +765,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Drp-Y5-bTY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="125"/>
+            <point key="canvasLocation" x="828" y="-45"/>
         </scene>
     </scenes>
 </document>
