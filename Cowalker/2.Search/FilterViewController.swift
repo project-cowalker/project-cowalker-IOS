@@ -83,11 +83,13 @@ class FilterViewController: UIViewController {
             tempForButton[row] = button
             tempForButton[row].setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
             countForButton[row] = 1
+            
         }else if i == 0 {
             defaultForButton[row].setBackgroundImage(UIImage(named: "btnHalfGray"), for: UIControlState.normal)
             tempForButton[row] = button
             button.setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
             countForButton[row] = 1
+            
             firstResponse = false
             //서버 연동시 해당 데이터 여기서 처리
             
