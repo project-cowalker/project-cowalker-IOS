@@ -111,27 +111,28 @@ class CreateLastViewController: UIViewController,UICollectionViewDelegate,UIColl
  
     @IBAction func createProjectDone(_ sender: UIButton) {
         img_url = imageForProject[0]
-        explain = explainTextView.text
-       // print(department)
-        //print(explain)
-
+        explain = explainTextView.text!
+        print(title2)
+        print(summary)
+        print(area)
+        print(department)
+        print(aim)
+        print(explain)
+        print(img_url)
         CreateNewProjectService.createNewProject(title: title2, summary: summary, area: area, department: department, aim: aim ,explain: explain, img_url: img_url) {
-            self.navigationController?.popViewController(animated: true)
-//            (message) in
-//            print(message)
-//            if message == "success"{
-//                print("111111111111111111111")
-//                self.dismiss(animated: true, completion: nil)
-//            }else {
-//                print("222222222")
-//                self.dismiss(animated: true, completion: nil)
-//            }
+           (message) in
+           print(message)
+            if message == "success"{
+                print("111111111111111111111")
+                self.dismiss(animated: true, completion: nil)
+            }else {
+                print("222222222")
+                self.dismiss(animated: true, completion: nil)
+            }
         }
         
         
     }
-    
- 
-    
+
     
 }

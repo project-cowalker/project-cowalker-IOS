@@ -16,7 +16,7 @@ import UIKit
 struct CreateNewProjectService: APIService {
    
     
-    static func createNewProject(title: String, summary: String, area: String, department: String, aim: String ,explain: String, img_url: UIImage, completion: @escaping () -> Void){
+    static func createNewProject(title: String, summary: String, area: String, department: String, aim: String ,explain: String, img_url: UIImage, completion: @escaping (String) -> Void){
         let URL = url("/project")
 //        let userdefault = UserDefaults.standard
         let titleData = title.data(using: .utf8)
@@ -26,11 +26,12 @@ struct CreateNewProjectService: APIService {
         let aimData = aim.data(using: .utf8)
         let explainData = explain.data(using: .utf8)
         let img_urlData = UIImageJPEGRepresentation(img_url, 0.3)
+        //token 처리도 해야함 유저로 가게
+        
         let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"
-        let content = "form-data"
-        let header = ["Content-Type": content,"authorization" : token]
+        let header = ["authorization" : token]
         Alamofire.upload(multipartFormData: { (multipartFormData) in
-//            multipartFormData.append(token!, withName: "authorization")
+
             multipartFormData.append(titleData!, withName: "title")
             multipartFormData.append(summaryData!, withName: "summary")
             multipartFormData.append(areaData!, withName: "area")
@@ -61,19 +62,24 @@ struct CreateNewProjectService: APIService {
                             
                             if message == "success"{
                                 print(3)
-                                completion()
+                                completion(message!)
                             }else if message == "fail"{
                                 print("fail")
-                            }else {
+                            }else if message == "access denied"{
                                 print("just nothing")
+                            }else {
+                                print("shit")
                             }
+                            
                         }
                         break
                     case .failure(let err):
                         print("개시발")
                         print(err.localizedDescription)
                     }
+                    
                 })
+                
             case .failure(let err):
                 print("젖같네")
                 print(err.localizedDescription)
