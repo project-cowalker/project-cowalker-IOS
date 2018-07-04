@@ -66,4 +66,17 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
         }
     }
     
+    // 새소식 외에 쪽지가 선택 됫을때로 바꾸기 아마 push action 해야할지도
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if num == 1{
+            let storyboard: UIStoryboard = self.storyboard!
+            let nextView = storyboard.instantiateViewController(withIdentifier: "AlarmSecondNaviController")
+            
+            present(nextView, animated: true, completion: nil)
+        }
+       
+        
+    }
+    
 }

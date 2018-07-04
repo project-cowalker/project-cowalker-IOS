@@ -22,14 +22,40 @@ class AlarmSecondViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func sendingMessagePage(_ sender: Any) {
+        
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "AlarmThirdNaviController")
+        
+        present(nextView, animated: true, completion: nil)
+        
+        
     }
-    */
-
+    
+    
+    
+    @IBAction func goToBackPage(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func deleteMessage(_ sender: Any) {
+        deleteAlert()
+        // message 전체 삭제로 알람 띄우고 삭제
+       
+    }
+    func deleteAlert(){
+        let message = UIAlertController(title: "쪽지 전체 삭제하기", message: "쪽지를 전체 삭제하시겠습니까?", preferredStyle: .alert)
+        let cancel = UIAlertAction(title:"취소", style: UIAlertActionStyle.default)
+        let action = UIAlertAction(title: "삭제", style: UIAlertActionStyle.default)
+        message.addAction(cancel)
+        message.addAction(action)
+        self.present(message, animated: true,completion: nil)
+    }
+    
+    
+    
+    
+    
 }

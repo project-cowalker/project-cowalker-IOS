@@ -60,6 +60,7 @@
 		E41A8F6E20EA62900009F330 /* CreateImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A8F6D20EA62900009F330 /* CreateImageCollectionViewCell.swift */; };
 		E4692B2920EC14BB000F4A72 /* AlarmSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4692B2820EC14BB000F4A72 /* AlarmSecondViewController.swift */; };
 		E4692B2B20EC14F7000F4A72 /* messageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4692B2A20EC14F7000F4A72 /* messageTableViewCell.swift */; };
+		E4692B2D20EC9AA3000F4A72 /* SendingMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4692B2C20EC9AA3000F4A72 /* SendingMessageViewController.swift */; };
 		E473A9AB20EA5C8900B51830 /* CreateLastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E473A9AA20EA5C8900B51830 /* CreateLastViewController.swift */; };
 		E6231439F316A39B412F7A83 /* Pods_Cowalker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8749A2CEEC4B02DB346C00 /* Pods_Cowalker.framework */; };
 /* End PBXBuildFile section */
@@ -123,6 +124,7 @@
 		E41A8F6D20EA62900009F330 /* CreateImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4692B2820EC14BB000F4A72 /* AlarmSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSecondViewController.swift; sourceTree = "<group>"; };
 		E4692B2A20EC14F7000F4A72 /* messageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageTableViewCell.swift; sourceTree = "<group>"; };
+		E4692B2C20EC9AA3000F4A72 /* SendingMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingMessageViewController.swift; sourceTree = "<group>"; };
 		E473A9AA20EA5C8900B51830 /* CreateLastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLastViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -238,6 +240,7 @@
 				9403DD0C20E8E4FC0049C497 /* chattingTableViewCell.swift */,
 				E4692B2820EC14BB000F4A72 /* AlarmSecondViewController.swift */,
 				E4692B2A20EC14F7000F4A72 /* messageTableViewCell.swift */,
+				E4692B2C20EC9AA3000F4A72 /* SendingMessageViewController.swift */,
 			);
 			path = 4.Alarm;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				94ECBFA420E96A0E002F9F92 /* ProjectMemberViewController.swift in Sources */,
 				944A9F8020E8DFE100F5FE80 /* MyPageViewController.swift in Sources */,
 				94ECBF9520E95405002F9F92 /* ListCollectionViewCell.swift in Sources */,
+				E4692B2D20EC9AA3000F4A72 /* SendingMessageViewController.swift in Sources */,
 				94057B1620E99758008875C5 /* PartCollectionViewCell.swift in Sources */,
 				94057B1220E98EE3008875C5 /* FilterViewController.swift in Sources */,
 				944A9F7A20E8BB7700F5FE80 /* MyTabViewController.swift in Sources */,
