@@ -36,6 +36,7 @@ class JoinViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     @IBAction func checkEmailAction(_ sender: UIButton) {
+        
         JoinService.overrideCheck(add: emailTf.text!) {  (message) in
             if message == "Already Exists"{
             // 알람띄우기

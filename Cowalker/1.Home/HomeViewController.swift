@@ -75,7 +75,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     ///////////////////컬랙션 뷰 클릭하면 이동
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == listCollectionView{
-        let secondVC = UIStoryboard(name: "Home", bundle:nil ).instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
+            
+        let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
             self.navigationController?.pushViewController(secondVC, animated: true)
         }
     }

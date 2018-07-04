@@ -13,9 +13,10 @@ class ProjectFullViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "여정"
+        // 네비게이션 추가
         
-        // 오른쪽 버튼 추가
-        // 왼쪽 버튼 색 변경
+        // 탭바는 없음
+    
     }
     
     
