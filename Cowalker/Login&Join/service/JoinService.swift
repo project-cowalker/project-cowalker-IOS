@@ -42,6 +42,8 @@ struct JoinService:APIService{
             
             switch res.result{
             case .success:
+                
+                //print(add)
                 if let value = res.result.value{
                     if let message = JSON(value)["message"].string {
                         completion(message)
