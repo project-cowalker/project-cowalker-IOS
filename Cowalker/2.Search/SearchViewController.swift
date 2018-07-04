@@ -53,6 +53,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBAction func filterBtnAct(_ sender: UIButton) {
         //필터뷰 오픈, 프리젠트
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "FilterViewController")
+        
+        present(nextView, animated: true, completion: nil)
         
     }
     @IBAction func searchBtnAct(_ sender: UIButton) {
