@@ -120,11 +120,16 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func nextButtonFunc(_ sender: UIButton) {
         if let secondVC = storyboard?.instantiateViewController(withIdentifier: "CreateLastViewController") as? CreateLastViewController{
-            secondVC.title2 = titleTextField.text
-            secondVC.summary = summaryTextField.text
-            secondVC.aim = resultForButton[0].currentTitle   //purpose
-            secondVC.department = resultForButton[1].currentTitle   // part
-            secondVC.area = resultForButton[2].currentTitle   //region
+            secondVC.title2 = titleTextField.text!
+            secondVC.summary = summaryTextField.text!
+            secondVC.aim = resultForButton[0].currentTitle!   //purpose
+            secondVC.department = resultForButton[1].currentTitle!// part
+            secondVC.area = resultForButton[2].currentTitle!   //region
+//            print(titleTextField.text)
+//            print(summaryTextField.text)
+//            print(resultForButton[0].currentTitle)
+//            print(resultForButton[1].currentTitle)
+//            print(resultForButton[2].currentTitle)
             
             self.navigationController?.pushViewController(secondVC, animated: true)
             
