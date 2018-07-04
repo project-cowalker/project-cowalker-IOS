@@ -61,6 +61,7 @@
 		94ECBFA220E96776002F9F92 /* ProjectPartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBFA120E96776002F9F92 /* ProjectPartDetailViewController.swift */; };
 		94ECBFA420E96A0E002F9F92 /* ProjectMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBFA320E96A0E002F9F92 /* ProjectMemberViewController.swift */; };
 		E41A8F6E20EA62900009F330 /* CreateImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A8F6D20EA62900009F330 /* CreateImageCollectionViewCell.swift */; };
+		E4661BAF20ECECA8009BFE0F /* CreateNewProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4661BAE20ECECA8009BFE0F /* CreateNewProjectService.swift */; };
 		E4692B2920EC14BB000F4A72 /* AlarmSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4692B2820EC14BB000F4A72 /* AlarmSecondViewController.swift */; };
 		E4692B2B20EC14F7000F4A72 /* messageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4692B2A20EC14F7000F4A72 /* messageTableViewCell.swift */; };
 		E4692B2D20EC9AA3000F4A72 /* SendingMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4692B2C20EC9AA3000F4A72 /* SendingMessageViewController.swift */; };
@@ -128,6 +129,7 @@
 		94ECBFA320E96A0E002F9F92 /* ProjectMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMemberViewController.swift; sourceTree = "<group>"; };
 		99AEF46B244E09E4EC0E1D36 /* Pods-Cowalker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cowalker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cowalker/Pods-Cowalker.release.xcconfig"; sourceTree = "<group>"; };
 		E41A8F6D20EA62900009F330 /* CreateImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4661BAE20ECECA8009BFE0F /* CreateNewProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewProjectService.swift; sourceTree = "<group>"; };
 		E4692B2820EC14BB000F4A72 /* AlarmSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSecondViewController.swift; sourceTree = "<group>"; };
 		E4692B2A20EC14F7000F4A72 /* messageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageTableViewCell.swift; sourceTree = "<group>"; };
 		E4692B2C20EC9AA3000F4A72 /* SendingMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingMessageViewController.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		944A9F6320E8B3CE00F5FE80 /* 3.Create */ = {
 			isa = PBXGroup;
 			children = (
+				E4661BAD20ECEC7C009BFE0F /* service */,
 				944A9F6A20E8B59400F5FE80 /* CreateViewController.swift */,
 				944A9F7220E8B5E200F5FE80 /* Create.storyboard */,
 				94057B1720E9CCCF008875C5 /* CreateNewViewController.swift */,
@@ -373,6 +376,14 @@
 				6F8749A2CEEC4B02DB346C00 /* Pods_Cowalker.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4661BAD20ECEC7C009BFE0F /* service */ = {
+			isa = PBXGroup;
+			children = (
+				E4661BAE20ECECA8009BFE0F /* CreateNewProjectService.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,6 +557,7 @@
 				944A9F7A20E8BB7700F5FE80 /* MyTabViewController.swift in Sources */,
 				944A9F5A20E8AFE400F5FE80 /* JoinViewController.swift in Sources */,
 				944A9F6720E8B53200F5FE80 /* HomeViewController.swift in Sources */,
+				E4661BAF20ECECA8009BFE0F /* CreateNewProjectService.swift in Sources */,
 				9406D25F20ECB386001B145D /* FullPlusViewController.swift in Sources */,
 				9403DD0F20E92B130049C497 /* CreateCollectionViewCell.swift in Sources */,
 				944A9F5620E8AE8600F5FE80 /* LoginService.swift in Sources */,
