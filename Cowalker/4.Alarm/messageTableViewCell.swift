@@ -22,7 +22,7 @@ class messageTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var userLabel: UILabel!
     
-    @IBOutlet weak var userGotText: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     
     @IBOutlet weak var timeLabel: UILabel!
     

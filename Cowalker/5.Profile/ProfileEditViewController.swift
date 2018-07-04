@@ -65,21 +65,7 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
     let partArray = ["블록체인","IOT","인공지능","디자인","콘텐츠","기타"]
     let purposeArray = ["창업","공모전 참여","스터디","사이드 프로젝트","창작","기타"]
     
-//    func addCancelDoneButton()  {
-//        let keyboardToolbar = UIToolbar()
-//        keyboardToolbar.sizeToFit()
-//
-//        let cancelBarButton = UIBarButtonItem(barButtonSystemItem: .cancel,
-//                                              target: view, action: Selector(("cancelEditing:")))
-//        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
-//                                            target: nil, action: nil)
-//        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done,
-//                                            target: view, action: Selector(("doneEditing:")))
-//        keyboardToolbar.items = [cancelBarButton, flexBarButton, doneBarButton]
-////        self.inputAccessoryView = keyboardToolbar
-//
-//    }
-    
+
 
 
 
@@ -100,16 +86,7 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
     @IBAction func goBackToMyPage(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-//    func initPicker(){
-//
-//        let bar = UIToolbar()
-//        bar.sizeToFit()
-//
-//        roleTextField.inputAccessoryView = bar
-//        let doneButton = UIBarButtonItem (title: "확인", style: .done, target: self, action: #selector(selectedPicker))
-//        bar.setItems([doneButton], animated: true)
-//
-//    }
+
     @objc func selectedRolePicker(){
         let row = rolePicker.selectedRow(inComponent: 0)
         roleTextField.text = roleArray[row]
