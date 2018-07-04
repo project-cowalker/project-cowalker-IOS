@@ -23,6 +23,9 @@
 		9406D25F20ECB386001B145D /* FullPlusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406D25E20ECB386001B145D /* FullPlusViewController.swift */; };
 		9406D26120ECB3C9001B145D /* FullEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406D26020ECB3C9001B145D /* FullEditViewController.swift */; };
 		9406D26420ECCC33001B145D /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9406D26320ECCC33001B145D /* Project.storyboard */; };
+		9406D26920ECDE31001B145D /* RecruitPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406D26820ECDE31001B145D /* RecruitPartViewController.swift */; };
+		9406D26C20ECF0F8001B145D /* RecruitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406D26B20ECF0F8001B145D /* RecruitService.swift */; };
+		9406D26E20ECF240001B145D /* RecruitNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406D26D20ECF240001B145D /* RecruitNextViewController.swift */; };
 		944A9F4120E8AAF900F5FE80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F4020E8AAF900F5FE80 /* AppDelegate.swift */; };
 		944A9F4820E8AAF900F5FE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944A9F4720E8AAF900F5FE80 /* Assets.xcassets */; };
 		944A9F4B20E8AAF900F5FE80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944A9F4920E8AAF900F5FE80 /* LaunchScreen.storyboard */; };
@@ -87,6 +90,9 @@
 		9406D25E20ECB386001B145D /* FullPlusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPlusViewController.swift; sourceTree = "<group>"; };
 		9406D26020ECB3C9001B145D /* FullEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullEditViewController.swift; sourceTree = "<group>"; };
 		9406D26320ECCC33001B145D /* Project.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
+		9406D26820ECDE31001B145D /* RecruitPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitPartViewController.swift; sourceTree = "<group>"; };
+		9406D26B20ECF0F8001B145D /* RecruitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitService.swift; sourceTree = "<group>"; };
+		9406D26D20ECF240001B145D /* RecruitNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitNextViewController.swift; sourceTree = "<group>"; };
 		944A9F3D20E8AAF900F5FE80 /* Cowalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cowalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944A9F4020E8AAF900F5FE80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		944A9F4720E8AAF900F5FE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -203,7 +209,8 @@
 				9406D25D20ECB2C6001B145D /* -full */,
 				9406D26520ECCD6F001B145D /* -detail */,
 				9406D26620ECCD8A001B145D /* -join */,
-				94ECBF9620E95E0D002F9F92 /* -project */,
+				9406D26720ECDDC9001B145D /* -recruit */,
+				94ECBF9620E95E0D002F9F92 /* -etc */,
 			);
 			path = 0.Project;
 			sourceTree = "<group>";
@@ -222,6 +229,24 @@
 				94ECBF9F20E964A3002F9F92 /* ProjectJoinViewController.swift */,
 			);
 			path = "-join";
+			sourceTree = "<group>";
+		};
+		9406D26720ECDDC9001B145D /* -recruit */ = {
+			isa = PBXGroup;
+			children = (
+				9406D26A20ECF0DB001B145D /* service */,
+				9406D26820ECDE31001B145D /* RecruitPartViewController.swift */,
+				9406D26D20ECF240001B145D /* RecruitNextViewController.swift */,
+			);
+			path = "-recruit";
+			sourceTree = "<group>";
+		};
+		9406D26A20ECF0DB001B145D /* service */ = {
+			isa = PBXGroup;
+			children = (
+				9406D26B20ECF0F8001B145D /* RecruitService.swift */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 		944A9F3420E8AAF900F5FE80 = {
@@ -348,14 +373,14 @@
 			path = service;
 			sourceTree = "<group>";
 		};
-		94ECBF9620E95E0D002F9F92 /* -project */ = {
+		94ECBF9620E95E0D002F9F92 /* -etc */ = {
 			isa = PBXGroup;
 			children = (
 				94ECBF9920E962BB002F9F92 /* ProjectDetailViewController.swift */,
 				94ECBF9D20E962D6002F9F92 /* ProjectPartViewController.swift */,
 				94ECBFA320E96A0E002F9F92 /* ProjectMemberViewController.swift */,
 			);
-			path = "-project";
+			path = "-etc";
 			sourceTree = "<group>";
 		};
 		9B8EABFC6229578F8787571A /* Pods */ = {
@@ -510,6 +535,7 @@
 				944A9F5E20E8B0D000F5FE80 /* JoinService.swift in Sources */,
 				94ECBF9E20E962D6002F9F92 /* ProjectPartViewController.swift in Sources */,
 				E4692B2920EC14BB000F4A72 /* AlarmSecondViewController.swift in Sources */,
+				9406D26C20ECF0F8001B145D /* RecruitService.swift in Sources */,
 				944A9F8220E8DFF700F5FE80 /* MyProjectViewController.swift in Sources */,
 				94057B1A20E9DA85008875C5 /* CreateNaviViewController.swift in Sources */,
 				9403DD1E20E9306C0049C497 /* MyScrapViewController.swift in Sources */,
@@ -529,6 +555,7 @@
 				94ECBF9820E95E34002F9F92 /* ProjectIntroViewController.swift in Sources */,
 				944A9F5C20E8B0BE00F5FE80 /* APIService.swift in Sources */,
 				944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */,
+				9406D26E20ECF240001B145D /* RecruitNextViewController.swift in Sources */,
 				9403DD1320E92B340049C497 /* ApplyingCollectionViewCell.swift in Sources */,
 				944A9F6F20E8B5CC00F5FE80 /* ProfileViewController.swift in Sources */,
 				944A9F7E20E8DFCA00F5FE80 /* ProfileEditViewController.swift in Sources */,
@@ -544,6 +571,7 @@
 				94057B1620E99758008875C5 /* PartCollectionViewCell.swift in Sources */,
 				94057B1220E98EE3008875C5 /* FilterViewController.swift in Sources */,
 				944A9F7A20E8BB7700F5FE80 /* MyTabViewController.swift in Sources */,
+				9406D26920ECDE31001B145D /* RecruitPartViewController.swift in Sources */,
 				944A9F5A20E8AFE400F5FE80 /* JoinViewController.swift in Sources */,
 				944A9F6720E8B53200F5FE80 /* HomeViewController.swift in Sources */,
 				9406D25F20ECB386001B145D /* FullPlusViewController.swift in Sources */,
