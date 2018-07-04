@@ -21,6 +21,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     let userdefault = UserDefaults.standard
     var uid:String!
     var password:String!
+   // var tok:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,33 +78,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         if let userId = self.userdefault.string(forKey: "email"){
             self.idTf.text = userId
             self.pwTf.text = self.userdefault.string(forKey: "pwd")!
+            
          }
         // 통신
-        LoginService.logInit(email: idTf.text!,  password: pwTf.text!) {  (message)  in
-            if message == "login success"{
+        LoginService.logInit(email: idTf.text!,  password: pwTf.text!) {  (arr)  in
+            
+            
+            
+            if arr[0] == "login success"{
                 
                 if self.autoLogin == true {
                  // 성공한 경우에 데이터 저장하기
                  self.userdefault.set(self.gsno(self.idTf.text), forKey: "email")
                  self.userdefault.set(self.gsno(self.pwTf.text), forKey: "pwd")
-                    //}
+                    self.userdefault.set(self.gsno(arr[1]), forKey: "token")
+                    
+                    
+               // self.userdefault.set(arr[1], forkey: "token")
                 }
                 let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "MyTabViewController") as! MyTabViewController
                 self.present(vc, animated: false, completion: nil)
-            }else if message == "wrong password"{
+            }else if arr[0] == "wrong password"{
                 // alert
                 let dialog = UIAlertController(title: "로그인 실패", message: "비밀번호를 다시 확인해주세요", preferredStyle: .alert)
                 let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
                 dialog.addAction(action)
                 self.present(dialog, animated: true, completion: nil)
-            }else if message == "wrong email"{
+            }else if arr[0] == "wrong email"{
                 //
                 let dialog = UIAlertController(title: "로그인 실패", message: "이메일을 다시 확인해주세요", preferredStyle: .alert)
                 let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
                 dialog.addAction(action)
                 self.present(dialog, animated: true, completion: nil)
             }
+            //(token) in
+            //print(token)
         }
     }
 }

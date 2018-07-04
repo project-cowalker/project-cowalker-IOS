@@ -116,10 +116,11 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         let secondVC = UIStoryboard(name: "Home", bundle:nil ).instantiateViewController(withIdentifier: "ProjectDetailViewController") as! ProjectDetailViewController
         self.navigationController?.pushViewController(secondVC, animated: true)
     }
+    /*
     @IBAction func fullBtnAction(_ sender: UIButton) {
         let secondVC = UIStoryboard(name: "Home", bundle:nil ).instantiateViewController(withIdentifier: "ProjectFullViewController") as! ProjectFullViewController
         self.navigationController?.pushViewController(secondVC, animated: true)
-    }
+    }*/
     @IBAction func partBtnAction(_ sender: UIButton) {
         let secondVC = UIStoryboard(name: "Home", bundle:nil ).instantiateViewController(withIdentifier: "ProjectPartViewController") as! ProjectPartViewController
         self.navigationController?.pushViewController(secondVC, animated: true)
