@@ -11,13 +11,17 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
     
+    @IBOutlet weak var summaryTextField: UITextField!
+    
+    
     @IBAction func closeFunction(_ sender: Any) {
         //        self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        //titleTextField 받아오기
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     
@@ -29,82 +33,70 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    var countForObjectFunc = 0
-    var temp = UIButton()
     @IBAction func objectFunction(_ sender: UIButton) {
-        if countForObjectFunc == 0 {
-            temp = sender
-            sender.setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
-            countForObjectFunc = 1
-            // 해당 text 서버 연동시 여기닥 가져오기
-            
-        }else
-        {
-            
-            temp.setBackgroundImage(UIImage(named: "btnHalfGray"), for: UIControlState.normal)
-            
-            sender.setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
-            temp = sender
-            // 해당 text 서버 연동시 여기닥 가져오기
-            
-            
-            
-        }
         
+        defineWhichButton(i: 0, button: sender)
     }
     
-    var countForPartFunc = 0
-    var temp2 = UIButton()
+
     
     
     @IBAction func partFunction(_ sender: UIButton) {
-        if countForPartFunc == 0 {
-            temp2 = sender
-            sender.setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
-            countForPartFunc = 1
-            // 해당 text 서버 연동시 여기닥 가져오기
-            
-        }else
-        {
-            
-            temp2.setBackgroundImage(UIImage(named: "btnHalfGray"), for: UIControlState.normal)
-            
-            sender.setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
-            temp2 = sender
-            // 해당 text 서버 연동시 여기닥 가져오기
-            
-            
-            
-        }
+        defineWhichButton(i: 1, button: sender)
      
         
     }
     
     
     
-    var countForRegionFunc = 0
-    var temp3 = UIButton()
+ 
     
     @IBAction func regionFunction(_ sender: UIButton) {
-        if countForRegionFunc == 0 {
-            temp3 = sender
-            sender.setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
-            countForRegionFunc = 1
-            // 해당 text 서버 연동시 여기닥 가져오기
-            
-        }else
-        {
-            
-            temp3.setBackgroundImage(UIImage(named: "btnHalfGray"), for: UIControlState.normal)
-            
-            sender.setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
-            temp3 = sender
-            // 해당 text 서버 연동시 여기닥 가져오기
-            
-            
-            
+        defineWhichButton(i: 2, button: sender)
+        
+    }
+    
+    var countForButton = [0,0,0]
+    var tempForButton: [UIButton]!
+    let temp = UIButton()
+    let temp1 = UIButton()
+    let temp2 = UIButton()
+    var resultForButton: [UIButton]!
+    let temp3 = UIButton()
+    let temp4 = UIButton()
+    let temp5 = UIButton()
+    func defineWhichButton(i : Int, button : UIButton){
+        
+        switch i {
+        case 0:
+            selectedButton(i: countForButton[i], button: button, row: 0)
+        case 1:
+            selectedButton(i: countForButton[i], button: button, row: 1)
+        case 2:
+            selectedButton(i: countForButton[i], button: button, row: 2)
+        
+        default:
+            break
         }
         
+    }
+    
+    func selectedButton(i : Int, button: UIButton, row: Int){
+        if i == 0 {
+            tempForButton[row] = button
+            button.setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
+            countForButton[row] = 1
+            resultForButton[row] = button
+            //서버 연동시 해당 데이터 여기서 처리
+            
+        }else {
+            tempForButton[row].setBackgroundImage(UIImage(named: "btnHalfGray"), for: UIControlState.normal)
+            button.setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
+            tempForButton[row] = button
+            resultForButton[row] = button
+           
+            // 서버 연동시 해당 데이터 여기서 처리
+        }
     }
     
     
@@ -113,6 +105,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.commentOfIntro.delegate = self
+        tempForButton = [temp,temp1,temp2]
+        resultForButton = [temp3,temp4,temp5]
+        
         
         // Do any additional setup after loading the view.
     }
@@ -125,7 +120,11 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func nextButtonFunc(_ sender: UIButton) {
         if let secondVC = storyboard?.instantiateViewController(withIdentifier: "CreateLastViewController") as? CreateLastViewController{
-            
+            secondVC.title2 = titleTextField.text
+            secondVC.summary = summaryTextField.text
+            secondVC.aim = resultForButton[0].currentTitle   //purpose
+            secondVC.department = resultForButton[1].currentTitle   // part
+            secondVC.area = resultForButton[2].currentTitle   //region
             
             self.navigationController?.pushViewController(secondVC, animated: true)
             

@@ -22,7 +22,8 @@ class CreateLastViewController: UIViewController,UICollectionViewDelegate,UIColl
     }
     @IBOutlet weak var viewForProject: UICollectionView!
     
-
+    @IBOutlet weak var explainTextView: UITextView!
+    
     override func viewDidLoad() {
        
         viewForProject.dataSource = self
@@ -98,6 +99,38 @@ class CreateLastViewController: UIViewController,UICollectionViewDelegate,UIColl
         
         self.dismiss(animated: true, completion: nil)
      }
+    
+    var title2: String!
+    var summary: String!
+    var area: String!
+    var department: String!
+    var aim: String!
+    var explain: String!
+    var img_url: UIImage!
+    
+ 
+    @IBAction func createProjectDone(_ sender: UIButton) {
+        img_url = imageForProject[0]
+        explain = explainTextView.text
+       // print(department)
+        //print(explain)
+
+        CreateNewProjectService.createNewProject(title: title2, summary: summary, area: area, department: department, aim: aim ,explain: explain, img_url: img_url) {
+            self.navigationController?.popViewController(animated: true)
+//            (message) in
+//            print(message)
+//            if message == "success"{
+//                print("111111111111111111111")
+//                self.dismiss(animated: true, completion: nil)
+//            }else {
+//                print("222222222")
+//                self.dismiss(animated: true, completion: nil)
+//            }
+        }
+        
+        
+    }
+    
  
     
     
