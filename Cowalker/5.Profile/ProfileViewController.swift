@@ -17,17 +17,23 @@ class ProfileViewController: UIViewController {
 
         self.tabBarController?.tabBar.items![4].image = #imageLiteral(resourceName: "iconsTabbar5Mypage")
         
-        
+    
         
         
         circleButton.layer.masksToBounds = true
         circleButton.layer.cornerRadius = circleButton.layer.frame.width/2
         circleButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         circleButton.layer.borderWidth = 0.1
+        whiteCircle.layer.masksToBounds = true
+        whiteCircle.layer.cornerRadius = whiteCircle.layer.frame.width/2
+        whiteCircle.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        whiteCircle.layer.borderWidth = 0.1
         
 
     }
 
+    @IBOutlet weak var whiteCircle: UIView!
+    
     @IBAction func goToEditProfile(_ sender: Any) {
         
         if let secondVC = storyboard?.instantiateViewController(withIdentifier: "ProfileEditViewController") as? ProfileEditViewController{
