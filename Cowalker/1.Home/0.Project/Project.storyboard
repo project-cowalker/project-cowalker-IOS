@@ -424,6 +424,9 @@
                                                     <constraint firstAttribute="height" constant="60" id="dxz-mQ-Rnc"/>
                                                 </constraints>
                                                 <state key="normal" title="완료"/>
+                                                <connections>
+                                                    <action selector="btnAct:" destination="ia3-39-tOZ" eventType="touchUpInside" id="IHW-6F-btQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -481,12 +484,17 @@
                     </view>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="introTf" destination="Ilp-le-4fA" id="3eN-1C-JMs"/>
+                        <outlet property="portfolioTf" destination="QAI-Wp-0gN" id="Jmd-Ta-rNX"/>
                         <outlet property="projectCollectionView" destination="mKo-RI-gDF" id="GY8-k5-mKl"/>
+                        <outlet property="question2Tf" destination="hjG-Wx-moK" id="9fH-jY-eBp"/>
+                        <outlet property="questionTf" destination="TJ0-ae-eaM" id="7ot-xb-XBR"/>
+                        <outlet property="recruitTf" destination="cQ4-8g-hWH" id="62d-YM-7Kd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMx-LR-7dX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1773.5999999999999" y="407.49625187406298"/>
+            <point key="canvasLocation" x="1759" y="515"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gF0-wS-txH">

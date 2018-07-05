@@ -26,6 +26,7 @@
 		9406D26920ECDE31001B145D /* RecruitPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406D26820ECDE31001B145D /* RecruitPartViewController.swift */; };
 		9406D26C20ECF0F8001B145D /* RecruitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406D26B20ECF0F8001B145D /* RecruitService.swift */; };
 		9406D26E20ECF240001B145D /* RecruitNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406D26D20ECF240001B145D /* RecruitNextViewController.swift */; };
+		9406D27720EDAEE0001B145D /* ApplyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406D27620EDAEE0001B145D /* ApplyService.swift */; };
 		944A9F4120E8AAF900F5FE80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F4020E8AAF900F5FE80 /* AppDelegate.swift */; };
 		944A9F4820E8AAF900F5FE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944A9F4720E8AAF900F5FE80 /* Assets.xcassets */; };
 		944A9F4B20E8AAF900F5FE80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944A9F4920E8AAF900F5FE80 /* LaunchScreen.storyboard */; };
@@ -94,6 +95,7 @@
 		9406D26820ECDE31001B145D /* RecruitPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitPartViewController.swift; sourceTree = "<group>"; };
 		9406D26B20ECF0F8001B145D /* RecruitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitService.swift; sourceTree = "<group>"; };
 		9406D26D20ECF240001B145D /* RecruitNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitNextViewController.swift; sourceTree = "<group>"; };
+		9406D27620EDAEE0001B145D /* ApplyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyService.swift; sourceTree = "<group>"; };
 		944A9F3D20E8AAF900F5FE80 /* Cowalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cowalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944A9F4020E8AAF900F5FE80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		944A9F4720E8AAF900F5FE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		9406D26620ECCD8A001B145D /* -join */ = {
 			isa = PBXGroup;
 			children = (
+				9406D26F20ED5F3E001B145D /* service */,
 				94ECBF9F20E964A3002F9F92 /* ProjectJoinViewController.swift */,
 			);
 			path = "-join";
@@ -247,6 +250,14 @@
 			isa = PBXGroup;
 			children = (
 				9406D26B20ECF0F8001B145D /* RecruitService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		9406D26F20ED5F3E001B145D /* service */ = {
+			isa = PBXGroup;
+			children = (
+				9406D27620EDAEE0001B145D /* ApplyService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -565,6 +576,7 @@
 				94ECBFA220E96776002F9F92 /* ProjectPartDetailViewController.swift in Sources */,
 				94ECBF9820E95E34002F9F92 /* ProjectIntroViewController.swift in Sources */,
 				944A9F5C20E8B0BE00F5FE80 /* APIService.swift in Sources */,
+				9406D27720EDAEE0001B145D /* ApplyService.swift in Sources */,
 				944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */,
 				9406D26E20ECF240001B145D /* RecruitNextViewController.swift in Sources */,
 				9403DD1320E92B340049C497 /* ApplyingCollectionViewCell.swift in Sources */,

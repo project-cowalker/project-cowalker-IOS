@@ -14,6 +14,9 @@ import UIKit
 struct RecruitService:APIService{
     static func recruitInit(position:String, start_date:String, end_date:String, number:Int, task:String, activity:String, reward:String, area:String, ability:String, career:String, preference:String, comment:String, question:[String], completion : @escaping (String)->Void) {
         
+        //
+        
+        
         let URL = url("/recruit")
         //var headers = UserDefaults.standard.string(forKey: "token")
         
