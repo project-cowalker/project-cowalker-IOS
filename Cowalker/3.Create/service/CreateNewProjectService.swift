@@ -38,7 +38,7 @@ struct CreateNewProjectService: APIService {
             multipartFormData.append(departmentData!, withName: "department")
             multipartFormData.append(aimData!, withName: "aim")
             multipartFormData.append(explainData!, withName: "explain")
-            multipartFormData.append(img_urlData!, withName: "img_url", fileName: "img_url.jpg" , mimeType: "image/jpeg")
+            multipartFormData.append(img_urlData!, withName: "img", fileName: "img.jpg" , mimeType: "image/jpeg")
             
         }, to: URL, method: .post, headers: header)
         { (encodingResult) in
