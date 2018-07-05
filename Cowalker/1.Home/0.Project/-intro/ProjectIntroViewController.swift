@@ -1,20 +1,15 @@
-//
-//  ProjectIntroViewController.swift
-//  Cowalker
-//
-//  Created by 조예원 on 2018. 7. 2..
-//  Copyright © 2018년 조예원. All rights reserved.
-//
 
 import UIKit
 
 class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    // 참여자, 개설자
+    var people = 0
+    
     @IBOutlet weak var projectCollectionView: UICollectionView! // 콜랙션
     @IBOutlet weak var partCollectionView: UICollectionView!
-
     @IBOutlet weak var underBar: UIToolbar! // 하단버튼
-    @IBOutlet weak var barJoinBtn: UIBarButtonItem! // 하단버튼3
+  //  @IBOutlet weak var barJoinBtn: UIBarButtonItem! // 하단버튼3
 
     @IBOutlet weak var constBtn: NSLayoutConstraint! // 제약
     @IBOutlet weak var constLabel: UILabel!
@@ -29,7 +24,7 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     var partList = ["개발자","디자이너","기획자","디자이너"]//,"개발자", "디자이너"]
     var numList = ["1명", "2명", "3명", "4명", "5명", "6명"]
     var ddayList = ["D - 1", "D - 2", "D - 3", "D - 4", "D - 5", "D - 6"]
-    var detailList = ["웹,앱 서비스 개발", "로고 및 앱 디자인", "웹,앱 서비스 개발", "웹,앱 서비스 개발", "웹,앱 서비스 개발", ""]
+    var detailList = ["웹,앱 서비스 개발", "로고 및 앱 디자인", "웹,앱 서비스 개발", "웹,앱 서비스 개발", "웹,앱 서비스 개발"]
     
     override func viewDidLoad() {
         
@@ -37,16 +32,16 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         self.tabBarController?.tabBar.isHidden = true // 하단 탭바 삭제
         constBtn.constant =  -constLabel.bounds.size.height// 제약 설정
         
-        
         // 상단 바 보이게
         self.navigationController?.isNavigationBarHidden = false
 
-        
         collecViewH.constant = CGFloat((self.partList.count - 1)*88) + collecViewH.constant
         
     }
+    
 
     @IBOutlet weak var collecViewH: NSLayoutConstraint!
+    
     // 컬랙션뷰
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == projectCollectionView {return imageArray.count }
@@ -77,6 +72,15 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0}
 
+    // 스크랩 버튼 //////////
+    @IBAction func scrapAct(_ sender: UIButton) {
+        // 스크랩 기능
+    }
+    // 여정 버튼
+    @IBAction func fullAct(_ sender: UIButton) {
+        // 여정 화면으로 이동하기
+    }
+    
     // 더보기 버튼
     @IBAction func btnClickAct(_ sender: UIButton) {
         if isOpencheck == 0 { // 닫->여
@@ -99,7 +103,46 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         let activityController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
         self.present(activityController, animated: true, completion:  nil)
     }
+    
+    // 하단 관리 버튼
+    // 참여자, 관리자 일때
+    @IBAction func tabBtnACt(_ sender: UIBarButtonItem) {
+        if people == 0 { // 참여자
+            // 뷰 이동
+            let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "ProjectJoinViewController") as! ProjectJoinViewController
+            self.navigationController?.pushViewController(secondVC, animated: true)
+        }else if people == 1{ // 관리자
+            
+            // 알림 창 띄우기
+            let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            let firstAction: UIAlertAction = UIAlertAction(title: "프로젝트 수정", style: .default) { action -> Void in
+                editAct()
+            }
+            let secondAction: UIAlertAction = UIAlertAction(title: "프로젝트 삭제", style: .default) { action -> Void in
+                deleteAct()
+            }
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
+            
+            actionSheetController.addAction(firstAction)
+            actionSheetController.addAction(secondAction)
+            actionSheetController.addAction(cancelAction)
+            present(actionSheetController, animated: true, completion: nil)
+            
+            func editAct(){// 수정
+               // 프로젝트 수정화면으로 이동
+            }
+            func deleteAct(){// 삭제
+                let dialog = UIAlertController(title: "프로젝트 삭제", message: "삭제하겠습니다.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
+                dialog.addAction(action)
+                self.present(dialog, animated: true, completion: nil)
+                // 프로젝트 삭제
+                
+            }
+        }
+    }
 }
+
  /*
  let leftButton = UIBarButtonItem(title: "<Home", style: .plain, target: self, action: #selector(self.action))
  self.navigationItem.leftBarButtonItem = leftButton //왼쪽버튼
@@ -109,6 +152,7 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     self.tabBarController?.tabBar.isHidden = false
 }
 */
+
 /*
  // 버튼 이동
  @IBAction func detailBtnAction(_ sender: UIButton) {
