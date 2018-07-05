@@ -62,6 +62,18 @@ class ProfileViewController: UIViewController {
         
     }
     
+    @IBAction func logOutFunc(_ sender: UIButton) {
+        let message = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
+        let cancel = UIAlertAction(title:"취소", style: UIAlertActionStyle.default)
+        let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){
+            (UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+            
+        }
+        message.addAction(cancel)
+        message.addAction(action)
+        self.present(message, animated: true, completion: nil)
+    }
     
     
     
