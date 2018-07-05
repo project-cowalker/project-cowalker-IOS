@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateLastViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class CreateLastViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate {
     var imageForProject =  [#imageLiteral(resourceName: "btnAddPic")]
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageForProject.count
@@ -20,6 +20,22 @@ class CreateLastViewController: UIViewController,UICollectionViewDelegate,UIColl
         
         return cell
     }
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//        if textView.text != ""{
+//            finishButton.setBackgroundImage(UIImage(named: "btnFloatNormal"), for: UIControlState.normal)
+//            finishButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: UIControlState.normal)
+//        }else {
+//            finishButton.setBackgroundImage(UIImage(named: "btnFloatNormal"), for: UIControlState.normal)
+//            finishButton.setTitleColor(#colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1), for: UIControlState.normal)
+//        }
+//    }
+    
+    @IBOutlet weak var finishButton: UIButton!
+    
     @IBOutlet weak var viewForProject: UICollectionView!
     
     @IBOutlet weak var explainTextView: UITextView!
@@ -29,6 +45,7 @@ class CreateLastViewController: UIViewController,UICollectionViewDelegate,UIColl
         viewForProject.dataSource = self
         viewForProject.delegate = self
         imagePicker.delegate = self
+        explainTextView.placeholder = "팀 소개, 주요 업무, 자격 요건, 팀 빌딩 절차, 문의처, 상세정보"
         
         super.viewDidLoad()
         
