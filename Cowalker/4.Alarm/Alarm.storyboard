@@ -315,7 +315,6 @@
                                     <constraint firstAttribute="width" constant="336" id="alK-gS-noK"/>
                                     <constraint firstAttribute="height" constant="278" id="g4r-cR-0fm"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -325,7 +324,7 @@
                                     <constraint firstAttribute="height" constant="54" id="YcW-yy-ebd"/>
                                     <constraint firstAttribute="width" constant="335" id="o1Y-Jo-SVq"/>
                                 </constraints>
-                                <state key="normal" title="전송" backgroundImage="btnNomal">
+                                <state key="normal" title="전송" backgroundImage="btnFloatNormal">
                                     <color key="titleColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -350,6 +349,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="messageTextView" destination="COU-M7-w0o" id="gtJ-0V-u5L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vb2-wZ-td8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -386,7 +388,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1b2-hV-cDA">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -404,7 +406,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btnNomal" width="335" height="54"/>
+        <image name="btnFloatNormal" width="335" height="52"/>
         <image name="iconCaretLeftDarkgray" width="24" height="24"/>
         <image name="iconTrashCanDarkgray" width="24" height="24"/>
         <image name="icon_darkgray_letter" width="19" height="23"/>
