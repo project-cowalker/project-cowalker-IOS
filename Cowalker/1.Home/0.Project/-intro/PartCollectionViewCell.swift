@@ -14,4 +14,5 @@ class PartCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var partNumLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var dDayLabel: UILabel!
+    
 }
