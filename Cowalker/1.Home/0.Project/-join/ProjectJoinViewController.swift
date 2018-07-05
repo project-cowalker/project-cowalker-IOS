@@ -67,7 +67,8 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
                 
             }
         }*/
-}
+    }
+    
 
 }
 
