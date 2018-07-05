@@ -13,6 +13,13 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
     //변수
     @IBOutlet weak var projectCollectionView: UICollectionView!
     
+    @IBOutlet weak var introTf: UIView!
+    @IBOutlet weak var portfolioTf: UITextField!
+    @IBOutlet weak var recruitTf: UITextField!
+    @IBOutlet weak var questionTf: UITextField!
+    
+    @IBOutlet weak var question2Tf: UITextField!
+    
     var partList = ["개발자","디자이너","기획자","디자이너","개발자", "디자이너"]
     var numList = ["1", "2", "3", "4", "5", "6"]
     var ddayList = ["1", "2", "3", "4", "5", "6"]
@@ -48,4 +55,35 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
     
     // 버튼
     
+    @IBAction func btnAct(_ sender: UIButton) {
+        /*
+        ApplyService.applyInit(introduce: self.introTf.text, portfolio_url: self.portfolioTf.text, recruit_idx: self.recruitTf.text, question: self.introTf.text ) { (message) in)
+    
+            if message == "success"{
+                
+            }else if message == "database failure"{
+                
+            }else{ // 권한 없은
+                
+            }
+        }*/
 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

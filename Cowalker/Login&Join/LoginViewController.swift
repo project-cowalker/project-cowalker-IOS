@@ -18,6 +18,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     // 자동로그인 기능
     @IBOutlet weak var loginCheckImg: UIImageView!
     var autoLogin = false
+    
     let userdefault = UserDefaults.standard
     var uid:String!
     var password:String!
