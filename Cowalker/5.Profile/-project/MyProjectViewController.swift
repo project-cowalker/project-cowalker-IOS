@@ -18,6 +18,19 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+    }
+    func funcForNavigationBar(){
+        
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.title = "프로젝트"
+        let leftButtonItem = UIBarButtonItem(image: UIImage(named: "iconCaretLeftDarkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(MyProjectViewController.popAction))
+        leftButtonItem.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem = leftButtonItem
+        
+    }
+    @objc func popAction(){
+        self.navigationController?.popViewController(animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -53,6 +66,7 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
             
             
         }else{
+            print(11111)
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ApplyingCollectionViewCell", for: indexPath) as! ApplyingCollectionViewCell
             cell.projectImage.image = imageArray[indexPath.row]
             
