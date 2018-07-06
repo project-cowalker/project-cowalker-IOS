@@ -34,16 +34,18 @@ struct JoinService:APIService{
             }
         }
     }
+    
+    
     static func overrideCheck (add:String, completion: @escaping (String)->Void){
         
         let URL = url("/signup/check?email=\(add)")
        
+        
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData() {res in
             
             switch res.result{
             case .success:
                 
-                //print(add)
                 if let value = res.result.value{
                     if let message = JSON(value)["message"].string {
                         completion(message)
