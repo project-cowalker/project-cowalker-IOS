@@ -7,9 +7,16 @@
 //
 
 import UIKit
-
 class chattingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    @IBOutlet weak var messageFromLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

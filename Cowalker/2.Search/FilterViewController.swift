@@ -14,9 +14,22 @@ class FilterViewController: UIViewController {
         super.viewDidLoad()
         tempForButton = [temp , temp1, temp2, temp3]
         defaultForButton = [defaultPurpose, defaultField, defaultRole,defaultRegion]
+        funcForNavigationBar()
+    }
+    
+    func funcForNavigationBar(){
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.title = "필터"
+        let leftButtonItem = UIBarButtonItem(image: UIImage(named: "darkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(FilterViewController.popAction))
+        leftButtonItem.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem = leftButtonItem
+    }
+    @objc func popAction() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func btnClickAct(_ sender: UIButton) {
+        //이 버튼 클릭시 서버 연동
         
         self.dismiss(animated: true, completion: nil)
     }

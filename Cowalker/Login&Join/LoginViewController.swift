@@ -19,7 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var loginCheckImg: UIImageView!
     var autoLogin = false
     
-    let userdefault = UserDefaults.standard
+    let userdefault = UserDefaults.standard///
     var uid:String!
     var password:String!
    // var tok:String!
