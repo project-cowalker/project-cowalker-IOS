@@ -17,7 +17,8 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
     //변수
     @IBOutlet weak var introTf: UITextField!
     @IBOutlet weak var portfolioTf: UITextField!
-    @IBOutlet weak var recruitTf: UITextField!
+    @IBOutlet weak var phoneTf: UITextField!
+    
     @IBOutlet weak var questionTf: UITextField!
     @IBOutlet weak var question2Tf: UITextField!
     
@@ -59,20 +60,19 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
     // 참여하기 버튼
     @IBAction func btnAct(_ sender: UIButton) {
         // 서버 통신
-        /*
-        ApplyService.applyInit(introduce: self.introTf.text, portfolio_url: self.portfolioTf.text, recruit_idx: self.recruitTf.text, question: self.introTf.text ) { (message) in)
-    
+        ApplyService.applyInit(introduce: "", portfolio_url: "", phone: "", recruit_idx: "", project_idx: "", position: "", answers: ["",""] ) { (message) in
+
             if message == "success"{
-                
+                print("sc")
             }else if message == "database failure"{
                 
             }else{ // 권한 없은
                 
             }
-        }*/
-        // 화면 전환
+        }
         
-        self.navigationController?.popViewController(animated: true)
+        // 화면 전환
+    self.navigationController?.popViewController(animated: true)
     }
 }
 

@@ -4,7 +4,7 @@ import UIKit
 class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     // 참여자, 개설자
-    var people = 1
+    var people = 0
     
     @IBOutlet weak var projectCollectionView: UICollectionView! // 콜랙션
     @IBOutlet weak var partCollectionView: UICollectionView!

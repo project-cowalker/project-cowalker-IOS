@@ -40,11 +40,6 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
         return 0
     }
     
-    
-    
-    
-    
-    
     // 화면 전환
     @IBAction func btnClickAct(_ sender: UIButton) {
         let secondVC = UIStoryboard(name: "Home", bundle:nil ).instantiateViewController(withIdentifier: "ProjectMemberViewController") as! ProjectMemberViewController
