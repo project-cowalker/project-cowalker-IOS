@@ -20,11 +20,11 @@ class MyPageViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationItem.title = "내 소개"
+       
         funcForNavigationBar()
     }
     func funcForNavigationBar(){
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.title = "내 소개"
         let leftButtonItem = UIBarButtonItem(image: UIImage(named: "iconCaretLeftDarkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(MyPageViewController.popAction))
         leftButtonItem.tintColor = UIColor.black
@@ -47,6 +47,7 @@ class MyPageViewController: UIViewController, UICollectionViewDataSource, UIColl
             
             
         }
+        
         
     }
 

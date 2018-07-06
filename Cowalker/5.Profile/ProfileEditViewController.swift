@@ -73,7 +73,7 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialization()
+        funcForNavigationBar()
         // Do any additional setup after loading the view.
     }
 
@@ -86,7 +86,35 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
     @IBAction func goBackToMyPage(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
 
+    func funcForNavigationBar(){
+        
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.title = "프로필 수정"
+        let leftButtonItem = UIBarButtonItem(image: UIImage(named: "iconCaretLeftDarkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(ProfileEditViewController.popAction))
+        let rightButtonItem = UIBarButtonItem(image: UIImage(named: "btnNavbarDone"), style:UIBarButtonItemStyle.plain, target: self, action: #selector(ProfileEditViewController.popAction))
+        leftButtonItem.tintColor = UIColor.black
+        rightButtonItem.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem = leftButtonItem
+        self.navigationItem.rightBarButtonItem = rightButtonItem
+        
+    }
+    @objc func popAction(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @objc func selectedRolePicker(){
         let row = rolePicker.selectedRow(inComponent: 0)
         roleTextField.text = roleArray[row]
@@ -111,53 +139,38 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
         
         view.endEditing(true)
     }
-    @objc func canceledRolePicker(){
+  
+    @objc func canceledPicker() {
         view.endEditing(true)
     }
-    func initialization(){
-        roleTextField.inputView = rolePicker
-        regionTextField.inputView = regionPicker
-        purposeTextField.inputView = purposePicker
-        partTextField.inputView = partPicker
-        
+    func initPicker(text: UITextField, picker: UIPickerView,array: [String]){
+        text.inputView = picker
         let bar = UIToolbar()
         bar.sizeToFit()
-        roleTextField.inputAccessoryView = bar
-        let doneButton = UIBarButtonItem (title: "확인", style: .done, target: self, action: #selector(selectedRolePicker))
+        text.inputAccessoryView = bar
+        
+        var doneButton = UIBarButtonItem (title: "확인", style: .done, target: self,action: #selector(selectedPurposePicker))
+        switch picker {
+        case rolePicker:
+            doneButton = UIBarButtonItem (title: "확인", style: .done, target: self,action: #selector(selectedRolePicker))
+        case purposePicker:
+            doneButton = UIBarButtonItem (title: "확인", style: .done, target: self,action: #selector(selectedPurposePicker))
+        case partPicker:
+            doneButton = UIBarButtonItem (title: "확인", style: .done, target: self,action: #selector(selectedPartPicker))
+        case regionPicker:
+            doneButton = UIBarButtonItem (title: "확인", style: .done, target: self,action: #selector(selectedRegionPicker))
+        default :
+            break
+        }
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(canceledRolePicker))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(canceledPicker))
         bar.setItems([cancelButton,spaceButton,doneButton], animated: true)
+        picker.dataSource = self; picker.delegate = self
         
-        let bar2 = UIToolbar()
-        bar2.sizeToFit()
-        regionTextField.inputAccessoryView = bar2
-        let doneButton2 = UIBarButtonItem (title: "확인", style: .done, target: self, action: #selector(selectedRegionPicker))
-        let spaceButton2 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton2 = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(canceledRolePicker))
-        bar2.setItems([cancelButton2,spaceButton2,doneButton2], animated: true)
-        
-        let bar3 = UIToolbar()
-        bar3.sizeToFit()
-        purposeTextField.inputAccessoryView = bar3
-        let doneButton3 = UIBarButtonItem (title: "확인", style: .done, target: self, action: #selector(selectedPurposePicker))
-        let spaceButton3 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton3 = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(canceledRolePicker))
-        bar3.setItems([cancelButton3,spaceButton3,doneButton3], animated: true)
-        
-        let bar4 = UIToolbar()
-        bar4.sizeToFit()
-        partTextField.inputAccessoryView = bar4
-        let doneButton4 = UIBarButtonItem (title: "확인", style: .done, target: self, action: #selector(selectedPartPicker))
-        let spaceButton4 = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton4 = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(canceledRolePicker))
-        bar4.setItems([cancelButton4,spaceButton4,doneButton4], animated: true)
-
-        
-        rolePicker.dataSource = self; rolePicker.delegate = self
-        regionPicker.dataSource = self; regionPicker.delegate = self
-        partPicker.dataSource = self; partPicker.delegate = self
-        purposePicker.dataSource = self; purposePicker.delegate = self
     }
+    
+    
+ 
     
     
     

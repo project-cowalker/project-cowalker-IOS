@@ -129,13 +129,7 @@ class CreateLastViewController: UIViewController,UICollectionViewDelegate,UIColl
     @IBAction func createProjectDone(_ sender: UIButton) {
         img_url = imageForProject[0]
         explain = explainTextView.text!
-        print(title2)
-        print(summary)
-        print(area)
-        print(department)
-        print(aim)
-        print(explain)
-        print(img_url)
+       
         CreateNewProjectService.createNewProject(title: title2, summary: summary, area: area, department: department, aim: aim ,explain: explain, img_url: img_url) {
            (message) in
            print(message)
