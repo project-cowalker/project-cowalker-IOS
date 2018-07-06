@@ -11,18 +11,15 @@ import UIKit
 class RecruitPartViewController: UIViewController, UITextFieldDelegate ,UITextViewDelegate{
     
     @IBOutlet weak var positionBtn: UIButton!
-    //
     @IBOutlet weak var number: UITextField!
     @IBOutlet weak var task: UITextView!
     @IBOutlet weak var activity: UITextView!
     @IBOutlet weak var reward: UITextView!
     @IBOutlet weak var area: UITextView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-}
-    
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -34,7 +31,6 @@ class RecruitPartViewController: UIViewController, UITextFieldDelegate ,UITextVi
         }
         return true
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toNextView" {
             let destVC = segue.destination as! RecruitNextViewController
