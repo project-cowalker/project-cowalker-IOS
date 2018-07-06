@@ -64,16 +64,16 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
     let regionArray = ["서울","경기도","인천","강원도","충청도","전라도","경상도","제주도"]
     let partArray = ["블록체인","IOT","인공지능","디자인","콘텐츠","기타"]
     let purposeArray = ["창업","공모전 참여","스터디","사이드 프로젝트","창작","기타"]
-    
-
-
-
 
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         funcForNavigationBar()
+        initPicker(text: roleTextField, picker: rolePicker, array: roleArray)
+        initPicker(text: purposeTextField, picker: purposePicker, array: purposeArray)
+        initPicker(text: partTextField, picker: partPicker, array: partArray)
+        initPicker(text: regionTextField, picker: regionPicker, array: regionArray)
         // Do any additional setup after loading the view.
     }
 
@@ -83,9 +83,7 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
     }
     
 
-    @IBAction func goBackToMyPage(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
+
     
     
 
@@ -94,7 +92,7 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.title = "프로필 수정"
         let leftButtonItem = UIBarButtonItem(image: UIImage(named: "iconCaretLeftDarkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(ProfileEditViewController.popAction))
-        let rightButtonItem = UIBarButtonItem(image: UIImage(named: "btnNavbarDone"), style:UIBarButtonItemStyle.plain, target: self, action: #selector(ProfileEditViewController.popAction))
+        let rightButtonItem = UIBarButtonItem(image: UIImage(named: "btnNavbarDone"), style:UIBarButtonItemStyle.plain, target: self, action: #selector(ProfileEditViewController.finishedEditing))
         leftButtonItem.tintColor = UIColor.black
         rightButtonItem.tintColor = UIColor.black
         self.navigationItem.leftBarButtonItem = leftButtonItem
@@ -105,6 +103,9 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
         self.navigationController?.popViewController(animated: true)
     }
     
+    @objc func finishedEditing(){
+        //  여기서 이제 서버로 넘기기
+    }
     
     
     

@@ -18,7 +18,7 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        funcForNavigationBar()
     }
     func funcForNavigationBar(){
         
