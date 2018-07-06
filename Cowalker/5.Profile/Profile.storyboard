@@ -397,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOA-Ji-tUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16.800000000000001" y="125.4872563718141"/>
+            <point key="canvasLocation" x="-12" y="27"/>
         </scene>
         <!--My Scrap View Controller-->
         <scene sceneID="CLV-gt-B5Q">

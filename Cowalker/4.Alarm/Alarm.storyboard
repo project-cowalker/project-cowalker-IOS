@@ -123,6 +123,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.84518398360000002" green="0.94244027139999997" blue="0.91328859780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="messageFromLabel" destination="uyt-2m-hSS" id="QVb-Db-MjE"/>
+                                            <outlet property="messageLabel" destination="IUc-zE-f6z" id="SiT-Ec-wMz"/>
+                                            <outlet property="profileImage" destination="ofA-DG-5Wn" id="ftl-Le-Dl7"/>
+                                            <outlet property="timeLabel" destination="WZk-6H-jGe" id="40L-Ji-yQn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
