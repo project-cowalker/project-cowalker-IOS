@@ -60,7 +60,10 @@ class RecruitNextViewController: UIViewController, UITextFieldDelegate, UITextVi
             }else if message == "success"{
                 // 성공시에 화면 이동 표현하기
         }
-}
+        }
+        
+        // 화면전환 /////두번 이동으로 수정하기-------------------------------
+        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
-
 }

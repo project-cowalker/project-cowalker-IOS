@@ -4,7 +4,7 @@ import UIKit
 class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     // 참여자, 개설자
-    var people = 0
+    var people = 1
     
     @IBOutlet weak var projectCollectionView: UICollectionView! // 콜랙션
     @IBOutlet weak var partCollectionView: UICollectionView!
@@ -16,8 +16,13 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     
     @IBOutlet weak var plusBtn: UIButton! // 더보기 버튼
     var isOpencheck = 0
+    var isScraptCheck = 0
     
     @IBOutlet weak var scrView: UIScrollView!
+    @IBOutlet weak var longBtn: UIBarButtonItem!
+    
+    @IBOutlet weak var plusPartBtn: UIButton!
+    
     
     /// 콜랙션뷰 변수
     var imageArray = [ #imageLiteral(resourceName: "1.png"), #imageLiteral(resourceName: "intro.png"), #imageLiteral(resourceName: "1.png")]
@@ -27,17 +32,44 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     var detailList = ["웹,앱 서비스 개발", "로고 및 앱 디자인", "웹,앱 서비스 개발", "웹,앱 서비스 개발", "웹,앱 서비스 개발"]
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true // 하단 탭바 삭제
         constBtn.constant =  -constLabel.bounds.size.height// 제약 설정
-        
+        // 왼쪽 버튼
+        let leftButton = UIBarButtonItem(title: "<Home", style: .plain, target: self, action: #selector(self.action))
+        self.navigationItem.leftBarButtonItem = leftButton //왼쪽버튼
         // 상단 바 보이게
         self.navigationController?.isNavigationBarHidden = false
-
         collecViewH.constant = CGFloat((self.partList.count - 1)*88) + collecViewH.constant
+        // 롱 버튼 이미지 설정
+        if people == 0 { // 참여자일 때, 참여하기
+            longBtn.image = #imageLiteral(resourceName: "btnJoinProject.png")//
+            plusPartBtn.isHidden = true
+            //plusBtn.isEnabled = false
+            /*
+             if 참여완료{
+                longBtn.image =
+             }else{
+                longBtn.image =
+             }
+             */
+            
+            
+        }else{ // 관리자일 때, 프로젝트 관ㄴ리
+            longBtn.image = #imageLiteral(resourceName: "btnProjectManage.png")
+            plusPartBtn.isHidden = false
+        }
         
+        /////////페이징 기능---------------------------------------------------//
+        /////////네비게이션 효과 기능---------------------------------------------------//
     }
+    
+    
+    @objc func action(){
+        self.navigationController?.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     
 
     @IBOutlet weak var collecViewH: NSLayoutConstraint!
@@ -72,15 +104,32 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0}
 
+    // 사진, 이름 클릭했을 때
+    @IBAction func goToProfile(_ sender: UIButton) {
+        if people == 0 { // 참여자일 때
+        // 프로필로 이동----------------------------------------------//
+        }else{ // 개설자일 때
+            
+        }
+        
+    }
     // 스크랩 버튼 //////////
     @IBAction func scrapAct(_ sender: UIButton) {
         // 스크랩 기능
+        if isScraptCheck == 0{
+            sender.setImage(#imageLiteral(resourceName: "iconScrapYellow.png"), for: .normal)
+            isScraptCheck = 1
+            // 스크랩 하기기능추가----------------------------------------------//
+        }else{
+            sender.setImage(#imageLiteral(resourceName: "iconScrapDarkgray.png"), for: .normal)
+            isScraptCheck = 0
+            // 스크랩 취소기능추가----------------------------------------------//
+        }
     }
     // 여정 버튼
     @IBAction func fullAct(_ sender: UIButton) {
         // 여정 화면으로 이동하기
     }
-    
     // 더보기 버튼
     @IBAction func btnClickAct(_ sender: UIButton) {
         if isOpencheck == 0 { // 닫->여
@@ -91,8 +140,17 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             isOpencheck = 0
             constBtn.constant = -constLabel.bounds.size.height
             plusBtn.setImage(#imageLiteral(resourceName: "iconReadMore"), for: .normal)}}
+    
+    @IBAction func plusBtnAct(_ sender: UIButton) {
+        // 화면 이동
+        
+        let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "RecruitPartViewController") as! RecruitPartViewController
+        self.navigationController?.pushViewController(secondVC, animated: true)
+    }
+    
     // 추천 버튼
     @IBAction func recommendAct(_ sender: UIBarButtonItem) {
+        // 화면 이동 // 미정
         
     }
     // 공유 버튼
@@ -102,8 +160,8 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         let shareItems = [shareTxt, shareImg] as [Any]
         let activityController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
         self.present(activityController, animated: true, completion:  nil)
+        // 페이스북,카카오 추가하기 ---------------------------------------------//
     }
-    
     // 하단 관리 버튼
     // 참여자, 관리자 일때
     @IBAction func tabBtnACt(_ sender: UIBarButtonItem) {
