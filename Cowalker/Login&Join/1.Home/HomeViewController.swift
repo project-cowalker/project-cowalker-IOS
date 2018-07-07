@@ -72,22 +72,31 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    var projectDetails: [ProjectDetail] = [ProjectDetail]()
+    
+    
     ///////////////////컬랙션 뷰 클릭하면 이동
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == listCollectionView{
+            //////
+            let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
             
-        let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
+            // 서버 통신
+            CreateNewProjectService.getProjectDeatil(project_idx: "5b3dd2387172d402215033d2"){ (ProjectDetail, String) in
+                
+                self.projectDetails = ProjectDetail // 데이터 저장
+                secondVC.titleLabel.text = self.projectDetails[0].titile
+            
+            }
+            
+            // 화면 전환
             self.navigationController?.pushViewController(secondVC, animated: true)
+            /////
         }
     }
     
 }
-
-
-
-
-
-
 
 
 
