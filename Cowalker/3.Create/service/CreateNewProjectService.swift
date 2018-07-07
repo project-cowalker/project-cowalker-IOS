@@ -112,7 +112,7 @@ struct CreateNewProjectService: APIService {
                     do {
                         let projectDetailData = try decoder.decode(ProjectDetailData.self, from: value)
                         if projectDetailData.message == "success"{
-                            completion(projectDetailData.result,projectDetailData.user!)
+                            completion(projectDetailData.result, projectDetailData.user!)
                         }
                         
                     }catch{

@@ -12,9 +12,10 @@ class AlarmSecondViewController: UIViewController {
     var partner_idx = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
+        self.navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
         self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
-//        self.navigationController
+//        MessageService.individualMessageInit(partner_idx: partner_idx, completion: <#T##([IndividualMessage]) -> Void#>)
+      
         // Do any additional setup after loading the view.
     }
 
