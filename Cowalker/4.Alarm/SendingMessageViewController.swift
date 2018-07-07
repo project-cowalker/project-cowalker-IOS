@@ -27,7 +27,8 @@ class SendingMessageViewController: UIViewController {
     
     
     @IBAction func sendingMessage(_ sender: UIButton) {
-        
+//        MessageService.sendingMessageToPartner(partner_idx: <#T##String#>, contents: <#T##String#>, completion: <#T##() -> Void#>)
+//        
         
     }
     
