@@ -15,7 +15,8 @@ import UIKit
 
 struct CreateNewProjectService: APIService {
    
-    
+    // 프로젝트 생성하는 3번째 탭바 API@@@@@@@@@@@@@@@@@
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     static func createNewProject(title: String, summary: String, area: String, department: String, aim: String ,explain: String, img_url: UIImage, completion: @escaping (String) -> Void){
         let URL = url("/project")
 //        let userdefault = UserDefaults.standard
@@ -90,33 +91,42 @@ struct CreateNewProjectService: APIService {
     }
     
     
+    static func getProjectDeatil(project_idx: String,completion: @escaping ([ProjectDetail]) -> Void){
+        let URL = url("/"+project_idx)
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData() { res in
+            switch res.result {
+            case .success:
+                if let value = res.result.value {
+                    let decoder = JSONDecoder()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSS'Z"
+                    decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                    do {
+                        let projectDetailData = try decoder.decode(ProjectDetailData.self, from: value)
+                        if projectDetailData.message == "success"{
+                            completion(projectDetailData.result)
+                        }
+                        
+                    }catch{
+                        
+                    }
+                }
+                break
+                
+                
+                
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+            
+            
+        }
+        
+        
+    }
+
+
 }
 
-//
-//        case .success(request: let upload, streamingFromDisk: _, streamFileURL: _):
-//            upload.responseData( completionHandler: { (res) in
-//                switch res.result{
-//                case .success:
-//                    if let value = res.result.value {
-//                        let message = JSON(value)["mesaage"].string
-//                        if message == "Successful Register Board Data"{
-//
-//                            completion()
-//                        }
-//                    }
-//                    break
-//
-//                case .failure(let err):
-//                    print(err.localizedDescription)
-//                }
-//
-//            })
-//
-//        case .failure(let err):
-//            print(err.localizedDescription)
-//
-//        }
-//    }
-//
-//}
 

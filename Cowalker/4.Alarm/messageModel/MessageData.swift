@@ -10,6 +10,6 @@ import Foundation
 struct MessageData: Codable{
     
     let message: String
-    let data: [Message]
+    let result: [Message]
 }
 
