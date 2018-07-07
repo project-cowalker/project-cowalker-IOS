@@ -89,6 +89,8 @@
 		E4CD826E20EFD5A000352A78 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD826D20EFD5A000352A78 /* MessageData.swift */; };
 		E4CD827320F0AE8400352A78 /* ProjectDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD827220F0AE8400352A78 /* ProjectDetail.swift */; };
 		E4CD827520F0AE9A00352A78 /* ProjectDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD827420F0AE9A00352A78 /* ProjectDetailData.swift */; };
+		E4CD827720F0E39100352A78 /* IndividualMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD827620F0E39100352A78 /* IndividualMessage.swift */; };
+		E4CD827920F0E3A000352A78 /* IndividualMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD827820F0E3A000352A78 /* IndividualMessageData.swift */; };
 		E6231439F316A39B412F7A83 /* Pods_Cowalker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8749A2CEEC4B02DB346C00 /* Pods_Cowalker.framework */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +182,8 @@
 		E4CD826D20EFD5A000352A78 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
 		E4CD827220F0AE8400352A78 /* ProjectDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetail.swift; sourceTree = "<group>"; };
 		E4CD827420F0AE9A00352A78 /* ProjectDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailData.swift; sourceTree = "<group>"; };
+		E4CD827620F0E39100352A78 /* IndividualMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualMessage.swift; sourceTree = "<group>"; };
+		E4CD827820F0E3A000352A78 /* IndividualMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualMessageData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -549,6 +553,8 @@
 			children = (
 				E4CD826B20EFD59600352A78 /* Message.swift */,
 				E4CD826D20EFD5A000352A78 /* MessageData.swift */,
+				E4CD827620F0E39100352A78 /* IndividualMessage.swift */,
+				E4CD827820F0E3A000352A78 /* IndividualMessageData.swift */,
 			);
 			path = messageModel;
 			sourceTree = "<group>";
@@ -706,6 +712,7 @@
 				944A9F8220E8DFF700F5FE80 /* MyProjectViewController.swift in Sources */,
 				94057B1A20E9DA85008875C5 /* CreateNaviViewController.swift in Sources */,
 				9403DD1E20E9306C0049C497 /* MyScrapViewController.swift in Sources */,
+				E4CD827920F0E3A000352A78 /* IndividualMessageData.swift in Sources */,
 				9403DD1C20E930540049C497 /* ScrapCollectionViewCell.swift in Sources */,
 				9406D26120ECB3C9001B145D /* FullEditViewController.swift in Sources */,
 				948AE9E420EFE1C8003CF30F /* applyMemTableViewCell.swift in Sources */,
@@ -714,6 +721,7 @@
 				E41A8F6E20EA62900009F330 /* CreateImageCollectionViewCell.swift in Sources */,
 				9403DD1820E92F890049C497 /* IntroductionCollectionViewCell.swift in Sources */,
 				944A9F6B20E8B59400F5FE80 /* CreateViewController.swift in Sources */,
+				E4CD827720F0E39100352A78 /* IndividualMessage.swift in Sources */,
 				E4CD826920EFC76000352A78 /* MessageService.swift in Sources */,
 				94ECBF9320E953FE002F9F92 /* PagingCollectionViewCell.swift in Sources */,
 				948AE9E020EFDC50003CF30F /* memTableViewCell.swift in Sources */,
