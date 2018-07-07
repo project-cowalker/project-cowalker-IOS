@@ -85,6 +85,8 @@
 		E4CD826920EFC76000352A78 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD826820EFC76000352A78 /* MessageService.swift */; };
 		E4CD826C20EFD59600352A78 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD826B20EFD59600352A78 /* Message.swift */; };
 		E4CD826E20EFD5A000352A78 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD826D20EFD5A000352A78 /* MessageData.swift */; };
+		E4CD827320F0AE8400352A78 /* ProjectDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD827220F0AE8400352A78 /* ProjectDetail.swift */; };
+		E4CD827520F0AE9A00352A78 /* ProjectDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD827420F0AE9A00352A78 /* ProjectDetailData.swift */; };
 		E6231439F316A39B412F7A83 /* Pods_Cowalker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8749A2CEEC4B02DB346C00 /* Pods_Cowalker.framework */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +174,8 @@
 		E4CD826820EFC76000352A78 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		E4CD826B20EFD59600352A78 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E4CD826D20EFD5A000352A78 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
+		E4CD827220F0AE8400352A78 /* ProjectDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetail.swift; sourceTree = "<group>"; };
+		E4CD827420F0AE9A00352A78 /* ProjectDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,6 +421,7 @@
 		944A9F6320E8B3CE00F5FE80 /* 3.Create */ = {
 			isa = PBXGroup;
 			children = (
+				E4CD827120F0AE6B00352A78 /* projectDetailModel */,
 				E4661BAD20ECEC7C009BFE0F /* service */,
 				944A9F6A20E8B59400F5FE80 /* CreateViewController.swift */,
 				944A9F7220E8B5E200F5FE80 /* Create.storyboard */,
@@ -513,6 +518,15 @@
 				E4CD826D20EFD5A000352A78 /* MessageData.swift */,
 			);
 			path = messageModel;
+			sourceTree = "<group>";
+		};
+		E4CD827120F0AE6B00352A78 /* projectDetailModel */ = {
+			isa = PBXGroup;
+			children = (
+				E4CD827220F0AE8400352A78 /* ProjectDetail.swift */,
+				E4CD827420F0AE9A00352A78 /* ProjectDetailData.swift */,
+			);
+			path = projectDetailModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -664,6 +678,7 @@
 				9406D26120ECB3C9001B145D /* FullEditViewController.swift in Sources */,
 				948AE9E420EFE1C8003CF30F /* applyMemTableViewCell.swift in Sources */,
 				E473A9AB20EA5C8900B51830 /* CreateLastViewController.swift in Sources */,
+				E4CD827520F0AE9A00352A78 /* ProjectDetailData.swift in Sources */,
 				E41A8F6E20EA62900009F330 /* CreateImageCollectionViewCell.swift in Sources */,
 				9403DD1820E92F890049C497 /* IntroductionCollectionViewCell.swift in Sources */,
 				944A9F6B20E8B59400F5FE80 /* CreateViewController.swift in Sources */,
@@ -682,6 +697,7 @@
 				9406D27720EDAEE0001B145D /* ApplyService.swift in Sources */,
 				944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */,
 				9406D26E20ECF240001B145D /* RecruitNextViewController.swift in Sources */,
+				E4CD827320F0AE8400352A78 /* ProjectDetail.swift in Sources */,
 				9403DD1320E92B340049C497 /* ApplyingCollectionViewCell.swift in Sources */,
 				944A9F6F20E8B5CC00F5FE80 /* ProfileViewController.swift in Sources */,
 				944A9F7E20E8DFCA00F5FE80 /* ProfileEditViewController.swift in Sources */,
