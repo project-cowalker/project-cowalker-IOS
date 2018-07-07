@@ -59,8 +59,11 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
     
     // 참여하기 버튼
     @IBAction func btnAct(_ sender: UIButton) {
+        
+        
+        /*
         // 서버 통신
-        ApplyService.applyInit(introduce: "", portfolio_url: "", phone: "", recruit_idx: "", project_idx: "", position: "", answers: ["",""] ) { (message) in
+        ApplyService.applyNew(introduce: "", portfolio_url: "", phone: "", recruit_idx: "", project_idx: "", position: "", answers: ["",""] ) { (message) in
 
             if message == "success"{
                 print("sc")
@@ -69,7 +72,7 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
             }else{ // 권한 없은
                 
             }
-        }
+        }*/
         
         // 화면 전환
     self.navigationController?.popViewController(animated: true)
