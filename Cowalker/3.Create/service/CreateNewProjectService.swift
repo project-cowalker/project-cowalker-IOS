@@ -90,7 +90,6 @@ struct CreateNewProjectService: APIService {
         
     }
     
-    
     static func getProjectDeatil(project_idx: String,completion: @escaping ([ProjectDetail]) -> Void){
         let URL = url("/"+project_idx)
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData() { res in
