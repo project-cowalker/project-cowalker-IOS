@@ -10,11 +10,15 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 import UIKit
-
+/*
 struct ApplyService:APIService{
     
+    static func applyInit(
     
-    static func applyInit(introduce:String, portfolio_url:String, phone:String, recruit_idx:String, project_idx:String, position:String, answers:[String] ,completion : @escaping (String)->Void) {
+    )}*/
+        /*
+    
+    static func applyNew(introduce:String, portfolio_url:String, phone:String, recruit_idx:String, project_idx:String, position:String, answers:[String] ,completion : @escaping (String)->Void) {
          let URL = url("/apply")
        
         
@@ -52,7 +56,18 @@ struct ApplyService:APIService{
             }
         }
     }
+ 
+ 
+ 
+ */
+        
+        
+        
+        
+    // applyinit
     
+    /*
+    //
     static func applyList(a:String, b:String, c:String, completion: @escaping (String)->Void){ // 지원자 테이블 출력
         let URL = url("/\(a)/\(b)/join/\(c)")
         
@@ -84,7 +99,7 @@ struct ApplyService:APIService{
 
 
 
-
+*/
 
 
 

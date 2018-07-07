@@ -280,12 +280,13 @@
                                             </toolbar>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDJ-vd-Z3p">
                                                 <rect key="frame" x="0.0" y="998" width="375" height="60"/>
-                                                <color key="backgroundColor" red="0.3921568627" green="0.87450980389999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="1" green="0.97824598880000002" blue="0.77966560699999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="375" id="3mY-j3-5Fo"/>
                                                     <constraint firstAttribute="height" constant="60" id="8Ib-G5-7Uz"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="gi0-6o-CUS"/>
                                                 </constraints>
+                                                <state key="normal" title="지원멤버"/>
                                                 <connections>
                                                     <segue destination="iVe-cM-6Nr" kind="show" id="v0H-PK-D56">
                                                         <nil key="action"/>
@@ -294,12 +295,13 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJJ-tC-qDb">
                                                 <rect key="frame" x="0.0" y="1058" width="375" height="60"/>
-                                                <color key="backgroundColor" red="0.3921568627" green="0.87450980389999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="0mh-hR-d1m"/>
                                                     <constraint firstAttribute="width" constant="375" id="6On-Ub-N9k"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="VSg-a3-A9S"/>
                                                 </constraints>
+                                                <state key="normal" title="참여하기"/>
                                                 <connections>
                                                     <segue destination="DSu-WV-aSf" kind="show" id="GV3-Yl-Zkk">
                                                         <nil key="action"/>

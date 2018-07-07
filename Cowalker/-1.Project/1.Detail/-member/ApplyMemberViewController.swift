@@ -10,6 +10,9 @@ import UIKit
 
 class ApplyMemberViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    //
+    var applys: [Apply] = [Apply]()
+    //
     @IBOutlet weak var applyTableView: UITableView!
     
     
@@ -18,8 +21,11 @@ class ApplyMemberViewController: UIViewController, UITableViewDelegate, UITableV
         self.title = "지원 멤버"
         
         // 화면 로드
-        
-        
+        // applyInit()
+    }
+    
+    func applyInit(){
+        //ApplyService.applyInit
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

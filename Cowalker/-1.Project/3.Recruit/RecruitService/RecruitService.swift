@@ -2,7 +2,7 @@
 //  RecruitService.swift
 //  Cowalker
 //
-//  Created by 조예원 on 2018. 7. 4..
+//  Created by 조예원 on 2018. 7. 7..
 //  Copyright © 2018년 조예원. All rights reserved.
 //
 
@@ -43,13 +43,13 @@ struct RecruitService:APIService{
         Alamofire.request(URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseData() {res in
             //print(0)
             switch res.result{
-    
+                
             case .success:
                 if let value = res.result.value{
                     print(1)
                     //print()
                     if let message = JSON(value)["message"].string {
-                     //   print("33333")
+                        //   print("33333")
                         completion(message)
                         
                     }
@@ -60,7 +60,7 @@ struct RecruitService:APIService{
                 print(err.localizedDescription)
                 break
             }
-                }
+        }
     }
 }
 
