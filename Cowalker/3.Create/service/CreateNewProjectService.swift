@@ -93,7 +93,7 @@ struct CreateNewProjectService: APIService {
     }
     
 
-    static func getProjectDeatil(project_idx: String,completion: @escaping ([ProjectDetail]) -> Void){
+   
 
     //project 선택시 세부사항 정보들 볼 수 있게 조회 하는 함수@@@@@@@@@@@@@@@@@@@@
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
