@@ -60,18 +60,18 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     
     var projectDetails: [ProjectDetail] = [ProjectDetail]()
     
-    func projectInit(){
-        CreateNewProjectService.getProjectDeatil(project_idx: "5b3dd2387172d402215033d2"){ (ProjectDetail) in
-            
-            self.projectDetails = ProjectDetail
-            /*
-            if projectDetails == ""{
-                
-            }else if message == ""{
- 
-            }*/
-        }
-    }
+//    func projectInit(){
+//        CreateNewProjectService.getProjectDeatil(project_idx: "5b3dd2387172d402215033d2"){ (ProjectDetail) in
+//            
+//            self.projectDetails = ProjectDetail
+//            /*
+//            if projectDetails == ""{
+//                
+//            }else if message == ""{
+// 
+//            }*/
+//        }
+//    }
     
     
     
