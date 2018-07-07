@@ -52,8 +52,7 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
         label2.setTitleColor(UIColor.black, for: .normal)
         label1.setTitleColor(UIColor.lightGray, for: .normal)
         MessageService.messageInit { (message) in
-            print(33333)
-            print(message)
+          
             self.message = message
             self.alarmTableView.reloadData()
             
