@@ -116,14 +116,9 @@ struct CreateNewProjectService: APIService {
                         }
                         
                     }catch{
-                        
                     }
                 }
                 break
-                
-                
-                
-                
             case .failure(let err):
                 print(err.localizedDescription)
             }
