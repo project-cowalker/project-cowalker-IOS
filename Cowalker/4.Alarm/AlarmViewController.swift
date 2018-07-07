@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var alarmTableView: UITableView!
@@ -56,7 +56,7 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
             print(message)
             self.message = message
             self.alarmTableView.reloadData()
-            print(message[0].partner_name)
+            
         }
         print(message.count)
     }
@@ -73,8 +73,16 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier:"chattingTableViewCell") as! chattingTableViewCell
-            print(message[0].partner_name)
+            
+            // 이때 partner_idx 받을 수 있다~~~~~~~ 이거 체크하기@@@@@@@@@@@@
+            // 쪽지 보낼때 필요한 값
+
+            cell.profileImage.kf.setImage(with: URL(string: gsno(message[indexPath.row].partner_profile_url)), placeholder: UIImage())
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd HH:mm"
+            cell.timeLabel.text = dateFormatter.string(from: message[indexPath.row].create_at)
             cell.messageFromLabel.text = message[indexPath.row].partner_name
+            cell.messageLabel.text = message[indexPath.row].contents
             return cell
         }
     }
@@ -93,3 +101,4 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
     }
     
 }
+
