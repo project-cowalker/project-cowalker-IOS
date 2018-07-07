@@ -75,20 +75,30 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     var projectDetails: [ProjectDetail] = [ProjectDetail]()
     
-    
+    let temp: String = ""
     ///////////////////컬랙션 뷰 클릭하면 이동
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == listCollectionView{
             //////
             let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
             
+            /*
             // 서버 통신
-            CreateNewProjectService.getProjectDeatil(project_idx: "5b3dd2387172d402215033d2"){ (ProjectDetail, String) in
+            CreateNewProjectService.getProjectDeatil(project_idx: "5b3dd2387172d402215033d2"){ (projectDetails, temp) in
                 
+                print(222)
+               // secondVC.titleLabel.text = projectDetails[0].title
+                //print(projectDetails)
+                self.projectDetails = projectDetails
+                secondVC.titleLabel.text = self.projectDetails[0].title
+                print(projectDetails[0].title)
+/*
                 self.projectDetails = ProjectDetail // 데이터 저장
-                secondVC.titleLabel.text = self.projectDetails[0].titile
+                print(self.projectDetails[0].title)
+                secondVC.titleLabel.text = self.projectDetails[0].title
+*/
             
-            }
+            }*/
             
             // 화면 전환
             self.navigationController?.pushViewController(secondVC, animated: true)
