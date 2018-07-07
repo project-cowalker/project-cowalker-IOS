@@ -100,23 +100,28 @@ struct CreateNewProjectService: APIService {
     
     static func getProjectDeatil(project_idx: String,completion: @escaping ([ProjectDetail],String) -> Void){
 
-        let URL = url("/"+project_idx)
+        let URL = url("/project/"+project_idx)
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData() { res in
             switch res.result {
             case .success:
                 if let value = res.result.value {
+                    print(value)
                     let decoder = JSONDecoder()
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSS'Z"
                     decoder.dateDecodingStrategy = .formatted(dateFormatter)
                     do {
+                        print("dodododo")
                         let projectDetailData = try decoder.decode(ProjectDetailData.self, from: value)
+                        print("2222")
                         if projectDetailData.message == "success"{
-                            completion(projectDetailData.result, projectDetailData.user!)
+                            print("success")
+                            completion(projectDetailData.result, projectDetailData.user)
                         }
                         
-                    }catch{
-                        
+                    }catch let err{
+                        print(err)
+                        print("catch")
                     }
                 }
                 break

@@ -8,9 +8,9 @@
 
 import Foundation
 struct ProjectDetailData: Codable {
-    let message: String?
+    let message: String
     let result: [ProjectDetail]
-    let user: String?
+    let user: String
     
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //    * user  -> 총 4가지의 value값을 가진다.

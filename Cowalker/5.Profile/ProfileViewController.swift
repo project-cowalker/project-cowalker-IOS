@@ -38,15 +38,12 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var whiteCircle: UIView!
     
-//    var pro: [ProjectDetail] = [ProjectDetail]()
-//    var temp = ""
+    
     @IBAction func goToEditProfile(_ sender: Any) {
-//        CreateNewProjectService.getProjectDeatil(project_idx: "5b3dd2387172d402215033d2") { (pro, temp) in
-//            self.pro = pro
-//        }
-        
+      
+       
         if let secondVC = storyboard?.instantiateViewController(withIdentifier: "ProfileEditViewController") as? ProfileEditViewController{
-//            secondVC.roleTextField.text = pro[0].title
+
             self.navigationController?.pushViewController(secondVC, animated: true)
             
             
