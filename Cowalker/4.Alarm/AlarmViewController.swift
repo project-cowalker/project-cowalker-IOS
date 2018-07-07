@@ -83,18 +83,30 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
             cell.timeLabel.text = dateFormatter.string(from: message[indexPath.row].create_at)
             cell.messageFromLabel.text = message[indexPath.row].partner_name
             cell.messageLabel.text = message[indexPath.row].contents
+            partner_idx = message[indexPath.row].partner_idx
             return cell
         }
     }
+    var partner_idx = 0
     
     // 새소식 외에 쪽지가 선택 됫을때로 바꾸기 아마 push action 해야할지도
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
         if num == 1{
-            let storyboard: UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "AlarmSecondNaviController")
-
-            present(nextView, animated: true, completion: nil)
+            if let secondVC = storyboard?.instantiateViewController(withIdentifier: "AlarmSecondViewController") as? AlarmSecondViewController{
+                secondVC.partner_idx = partner_idx
+                
+                
+                //더 보기로 이동
+                
+                self.navigationController?.pushViewController(secondVC, animated: true)
+                
+                
+            }
+//            let storyboard: UIStoryboard = self.storyboard!
+//            let nextView = storyboard.instantiateViewController(withIdentifier: "AlarmSecondNaviController")
+//
+//            present(nextView, animated: true, completion: nil)
         }
        
         
