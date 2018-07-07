@@ -92,10 +92,14 @@ struct CreateNewProjectService: APIService {
         
     }
     
+
+    static func getProjectDeatil(project_idx: String,completion: @escaping ([ProjectDetail]) -> Void){
+
     //project 선택시 세부사항 정보들 볼 수 있게 조회 하는 함수@@@@@@@@@@@@@@@@@@@@
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     
     static func getProjectDeatil(project_idx: String,completion: @escaping ([ProjectDetail],String) -> Void){
+
         let URL = url("/"+project_idx)
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData() { res in
             switch res.result {

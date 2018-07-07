@@ -46,6 +46,10 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             longBtn.image = #imageLiteral(resourceName: "btnProjectManage.png")
             plusPartBtn.isHidden = false
         }
+        // 데이터 가져오기
+       // projectInit()
+        
+        
         /////////페이징 기능---------------------------------------------------//
         /////////네비게이션 효과 기능---------------------------------------------------//
     }
@@ -53,6 +57,24 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         self.navigationController?.popViewController(animated: true)
         self.tabBarController?.tabBar.isHidden = false
     }
+    
+    var projectDetails: [ProjectDetail] = [ProjectDetail]()
+    
+    func projectInit(){
+        CreateNewProjectService.getProjectDeatil(project_idx: "5b3dd2387172d402215033d2"){ (ProjectDetail) in
+            
+            self.projectDetails = ProjectDetail
+            /*
+            if projectDetails == ""{
+                
+            }else if message == ""{
+ 
+            }*/
+        }
+    }
+    
+    
+    
     
     /// 콜랙션뷰 변수
     var imageArray = [ #imageLiteral(resourceName: "1.png"), #imageLiteral(resourceName: "intro.png"), #imageLiteral(resourceName: "1.png")]
