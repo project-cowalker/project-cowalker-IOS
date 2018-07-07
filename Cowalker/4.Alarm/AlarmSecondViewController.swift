@@ -9,10 +9,12 @@
 import UIKit
 
 class AlarmSecondViewController: UIViewController {
-
+    var partner_idx = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+         self.navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
+        self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
+//        self.navigationController
         // Do any additional setup after loading the view.
     }
 
@@ -36,23 +38,11 @@ class AlarmSecondViewController: UIViewController {
     
     
     @IBAction func goToBackPage(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     
-    @IBAction func deleteMessage(_ sender: Any) {
-        deleteAlert()
-        // message 전체 삭제로 알람 띄우고 삭제
-       
-    }
-    func deleteAlert(){
-        let message = UIAlertController(title: "쪽지 전체 삭제하기", message: "쪽지를 전체 삭제하시겠습니까?", preferredStyle: .alert)
-        let cancel = UIAlertAction(title:"취소", style: UIAlertActionStyle.default)
-        let action = UIAlertAction(title: "삭제", style: UIAlertActionStyle.default)
-        message.addAction(cancel)
-        message.addAction(action)
-        self.present(message, animated: true,completion: nil)
-    }
+
     
     
     

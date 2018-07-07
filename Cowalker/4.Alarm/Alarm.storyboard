@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -288,18 +287,11 @@
                                 <action selector="goToBackPage:" destination="npx-nz-NNS" id="T0x-it-mBG"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="icon_darkgray_letter" id="OWB-N4-aWj">
-                                <connections>
-                                    <action selector="sendingMessagePage:" destination="npx-nz-NNS" id="sYs-QY-jk5"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Item" image="iconTrashCanDarkgray" id="gzP-kw-tw7">
-                                <connections>
-                                    <action selector="deleteMessage:" destination="npx-nz-NNS" id="VVX-Lo-oh7"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon_darkgray_letter" id="OWB-N4-aWj">
+                            <connections>
+                                <action selector="sendingMessagePage:" destination="npx-nz-NNS" id="sYs-QY-jk5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7Q-3r-fTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -414,7 +406,6 @@
     <resources>
         <image name="btnFloatNormal" width="335" height="52"/>
         <image name="iconCaretLeftDarkgray" width="24" height="24"/>
-        <image name="iconTrashCanDarkgray" width="24" height="24"/>
         <image name="icon_darkgray_letter" width="19" height="23"/>
         <image name="iconsTabbar1Home" width="48" height="49"/>
         <image name="iconsTabbar2Search" width="48" height="49"/>
