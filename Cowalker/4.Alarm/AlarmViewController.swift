@@ -102,10 +102,7 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
                 
                 
             }
-//            let storyboard: UIStoryboard = self.storyboard!
-//            let nextView = storyboard.instantiateViewController(withIdentifier: "AlarmSecondNaviController")
-//
-//            present(nextView, animated: true, completion: nil)
+
         }
        
         
