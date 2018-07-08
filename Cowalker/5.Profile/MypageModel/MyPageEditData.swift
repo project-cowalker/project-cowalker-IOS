@@ -1,5 +1,5 @@
 //
-//  MyPageData.swift
+//  MyPageEditData.swift
 //  Cowalker
 //
 //  Created by 정보영 on 2018. 7. 8..
@@ -8,9 +8,7 @@
 
 import Foundation
 
-struct MyPageData: Codable {
-    let message: String
-    let data: [MyPage]
-    
-    
+struct MyPageEditData: Codable {
+    let message: String?
+    let data: [MyPageEdit]
 }
