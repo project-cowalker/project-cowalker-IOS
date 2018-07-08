@@ -15,7 +15,8 @@ import UIKit
 
 struct CreateNewProjectService: APIService {
    
-    
+    // 프로젝트 생성하는 3번째 탭바 API@@@@@@@@@@@@@@@@@
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     static func createNewProject(title: String, summary: String, area: String, department: String, aim: String ,explain: String, img_url: UIImage, completion: @escaping (String) -> Void){
         let URL = url("/project")
 //        let userdefault = UserDefaults.standard
@@ -26,6 +27,8 @@ struct CreateNewProjectService: APIService {
         let aimData = aim.data(using: .utf8)
         let explainData = explain.data(using: .utf8)
         let img_urlData = UIImageJPEGRepresentation(img_url, 0.3)
+        
+        
         //token 처리도 해야함 유저로 가게
         
         let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"
@@ -89,34 +92,52 @@ struct CreateNewProjectService: APIService {
         
     }
     
+
+   
+
+    //project 선택시 세부사항 정보들 볼 수 있게 조회 하는 함수@@@@@@@@@@@@@@@@@@@@
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     
+    static func getProjectDeatil(project_idx: String,completion: @escaping ([ProjectDetail],String) -> Void){
+
+        let URL = url("/project/"+project_idx)
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData() { res in
+            switch res.result {
+            case .success:
+                if let value = res.result.value {
+                    print(value)
+                    let decoder = JSONDecoder()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSS'Z"
+                    decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                    do {
+                        print("dodododo")
+                        let projectDetailData = try decoder.decode(ProjectDetailData.self, from: value)
+                        print("2222")
+                        if projectDetailData.message == "success"{
+                            print("success")
+                            completion(projectDetailData.result, projectDetailData.user)
+                        }
+                        
+                    }catch let err{
+                        print(err)
+                        print("catch")
+                    }
+                }
+                break
+                
+                
+                
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+            
+            
+        }
+        
+        
+    }
+
+
 }
-
-//
-//        case .success(request: let upload, streamingFromDisk: _, streamFileURL: _):
-//            upload.responseData( completionHandler: { (res) in
-//                switch res.result{
-//                case .success:
-//                    if let value = res.result.value {
-//                        let message = JSON(value)["mesaage"].string
-//                        if message == "Successful Register Board Data"{
-//
-//                            completion()
-//                        }
-//                    }
-//                    break
-//
-//                case .failure(let err):
-//                    print(err.localizedDescription)
-//                }
-//
-//            })
-//
-//        case .failure(let err):
-//            print(err.localizedDescription)
-//
-//        }
-//    }
-//
-//}
-

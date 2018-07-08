@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var alarmTableView: UITableView!
@@ -32,7 +32,9 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
         self.tabBarController?.tabBar.tintColor = UIColor (red: 100.0/255.0, green: 223.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.tabBarController?.tabBar.items![3].image = #imageLiteral(resourceName: "iconsTabbar4Alarm")
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        alarmTableView.reloadData()
+    }
     @IBAction func button1(_ sender: UIButton) {
         num = 0
         
@@ -52,11 +54,10 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
         label2.setTitleColor(UIColor.black, for: .normal)
         label1.setTitleColor(UIColor.lightGray, for: .normal)
         MessageService.messageInit { (message) in
-            print(33333)
-            print(message)
+          
             self.message = message
             self.alarmTableView.reloadData()
-            print(message[0].partner_name)
+            
         }
         print(message.count)
     }
@@ -73,23 +74,46 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier:"chattingTableViewCell") as! chattingTableViewCell
-            print(message[0].partner_name)
+            
+            // 이때 partner_idx 받을 수 있다~~~~~~~ 이거 체크하기@@@@@@@@@@@@
+            // 쪽지 보낼때 필요한 값
+
+            cell.profileImage.kf.setImage(with: URL(string: gsno(message[indexPath.row].partner_profile_url)), placeholder: UIImage())
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd HH:mm"
+            cell.timeLabel.text = dateFormatter.string(from: message[indexPath.row].create_at)
             cell.messageFromLabel.text = message[indexPath.row].partner_name
+            cell.messageLabel.text = message[indexPath.row].contents
+            
             return cell
         }
     }
+    var partner_idx = 0
+    var partner_name = ""
     
     // 새소식 외에 쪽지가 선택 됫을때로 바꾸기 아마 push action 해야할지도
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
         if num == 1{
-            let storyboard: UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "AlarmSecondNaviController")
+            if let secondVC = storyboard?.instantiateViewController(withIdentifier: "AlarmSecondViewController") as? AlarmSecondViewController{
+                partner_idx = message[indexPath.row].partner_idx
+                partner_name = message[indexPath.row].partner_name!
+                
+                secondVC.partner_idx = partner_idx
+                print(partner_name)
+                print(partner_idx)
+                secondVC.partner_name = partner_name
+                //더 보기로 이동
+                
+                self.navigationController?.pushViewController(secondVC, animated: true)
+                
+                
+            }
 
-            present(nextView, animated: true, completion: nil)
         }
        
         
     }
     
 }
+

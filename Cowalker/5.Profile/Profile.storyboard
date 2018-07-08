@@ -391,13 +391,21 @@
                         <viewLayoutGuide key="safeArea" id="V6f-B3-hGI"/>
                     </view>
                     <connections>
+                        <outlet property="aimLabel" destination="lu6-kM-h5g" id="8cV-Tq-ZtM"/>
+                        <outlet property="areaLabel" destination="CHP-G4-a6b" id="FB5-ao-jB8"/>
+                        <outlet property="backgroundImage" destination="MXs-Hy-Iyb" id="28K-yX-VW1"/>
                         <outlet property="circleButton" destination="cJg-4g-XfE" id="UVB-Ul-nUi"/>
+                        <outlet property="departmentLabel" destination="vch-0J-1L3" id="A2y-yB-dNm"/>
+                        <outlet property="emailLabel" destination="raA-1B-NuY" id="xQe-Hs-b1h"/>
+                        <outlet property="introduceLabel" destination="HaE-yu-5GN" id="0nn-8K-Gln"/>
+                        <outlet property="nameLabel" destination="iAa-3u-0nQ" id="zrp-HU-Q1m"/>
+                        <outlet property="positionLabel" destination="Wlk-G2-MR2" id="E4Z-he-5i5"/>
                         <outlet property="whiteCircle" destination="zNN-OC-XtC" id="Tzs-wu-vrI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOA-Ji-tUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="27"/>
+            <point key="canvasLocation" x="158" y="-315"/>
         </scene>
         <!--My Scrap View Controller-->
         <scene sceneID="CLV-gt-B5Q">
@@ -1414,6 +1422,8 @@
                     </view>
                     <size key="freeformSize" width="375" height="750"/>
                     <connections>
+                        <outlet property="emailTextField" destination="jLL-aq-MOo" id="8if-w6-nA9"/>
+                        <outlet property="introductionTextField" destination="UDE-rw-zc4" id="S9b-8q-KyE"/>
                         <outlet property="partTextField" destination="20Z-X8-muY" id="UuI-i7-15s"/>
                         <outlet property="purposeTextField" destination="dMi-BT-ZJ2" id="B0f-e1-uG7"/>
                         <outlet property="regionTextField" destination="JQO-Hc-m7i" id="F9U-Zm-eUi"/>

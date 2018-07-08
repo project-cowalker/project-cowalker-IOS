@@ -45,14 +45,12 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
 //        selectRow = row
 //    }
     @IBOutlet weak var roleTextField: UITextField!
-    
     @IBOutlet weak var purposeTextField: UITextField!
-    
     @IBOutlet weak var partTextField: UITextField!
-    
-    
     @IBOutlet weak var regionTextField: UITextField!
+    @IBOutlet weak var introductionTextField: UITextField!
     
+    @IBOutlet weak var emailTextField: UITextField!
     
     
     let rolePicker = UIPickerView()
@@ -75,6 +73,8 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
         initPicker(text: partTextField, picker: partPicker, array: partArray)
         initPicker(text: regionTextField, picker: regionPicker, array: regionArray)
         // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,13 +103,58 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    var myPageEdit: [MyPageEdit] = [MyPageEdit]()
     @objc func finishedEditing(){
+        if roleTextField.text == "선택"{
+            roleTextField.text = positionLabel
+        }else if introductionTextField.text == "" {
+            introductionTextField.text = introduceLabel
+        }else if emailTextField.text == "" {
+            emailTextField.text = emailLabel
+        }else if purposeTextField.text == "선택"{
+            purposeTextField.text = aimLabel
+        }else if partTextField.text == "선택" {
+            partTextField.text = departmentLabel
+        }else if regionTextField.text == "선택"{
+            regionTextField.text = areaLabel
+        }
         //  여기서 이제 서버로 넘기기
+        MypageService.myPageEdit(profile_img: profileImage, background_img: backgroundImage, name: nameLabel, position: roleTextField.text!, introduce: introductionTextField.text!, portfolio_url: emailTextField.text!, aim: purposeTextField.text!, department: partTextField.text!, area: regionTextField.text!) { (message) in
+            if message == "update success"{
+                print("success")
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    
+//        MypageService.myPageEdit(profile_img: profileImage, background_img: backgroundImage, email: emailTextField.text!, name: nameLabel, point: <#T##Int#>, position: roleTextField.text!, introduce: introductionTextField.text!, portfolio_url: <#T##String#>, aim: purposeTextField.text!, department: partTextField.text!, area: regionTextField.text!) { (message) in
+//            if message == "update success"{
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//        }
+        
+//        MypageService.myPageEdit { (myPageEdit) in
+//            self.myPageEdit = myPageEdit
+//        }
+//        self.navigationController?.popViewController(animated: true)
     }
+    var profileImage = UIImage()
+    var backgroundImage = UIImage()
+    var nameLabel = ""
+    var positionLabel = ""
+    var introduceLabel = ""
+    var emailLabel = ""
+    var aimLabel = ""
+    var departmentLabel = ""
+    var areaLabel = ""
     
-    
-    
-    
+    //        nameLabel.text = myPage[0].name!
+    //        positionLabel.text = myPage[0].position!
+    //        introduceLabel.text = myPage[0].introduce!
+    //        emailLabel.text = myPage[0].email!
+    //        aimLabel.text = myPage[0].aim!
+    //        departmentLabel.text = myPage[0].department!
+    //        areaLabel.text = myPage[0].area!
     
     
     

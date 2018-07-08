@@ -1,5 +1,5 @@
 //
-//  MessageData.swift
+//  IndividualMessageData.swift
 //  Cowalker
 //
 //  Created by 정보영 on 2018. 7. 7..
@@ -7,9 +7,8 @@
 //
 
 import Foundation
-struct MessageData: Codable{
-    
-    let message: String
-    let result: [Message]
-}
 
+struct IndividualMessageData: Codable {
+    let message: String
+    let result: [IndividualMessage]
+}
