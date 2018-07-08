@@ -2,7 +2,7 @@
 import UIKit
 
 class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    var people = 0 // 참여자, 개설자 확인 변수
+    var people = 1 // 참여자, 개설자 확인 변수
     var isClose = 0 //  참여종료 확인 변수
     
     @IBOutlet weak var projectCollectionView: UICollectionView! // 콜랙션
@@ -158,8 +158,10 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     // 플러스 버튼
     @IBAction func plusBtnAct(_ sender: UIButton) {
         // 화면 이동
+        //
         let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "RecruitPartViewController") as! RecruitPartViewController
-        self.navigationController?.pushViewController(secondVC, animated: true)
+        self.present(secondVC, animated: false, completion: nil)
+        
     }
     // 추천 버튼
     @IBAction func recommendAct(_ sender: UIBarButtonItem) {
