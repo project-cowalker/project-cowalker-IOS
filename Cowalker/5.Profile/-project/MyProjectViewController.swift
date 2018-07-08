@@ -69,10 +69,6 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
 //                    cell.projectImage.kf.setImage(with: URL(string: gsno(temp)), placeholder: UIImage())
 //            }
             
-//            cell.projectImage.kf.setImage(with: URL(string: gsno(message[indexPath.row].partner_profile_url)), placeholder: UIImage())
-//
-            
-            
             return cell
             
         }else if collectionView == doingCollectionView {
@@ -83,7 +79,7 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
             
             
         }else{
-            print(11111)
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ApplyingCollectionViewCell", for: indexPath) as! ApplyingCollectionViewCell
             cell.projectImage.image = imageArray[indexPath.row]
             

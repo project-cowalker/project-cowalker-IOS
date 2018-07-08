@@ -48,8 +48,16 @@ struct MypageService: APIService {
         }
     
     }
-    
-    
+//
+//    "profile_img": "사진 업로드(없어도 됨)",
+//    "background_img": "사진 업로드(없어도 됨)",
+//    "name": "임규",
+//    "position": "개발자",
+//    "introduce": "안녕하세요, 규희입니다",
+//    "portfolio_url": "Limkyuhee",
+//    "aim": "공모전참여",
+//    "department": "콘텐츠",
+//    "area": "서울"
     // api 바뀌면 다시 해야한다
     static func myPageEdit(profile_img: UIImage, background_img: UIImage, name: String, position: String, introduce: String, portfolio_url: String, aim: String, department: String, area: String, completion: @escaping (String) -> Void){
         let URL = url("/mypage")
@@ -66,15 +74,13 @@ struct MypageService: APIService {
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             multipartFormData.append(profile_imgData!, withName: "profile_img", fileName: "profile_img.jpg", mimeType: "image/jpeg")
             multipartFormData.append(background_imgData!, withName: "background_img", fileName: "background_img.jpg", mimeType: "image/jpeg")
-            
             multipartFormData.append(nameData!, withName: "name")
             multipartFormData.append(positionData!, withName: "position")
             multipartFormData.append(introduceData!, withName: "introduce")
-            multipartFormData.append(portfolio_urlData!, withName: "aim")
+            multipartFormData.append(portfolio_urlData!, withName: "portfolio")
             multipartFormData.append(aimData!, withName: "aim")
             multipartFormData.append(departmentData!, withName: "department")
             multipartFormData.append(areaData!, withName: "area")
-            
         }, to: URL, method: .put, headers: header)
         {(encodingResult) in
             
@@ -120,6 +126,7 @@ struct MypageService: APIService {
                     decoder.dateDecodingStrategy = .formatted(dateFormatter)
                     do {
                         let madeProject = try decoder.decode(IMadeProjectData.self, from: value)
+                        print(madeProject.message)
                         if madeProject.message == "success"{
                             print("success")
                             completion(madeProject.result)
@@ -135,6 +142,7 @@ struct MypageService: APIService {
         }
     }
     
+//    static func participateProject(completion: @escaping)
     
 //    Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
 //    switch res.result{

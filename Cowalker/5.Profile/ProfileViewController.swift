@@ -50,8 +50,8 @@ class ProfileViewController: UIViewController {
       
        
         if let secondVC = storyboard?.instantiateViewController(withIdentifier: "ProfileEditViewController") as? ProfileEditViewController{
-            secondVC.profileImage = circleButton.backgroundImage(for: UIControlState.normal)!
-            secondVC.backgroundImage = backgroundImage.backgroundImage(for: UIControlState.normal)!
+            secondVC.profileImage = circleButton.currentBackgroundImage!
+            secondVC.backgroundImage = backgroundImage.currentBackgroundImage!
             secondVC.nameLabel = nameLabel.text!
             secondVC.positionLabel = positionLabel.text!
             secondVC.introduceLabel = introduceLabel.text!

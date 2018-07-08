@@ -122,6 +122,7 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
         //  여기서 이제 서버로 넘기기
         MypageService.myPageEdit(profile_img: profileImage, background_img: backgroundImage, name: nameLabel, position: roleTextField.text!, introduce: introductionTextField.text!, portfolio_url: emailTextField.text!, aim: purposeTextField.text!, department: partTextField.text!, area: regionTextField.text!) { (message) in
             if message == "update success"{
+                print("success")
                 self.navigationController?.popViewController(animated: true)
             }
         }
