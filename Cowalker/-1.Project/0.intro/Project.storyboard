@@ -440,7 +440,6 @@
                                                         <state key="normal" backgroundImage="iconAddDarkgray"/>
                                                         <connections>
                                                             <action selector="plusBtnAct:" destination="4ud-ul-aRk" eventType="touchUpInside" id="BIY-hL-mz1"/>
-                                                            <segue destination="mlZ-8F-iwy" kind="show" id="rw6-jz-L2h"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

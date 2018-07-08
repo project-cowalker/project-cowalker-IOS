@@ -10,9 +10,7 @@ import UIKit
 
 class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
-    @IBOutlet weak var partDetailCollectionView: UICollectionView!
-    
+    @IBOutlet weak var detailPartCollectionView: UICollectionView!
     @IBOutlet weak var longBtn: UIBarButtonItem!
     var user = "0"
     
@@ -100,7 +98,7 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onePartCollectionViewCell", for: indexPath) as! onePartCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailPartCollectionViewCell", for: indexPath) as! detailPartCollectionViewCell
         
         
         cell.partLabel.text = partList[indexPath.row]
@@ -113,7 +111,7 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width:336*self.view.frame.width   , height: 90*self.view.frame.height/677)
+        return CGSize(width:336*self.view.frame.width/375   , height: 90*self.view.frame.height/677)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
