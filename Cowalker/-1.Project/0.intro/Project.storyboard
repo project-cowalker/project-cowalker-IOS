@@ -414,7 +414,6 @@
                                                             <outlet property="detailLabel" destination="w94-ZX-lxi" id="yUl-Xu-bQk"/>
                                                             <outlet property="partLabel" destination="UOP-Y2-oTz" id="ZzB-RE-58b"/>
                                                             <outlet property="partNumLabel" destination="Wvg-6g-NJc" id="uak-V6-yM8"/>
-                                                            <segue destination="uJJ-no-4Wb" kind="show" id="nvF-yL-A67"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -592,15 +591,20 @@
                     </view>
                     <size key="freeformSize" width="375" height="1202"/>
                     <connections>
+                        <outlet property="aimLabel" destination="aie-mk-J08" id="kUU-PM-XP6"/>
+                        <outlet property="areaLabel" destination="KKx-Za-0Bv" id="5IO-op-kdp"/>
                         <outlet property="collecViewH" destination="UMs-eo-10z" id="nNo-z2-zRm"/>
                         <outlet property="constBtn" destination="bZy-dz-75I" id="b6p-Fb-jcV"/>
                         <outlet property="constLabel" destination="oYr-Ac-9tf" id="fnA-nt-JYS"/>
+                        <outlet property="departmentLabel" destination="pp0-I7-bmM" id="78B-NA-GGY"/>
+                        <outlet property="explainLabel" destination="oYr-Ac-9tf" id="lWj-xh-GpB"/>
                         <outlet property="longBtn" destination="Kbt-qg-vda" id="CH1-7C-d4q"/>
                         <outlet property="partCollectionView" destination="xij-Vl-n9N" id="xA8-hz-8L3"/>
                         <outlet property="plusBtn" destination="iUb-Tn-my6" id="MtS-H9-Aro"/>
                         <outlet property="plusPartBtn" destination="Ezg-tn-Lfa" id="5FY-mO-azG"/>
                         <outlet property="projectCollectionView" destination="Cex-mO-pV2" id="3ma-KR-22S"/>
                         <outlet property="scrView" destination="ebv-cn-LgW" id="gF9-XR-I3r"/>
+                        <outlet property="summaryLabel" destination="gdA-fQ-HSK" id="sHO-4v-s8V"/>
                         <outlet property="titleLabel" destination="PFY-m1-Nht" id="nc3-o1-kfD"/>
                         <outlet property="underBar" destination="har-vG-55d" id="Gog-Fh-Jgk"/>
                     </connections>

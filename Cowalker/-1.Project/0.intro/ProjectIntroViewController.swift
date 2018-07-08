@@ -22,10 +22,16 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var longBtn: UIBarButtonItem!
     @IBOutlet weak var plusPartBtn: UIButton!
     
-    //
+    ////////////////////////////
     
     @IBOutlet weak var titleLabel: UILabel!
-    var titleName = ""
+    @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var areaLabel: UILabel!
+    @IBOutlet weak var departmentLabel: UILabel!
+    @IBOutlet weak var aimLabel: UILabel!
+    @IBOutlet weak var explainLabel: UILabel!
+    
+    
     
     
     override func viewDidLoad() {
@@ -52,9 +58,13 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             longBtn.image = #imageLiteral(resourceName: "btnProjectManage.png")
             plusPartBtn.isHidden = false
         }
+    
+        
+        
         
         /////////페이징 기능---------------------------------------------------//
         /////////네비게이션 효과 기능---------------------------------------------------//
+    
     }
     @objc func action(){ // 뒤로가기 버튼
         self.navigationController?.popViewController(animated: true)
@@ -68,9 +78,13 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     var numList = ["1명", "2명", "3명", "4명", "5명", "6명"]
     var ddayList = ["D - 1", "D - 2", "D - 3", "D - 4", "D - 5", "D - 6"]
     var detailList = ["웹,앱 서비스 개발", "로고 및 앱 디자인", "웹,앱 서비스 개발", "웹,앱 서비스 개발", "웹,앱 서비스 개발"]
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        /*
         if collectionView == projectCollectionView {return imageArray.count }
-        else {return partList.count }
+        else {return partList.count }*/
+        return imageArray.count
+        
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == projectCollectionView {
@@ -95,6 +109,15 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         return 0}
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0}
+    // 셀 클릭시
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // 화면이동
+        let secondVC = UIStoryboard(name: "Detail", bundle:nil ).instantiateViewController(withIdentifier: "ProjectPartDetailViewController") as! ProjectPartDetailViewController
+        self.navigationController?.pushViewController(secondVC, animated: true)
+        // 자료 전달
+        
+    }
 
     // 사진, 이름 클릭했을 때, 프로필 이동
     @IBAction func goToProfile(_ sender: UIButton) {
