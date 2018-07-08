@@ -32,7 +32,9 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
         self.tabBarController?.tabBar.tintColor = UIColor (red: 100.0/255.0, green: 223.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.tabBarController?.tabBar.items![3].image = #imageLiteral(resourceName: "iconsTabbar4Alarm")
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        alarmTableView.reloadData()
+    }
     @IBAction func button1(_ sender: UIButton) {
         num = 0
         
@@ -82,20 +84,25 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
             cell.timeLabel.text = dateFormatter.string(from: message[indexPath.row].create_at)
             cell.messageFromLabel.text = message[indexPath.row].partner_name
             cell.messageLabel.text = message[indexPath.row].contents
-            partner_idx = message[indexPath.row].partner_idx
+            
             return cell
         }
     }
     var partner_idx = 0
+    var partner_name = ""
     
     // 새소식 외에 쪽지가 선택 됫을때로 바꾸기 아마 push action 해야할지도
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
         if num == 1{
             if let secondVC = storyboard?.instantiateViewController(withIdentifier: "AlarmSecondViewController") as? AlarmSecondViewController{
+                partner_idx = message[indexPath.row].partner_idx
+                partner_name = message[indexPath.row].partner_name!
+                
                 secondVC.partner_idx = partner_idx
-                
-                
+                print(partner_name)
+                print(partner_idx)
+                secondVC.partner_name = partner_name
                 //더 보기로 이동
                 
                 self.navigationController?.pushViewController(secondVC, animated: true)

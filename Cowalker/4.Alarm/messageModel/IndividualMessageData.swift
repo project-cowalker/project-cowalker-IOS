@@ -9,6 +9,6 @@
 import Foundation
 
 struct IndividualMessageData: Codable {
-    let message: String?
+    let message: String
     let result: [IndividualMessage]
 }

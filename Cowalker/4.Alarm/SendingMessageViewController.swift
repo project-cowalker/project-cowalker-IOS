@@ -9,10 +9,11 @@
 import UIKit
 
 class SendingMessageViewController: UIViewController {
-
+    var partner_idx = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         messageTextView.placeholder = "내용 입력"
+        self.navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
         // Do any additional setup after loading the view.
     }
 
@@ -22,17 +23,29 @@ class SendingMessageViewController: UIViewController {
     }
     
     @IBAction func goToBackPage(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     
     @IBAction func sendingMessage(_ sender: UIButton) {
-//        MessageService.sendingMessageToPartner(partner_idx: <#T##String#>, contents: <#T##String#>, completion: <#T##() -> Void#>)
-//        
+        MessageService.sendingMessageToPartner(partner_idx: partner_idx, contents: messageTextView.text, completion: popAction)
+        
         
     }
-    
+    func popAction(){
+        
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBOutlet weak var messageTextView: UITextView!
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 extension UITextView: UITextViewDelegate {
     
