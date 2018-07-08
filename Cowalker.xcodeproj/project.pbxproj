@@ -90,6 +90,10 @@
 		E41034A920F2247E0001EF40 /* MyPageEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41034A820F2247E0001EF40 /* MyPageEditData.swift */; };
 		E41A8F6E20EA62900009F330 /* CreateImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A8F6D20EA62900009F330 /* CreateImageCollectionViewCell.swift */; };
 		E41BC9F320EE411800DAD27F /* Profile2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41BC9F220EE411800DAD27F /* Profile2.storyboard */; };
+		E44376D820F295D9009856B8 /* IMadeProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44376D720F295D9009856B8 /* IMadeProject.swift */; };
+		E44376DA20F295EA009856B8 /* IMadeProjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44376D920F295EA009856B8 /* IMadeProjectData.swift */; };
+		E44376DC20F2A7BF009856B8 /* ParticipatedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44376DB20F2A7BF009856B8 /* ParticipatedProject.swift */; };
+		E44376DE20F2A7CC009856B8 /* ParticipatedProjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44376DD20F2A7CC009856B8 /* ParticipatedProjectData.swift */; };
 		E4661BAF20ECECA8009BFE0F /* CreateNewProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4661BAE20ECECA8009BFE0F /* CreateNewProjectService.swift */; };
 		E4692B2920EC14BB000F4A72 /* AlarmSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4692B2820EC14BB000F4A72 /* AlarmSecondViewController.swift */; };
 		E4692B2B20EC14F7000F4A72 /* messageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4692B2A20EC14F7000F4A72 /* messageTableViewCell.swift */; };
@@ -195,6 +199,10 @@
 		E41034A820F2247E0001EF40 /* MyPageEditData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageEditData.swift; sourceTree = "<group>"; };
 		E41A8F6D20EA62900009F330 /* CreateImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E41BC9F220EE411800DAD27F /* Profile2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile2.storyboard; sourceTree = "<group>"; };
+		E44376D720F295D9009856B8 /* IMadeProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMadeProject.swift; sourceTree = "<group>"; };
+		E44376D920F295EA009856B8 /* IMadeProjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMadeProjectData.swift; sourceTree = "<group>"; };
+		E44376DB20F2A7BF009856B8 /* ParticipatedProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatedProject.swift; sourceTree = "<group>"; };
+		E44376DD20F2A7CC009856B8 /* ParticipatedProjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatedProjectData.swift; sourceTree = "<group>"; };
 		E4661BAE20ECECA8009BFE0F /* CreateNewProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewProjectService.swift; sourceTree = "<group>"; };
 		E4692B2820EC14BB000F4A72 /* AlarmSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSecondViewController.swift; sourceTree = "<group>"; };
 		E4692B2A20EC14F7000F4A72 /* messageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageTableViewCell.swift; sourceTree = "<group>"; };
@@ -588,6 +596,10 @@
 				E41034A120F123B20001EF40 /* MyPageData.swift */,
 				E41034A620F224700001EF40 /* MyPageEdit.swift */,
 				E41034A820F2247E0001EF40 /* MyPageEditData.swift */,
+				E44376D720F295D9009856B8 /* IMadeProject.swift */,
+				E44376D920F295EA009856B8 /* IMadeProjectData.swift */,
+				E44376DB20F2A7BF009856B8 /* ParticipatedProject.swift */,
+				E44376DD20F2A7CC009856B8 /* ParticipatedProjectData.swift */,
 			);
 			path = MypageModel;
 			sourceTree = "<group>";
@@ -778,6 +790,7 @@
 				948AE9F520F015EA003CF30F /* ApplyData.swift in Sources */,
 				944A9F6D20E8B5C500F5FE80 /* AlarmViewController.swift in Sources */,
 				948AEA0D20F12ADB003CF30F /* RecruitList.swift in Sources */,
+				E44376D820F295D9009856B8 /* IMadeProject.swift in Sources */,
 				E4CD826E20EFD5A000352A78 /* MessageData.swift in Sources */,
 				944A9F5420E8AE6800F5FE80 /* LoginViewController.swift in Sources */,
 				E495549320EE96AE00D4A335 /* IntroductionEditCollectionViewCell.swift in Sources */,
@@ -807,6 +820,7 @@
 				948AEA1520F1EF11003CF30F /* RecruitDetail.swift in Sources */,
 				944A9F8820E8E03D00F5FE80 /* MyBagViewController.swift in Sources */,
 				948AE9EF20F000CA003CF30F /* ResumeViewController.swift in Sources */,
+				E44376DA20F295EA009856B8 /* IMadeProjectData.swift in Sources */,
 				94057B1420E9959F008875C5 /* ProjectCollectionViewCell.swift in Sources */,
 				94EA8FEE20EB8263006EC50A /* SearchNewViewController.swift in Sources */,
 				94ECBF9C20E962CD002F9F92 /* ProjectFullViewController.swift in Sources */,
@@ -820,6 +834,7 @@
 				9406D27720EDAEE0001B145D /* ApplyService.swift in Sources */,
 				944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */,
 				E41034A920F2247E0001EF40 /* MyPageEditData.swift in Sources */,
+				E44376DE20F2A7CC009856B8 /* ParticipatedProjectData.swift in Sources */,
 				9406D26E20ECF240001B145D /* RecruitNextViewController.swift in Sources */,
 				E4CD827320F0AE8400352A78 /* ProjectDetail.swift in Sources */,
 				9403DD1320E92B340049C497 /* ApplyingCollectionViewCell.swift in Sources */,
@@ -845,6 +860,7 @@
 				94057B1620E99758008875C5 /* PartCollectionViewCell.swift in Sources */,
 				948AE9F320F015CC003CF30F /* Apply.swift in Sources */,
 				94057B1220E98EE3008875C5 /* FilterViewController.swift in Sources */,
+				E44376DC20F2A7BF009856B8 /* ParticipatedProject.swift in Sources */,
 				944A9F7A20E8BB7700F5FE80 /* MyTabViewController.swift in Sources */,
 				9406D26920ECDE31001B145D /* RecruitPartViewController.swift in Sources */,
 				948AEA2120F28EA1003CF30F /* resumeDetail.swift in Sources */,
