@@ -144,7 +144,8 @@ class ProfileViewController: UIViewController {
     
 
     @IBAction func mainPicFunc(_ sender: UIButton) {
-       
+        mypageInit()
+       textInit()
         //사진 바꾸기
     }
     
