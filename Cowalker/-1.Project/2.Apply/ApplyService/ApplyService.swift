@@ -10,28 +10,23 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 import UIKit
-/*
+
+
 struct ApplyService:APIService{
     
-    static func applyInit(
-    
-    )}*/
-        /*
-    
-    static func applyNew(introduce:String, portfolio_url:String, phone:String, recruit_idx:String, project_idx:String, position:String, answers:[String] ,completion : @escaping (String)->Void) {
-         let URL = url("/apply")
-       
+    static func applyWrite(introduce:String, portfolio_url:String, phone:String, recruit_idx:String, project_idx:String, position:String, answers:[String] ,completion : @escaping (String)->Void){
+        
+        let URL = url("/apply")
         
         let body: [String : Any] = [
-            "introduce" : "안녕하세요.저는 문지현입니다.",
-            "portfolio_url" : "https://project-cowalker.s3.ap-northeast-2.amazonaws.com/1530643487481.txt",
-            "phone" : "010-1234-5678",
+            "introduce" : introduce,
+            "portfolio_url" : portfolio_url,
+            "phone" : phone,
             "recruit_idx" : "11",
             "project_idx" : "5b3f3f28a989031a3ef84e3c",
-            "position" : "PM",
-            "answers" : ["잘 할 수 있습니다.", "뽑아주세요."]
+            "position" : position,
+            "answers" : answers
         ]
-        
         let header: [String : String] = [
             "authorization" : UserDefaults.standard.string(forKey: "token")!
         ]
@@ -44,7 +39,6 @@ struct ApplyService:APIService{
                 if let value = res.result.value{
                     print(1)
                     if let message = JSON(value)["message"].string {
-                        //   print("33333")
                         completion(message)
                     }
                 }
@@ -55,15 +49,9 @@ struct ApplyService:APIService{
                 break
             }
         }
+        
     }
- 
- 
- 
- */
-        
-        
-        
-        
+
     // applyinit
     
     /*
@@ -89,8 +77,10 @@ struct ApplyService:APIService{
                 break
             }
     }
+}*/
+    
+    
 }
-}
 
 
 
@@ -99,7 +89,7 @@ struct ApplyService:APIService{
 
 
 
-*/
+
 
 
 

@@ -12,29 +12,18 @@ import UIKit
 class ProjectMemberViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
 
     @IBOutlet weak var memberTable: UITableView!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         self.title = "참여 멤버"
-        
-        
     }
-
     //
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
             let cell = tableView.dequeueReusableCell(withIdentifier:"memTableViewCell") as! memTableViewCell
         
             return cell
-      
     }
-    
-    
 }

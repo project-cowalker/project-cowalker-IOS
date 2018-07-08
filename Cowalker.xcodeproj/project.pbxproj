@@ -488,11 +488,11 @@
 		948AEA0720F09C5B003CF30F /* 1.Detail */ = {
 			isa = PBXGroup;
 			children = (
-				948AE9ED20F000B4003CF30F /* -resume */,
 				94ECBFA120E96776002F9F92 /* ProjectPartDetailViewController.swift */,
 				948AE9E720EFFD34003CF30F /* Detail.storyboard */,
 				948AEA1220F1E6E8003CF30F /* onePartCollectionViewCell.swift */,
 				948AE9DE20EFD844003CF30F /* -member */,
+				948AE9ED20F000B4003CF30F /* -resume */,
 			);
 			path = 1.Detail;
 			sourceTree = "<group>";

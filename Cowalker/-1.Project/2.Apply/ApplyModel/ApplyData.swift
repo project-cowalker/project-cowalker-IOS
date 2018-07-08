@@ -14,6 +14,3 @@ struct ApplyData: Codable{
     let data: [Apply]
 }
 
-
-
-

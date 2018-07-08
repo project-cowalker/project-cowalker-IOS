@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "22기_홈페이지로고.png",
+      "filename" : "btnJoinProjectDone.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "btnJoinProjectDone@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "btnJoinProjectDone@3x.png",
       "scale" : "3x"
     }
   ],
