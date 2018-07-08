@@ -73,32 +73,40 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return 0
     }
     
+    
+    ///
+    
     var projectDetails: [ProjectDetail] = [ProjectDetail]()
+    var recruitLists: [RecruitList] = [RecruitList]()
     
     let temp: String = ""
     ///////////////////컬랙션 뷰 클릭하면 이동
+    /////////////토큰 값 넘기기
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == listCollectionView{
-            //////
+            
             let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
             
-            /*
-            // 서버 통신
+            // 서버 통신 1 - 프로젝트 관련
             CreateNewProjectService.getProjectDeatil(project_idx: "5b3dd2387172d402215033d2"){ (projectDetails, temp) in
                 
-                print(222)
-               // secondVC.titleLabel.text = projectDetails[0].title
-                //print(projectDetails)
                 self.projectDetails = projectDetails
                 secondVC.titleLabel.text = self.projectDetails[0].title
-                print(projectDetails[0].title)
-/*
-                self.projectDetails = ProjectDetail // 데이터 저장
-                print(self.projectDetails[0].title)
-                secondVC.titleLabel.text = self.projectDetails[0].title
-*/
+                //print(projectDetails[0].title)
+            }
             
-            }*/
+            // 서버 통신 2 - 모집 관련 호출
+            // 통신 값을 다음 화면의 컬랙션에 출력해야된다.
+            
+            
+            
+            RecruitService.recruitList(add: "5b3dd2387172d402215033d2"){ (recruitLists) in
+              //  print("tq")
+                //print(recruitLists[0].dday)
+                self.recruitLists = recruitLists
+                secondVC.titleLabel.text = self.recruitLists[0].position
+                
+            }
             
             // 화면 전환
             self.navigationController?.pushViewController(secondVC, animated: true)

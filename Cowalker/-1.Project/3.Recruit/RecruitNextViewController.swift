@@ -43,7 +43,7 @@ class RecruitNextViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
 
     @IBAction func BtnClickAct(_ sender: UIButton) {
-        
+        /*
         RecruitService.recruitInit(position: position, start_date: start_date, end_date: start_date, number: number, task: task, activity: activity, reward: rewartd, area: area, ability: ability.text, career: career.text, preference: preference.text, comment: comment.text, question: QuestionArray) { (message) in
             
             if message == "access denied"{
@@ -64,6 +64,6 @@ class RecruitNextViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         // 화면전환 /////두번 이동으로 수정하기-------------------------------
         self.navigationController?.popViewController(animated: true)
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)*/
     }
 }

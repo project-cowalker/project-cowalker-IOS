@@ -53,7 +53,6 @@
 		944A9F8220E8DFF700F5FE80 /* MyProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8120E8DFF700F5FE80 /* MyProjectViewController.swift */; };
 		944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8320E8E00E00F5FE80 /* MyPageUpdateViewController.swift */; };
 		944A9F8820E8E03D00F5FE80 /* MyBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8720E8E03D00F5FE80 /* MyBagViewController.swift */; };
-		948AE9DD20EF8858003CF30F /* detailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9DC20EF8858003CF30F /* detailCollectionViewCell.swift */; };
 		948AE9E020EFDC50003CF30F /* memTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9DF20EFDC50003CF30F /* memTableViewCell.swift */; };
 		948AE9E220EFE15D003CF30F /* ApplyMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9E120EFE15D003CF30F /* ApplyMemberViewController.swift */; };
 		948AE9E420EFE1C8003CF30F /* applyMemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9E320EFE1C8003CF30F /* applyMemTableViewCell.swift */; };
@@ -67,6 +66,11 @@
 		948AE9FE20F02C0C003CF30F /* RecruitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9FD20F02C0C003CF30F /* RecruitData.swift */; };
 		948AEA0020F0971F003CF30F /* RecruitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9FF20F0971F003CF30F /* RecruitService.swift */; };
 		948AEA0620F09898003CF30F /* Apply.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948AEA0520F09898003CF30F /* Apply.storyboard */; };
+		948AEA0D20F12ADB003CF30F /* RecruitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AEA0C20F12ADB003CF30F /* RecruitList.swift */; };
+		948AEA0F20F12CCB003CF30F /* RecruitListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AEA0E20F12CCB003CF30F /* RecruitListData.swift */; };
+		948AEA1320F1E6E8003CF30F /* onePartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AEA1220F1E6E8003CF30F /* onePartCollectionViewCell.swift */; };
+		948AEA1520F1EF11003CF30F /* RecruitDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AEA1420F1EF11003CF30F /* RecruitDetail.swift */; };
+		948AEA1720F1EF20003CF30F /* RecruitDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AEA1620F1EF20003CF30F /* RecruitDetailData.swift */; };
 		94EA8FEE20EB8263006EC50A /* SearchNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA8FED20EB8263006EC50A /* SearchNewViewController.swift */; };
 		94EA8FF020EBB055006EC50A /* ExtensionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA8FEF20EBB055006EC50A /* ExtensionController.swift */; };
 		94ECBF9320E953FE002F9F92 /* PagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBF9220E953FE002F9F92 /* PagingCollectionViewCell.swift */; };
@@ -145,7 +149,6 @@
 		944A9F8120E8DFF700F5FE80 /* MyProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectViewController.swift; sourceTree = "<group>"; };
 		944A9F8320E8E00E00F5FE80 /* MyPageUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageUpdateViewController.swift; sourceTree = "<group>"; };
 		944A9F8720E8E03D00F5FE80 /* MyBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagViewController.swift; sourceTree = "<group>"; };
-		948AE9DC20EF8858003CF30F /* detailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCollectionViewCell.swift; sourceTree = "<group>"; };
 		948AE9DF20EFDC50003CF30F /* memTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memTableViewCell.swift; sourceTree = "<group>"; };
 		948AE9E120EFE15D003CF30F /* ApplyMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyMemberViewController.swift; sourceTree = "<group>"; };
 		948AE9E320EFE1C8003CF30F /* applyMemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applyMemTableViewCell.swift; sourceTree = "<group>"; };
@@ -159,6 +162,11 @@
 		948AE9FD20F02C0C003CF30F /* RecruitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitData.swift; sourceTree = "<group>"; };
 		948AE9FF20F0971F003CF30F /* RecruitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitService.swift; sourceTree = "<group>"; };
 		948AEA0520F09898003CF30F /* Apply.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Apply.storyboard; sourceTree = "<group>"; };
+		948AEA0C20F12ADB003CF30F /* RecruitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitList.swift; sourceTree = "<group>"; };
+		948AEA0E20F12CCB003CF30F /* RecruitListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitListData.swift; sourceTree = "<group>"; };
+		948AEA1220F1E6E8003CF30F /* onePartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onePartCollectionViewCell.swift; sourceTree = "<group>"; };
+		948AEA1420F1EF11003CF30F /* RecruitDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitDetail.swift; sourceTree = "<group>"; };
+		948AEA1620F1EF20003CF30F /* RecruitDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitDetailData.swift; sourceTree = "<group>"; };
 		94EA8FED20EB8263006EC50A /* SearchNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewViewController.swift; sourceTree = "<group>"; };
 		94EA8FEF20EBB055006EC50A /* ExtensionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionController.swift; sourceTree = "<group>"; };
 		94ECBF9220E953FE002F9F92 /* PagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -396,6 +404,10 @@
 			children = (
 				948AE9FB20F02C02003CF30F /* Recruit.swift */,
 				948AE9FD20F02C0C003CF30F /* RecruitData.swift */,
+				948AEA0C20F12ADB003CF30F /* RecruitList.swift */,
+				948AEA0E20F12CCB003CF30F /* RecruitListData.swift */,
+				948AEA1420F1EF11003CF30F /* RecruitDetail.swift */,
+				948AEA1620F1EF20003CF30F /* RecruitDetailData.swift */,
 			);
 			path = RecruitModel;
 			sourceTree = "<group>";
@@ -466,8 +478,8 @@
 			children = (
 				948AE9ED20F000B4003CF30F /* -resume */,
 				94ECBFA120E96776002F9F92 /* ProjectPartDetailViewController.swift */,
-				948AE9DC20EF8858003CF30F /* detailCollectionViewCell.swift */,
 				948AE9E720EFFD34003CF30F /* Detail.storyboard */,
+				948AEA1220F1E6E8003CF30F /* onePartCollectionViewCell.swift */,
 				948AE9DE20EFD844003CF30F /* -member */,
 			);
 			path = 1.Detail;
@@ -701,6 +713,7 @@
 				94ECBFA020E964A3002F9F92 /* ProjectJoinViewController.swift in Sources */,
 				948AE9F520F015EA003CF30F /* ApplyData.swift in Sources */,
 				944A9F6D20E8B5C500F5FE80 /* AlarmViewController.swift in Sources */,
+				948AEA0D20F12ADB003CF30F /* RecruitList.swift in Sources */,
 				E4CD826E20EFD5A000352A78 /* MessageData.swift in Sources */,
 				944A9F5420E8AE6800F5FE80 /* LoginViewController.swift in Sources */,
 				E495549320EE96AE00D4A335 /* IntroductionEditCollectionViewCell.swift in Sources */,
@@ -723,8 +736,10 @@
 				944A9F6B20E8B59400F5FE80 /* CreateViewController.swift in Sources */,
 				E4CD827720F0E39100352A78 /* IndividualMessage.swift in Sources */,
 				E4CD826920EFC76000352A78 /* MessageService.swift in Sources */,
+				948AEA1320F1E6E8003CF30F /* onePartCollectionViewCell.swift in Sources */,
 				94ECBF9320E953FE002F9F92 /* PagingCollectionViewCell.swift in Sources */,
 				948AE9E020EFDC50003CF30F /* memTableViewCell.swift in Sources */,
+				948AEA1520F1EF11003CF30F /* RecruitDetail.swift in Sources */,
 				944A9F8820E8E03D00F5FE80 /* MyBagViewController.swift in Sources */,
 				948AE9EF20F000CA003CF30F /* ResumeViewController.swift in Sources */,
 				94057B1420E9959F008875C5 /* ProjectCollectionViewCell.swift in Sources */,
@@ -733,6 +748,7 @@
 				944A9F6920E8B58B00F5FE80 /* SearchViewController.swift in Sources */,
 				94ECBFA220E96776002F9F92 /* ProjectPartDetailViewController.swift in Sources */,
 				94ECBF9820E95E34002F9F92 /* ProjectIntroViewController.swift in Sources */,
+				948AEA0F20F12CCB003CF30F /* RecruitListData.swift in Sources */,
 				944A9F5C20E8B0BE00F5FE80 /* APIService.swift in Sources */,
 				9406D27720EDAEE0001B145D /* ApplyService.swift in Sources */,
 				944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */,
@@ -741,11 +757,11 @@
 				9403DD1320E92B340049C497 /* ApplyingCollectionViewCell.swift in Sources */,
 				944A9F6F20E8B5CC00F5FE80 /* ProfileViewController.swift in Sources */,
 				944A9F7E20E8DFCA00F5FE80 /* ProfileEditViewController.swift in Sources */,
+				948AEA1720F1EF20003CF30F /* RecruitDetailData.swift in Sources */,
 				94057B1820E9CCCF008875C5 /* CreateNewViewController.swift in Sources */,
 				9403DD0D20E8E4FC0049C497 /* chattingTableViewCell.swift in Sources */,
 				948AE9E220EFE15D003CF30F /* ApplyMemberViewController.swift in Sources */,
 				E4692B2B20EC14F7000F4A72 /* messageTableViewCell.swift in Sources */,
-				948AE9DD20EF8858003CF30F /* detailCollectionViewCell.swift in Sources */,
 				944A9F4120E8AAF900F5FE80 /* AppDelegate.swift in Sources */,
 				94EA8FF020EBB055006EC50A /* ExtensionController.swift in Sources */,
 				94ECBFA420E96A0E002F9F92 /* ProjectMemberViewController.swift in Sources */,
