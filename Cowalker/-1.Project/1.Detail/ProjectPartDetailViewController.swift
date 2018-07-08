@@ -9,19 +9,25 @@
 import UIKit
 
 class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
-
-    @IBOutlet weak var partSelectCollectionView: UICollectionView!
+    
+    
+    @IBOutlet weak var partDetailCollectionView: UICollectionView!
+    
+    @IBOutlet weak var longBtn: UIBarButtonItem!
+    var user = "0"
     
     var partList = ["개발자"]//,"디자이너","기획자","디자이너"]//,"개발자", "디자이너"]
     var numList = ["1명", "2명", "3명", "4명", "5명", "6명"]
     var ddayList = ["D - 1", "D - 2", "D - 3", "D - 4", "D - 5", "D - 6"]
     var detailList = ["웹,앱 서비스 개발", "로고 및 앱 디자인", "웹,앱 서비스 개발", "웹,앱 서비스 개발", "웹,앱 서비스 개발"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         partDetailLoad()
-    }
+        self.title = "모집 상세"
+        }
+    
     //
-    var user = "0"
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
@@ -40,7 +46,6 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
     var recruitDetails: [RecruitDetail] = [RecruitDetail]()
     
     @IBOutlet weak var applyBtn: UIButton!
-    
     @IBOutlet weak var btnConst: NSLayoutConstraint!
     
     func partDetailLoad(){
@@ -60,29 +65,35 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
             self.preferenceLabel.text = self.recruitDetails[0].preference
             self.commentLabel.text = self.recruitDetails[0].comment
             
-            self.user = "참여하기"//userData
- 
-            if self.user == "개발자"{
+            self.user = "개발자"//= "참여완료"//userData // 디폴트값 = 참여하기
+            
+            if self.user == "개발자"{               // 개설자
                 // 롱버튼 바꾸기
+                self.longBtn.image = #imageLiteral(resourceName: "btnProjectManage.png") // 프로젝트 관리
+                // 지원멤버 보이기
+                self.applyBtn.isHidden = false
+                self.btnConst.constant = 60
                 
-            }else {
+            }else {                                // 손님
                 // 지원멤버 지우기
                 self.applyBtn.isHidden = true
-                
                 self.btnConst.constant = 0
                 
                 //롱버튼 바꾸기
                 if self.user == "참여하기"{
-                    
+                    self.longBtn.image = #imageLiteral(resourceName: "btnJoinProject.png")
                 }else if self.user == "참여대기"{
-                    
+                    self.longBtn.image = #imageLiteral(resourceName: "btnJoinProjectWaiting.png")
+                    self.longBtn.tintColor = UIColor.lightGray
                 }else if self.user == "참여완료"{
-                    
+                    self.longBtn.image = #imageLiteral(resourceName: "btnJoinProjectDone")
+                    self.longBtn.tintColor = UIColor.lightGray
                 }
+            
+           
             }
-        }
         //
-        
+    }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -111,15 +122,31 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
         return 0
     }
     
-    // 화면 전환
-    @IBAction func btnClickAct(_ sender: UIButton) {
-        let secondVC = UIStoryboard(name: "Home", bundle:nil ).instantiateViewController(withIdentifier: "ProjectMemberViewController") as! ProjectMemberViewController
-        self.navigationController?.pushViewController(secondVC, animated: true)
-    }
-    @IBAction func JoinBtnAct(_ sender: UIButton) {
-        let secondVC = UIStoryboard(name: "Home", bundle:nil ).instantiateViewController(withIdentifier: "ProjectJoinViewController") as! ProjectJoinViewController
+    @IBAction func btnClicAct(_ sender: UIButton) {
+        let secondVC = UIStoryboard(name: "Apply", bundle:nil ).instantiateViewController(withIdentifier: "ProjectJoinViewController") as! ProjectJoinViewController
         self.navigationController?.pushViewController(secondVC, animated: true)
     }
     
-    
+    @IBAction func applyBtnAct(_ sender: UIButton) {
+        let secondVC = UIStoryboard(name: "Detail", bundle:nil ).instantiateViewController(withIdentifier: "ApplyMemberViewController") as! ApplyMemberViewController
+        self.navigationController?.pushViewController(secondVC, animated: true)
+    }
+    @IBAction func participateBtnAct(_ sender: UIButton) {
+        let secondVC = UIStoryboard(name: "Detail", bundle:nil ).instantiateViewController(withIdentifier: "ProjectMemberViewController") as! ProjectMemberViewController
+        self.navigationController?.pushViewController(secondVC, animated: true)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

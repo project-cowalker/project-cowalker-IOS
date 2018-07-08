@@ -32,6 +32,11 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        introTf.text = ""
+        portfolioTf.text = ""
+        phoneTf.text = ""
+        questionTf.text = ""
+        question2Tf.text = ""
         
         collectiViewH.constant = CGFloat((self.partList.count - 1)*88) + collectiViewH.constant
     }
@@ -59,23 +64,19 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
     
     // 참여하기 버튼
     @IBAction func btnAct(_ sender: UIButton) {
-        
-        
-        /*
-        // 서버 통신
-        ApplyService.applyNew(introduce: "", portfolio_url: "", phone: "", recruit_idx: "", project_idx: "", position: "", answers: ["",""] ) { (message) in
 
+        
+        // 서버 통신
+        ApplyService.applyWrite(introduce: introTf.text!, portfolio_url: portfolioTf.text!, phone: phoneTf.text!, recruit_idx: "", project_idx: "", position: "PM", answers: [questionTf.text!,question2Tf.text!] ) { (message) in
             if message == "success"{
                 print("sc")
             }else if message == "database failure"{
-                
             }else{ // 권한 없은
-                
             }
-        }*/
-        
+        }
         // 화면 전환
     self.navigationController?.popViewController(animated: true)
+        // 돌아가면서
     }
 }
 

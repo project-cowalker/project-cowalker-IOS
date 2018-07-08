@@ -3,7 +3,7 @@ import UIKit
 
 class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var people = 0 // 참여자, 개설자 확인 변수
-    var isClose = 1 //  참여종료 확인 변수
+    var isClose = 0 //  참여종료 확인 변수
     
     @IBOutlet weak var projectCollectionView: UICollectionView! // 콜랙션
     @IBOutlet weak var partCollectionView: UICollectionView!
@@ -22,8 +22,8 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var longBtn: UIBarButtonItem!
     @IBOutlet weak var plusPartBtn: UIButton!
     
-    ////////////////////////////
     
+    ////////////////////////////
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var areaLabel: UILabel!
@@ -46,8 +46,10 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         collecViewH.constant = CGFloat((self.partList.count - 1)*88) + collecViewH.constant
         
         // 화면 아이템 설정, 롱 버튼 이미지, 플러스 버튼 유무
+        
         if people == 0 { // 참여자일 때
             plusPartBtn.isHidden = true
+            
              if isClose == 0{ // 모집 중
                 longBtn.image = #imageLiteral(resourceName: "btnJoinProject.png")
              }else{ // 모집 완료
