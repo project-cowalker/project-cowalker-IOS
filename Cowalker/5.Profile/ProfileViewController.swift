@@ -29,9 +29,12 @@ class ProfileViewController: UIViewController {
         whiteCircle.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         whiteCircle.layer.borderWidth = 0.1
         mypageInit()
-//        textInit()
+        
+        
         
     }
+    
+   
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -89,12 +92,7 @@ class ProfileViewController: UIViewController {
         self.present(message, animated: true, completion: nil)
     }
     
-//    MessageService.messageInit { (message) in
-//
-//    self.message = message
-//    self.alarmTableView.reloadData()
-//
-//    }
+
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
@@ -110,66 +108,35 @@ class ProfileViewController: UIViewController {
             self.myPage = MyPage
             
         }
-        
-        /*
-        
-        if myPage[0].name == nil {
-            nameLabel.text = ""
-        }else {
-            nameLabel.text = myPage[0].name!
-        }
-
-        if myPage[0].position == nil {
-            positionLabel.text = ""
-        }else {
-            positionLabel.text = myPage[0].position!
-        }
-
-        if myPage[0].introduce == nil {
-            introduceLabel.text = ""
-        }else {
-            introduceLabel.text = myPage[0].introduce!
-        }
-        if myPage[0].portfolio_url == nil {
-            emailLabel.text = ""
-        }else {
-            emailLabel.text = myPage[0].portfolio_url!
-        }
-        if myPage[0].aim == nil {
-            aimLabel.text = ""
-        }else {
-            aimLabel.text = myPage[0].aim!
-        }
-        if myPage[0].department == nil {
-            departmentLabel.text = ""
-        }else {
-            departmentLabel.text = myPage[0].department!
-        }
-        if myPage[0].area == nil {
-            areaLabel.text = ""
-        }else {
-            areaLabel.text = myPage[0].area!
-        }
-        nameLabel.text = myPage[0].name!
-        positionLabel.text = myPage[0].position!
-        introduceLabel.text = myPage[0].introduce!
-        emailLabel.text = myPage[0].portfolio_url!
-        aimLabel.text = myPage[0].aim!
-        departmentLabel.text = myPage[0].department!
-        areaLabel.text = myPage[0].area!
-
-        */
 
     }
     
+    func checkTheText(textField: UILabel!, temp: String?)
+    {
+        if temp == nil {
+            textField.text = ""
+        }else {
+            textField.text = temp!
+        }
+    }
+    // mypageInit 후에 이거 해야한다@@@@@@@@@@@@ 연결 문제점 - > 팟장한테 물어보기
+    var tempForProfile = UIImageView()
+    var tempForBackground = UIImageView()
     func textInit(){
-        nameLabel.text = myPage[0].name!
-        positionLabel.text = myPage[0].position!
-        introduceLabel.text = myPage[0].introduce!
-        emailLabel.text = myPage[0].portfolio_url!
-        aimLabel.text = myPage[0].aim!
-        departmentLabel.text = myPage[0].department!
-        areaLabel.text = myPage[0].area!
+
+        tempForProfile.kf.setImage(with: URL(string: gsno(myPage[0].profile_url)),placeholder: UIImage())
+        tempForBackground.kf.setImage(with: URL(string: gsno(myPage[0].background_url)),placeholder: UIImage())
+        
+        circleButton.setBackgroundImage(tempForProfile.image, for: UIControlState.normal)
+        backgroundImage.setBackgroundImage(tempForBackground.image, for: UIControlState.normal)
+        checkTheText(textField: nameLabel, temp: myPage[0].name)
+        checkTheText(textField: positionLabel, temp: myPage[0].position)
+        checkTheText(textField: introduceLabel, temp: myPage[0].introduce)
+        checkTheText(textField: emailLabel, temp: myPage[0].portfolio_url)
+        checkTheText(textField: aimLabel, temp: myPage[0].aim)
+        checkTheText(textField: departmentLabel, temp: myPage[0].department)
+        checkTheText(textField: areaLabel, temp: myPage[0].area)
+        
     }
 
     @IBOutlet weak var circleButton: UIButton!
@@ -177,7 +144,7 @@ class ProfileViewController: UIViewController {
     
 
     @IBAction func mainPicFunc(_ sender: UIButton) {
-        textInit()
+       
         //사진 바꾸기
     }
     
