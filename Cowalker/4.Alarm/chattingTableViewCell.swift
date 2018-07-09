@@ -24,6 +24,11 @@ class chattingTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        profileImage.layer.masksToBounds = true
+        profileImage.layer.cornerRadius = profileImage.layer.frame.width/2
+        profileImage.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        profileImage.layer.borderWidth = 0.1
+
         
         
 

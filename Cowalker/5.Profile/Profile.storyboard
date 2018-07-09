@@ -516,7 +516,7 @@
                                     <constraint firstAttribute="width" constant="375" id="EHF-uv-Ycn"/>
                                     <constraint firstAttribute="height" constant="200" id="wjr-O8-Bas"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AH1-bw-2JD">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AH1-bw-2JD">
                                     <size key="itemSize" width="375" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -574,11 +574,12 @@
                     </view>
                     <connections>
                         <outlet property="introductionCollectionView" destination="ayP-cH-CC6" id="zKi-0p-R7S"/>
+                        <outlet property="textView" destination="XzC-es-Jpt" id="XzB-n4-AcE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OvL-BL-zRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="905"/>
+            <point key="canvasLocation" x="82" y="453"/>
         </scene>
         <!--My Page Update View Controller-->
         <scene sceneID="A3y-Nr-juv">

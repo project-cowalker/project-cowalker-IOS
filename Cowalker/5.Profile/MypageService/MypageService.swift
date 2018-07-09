@@ -48,17 +48,8 @@ struct MypageService: APIService {
         }
     
     }
-//
-//    "profile_img": "사진 업로드(없어도 됨)",
-//    "background_img": "사진 업로드(없어도 됨)",
-//    "name": "임규",
-//    "position": "개발자",
-//    "introduce": "안녕하세요, 규희입니다",
-//    "portfolio_url": "Limkyuhee",
-//    "aim": "공모전참여",
-//    "department": "콘텐츠",
-//    "area": "서울"
-    // api 바뀌면 다시 해야한다
+
+    
     static func myPageEdit(profile_img: UIImage, background_img: UIImage, name: String, position: String, introduce: String, portfolio_url: String, aim: String, department: String, area: String, completion: @escaping (String) -> Void){
         let URL = url("/mypage")
         let profile_imgData = UIImageJPEGRepresentation(profile_img, 0.3)
@@ -175,38 +166,47 @@ struct MypageService: APIService {
                 }
             }
         }
+    
+    
+    
+    //@@ 내가 나의 소개 페이지 보는 경우@@@@@@@@@@@@@@@@@@@
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    //+++++++++++++++타인이 소개 페이지 보는 경우도 -> url: intor/user_idx
+    
+    static func seeMyPageMySelf(urlTemp: String, completion: @escaping([IntroPage]) -> Void){
+        let URL = url("/intro"+urlTemp)
+        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
+            switch res.result {
+            case .success:
+                if let value = res.result.value {
+                    let decoder = JSONDecoder()
+                    
+                    do {
+                        let introPage = try decoder.decode(IntroPageData.self, from: value)
+                        
+                        if introPage.message == "success"{
+                           
+                            completion(introPage.result)
+                        }
+                    }catch let err {
+                        print(err)
+                    }
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+            
+        }
+        
+    }
+    
+    
+    
         
 }
     
-//    Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
-//    switch res.result{
-//    case .success:
-//    if let value = res.result.value {
-//    let decoder = JSONDecoder()
-//    do {
-//    print(11111)
-//    let myPageData = try decoder.decode(MyPageData.self, from: value)
-//    if myPageData.message == "success"{
-//    completion(myPageData.data)
-//
-//    }
-//
-//    }catch let err{
-//    print(err)
-//
-//    }
-//
-//    }
-//    break
-//
-//    case .failure(let err):
-//    print(err.localizedDescription)
-//    break
-//
-//    }
-//    }
-    
-    
+
     
 
 
