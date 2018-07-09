@@ -2,13 +2,12 @@
 import UIKit
 
 class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    var people = 1 // 참여자, 개설자 확인 변수
+    var people = 1 // 참여자0, 개설자1
     var isClose = 0 //  참여종료 확인 변수
     
     @IBOutlet weak var projectCollectionView: UICollectionView! // 콜랙션
     @IBOutlet weak var partCollectionView: UICollectionView!
-    @IBOutlet weak var underBar: UIToolbar! // 하단버튼
-  //  @IBOutlet weak var barJoinBtn: UIBarButtonItem! // 하단버튼3
+    @IBOutlet weak var underBar: UIToolbar! // 하단ㅂ
 
     @IBOutlet weak var constBtn: NSLayoutConstraint! // 상세 소개 제약
     @IBOutlet weak var constLabel: UILabel!
@@ -22,57 +21,51 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var longBtn: UIBarButtonItem!
     @IBOutlet weak var plusPartBtn: UIButton!
     
-    
-    ////////////////////////////
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel! // 라벨
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var areaLabel: UILabel!
     @IBOutlet weak var departmentLabel: UILabel!
     @IBOutlet weak var aimLabel: UILabel!
     @IBOutlet weak var explainLabel: UILabel!
     
-    
-    
-    
+    // 이전 뷰에서 값전달 받는다.
+    var tempProjectDetails: [ProjectDetail] = [ProjectDetail]()
+    var tempRecruitLists : [RecruitList] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
         self.tabBarController?.tabBar.isHidden = true // 하단 탭바 삭제
-        // 왼쪽 버튼
-        let leftButton = UIBarButtonItem(title: "<Home", style: .plain, target: self, action: #selector(self.action))
+        let leftButton = UIBarButtonItem(title: "<Home", style: .plain, target: self, action: #selector(self.action)) // 왼쪽 버튼 설정
         self.navigationItem.leftBarButtonItem = leftButton
-        // 제약 설정
-        constBtn.constant =  -constLabel.bounds.size.height
+        constBtn.constant =  -constLabel.bounds.size.height // 제약 설정
         collecViewH.constant = CGFloat((self.partList.count - 1)*88) + collecViewH.constant
-        
         // 화면 아이템 설정, 롱 버튼 이미지, 플러스 버튼 유무
-        
         if people == 0 { // 참여자일 때
             plusPartBtn.isHidden = true
-            
              if isClose == 0{ // 모집 중
                 longBtn.image = #imageLiteral(resourceName: "btnJoinProject.png")
              }else{ // 모집 완료
                 longBtn.image = #imageLiteral(resourceName: "btnJoinProjectWaiting")
                 longBtn.isEnabled = false
              }
-        }else{ // 관리자일 때
+        }else{ // 관리자일 때, 프로젝트 관리
             longBtn.image = #imageLiteral(resourceName: "btnProjectManage.png")
             plusPartBtn.isHidden = false
         }
-    
+        print(tempRecruitLists.count)
+        // 레벨 값 띄우기
         
         
-        
+        //
+        self.popView.layer.cornerRadius = 10
         /////////페이징 기능---------------------------------------------------//
         /////////네비게이션 효과 기능---------------------------------------------------//
-    
     }
     @objc func action(){ // 뒤로가기 버튼
         self.navigationController?.popViewController(animated: true)
         self.tabBarController?.tabBar.isHidden = false
     }
-    
     
     /// 콜랙션뷰 변수
     var imageArray = [ #imageLiteral(resourceName: "1.png"), #imageLiteral(resourceName: "intro.png"), #imageLiteral(resourceName: "1.png")]
@@ -80,13 +73,9 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     var numList = ["1명", "2명", "3명", "4명", "5명", "6명"]
     var ddayList = ["D - 1", "D - 2", "D - 3", "D - 4", "D - 5", "D - 6"]
     var detailList = ["웹,앱 서비스 개발", "로고 및 앱 디자인", "웹,앱 서비스 개발", "웹,앱 서비스 개발", "웹,앱 서비스 개발"]
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        /*
         if collectionView == projectCollectionView {return imageArray.count }
-        else {return partList.count }*/
-        return imageArray.count
-        
+        else {return partList.count}
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == projectCollectionView {
@@ -103,16 +92,13 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == projectCollectionView {
-            return CGSize(width:self.view.frame.width, height: 375*self.view.frame.height/1100)}
+            return CGSize(width:self.view.frame.width, height: 375*self.view.frame.height/1202)}
         else{
-            return CGSize(width: 200*self.view.frame.width/375, height: 50*self.view.frame.height/1100)}
+            return CGSize(width: 335*self.view.frame.width/375, height: 88*self.view.frame.height/1202)}
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0}
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0}
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {return 0}
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {return 0}
     // 셀 클릭시
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // 화면이동
         let secondVC = UIStoryboard(name: "Detail", bundle:nil ).instantiateViewController(withIdentifier: "ProjectPartDetailViewController") as! ProjectPartDetailViewController
@@ -120,16 +106,14 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         // 자료 전달
         
     }
-
-    // 사진, 이름 클릭했을 때, 프로필 이동
-    @IBAction func goToProfile(_ sender: UIButton) {
+    
+    @IBAction func goToProfile(_ sender: UIButton) {// 사진,이름 클릭 프로필이동
         if people == 0 { // 참여자일 때
         // 프로필로 이동----------------------------------------------//
-        }else{ // 개설자일 때
+        }else{ // 개설자일 때 // 아무것도 아님
         }
     }
-    // 스크랩 버튼 //////////
-    @IBAction func scrapAct(_ sender: UIButton) {
+    @IBAction func scrapAct(_ sender: UIButton) { // 스크랩 버튼 //////////
         // 스크랩 기능
         if isScraptCheck == 0{
             sender.setImage(#imageLiteral(resourceName: "iconScrapYellow.png"), for: .normal)
@@ -141,12 +125,10 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             // 스크랩 취소기능추가----------------------------------------------//
         }
     }
-    // 여정 버튼
-    @IBAction func fullAct(_ sender: UIButton) {
+    @IBAction func fullAct(_ sender: UIButton) {// 여정 버튼
         // 여정 화면으로 이동하기
     }
-    // 더보기 버튼
-    @IBAction func btnClickAct(_ sender: UIButton) {
+    @IBAction func btnClickAct(_ sender: UIButton) {// 더보기 버튼
         if isOpencheck == 0 { // 닫->여
             isOpencheck = 1
             constBtn.constant = 5
@@ -155,18 +137,48 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             isOpencheck = 0
             constBtn.constant = -constLabel.bounds.size.height
             plusBtn.setImage(#imageLiteral(resourceName: "iconReadMore"), for: .normal)}}
-    // 플러스 버튼
-    @IBAction func plusBtnAct(_ sender: UIButton) {
-        // 화면 이동
-        //
+    @IBAction func plusBtnAct(_ sender: UIButton) {// 플러스 버튼
         let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "RecruitPartViewController") as! RecruitPartViewController
         self.present(secondVC, animated: false, completion: nil)
+    }
+    
+    
+    @IBOutlet var popView: UIView!
+    // 추천 버튼
+    
+    
+    @IBAction func recommendAct(_ sender: UIBarButtonItem) {
+
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.addSubview(blurEffectView)
+        
+        
+        self.view.addSubview(popView)
+        popView.center.x = self.view.center.x
+        popView.center.y = self.view.center.y + CGFloat(100)
+        /*
+        // 화면 이동 // 미정
+        let popOverVC = UIStoryboard(name: "Popup", bundle: nil).instantiateViewController(withIdentifier: "PopupViewController") as! PopupViewController
+        
+        self.addChildViewController(popOverVC)
+        
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)*/
+        
         
     }
-    // 추천 버튼
-    @IBAction func recommendAct(_ sender: UIBarButtonItem) {
-        // 화면 이동 // 미정
+
+    @IBAction func popDoneAct(_ sender: Any) {
+        self.popView.removeFromSuperview()
+       // self.view.remove
+        
+        
     }
+    
     // 공유 버튼
     @IBAction func shareBtnAct(_ sender: UIBarButtonItem) {
         let shareTxt = "텍스트"
@@ -181,12 +193,12 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         if people == 0 { // 참여자
             let secondVC = UIStoryboard(name: "Apply", bundle:nil ).instantiateViewController(withIdentifier: "ProjectJoinViewController") as! ProjectJoinViewController
             self.navigationController?.pushViewController(secondVC, animated: true)
-            }else if people == 1{ // 관리자
+        }else if people == 1{ // 관리자
             // 알림 창 띄우기
             let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             let firstAction: UIAlertAction = UIAlertAction(title: "프로젝트 수정", style: .default) { action -> Void in
                 editAct()}
-            let secondAction: UIAlertAction = UIAlertAction(title: "프로젝트 삭제", style: .default) { action -> Void in
+            let secondAction: UIAlertAction = UIAlertAction(title: "프로젝트 삭제", style: UIAlertActionStyle.destructive) { action -> Void in
                 deleteAct()}
             let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
             actionSheetController.addAction(firstAction)
@@ -201,7 +213,7 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
                 let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
                 dialog.addAction(action)
                 self.present(dialog, animated: true, completion: nil)
-                // 프로젝트 삭제
+                // 프로젝트 삭제하기
             }
         }
     }
