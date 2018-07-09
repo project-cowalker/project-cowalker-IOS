@@ -1002,7 +1002,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4VKDMR728W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Cowalker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PODS_ROOT2 = "${SRCROOT}/Pods";
@@ -1019,7 +1019,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4VKDMR728W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Cowalker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PODS_ROOT2 = "${SRCROOT}/Pods";
