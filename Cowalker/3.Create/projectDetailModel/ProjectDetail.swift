@@ -18,5 +18,7 @@ struct ProjectDetail: Codable {
     let explain: String?
     let create_at: Date
     let img_url: [String]?
+    let project_user_name: String?
+    let project_user_profile_url: String?
    
 }
