@@ -126,9 +126,9 @@ struct MypageService: APIService {
                     decoder.dateDecodingStrategy = .formatted(dateFormatter)
                     do {
                         let madeProject = try decoder.decode(IMadeProjectData.self, from: value)
-                        print(madeProject.message)
+                        
                         if madeProject.message == "success"{
-                            print("success")
+                            
                             completion(madeProject.result)
                         }
                     }catch let err {
@@ -141,8 +141,42 @@ struct MypageService: APIService {
             
         }
     }
-    
-//    static func participateProject(completion: @escaping)
+    //@@@@@@@@@@@@@@@@@@ 내가 지원한 프로젝트 , 내가 참여한 프로젝트 둘다 쓸 수 있음
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    static func participateProject(urlTemp: String,completion: @escaping ([ParticipatedProject]) -> Void){
+        let URL = url(urlTemp)
+        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
+            switch res.result {
+            case .success:
+                if let value = res.result.value {
+                    let decoder = JSONDecoder()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSS'Z"
+                    decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                    do {
+                        let participateProject = try decoder.decode(ParticipatedProjectData.self, from: value)
+                        if participateProject.message == "success" {
+                            print("success")
+                            completion(participateProject.result)
+                        }else{
+                            print("fail")
+                        }
+                            
+                    }catch let err{
+                        print(err)
+                    }
+                    
+                
+                    }
+                break
+            case .failure(let err):
+                print(err.localizedDescription)
+                }
+            }
+        }
+        
+}
     
 //    Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
 //    switch res.result{
@@ -175,4 +209,4 @@ struct MypageService: APIService {
     
     
 
-}
+

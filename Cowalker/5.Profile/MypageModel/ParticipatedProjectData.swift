@@ -10,5 +10,5 @@ import Foundation
 
 struct ParticipatedProjectData: Codable {
     let message: String
-    let data: [ParticipatedProject]
+    let result: [ParticipatedProject]
 }
