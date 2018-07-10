@@ -30,7 +30,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconsTabbar1Home" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-RQ-78L">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgAlarmThumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-RQ-78L">
                                                     <rect key="frame" x="25" y="15" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="Nkc-iK-KCY"/>
@@ -402,7 +402,7 @@
         <image name="btnFloatNormal" width="335" height="52"/>
         <image name="iconCaretLeftDarkgray" width="24" height="24"/>
         <image name="icon_darkgray_letter" width="19" height="23"/>
-        <image name="iconsTabbar1Home" width="48" height="49"/>
         <image name="iconsTabbar2Search" width="48" height="49"/>
+        <image name="imgAlarmThumbnail" width="50" height="50"/>
     </resources>
 </document>

@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController {
    
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        mypageInit()
         self.navigationController?.isNavigationBarHidden = true
     }
 
@@ -125,8 +125,8 @@ class ProfileViewController: UIViewController {
     var tempForBackground = UIImageView()
     func textInit(){
 
-        tempForProfile.kf.setImage(with: URL(string: gsno(myPage[0].profile_url)),placeholder: UIImage())
-        tempForBackground.kf.setImage(with: URL(string: gsno(myPage[0].background_url)),placeholder: UIImage())
+        tempForProfile.kf.setImage(with: URL(string: gsno(myPage[0].profile_url)),placeholder:#imageLiteral(resourceName: "cowalker.png") )
+        tempForBackground.kf.setImage(with: URL(string: gsno(myPage[0].background_url)),placeholder: #imageLiteral(resourceName: "cowalker.png"))
         
         circleButton.setBackgroundImage(tempForProfile.image, for: UIControlState.normal)
         backgroundImage.setBackgroundImage(tempForBackground.image, for: UIControlState.normal)
