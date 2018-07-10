@@ -11,12 +11,17 @@ import Kingfisher
 
 class MyPageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    let imageArray = [#imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar1Home")]
+    var imageArray:[String] = [String]()
     
     @IBOutlet weak var introductionCollectionView: UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count
+        if temp != 0 {
+            return temp
+        }else{
+            return 1
+        }
+    
     }
     
     override func viewDidLoad() {
@@ -53,16 +58,23 @@ class MyPageViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         
     }
-    
+    var temp  = 1
     //자신이 더보기 누른 경우
     var introPage: [IntroPage] = [IntroPage]()
     func initIntroPage(){
         MypageService.seeMyPageMySelf(urlTemp: "") { (IntroPage) in
             self.introPage = IntroPage
-            self.introductionCollectionView.reloadData()
-            print(IntroPage)
             
+            self.textView.text = self.introPage[0].intro_contents
+            self.temp = (self.introPage[0].intro_img_url?.count)!
+            if let tem_url = self.introPage[0].intro_img_url{
+                self.imageArray = tem_url
+            }
+            print(self.temp)
+            print(self.imageArray)
+            self.introductionCollectionView.reloadData()
         }
+        
       
     }
 
@@ -72,10 +84,10 @@ class MyPageViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IntroductionCollectionViewCell", for: indexPath) as! IntroductionCollectionViewCell
-        
-//        cell.introductionImage.kf.setImage(with: URL(string: gsno(introPage[0].intro_img_url?[indexPath.row])), placeholder: UIImage())
 
-        
+        cell.introductionImage.kf.setImage(with: URL(string: gsno(imageArray[indexPath.row])), placeholder: UIImage())
+//
+//        cell.introductionImage.kf.setImage(with: URL(string: gsno(imageArray[indexPath.row])), placeholder: UIImage())
         
         
         return cell

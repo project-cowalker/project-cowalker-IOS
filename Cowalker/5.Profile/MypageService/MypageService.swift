@@ -208,6 +208,7 @@ struct MypageService: APIService {
         let URL = url("/intro")
         let contentsData = contents.data(using: .utf8)
         var imgData = [UIImage]()
+        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
         for  i in 0 ..< img.count{
             imgData.append(img[i])
         }
@@ -221,7 +222,7 @@ struct MypageService: APIService {
 
             multipartFormData.append(contentsData!, withName: "contents")
            
-        }, to: URL, method: .put, headers: nil)
+        }, to: URL, method: .put, headers: header)
         {(encodingResult) in
             
             switch encodingResult{
@@ -230,9 +231,9 @@ struct MypageService: APIService {
                     switch res.result{
                     case .success:
                         if let value = res.result.value {
-                            print(value)
+                            
                             let message = JSON(value)["message"].string
-                            print(message)
+                            
                             if message == "update myIntro success"{
                                 print("success@@@@@@@@@@@")
                                 completion(message!)
@@ -257,57 +258,6 @@ struct MypageService: APIService {
 }
     
     
-    
-//    static func myPageEdit(profile_img: UIImage, background_img: UIImage, name: String, position: String, introduce: String, portfolio_url: String, aim: String, department: String, area: String, completion: @escaping (String) -> Void){
-//        let URL = url("/mypage")
-//        let profile_imgData = UIImageJPEGRepresentation(profile_img, 0.3)
-//        let background_imgData = UIImageJPEGRepresentation(background_img, 0.3)
-//        let nameData = name.data(using: .utf8)
-//        let positionData = position.data(using: .utf8)
-//        let introduceData = introduce.data(using: .utf8)
-//        let portfolio_urlData = portfolio_url.data(using: .utf8)
-//        let aimData = aim.data(using: .utf8)
-//        let departmentData = department.data(using: .utf8)
-//        let areaData = area.data(using: .utf8)
-//        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
-//        Alamofire.upload(multipartFormData: { (multipartFormData) in
-//            multipartFormData.append(profile_imgData!, withName: "profile_img", fileName: "profile_img.jpg", mimeType: "image/jpeg")
-//            multipartFormData.append(background_imgData!, withName: "background_img", fileName: "background_img.jpg", mimeType: "image/jpeg")
-//            multipartFormData.append(nameData!, withName: "name")
-//            multipartFormData.append(positionData!, withName: "position")
-//            multipartFormData.append(introduceData!, withName: "introduce")
-//            multipartFormData.append(portfolio_urlData!, withName: "portfolio")
-//            multipartFormData.append(aimData!, withName: "aim")
-//            multipartFormData.append(departmentData!, withName: "department")
-//            multipartFormData.append(areaData!, withName: "area")
-//        }, to: URL, method: .put, headers: header)
-//        {(encodingResult) in
-//
-//            switch encodingResult{
-//            case .success(request: let upload, streamingFromDisk: _, streamFileURL: _):
-//                upload.responseData(completionHandler: { (res) in
-//                    switch res.result{
-//                    case .success:
-//                        if let value = res.result.value {
-//                            let message = JSON(value)["message"].string
-//                            if message == "update success"{
-//                                print("success")
-//                                completion(message!)
-//                            }
-//                        }
-//                        break
-//                    case .failure(let err):
-//                        print(err.localizedDescription)
-//                        break
-//                    }
-//                })
-//            case .failure(let err):
-//                print(err.localizedDescription)
-//            }
-//
-//        }
-//    }
-//
     
 
     

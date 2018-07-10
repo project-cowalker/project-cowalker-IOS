@@ -100,6 +100,8 @@
 		E4692B2D20EC9AA3000F4A72 /* SendingMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4692B2C20EC9AA3000F4A72 /* SendingMessageViewController.swift */; };
 		E473A9AB20EA5C8900B51830 /* CreateLastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E473A9AA20EA5C8900B51830 /* CreateLastViewController.swift */; };
 		E495549320EE96AE00D4A335 /* IntroductionEditCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495549220EE96AE00D4A335 /* IntroductionEditCollectionViewCell.swift */; };
+		E4B150C520F4C89700C4BF7E /* NewAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B150C420F4C89700C4BF7E /* NewAlarm.swift */; };
+		E4B150C720F4C8A100C4BF7E /* NewAlarmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B150C620F4C8A100C4BF7E /* NewAlarmData.swift */; };
 		E4C91B6E20F342EB008D81EC /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6D20F342EB008D81EC /* IntroPage.swift */; };
 		E4C91B7020F342F7008D81EC /* IntroPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6F20F342F7008D81EC /* IntroPageData.swift */; };
 		E4CD826920EFC76000352A78 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD826820EFC76000352A78 /* MessageService.swift */; };
@@ -211,6 +213,8 @@
 		E4692B2C20EC9AA3000F4A72 /* SendingMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingMessageViewController.swift; sourceTree = "<group>"; };
 		E473A9AA20EA5C8900B51830 /* CreateLastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLastViewController.swift; sourceTree = "<group>"; };
 		E495549220EE96AE00D4A335 /* IntroductionEditCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionEditCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4B150C420F4C89700C4BF7E /* NewAlarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarm.swift; sourceTree = "<group>"; };
+		E4B150C620F4C8A100C4BF7E /* NewAlarmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmData.swift; sourceTree = "<group>"; };
 		E4C91B6D20F342EB008D81EC /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
 		E4C91B6F20F342F7008D81EC /* IntroPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageData.swift; sourceTree = "<group>"; };
 		E4CD826820EFC76000352A78 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
@@ -649,6 +653,8 @@
 				E4CD826D20EFD5A000352A78 /* MessageData.swift */,
 				E4CD827620F0E39100352A78 /* IndividualMessage.swift */,
 				E4CD827820F0E3A000352A78 /* IndividualMessageData.swift */,
+				E4B150C420F4C89700C4BF7E /* NewAlarm.swift */,
+				E4B150C620F4C8A100C4BF7E /* NewAlarmData.swift */,
 			);
 			path = messageModel;
 			sourceTree = "<group>";
@@ -795,6 +801,7 @@
 				94ECBFA020E964A3002F9F92 /* ProjectJoinViewController.swift in Sources */,
 				E4C91B7020F342F7008D81EC /* IntroPageData.swift in Sources */,
 				948AE9F520F015EA003CF30F /* ApplyData.swift in Sources */,
+				E4B150C520F4C89700C4BF7E /* NewAlarm.swift in Sources */,
 				944A9F6D20E8B5C500F5FE80 /* AlarmViewController.swift in Sources */,
 				948AEA0D20F12ADB003CF30F /* RecruitList.swift in Sources */,
 				E44376D820F295D9009856B8 /* IMadeProject.swift in Sources */,
@@ -815,6 +822,7 @@
 				9403DD1C20E930540049C497 /* ScrapCollectionViewCell.swift in Sources */,
 				9406D26120ECB3C9001B145D /* FullEditViewController.swift in Sources */,
 				948AE9E420EFE1C8003CF30F /* applyMemTableViewCell.swift in Sources */,
+				E4B150C720F4C8A100C4BF7E /* NewAlarmData.swift in Sources */,
 				E473A9AB20EA5C8900B51830 /* CreateLastViewController.swift in Sources */,
 				E4CD827520F0AE9A00352A78 /* ProjectDetailData.swift in Sources */,
 				E41A8F6E20EA62900009F330 /* CreateImageCollectionViewCell.swift in Sources */,

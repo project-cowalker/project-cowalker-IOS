@@ -136,5 +136,90 @@ struct MessageService: APIService{
             }
         }
     }
+    
+    // 새 소식 가져오기@@@@@@@@@@@@@@@@@@@@@@@
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    
+    static func getNewAlarm(completion: @escaping ([NewAlarm]) -> Void){
+        let URL = url("/alarm")
+        
+        
+        //        let header: [String : String] = [
+        //            "authorization" : UserDefaults.standard.string(forKey: "token")!
+        //        ]
+        
+        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+        
+        
+        
+        Alamofire.request(URL, method: .get, parameters: nil , encoding: JSONEncoding.default, headers: header).responseData() { res in
+            switch res.result {
+            case .success:
+                if let value = res.result.value {
+                    
+                    let decoder = JSONDecoder()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSS'Z"
+                    
+                    decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                    
+                    do{
+                        
+                        
+                        let alarmData = try decoder.decode(NewAlarmData.self, from: value)
+                        
+                        if alarmData.message == "get alarm success"{
+                            
+                            completion(alarmData.result)
+                            
+                            
+                        }else{
+                            
+                            print(alarmData.message)
+                           
+                            
+                        }
+                    }catch let err{
+                        print(err)
+                        print("catch")
+                    }
+                }
+                
+                
+                
+                break
+            case .failure(let err):
+                print(err.localizedDescription)
+                break
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
