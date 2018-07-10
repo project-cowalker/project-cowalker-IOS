@@ -9,9 +9,11 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var partCollectionView: UICollectionView!
     @IBOutlet weak var underBar: UIToolbar! // 하단ㅂ
 
+    //
     @IBOutlet weak var constBtn: NSLayoutConstraint! // 상세 소개 제약
     @IBOutlet weak var constLabel: UILabel!
     @IBOutlet weak var collecViewH: NSLayoutConstraint!
+    //
     
     @IBOutlet weak var plusBtn: UIButton! // 더보기 버튼
     var isOpencheck = 0
@@ -28,9 +30,17 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var aimLabel: UILabel!
     @IBOutlet weak var explainLabel: UILabel!
     
+    var projectImageArray:[String] = []
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImg: UIButton!
+    
+    
+    @IBOutlet weak var constTest: NSLayoutConstraint!
+    
+    @IBOutlet weak var constTest2: NSLayoutConstraint!
     // 이전 뷰에서 값전달 받는다.
     var tempProjectDetails: [ProjectDetail] = [ProjectDetail]()
-    var tempRecruitLists : [RecruitList] = []
+    var tempRecruitLists : [RecruitList] = [RecruitList]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +48,13 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         self.tabBarController?.tabBar.isHidden = true // 하단 탭바 삭제
         let leftButton = UIBarButtonItem(title: "<Home", style: .plain, target: self, action: #selector(self.action)) // 왼쪽 버튼 설정
         self.navigationItem.leftBarButtonItem = leftButton
-        constBtn.constant =  -constLabel.bounds.size.height // 제약 설정
+        
+        //constBtn.constant =  -constLabel.bounds.size.height // 제약 설정
+        
+        constTest.constant = 0
+        
         collecViewH.constant = CGFloat((self.partList.count - 1)*88) + collecViewH.constant
+        
         // 화면 아이템 설정, 롱 버튼 이미지, 플러스 버튼 유무
         if people == 0 { // 참여자일 때
             plusPartBtn.isHidden = true
@@ -53,7 +68,10 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             longBtn.image = #imageLiteral(resourceName: "btnProjectManage.png")
             plusPartBtn.isHidden = false
         }
-        print(tempRecruitLists.count)
+        print("herererer")
+        print(tempRecruitLists)
+        
+        
         // 레벨 값 띄우기
         
         
@@ -124,19 +142,29 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             isScraptCheck = 0
             // 스크랩 취소기능추가----------------------------------------------//
         }
+        
     }
     @IBAction func fullAct(_ sender: UIButton) {// 여정 버튼
         // 여정 화면으로 이동하기
     }
+    
+    
+    @IBOutlet weak var labelDetail: UILabel!
+    
     @IBAction func btnClickAct(_ sender: UIButton) {// 더보기 버튼
         if isOpencheck == 0 { // 닫->여
             isOpencheck = 1
-            constBtn.constant = 5
+          //  constBtn.constant = 5
+            constTest.constant = labelDetail.bounds.size.height
+               // + constTest2.constant
+                
             plusBtn.setImage(#imageLiteral(resourceName: "iconReadMoreClose"), for: .normal)
         }else {
             isOpencheck = 0
-            constBtn.constant = -constLabel.bounds.size.height
+            constTest.constant = 0
+            //constBtn.constant = -constLabel.bounds.size.height
             plusBtn.setImage(#imageLiteral(resourceName: "iconReadMore"), for: .normal)}}
+    
     @IBAction func plusBtnAct(_ sender: UIButton) {// 플러스 버튼
         let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "RecruitPartViewController") as! RecruitPartViewController
         self.present(secondVC, animated: false, completion: nil)
@@ -148,35 +176,21 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     
     
     @IBAction func recommendAct(_ sender: UIBarButtonItem) {
-
+        /*
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.addSubview(blurEffectView)
-        
-        
+        */
+        // 블러, 액션 추가하가
         self.view.addSubview(popView)
         popView.center.x = self.view.center.x
         popView.center.y = self.view.center.y + CGFloat(100)
-        /*
-        // 화면 이동 // 미정
-        let popOverVC = UIStoryboard(name: "Popup", bundle: nil).instantiateViewController(withIdentifier: "PopupViewController") as! PopupViewController
-        
-        self.addChildViewController(popOverVC)
-        
-        popOverVC.view.frame = self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)*/
-        
-        
     }
-
     @IBAction func popDoneAct(_ sender: Any) {
         self.popView.removeFromSuperview()
        // self.view.remove
-        
-        
     }
     
     // 공유 버튼
