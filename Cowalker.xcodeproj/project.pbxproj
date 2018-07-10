@@ -14,8 +14,6 @@
 		9403DD1120E92B220049C497 /* DoingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403DD1020E92B220049C497 /* DoingCollectionViewCell.swift */; };
 		9403DD1320E92B340049C497 /* ApplyingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403DD1220E92B340049C497 /* ApplyingCollectionViewCell.swift */; };
 		9403DD1820E92F890049C497 /* IntroductionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403DD1720E92F890049C497 /* IntroductionCollectionViewCell.swift */; };
-		9403DD1C20E930540049C497 /* ScrapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403DD1B20E930540049C497 /* ScrapCollectionViewCell.swift */; };
-		9403DD1E20E9306C0049C497 /* MyScrapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403DD1D20E9306C0049C497 /* MyScrapViewController.swift */; };
 		94057B1220E98EE3008875C5 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94057B1120E98EE3008875C5 /* FilterViewController.swift */; };
 		94057B1420E9959F008875C5 /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94057B1320E9959F008875C5 /* ProjectCollectionViewCell.swift */; };
 		94057B1620E99758008875C5 /* PartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94057B1520E99758008875C5 /* PartCollectionViewCell.swift */; };
@@ -52,7 +50,6 @@
 		944A9F8020E8DFE100F5FE80 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F7F20E8DFE100F5FE80 /* MyPageViewController.swift */; };
 		944A9F8220E8DFF700F5FE80 /* MyProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8120E8DFF700F5FE80 /* MyProjectViewController.swift */; };
 		944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8320E8E00E00F5FE80 /* MyPageUpdateViewController.swift */; };
-		944A9F8820E8E03D00F5FE80 /* MyBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8720E8E03D00F5FE80 /* MyBagViewController.swift */; };
 		948AE9E020EFDC50003CF30F /* memTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9DF20EFDC50003CF30F /* memTableViewCell.swift */; };
 		948AE9E220EFE15D003CF30F /* ApplyMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9E120EFE15D003CF30F /* ApplyMemberViewController.swift */; };
 		948AE9E420EFE1C8003CF30F /* applyMemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9E320EFE1C8003CF30F /* applyMemTableViewCell.swift */; };
@@ -130,8 +127,6 @@
 		9403DD1020E92B220049C497 /* DoingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingCollectionViewCell.swift; sourceTree = "<group>"; };
 		9403DD1220E92B340049C497 /* ApplyingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyingCollectionViewCell.swift; sourceTree = "<group>"; };
 		9403DD1720E92F890049C497 /* IntroductionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionCollectionViewCell.swift; sourceTree = "<group>"; };
-		9403DD1B20E930540049C497 /* ScrapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapCollectionViewCell.swift; sourceTree = "<group>"; };
-		9403DD1D20E9306C0049C497 /* MyScrapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrapViewController.swift; sourceTree = "<group>"; };
 		94057B1120E98EE3008875C5 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		94057B1320E9959F008875C5 /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
 		94057B1520E99758008875C5 /* PartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -170,7 +165,6 @@
 		944A9F7F20E8DFE100F5FE80 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		944A9F8120E8DFF700F5FE80 /* MyProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectViewController.swift; sourceTree = "<group>"; };
 		944A9F8320E8E00E00F5FE80 /* MyPageUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageUpdateViewController.swift; sourceTree = "<group>"; };
-		944A9F8720E8E03D00F5FE80 /* MyBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagViewController.swift; sourceTree = "<group>"; };
 		948AE9DF20EFDC50003CF30F /* memTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memTableViewCell.swift; sourceTree = "<group>"; };
 		948AE9E120EFE15D003CF30F /* ApplyMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyMemberViewController.swift; sourceTree = "<group>"; };
 		948AE9E320EFE1C8003CF30F /* applyMemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applyMemTableViewCell.swift; sourceTree = "<group>"; };
@@ -259,15 +253,6 @@
 				944A9F8120E8DFF700F5FE80 /* MyProjectViewController.swift */,
 			);
 			path = "-project";
-			sourceTree = "<group>";
-		};
-		9403DD1520E92D6D0049C497 /* -script */ = {
-			isa = PBXGroup;
-			children = (
-				9403DD1B20E930540049C497 /* ScrapCollectionViewCell.swift */,
-				9403DD1D20E9306C0049C497 /* MyScrapViewController.swift */,
-			);
-			path = "-script";
 			sourceTree = "<group>";
 		};
 		9403DD1620E92DF20049C497 /* -mypage */ = {
@@ -367,12 +352,10 @@
 				E41BC9EF20EE40CE00DAD27F /* Profile2 */,
 				944A9F7720E8B5F900F5FE80 /* Profile.storyboard */,
 				9403DD1620E92DF20049C497 /* -mypage */,
-				9403DD1520E92D6D0049C497 /* -script */,
 				9403DD1420E92D260049C497 /* -project */,
 				944A9F6E20E8B5CC00F5FE80 /* ProfileViewController.swift */,
 				944A9F7D20E8DFCA00F5FE80 /* ProfileEditViewController.swift */,
 				944A9F8320E8E00E00F5FE80 /* MyPageUpdateViewController.swift */,
-				944A9F8720E8E03D00F5FE80 /* MyBagViewController.swift */,
 			);
 			path = 5.Profile;
 			sourceTree = "<group>";
@@ -836,9 +819,7 @@
 				E4692B2920EC14BB000F4A72 /* AlarmSecondViewController.swift in Sources */,
 				944A9F8220E8DFF700F5FE80 /* MyProjectViewController.swift in Sources */,
 				94057B1A20E9DA85008875C5 /* CreateNaviViewController.swift in Sources */,
-				9403DD1E20E9306C0049C497 /* MyScrapViewController.swift in Sources */,
 				E4CD827920F0E3A000352A78 /* IndividualMessageData.swift in Sources */,
-				9403DD1C20E930540049C497 /* ScrapCollectionViewCell.swift in Sources */,
 				9406D26120ECB3C9001B145D /* FullEditViewController.swift in Sources */,
 				948AE9E420EFE1C8003CF30F /* applyMemTableViewCell.swift in Sources */,
 				E4B150C720F4C8A100C4BF7E /* NewAlarmData.swift in Sources */,
@@ -852,7 +833,6 @@
 				94ECBF9320E953FE002F9F92 /* PagingCollectionViewCell.swift in Sources */,
 				948AE9E020EFDC50003CF30F /* memTableViewCell.swift in Sources */,
 				948AEA1520F1EF11003CF30F /* RecruitDetail.swift in Sources */,
-				944A9F8820E8E03D00F5FE80 /* MyBagViewController.swift in Sources */,
 				948AE9EF20F000CA003CF30F /* ResumeViewController.swift in Sources */,
 				E44376DA20F295EA009856B8 /* IMadeProjectData.swift in Sources */,
 				94057B1420E9959F008875C5 /* ProjectCollectionViewCell.swift in Sources */,

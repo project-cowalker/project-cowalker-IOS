@@ -283,9 +283,6 @@
                                     <constraint firstAttribute="width" constant="24" id="WOC-jY-Ywe"/>
                                 </constraints>
                                 <state key="normal" image="darkgray"/>
-                                <connections>
-                                    <segue destination="Qzc-vA-Xou" kind="show" id="sXj-Bw-kEu"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBagDarkgray" translatesAutoresizingMaskIntoConstraints="NO" id="O4b-X3-iUU">
                                 <rect key="frame" x="20" y="524.5" width="24" height="24"/>
@@ -301,9 +298,6 @@
                                     <constraint firstAttribute="width" constant="24" id="qeh-Qh-DXh"/>
                                 </constraints>
                                 <state key="normal" image="darkgray"/>
-                                <connections>
-                                    <segue destination="idv-ax-Zcj" kind="show" id="bjU-Ch-k2u"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배낭" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyA-oZ-Vef">
                                 <rect key="frame" x="64" y="526.5" width="28" height="20"/>
@@ -406,100 +400,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOA-Ji-tUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="158" y="-315"/>
-        </scene>
-        <!--My Scrap View Controller-->
-        <scene sceneID="CLV-gt-B5Q">
-            <objects>
-                <viewController restorationIdentifier="MyScrapViewController" storyboardIdentifier="MyScrapViewController" id="idv-ax-Zcj" customClass="MyScrapViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0ph-tm-See">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="anE-KB-6Pq">
-                                <rect key="frame" x="20" y="56" width="335" height="575"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="335" id="b88-16-pdw"/>
-                                    <constraint firstAttribute="height" constant="575" id="fPV-y0-5MG"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JIK-3e-jy9">
-                                    <size key="itemSize" width="167" height="287"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ScrapCollectionViewCell" reuseIdentifier="ScrapCollectionViewCell" id="0XU-Z0-xqK" customClass="ScrapCollectionViewCell" customModule="Cowalker" customModuleProvider="target">
-                                        <rect key="frame" x="84" y="0.0" width="167" height="287"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="167" height="287"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FHb-Ea-pdW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="167"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="167" id="15G-kq-SMk"/>
-                                                        <constraint firstAttribute="height" constant="167" id="kqJ-N4-s7I"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ti-v6-uTd">
-                                                    <rect key="frame" x="17.5" y="194" width="132" height="19"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="19" id="QAy-aY-Cb5"/>
-                                                        <constraint firstAttribute="width" constant="132" id="nws-ox-9Rg"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9C-J3-6Ta">
-                                                    <rect key="frame" x="20" y="240" width="126" height="12"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="126" id="2gj-Wa-RAh"/>
-                                                        <constraint firstAttribute="height" constant="12" id="yqc-GF-4RM"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="10"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="FHb-Ea-pdW" firstAttribute="leading" secondItem="0XU-Z0-xqK" secondAttribute="leading" id="1ag-in-KVc"/>
-                                            <constraint firstItem="J9C-J3-6Ta" firstAttribute="centerX" secondItem="0XU-Z0-xqK" secondAttribute="centerX" id="4U5-Ud-EIm"/>
-                                            <constraint firstItem="J9C-J3-6Ta" firstAttribute="top" secondItem="1Ti-v6-uTd" secondAttribute="bottom" constant="27" id="UK1-vb-7uB"/>
-                                            <constraint firstItem="1Ti-v6-uTd" firstAttribute="centerX" secondItem="0XU-Z0-xqK" secondAttribute="centerX" id="je9-cP-sVv"/>
-                                            <constraint firstItem="FHb-Ea-pdW" firstAttribute="top" secondItem="0XU-Z0-xqK" secondAttribute="top" id="qHt-7K-veo"/>
-                                            <constraint firstItem="1Ti-v6-uTd" firstAttribute="top" secondItem="FHb-Ea-pdW" secondAttribute="bottom" constant="27" id="uPU-St-CDM"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="projectImage" destination="FHb-Ea-pdW" id="d7g-tU-Pca"/>
-                                            <outlet property="projectName" destination="1Ti-v6-uTd" id="pfL-ZT-SI3"/>
-                                            <outlet property="projectPart" destination="J9C-J3-6Ta" id="by9-l2-fXE"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="idv-ax-Zcj" id="eLT-YY-aAG"/>
-                                    <outlet property="delegate" destination="idv-ax-Zcj" id="iVu-mk-lOl"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="anE-KB-6Pq" firstAttribute="centerY" secondItem="WN4-Zo-xsT" secondAttribute="centerY" id="Y6u-At-soI"/>
-                            <constraint firstItem="anE-KB-6Pq" firstAttribute="centerX" secondItem="WN4-Zo-xsT" secondAttribute="centerX" id="qdB-Sa-7Tr"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="WN4-Zo-xsT"/>
-                    </view>
-                    <connections>
-                        <outlet property="scraptCollectionView" destination="anE-KB-6Pq" id="GRX-te-0Ee"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e4q-Rc-wtA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-786.39999999999998" y="876.61169415292363"/>
         </scene>
         <!--My Page View Controller-->
         <scene sceneID="kga-hw-1fX">
@@ -723,7 +623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ruX-2x-E6C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44" y="1766.2668665667168"/>
+            <point key="canvasLocation" x="30" y="1257"/>
         </scene>
         <!--My Project View Controller-->
         <scene sceneID="AMf-UB-tyG">
@@ -1031,44 +931,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaC-5A-J7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="828" y="876.1619190404798"/>
-        </scene>
-        <!--My Bag View Controller-->
-        <scene sceneID="4rl-vK-elc">
-            <objects>
-                <viewController restorationIdentifier="MyBagViewController" storyboardIdentifier="MyBagViewController" id="Qzc-vA-Xou" customClass="MyBagViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BvY-qS-Kzs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="배낭" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWZ-PO-ZhU">
-                                <rect key="frame" x="64" y="133" width="196" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="보유한 씨앗" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyo-9V-myl">
-                                <rect key="frame" x="82" y="251" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1p-4w-cr4">
-                                <rect key="frame" x="100" y="304" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="nc3-vu-BPX"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pnz-FW-1JW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1506" y="656"/>
         </scene>
         <!--Profile Edit View Controller-->
         <scene sceneID="kYG-kp-I0D">
