@@ -43,7 +43,7 @@ class MyPageViewController: UIViewController, UICollectionViewDataSource, UIColl
     @objc func pushAction() {
         if let secondVC = storyboard?.instantiateViewController(withIdentifier: "MyPageUpdateViewController") as? MyPageUpdateViewController{
             
-            
+            secondVC.intro_idx = introPage[0].intro_idx
             //더 보기로 이동
             
             self.navigationController?.pushViewController(secondVC, animated: true)
@@ -53,6 +53,7 @@ class MyPageViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         
     }
+    
     //자신이 더보기 누른 경우
     var introPage: [IntroPage] = [IntroPage]()
     func initIntroPage(){
