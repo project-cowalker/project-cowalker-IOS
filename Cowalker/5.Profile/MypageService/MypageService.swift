@@ -29,6 +29,7 @@ struct MypageService: APIService {
                         print(11111)
                         let myPageData = try decoder.decode(MyPageData.self, from: value)
                         if myPageData.message == "success"{
+                            print("가져옴")
                             completion(myPageData.data)
                             
                         }
@@ -80,9 +81,13 @@ struct MypageService: APIService {
             case .success(request: let upload, streamingFromDisk: _, streamFileURL: _):
                 upload.responseData(completionHandler: { (res) in
                     switch res.result{
+                        
                     case .success:
                         if let value = res.result.value {
+                            
                             let message = JSON(value)["message"].string
+                            print("message 확인")
+                            print(message)
                             if message == "update success"{
                                 print("success")
                                 completion(message!)
@@ -90,6 +95,7 @@ struct MypageService: APIService {
                         }
                         break
                     case .failure(let err):
+                        print(111111111)
                         print(err.localizedDescription)
                         break
                     }

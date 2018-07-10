@@ -21,6 +21,7 @@ struct MyPage: Codable {
     let aim: String?
     let department: String?
     let area: String?
+    let point: Int
 //    let email: String?
 }
 

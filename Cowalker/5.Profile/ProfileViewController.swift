@@ -9,7 +9,7 @@
 import UIKit
 
 import Kingfisher
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var myPage: [MyPage] = [MyPage]()
     
@@ -29,6 +29,8 @@ class ProfileViewController: UIViewController {
         whiteCircle.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         whiteCircle.layer.borderWidth = 0.1
         mypageInit()
+        imagePicker.delegate = self
+        imagePickerForProfile.delegate = self
         
         
         
@@ -101,12 +103,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var aimLabel: UILabel!
     @IBOutlet weak var departmentLabel: UILabel!
     @IBOutlet weak var areaLabel: UILabel!
+    @IBOutlet weak var numOfSeeds: UILabel!
     
     func mypageInit(){
         MypageService.myPageInit(tempUrl: "") { (MyPage) in
             
             self.myPage = MyPage
             self.textInit() // 다른 뷰에 다 체크
+            print(self.myPage[0].profile_url!)
+            
             
         }
 
@@ -124,9 +129,9 @@ class ProfileViewController: UIViewController {
     var tempForProfile = UIImageView()
     var tempForBackground = UIImageView()
     func textInit(){
-
-        tempForProfile.kf.setImage(with: URL(string: gsno(myPage[0].profile_url)),placeholder:#imageLiteral(resourceName: "cowalker.png") )
-        tempForBackground.kf.setImage(with: URL(string: gsno(myPage[0].background_url)),placeholder: #imageLiteral(resourceName: "cowalker.png"))
+        
+        tempForProfile.kf.setImage(with: URL(string: gsno(myPage[0].profile_url)),placeholder: #imageLiteral(resourceName: "1.png"))
+        tempForBackground.kf.setImage(with: URL(string: gsno(myPage[0].background_url)),placeholder: #imageLiteral(resourceName: "1.png"))
         
         circleButton.setBackgroundImage(tempForProfile.image, for: UIControlState.normal)
         backgroundImage.setBackgroundImage(tempForBackground.image, for: UIControlState.normal)
@@ -137,25 +142,89 @@ class ProfileViewController: UIViewController {
         checkTheText(textField: aimLabel, temp: myPage[0].aim)
         checkTheText(textField: departmentLabel, temp: myPage[0].department)
         checkTheText(textField: areaLabel, temp: myPage[0].area)
+        if myPage[0].point != 0 {
+            numOfSeeds.text = String(myPage[0].point)+" 개"
+        }
         
     }
 
     @IBOutlet weak var circleButton: UIButton!
     
     
-
+//    secondVC.profileImage = circleButton.currentBackgroundImage!
+//    secondVC.backgroundImage = backgroundImage.currentBackgroundImage!
+//    secondVC.nameLabel = nameLabel.text!
+//    secondVC.positionLabel = positionLabel.text!
+//    secondVC.introduceLabel = introduceLabel.text!
+//    secondVC.emailLabel = emailLabel.text!
+//    secondVC.aimLabel = aimLabel.text!
+//    secondVC.departmentLabel = departmentLabel.text!
+//    secondVC.areaLabel = areaLabel.text!
     @IBAction func mainPicFunc(_ sender: UIButton) {
-      
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        self.present(imagePicker, animated: true, completion: nil)
+        if imageForMyPage != nil {
+            MypageService.myPageEdit(profile_img: circleButton.currentBackgroundImage!, background_img: imageForMyPage!, name: nameLabel.text!, position: positionLabel.text!, introduce: introduceLabel.text!, portfolio_url: emailLabel.text!, aim: aimLabel.text!, department: departmentLabel.text!, area: areaLabel.text!) { (message) in
+                if message == "update success"{
+                    print("success")
+                    self.mypageInit()
+                }
+        }
+        
+        }
+        
         //사진 바꾸기
     }
     
     @IBAction func profilePicFunc(_ sender: UIButton) {
-        
+        imagePickerForProfile.allowsEditing = false
+        imagePickerForProfile.sourceType = .photoLibrary
+        self.present(imagePickerForProfile, animated: true, completion: nil)
         //사진 바꾸기
+        if imageForProfile != nil {
+            MypageService.myPageEdit(profile_img: imageForProfile!, background_img: backgroundImage.currentBackgroundImage!, name: nameLabel.text!, position: positionLabel.text!, introduce: introduceLabel.text!, portfolio_url: emailLabel.text!, aim: aimLabel.text!, department: departmentLabel.text!, area: areaLabel.text!) { (message) in
+                if message == "update success"{
+                    print("success")
+                    self.mypageInit()
+                }
+            }
+            
+        }
         
     }
+    let imagePicker = UIImagePickerController()
+    let imagePickerForProfile = UIImagePickerController()
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        self.dismiss(animated: true)
+    }
+   
     
+    var imageForMyPage: UIImage?
+    var imageForProfile: UIImage?
     
+  
+    
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if picker == imagePicker {
+            if let selectedImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                
+                imageForMyPage = selectedImage
+                
+            }
+        }else {
+            if let selectedImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                
+                imageForProfile = selectedImage
+            }
+        }
+        
+        
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
 }
