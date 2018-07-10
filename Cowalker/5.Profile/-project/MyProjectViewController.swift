@@ -21,7 +21,8 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewDidLoad()
         funcForNavigationBar()
         putMadeProject()
-        
+        putDoingProject()
+        putAppliedProject()
     }
     func funcForNavigationBar(){
         
@@ -40,9 +41,9 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
         if collectionView == createCollectionView{
             return madeProject.count
         }else if collectionView == doingCollectionView{
-            return imageArray.count
+            return participateProject.count
         }else{
-            return imageArray.count
+            return appliedProject.count
         }
     }
     
@@ -56,6 +57,22 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
         MypageService.iMadeProject { (MadeProject) in
             self.madeProject = MadeProject
             self.createCollectionView.reloadData()
+        }
+    }
+    var participateProject: [ParticipatedProject] = [ParticipatedProject]()
+    func putDoingProject(){
+        MypageService.participateProject(urlTemp: "/apply/enter_project") { (ParticipatedProject) in
+            self.participateProject = ParticipatedProject
+            self.doingCollectionView.reloadData()
+            
+        }
+    }
+    var appliedProject: [ParticipatedProject] = [ParticipatedProject]()
+    func putAppliedProject(){
+        MypageService.participateProject(urlTemp: "/apply/apply_project") { (appliedProject) in
+            self.appliedProject = appliedProject
+            self.applyingCollectionView.reloadData()
+            
         }
     }
     
@@ -73,15 +90,18 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
             
         }else if collectionView == doingCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DoingCollectionViewCell", for: indexPath) as! DoingCollectionViewCell
-            cell.projectImage.image = imageArray[indexPath.row]
-            
+           
+            cell.projectName.text = participateProject[indexPath.row].title
+            cell.projectPart.text = participateProject[indexPath.row].department
             return cell
             
             
         }else{
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ApplyingCollectionViewCell", for: indexPath) as! ApplyingCollectionViewCell
-            cell.projectImage.image = imageArray[indexPath.row]
+            cell.projectName.text = appliedProject[indexPath.row].title
+            cell.projectPart.text = appliedProject[indexPath.row].department
+//            cell.projectImage.image = imageArray[indexPath.row]
             
             return cell
         }

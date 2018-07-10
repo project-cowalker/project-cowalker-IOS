@@ -100,6 +100,8 @@
 		E4692B2D20EC9AA3000F4A72 /* SendingMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4692B2C20EC9AA3000F4A72 /* SendingMessageViewController.swift */; };
 		E473A9AB20EA5C8900B51830 /* CreateLastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E473A9AA20EA5C8900B51830 /* CreateLastViewController.swift */; };
 		E495549320EE96AE00D4A335 /* IntroductionEditCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495549220EE96AE00D4A335 /* IntroductionEditCollectionViewCell.swift */; };
+		E4C91B6E20F342EB008D81EC /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6D20F342EB008D81EC /* IntroPage.swift */; };
+		E4C91B7020F342F7008D81EC /* IntroPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6F20F342F7008D81EC /* IntroPageData.swift */; };
 		E4CD826920EFC76000352A78 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD826820EFC76000352A78 /* MessageService.swift */; };
 		E4CD826C20EFD59600352A78 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD826B20EFD59600352A78 /* Message.swift */; };
 		E4CD826E20EFD5A000352A78 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD826D20EFD5A000352A78 /* MessageData.swift */; };
@@ -209,6 +211,8 @@
 		E4692B2C20EC9AA3000F4A72 /* SendingMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingMessageViewController.swift; sourceTree = "<group>"; };
 		E473A9AA20EA5C8900B51830 /* CreateLastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLastViewController.swift; sourceTree = "<group>"; };
 		E495549220EE96AE00D4A335 /* IntroductionEditCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionEditCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4C91B6D20F342EB008D81EC /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
+		E4C91B6F20F342F7008D81EC /* IntroPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageData.swift; sourceTree = "<group>"; };
 		E4CD826820EFC76000352A78 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		E4CD826B20EFD59600352A78 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E4CD826D20EFD5A000352A78 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
@@ -600,6 +604,8 @@
 				E44376D920F295EA009856B8 /* IMadeProjectData.swift */,
 				E44376DB20F2A7BF009856B8 /* ParticipatedProject.swift */,
 				E44376DD20F2A7CC009856B8 /* ParticipatedProjectData.swift */,
+				E4C91B6D20F342EB008D81EC /* IntroPage.swift */,
+				E4C91B6F20F342F7008D81EC /* IntroPageData.swift */,
 			);
 			path = MypageModel;
 			sourceTree = "<group>";
@@ -787,6 +793,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94ECBFA020E964A3002F9F92 /* ProjectJoinViewController.swift in Sources */,
+				E4C91B7020F342F7008D81EC /* IntroPageData.swift in Sources */,
 				948AE9F520F015EA003CF30F /* ApplyData.swift in Sources */,
 				944A9F6D20E8B5C500F5FE80 /* AlarmViewController.swift in Sources */,
 				948AEA0D20F12ADB003CF30F /* RecruitList.swift in Sources */,
@@ -840,6 +847,7 @@
 				9403DD1320E92B340049C497 /* ApplyingCollectionViewCell.swift in Sources */,
 				944A9F6F20E8B5CC00F5FE80 /* ProfileViewController.swift in Sources */,
 				944A9F7E20E8DFCA00F5FE80 /* ProfileEditViewController.swift in Sources */,
+				E4C91B6E20F342EB008D81EC /* IntroPage.swift in Sources */,
 				948AEA1720F1EF20003CF30F /* RecruitDetailData.swift in Sources */,
 				94057B1820E9CCCF008875C5 /* CreateNewViewController.swift in Sources */,
 				9403DD0D20E8E4FC0049C497 /* chattingTableViewCell.swift in Sources */,
@@ -1002,7 +1010,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4VKDMR728W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Cowalker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PODS_ROOT2 = "${SRCROOT}/Pods";
@@ -1019,7 +1027,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4VKDMR728W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Cowalker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PODS_ROOT2 = "${SRCROOT}/Pods";

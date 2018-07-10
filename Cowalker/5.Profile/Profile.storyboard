@@ -516,7 +516,7 @@
                                     <constraint firstAttribute="width" constant="375" id="EHF-uv-Ycn"/>
                                     <constraint firstAttribute="height" constant="200" id="wjr-O8-Bas"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AH1-bw-2JD">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AH1-bw-2JD">
                                     <size key="itemSize" width="375" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -574,11 +574,12 @@
                     </view>
                     <connections>
                         <outlet property="introductionCollectionView" destination="ayP-cH-CC6" id="zKi-0p-R7S"/>
+                        <outlet property="textView" destination="XzC-es-Jpt" id="XzB-n4-AcE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OvL-BL-zRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="905"/>
+            <point key="canvasLocation" x="82" y="453"/>
         </scene>
         <!--My Page Update View Controller-->
         <scene sceneID="A3y-Nr-juv">
@@ -661,6 +662,9 @@
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="MmT-Gw-qjP" id="IPs-an-eU7"/>
+                                        </connections>
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -714,6 +718,7 @@
                     </view>
                     <connections>
                         <outlet property="introductionTextView" destination="2jf-se-eiJ" id="suS-Uf-0Zy"/>
+                        <outlet property="viewForIntro" destination="u8e-Kr-Gq2" id="2xB-6P-Zah"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ruX-2x-E6C" userLabel="First Responder" sceneMemberID="firstResponder"/>

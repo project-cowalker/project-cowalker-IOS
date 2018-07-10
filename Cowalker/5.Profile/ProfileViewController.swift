@@ -106,6 +106,7 @@ class ProfileViewController: UIViewController {
         MypageService.myPageInit { (MyPage) in
             
             self.myPage = MyPage
+            self.textInit() // 다른 뷰에 다 체크
             
         }
 
@@ -144,8 +145,7 @@ class ProfileViewController: UIViewController {
     
 
     @IBAction func mainPicFunc(_ sender: UIButton) {
-        mypageInit()
-       textInit()
+      
         //사진 바꾸기
     }
     

@@ -28,7 +28,6 @@ struct CreateNewProjectService: APIService {
         let explainData = explain.data(using: .utf8)
         let img_urlData = UIImageJPEGRepresentation(img_url, 0.3)
         
-        
         //token 처리도 해야함 유저로 가게
         
         let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"

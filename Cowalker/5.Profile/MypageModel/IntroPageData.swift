@@ -1,5 +1,5 @@
 //
-//  ParticipatedProjectData.swift
+//  IntroPageData.swift
 //  Cowalker
 //
 //  Created by 정보영 on 2018. 7. 9..
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ParticipatedProjectData: Codable {
+struct IntroPageData: Codable {
     let message: String
-    let result: [ParticipatedProject]
+    let result: [IntroPage]
 }

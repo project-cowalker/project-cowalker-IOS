@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MyPageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -20,8 +21,10 @@ class MyPageViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
        
         funcForNavigationBar()
+        initIntroPage()
     }
     func funcForNavigationBar(){
         self.navigationController?.isNavigationBarHidden = false
@@ -40,7 +43,7 @@ class MyPageViewController: UIViewController, UICollectionViewDataSource, UIColl
     @objc func pushAction() {
         if let secondVC = storyboard?.instantiateViewController(withIdentifier: "MyPageUpdateViewController") as? MyPageUpdateViewController{
             
-            
+            secondVC.intro_idx = introPage[0].intro_idx
             //더 보기로 이동
             
             self.navigationController?.pushViewController(secondVC, animated: true)
@@ -50,11 +53,30 @@ class MyPageViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         
     }
+    
+    //자신이 더보기 누른 경우
+    var introPage: [IntroPage] = [IntroPage]()
+    func initIntroPage(){
+        MypageService.seeMyPageMySelf(urlTemp: "") { (IntroPage) in
+            self.introPage = IntroPage
+            self.introductionCollectionView.reloadData()
+            print(IntroPage)
+            
+        }
+      
+    }
 
+    @IBOutlet weak var textView: UITextView!
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IntroductionCollectionViewCell", for: indexPath) as! IntroductionCollectionViewCell
-        cell.introductionImage.image = imageArray[indexPath.row]
+        
+//        cell.introductionImage.kf.setImage(with: URL(string: gsno(introPage[0].intro_img_url?[indexPath.row])), placeholder: UIImage())
+
+        
+        
         
         return cell
     }
