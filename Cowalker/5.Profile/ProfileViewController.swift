@@ -130,11 +130,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     var tempForBackground = UIImageView()
     func textInit(){
         
-        tempForProfile.kf.setImage(with: URL(string: gsno(myPage[0].profile_url)),placeholder: #imageLiteral(resourceName: "1.png"))
-        tempForBackground.kf.setImage(with: URL(string: gsno(myPage[0].background_url)),placeholder: #imageLiteral(resourceName: "1.png"))
-        
-        circleButton.setBackgroundImage(tempForProfile.image, for: UIControlState.normal)
-        backgroundImage.setBackgroundImage(tempForBackground.image, for: UIControlState.normal)
+     
         checkTheText(textField: nameLabel, temp: myPage[0].name)
         checkTheText(textField: positionLabel, temp: myPage[0].position)
         checkTheText(textField: introduceLabel, temp: myPage[0].introduce)
@@ -142,6 +138,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         checkTheText(textField: aimLabel, temp: myPage[0].aim)
         checkTheText(textField: departmentLabel, temp: myPage[0].department)
         checkTheText(textField: areaLabel, temp: myPage[0].area)
+        tempForProfile.kf.setImage(with: URL(string: gsno(myPage[0].profile_url)),placeholder: #imageLiteral(resourceName: "1.png"))
+        tempForBackground.kf.setImage(with: URL(string: gsno(myPage[0].background_url)),placeholder: #imageLiteral(resourceName: "1.png"))
+        
+        circleButton.setBackgroundImage(tempForProfile.image, for: UIControlState.normal)
+        backgroundImage.setBackgroundImage(tempForBackground.image, for: UIControlState.normal)
         if myPage[0].point != 0 {
             numOfSeeds.text = String(myPage[0].point)+" 개"
         }
