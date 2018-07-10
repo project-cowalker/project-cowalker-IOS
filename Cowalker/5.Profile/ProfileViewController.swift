@@ -103,7 +103,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var areaLabel: UILabel!
     
     func mypageInit(){
-        MypageService.myPageInit { (MyPage) in
+        MypageService.myPageInit(tempUrl: "") { (MyPage) in
             
             self.myPage = MyPage
             self.textInit() // 다른 뷰에 다 체크

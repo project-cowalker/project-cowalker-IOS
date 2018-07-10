@@ -102,6 +102,12 @@
 		E495549320EE96AE00D4A335 /* IntroductionEditCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E495549220EE96AE00D4A335 /* IntroductionEditCollectionViewCell.swift */; };
 		E4B150C520F4C89700C4BF7E /* NewAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B150C420F4C89700C4BF7E /* NewAlarm.swift */; };
 		E4B150C720F4C8A100C4BF7E /* NewAlarmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B150C620F4C8A100C4BF7E /* NewAlarmData.swift */; };
+		E4BDC28E20F4EF5A00A50966 /* Profile2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDC28D20F4EF5A00A50966 /* Profile2ViewController.swift */; };
+		E4BDC29020F4FC3C00A50966 /* MadeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDC28F20F4FC3C00A50966 /* MadeCollectionViewCell.swift */; };
+		E4BDC29220F4FC5600A50966 /* JoinCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDC29120F4FC5600A50966 /* JoinCollectionViewCell.swift */; };
+		E4BDC29420F4FD9500A50966 /* ProfileProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDC29320F4FD9500A50966 /* ProfileProjectViewController.swift */; };
+		E4BDC29620F5067B00A50966 /* MoreInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDC29520F5067B00A50966 /* MoreInformationViewController.swift */; };
+		E4BDC29820F5098100A50966 /* MoreInformationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDC29720F5098100A50966 /* MoreInformationCollectionViewCell.swift */; };
 		E4C91B6E20F342EB008D81EC /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6D20F342EB008D81EC /* IntroPage.swift */; };
 		E4C91B7020F342F7008D81EC /* IntroPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6F20F342F7008D81EC /* IntroPageData.swift */; };
 		E4CD826920EFC76000352A78 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CD826820EFC76000352A78 /* MessageService.swift */; };
@@ -215,6 +221,12 @@
 		E495549220EE96AE00D4A335 /* IntroductionEditCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionEditCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4B150C420F4C89700C4BF7E /* NewAlarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarm.swift; sourceTree = "<group>"; };
 		E4B150C620F4C8A100C4BF7E /* NewAlarmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmData.swift; sourceTree = "<group>"; };
+		E4BDC28D20F4EF5A00A50966 /* Profile2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile2ViewController.swift; sourceTree = "<group>"; };
+		E4BDC28F20F4FC3C00A50966 /* MadeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadeCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4BDC29120F4FC5600A50966 /* JoinCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4BDC29320F4FD9500A50966 /* ProfileProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProjectViewController.swift; sourceTree = "<group>"; };
+		E4BDC29520F5067B00A50966 /* MoreInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInformationViewController.swift; sourceTree = "<group>"; };
+		E4BDC29720F5098100A50966 /* MoreInformationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInformationCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4C91B6D20F342EB008D81EC /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
 		E4C91B6F20F342F7008D81EC /* IntroPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageData.swift; sourceTree = "<group>"; };
 		E4CD826820EFC76000352A78 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
@@ -626,6 +638,12 @@
 			isa = PBXGroup;
 			children = (
 				E41BC9F220EE411800DAD27F /* Profile2.storyboard */,
+				E4BDC28D20F4EF5A00A50966 /* Profile2ViewController.swift */,
+				E4BDC28F20F4FC3C00A50966 /* MadeCollectionViewCell.swift */,
+				E4BDC29120F4FC5600A50966 /* JoinCollectionViewCell.swift */,
+				E4BDC29320F4FD9500A50966 /* ProfileProjectViewController.swift */,
+				E4BDC29520F5067B00A50966 /* MoreInformationViewController.swift */,
+				E4BDC29720F5098100A50966 /* MoreInformationCollectionViewCell.swift */,
 			);
 			path = Profile2;
 			sourceTree = "<group>";
@@ -800,6 +818,7 @@
 			files = (
 				94ECBFA020E964A3002F9F92 /* ProjectJoinViewController.swift in Sources */,
 				E4C91B7020F342F7008D81EC /* IntroPageData.swift in Sources */,
+				E4BDC29420F4FD9500A50966 /* ProfileProjectViewController.swift in Sources */,
 				948AE9F520F015EA003CF30F /* ApplyData.swift in Sources */,
 				E4B150C520F4C89700C4BF7E /* NewAlarm.swift in Sources */,
 				944A9F6D20E8B5C500F5FE80 /* AlarmViewController.swift in Sources */,
@@ -837,6 +856,7 @@
 				948AE9EF20F000CA003CF30F /* ResumeViewController.swift in Sources */,
 				E44376DA20F295EA009856B8 /* IMadeProjectData.swift in Sources */,
 				94057B1420E9959F008875C5 /* ProjectCollectionViewCell.swift in Sources */,
+				E4BDC28E20F4EF5A00A50966 /* Profile2ViewController.swift in Sources */,
 				94EA8FEE20EB8263006EC50A /* SearchNewViewController.swift in Sources */,
 				94ECBF9C20E962CD002F9F92 /* ProjectFullViewController.swift in Sources */,
 				944A9F6920E8B58B00F5FE80 /* SearchViewController.swift in Sources */,
@@ -846,6 +866,7 @@
 				948AEA2620F2BB4F003CF30F /* detailPartCollectionViewCell.swift in Sources */,
 				948AEA2320F28EAC003CF30F /* resumeDetailData.swift in Sources */,
 				944A9F5C20E8B0BE00F5FE80 /* APIService.swift in Sources */,
+				E4BDC29020F4FC3C00A50966 /* MadeCollectionViewCell.swift in Sources */,
 				9406D27720EDAEE0001B145D /* ApplyService.swift in Sources */,
 				944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */,
 				E41034A920F2247E0001EF40 /* MyPageEditData.swift in Sources */,
@@ -861,6 +882,7 @@
 				9403DD0D20E8E4FC0049C497 /* chattingTableViewCell.swift in Sources */,
 				948AE9E220EFE15D003CF30F /* ApplyMemberViewController.swift in Sources */,
 				E4692B2B20EC14F7000F4A72 /* messageTableViewCell.swift in Sources */,
+				E4BDC29820F5098100A50966 /* MoreInformationCollectionViewCell.swift in Sources */,
 				944A9F4120E8AAF900F5FE80 /* AppDelegate.swift in Sources */,
 				E41034A020F123A70001EF40 /* MyPage.swift in Sources */,
 				94EA8FF020EBB055006EC50A /* ExtensionController.swift in Sources */,
@@ -884,10 +906,12 @@
 				948AE9FC20F02C02003CF30F /* Recruit.swift in Sources */,
 				944A9F6720E8B53200F5FE80 /* HomeViewController.swift in Sources */,
 				E4661BAF20ECECA8009BFE0F /* CreateNewProjectService.swift in Sources */,
+				E4BDC29220F4FC5600A50966 /* JoinCollectionViewCell.swift in Sources */,
 				9406D25F20ECB386001B145D /* FullPlusViewController.swift in Sources */,
 				9403DD0F20E92B130049C497 /* CreateCollectionViewCell.swift in Sources */,
 				948AEA0020F0971F003CF30F /* RecruitService.swift in Sources */,
 				944A9F5620E8AE8600F5FE80 /* LoginService.swift in Sources */,
+				E4BDC29620F5067B00A50966 /* MoreInformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

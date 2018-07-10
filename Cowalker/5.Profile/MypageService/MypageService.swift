@@ -11,12 +11,13 @@ import Alamofire
 import SwiftyJSON
 struct MypageService: APIService {
 
-    
-    static func myPageInit(completion: @escaping([MyPage]) -> Void){
+    // 타인이 보거나 내가 보거나 둘다 된다@@@@@@@@@@@@@@@@@@@@
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    static func myPageInit(tempUrl: String, completion: @escaping([MyPage]) -> Void){
 //        let header: [String : String] = [
 //            "authorization" : UserDefaults.standard.string(forKey: "token")!
         
-        let URL = url("/mypage")
+        let URL = url("/mypage"+tempUrl)
         let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
         
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
@@ -100,11 +101,12 @@ struct MypageService: APIService {
         }
     }
     
-
+    // @@@@@@@@ 개설한 프로젝트 남이  보는거면 urlTemp 에 user_idx 날려야함
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     
-    static func iMadeProject(completion: @escaping([IMadeProject]) -> Void ){
+    static func iMadeProject(urlTemp: String, completion: @escaping([IMadeProject]) -> Void ){
         
-        let URL = url("/user/project")
+        let URL = url("/user/project"+urlTemp)
         let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
             switch res.result {
@@ -134,6 +136,7 @@ struct MypageService: APIService {
     }
     //@@@@@@@@@@@@@@@@@@ 내가 지원한 프로젝트 , 내가 참여한 프로젝트 둘다 쓸 수 있음
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    // 타인 마이페이지 보는 경우에 url = /user_idx 추가 하기
     static func participateProject(urlTemp: String,completion: @escaping ([ParticipatedProject]) -> Void){
         let URL = url(urlTemp)
         let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]

@@ -10,7 +10,7 @@ import UIKit
 
 
 class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    var madeProject: [IMadeProject] = [IMadeProject]()
+    
     let imageArray = [#imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar1Home")]
     
     @IBOutlet weak var createCollectionView: UICollectionView!
@@ -53,8 +53,9 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
         applyingCollectionView.dataSource = self; applyingCollectionView.delegate = self
         
     }
+    var madeProject: [IMadeProject] = [IMadeProject]()
     func putMadeProject(){
-        MypageService.iMadeProject { (MadeProject) in
+        MypageService.iMadeProject(urlTemp: "") { (MadeProject) in
             self.madeProject = MadeProject
             self.createCollectionView.reloadData()
         }
