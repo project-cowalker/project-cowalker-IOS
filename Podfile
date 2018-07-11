@@ -8,6 +8,7 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'Kingfisher'
 pod 'ObjectMapper'
+pod 'FBSDKLoginKit'
   # Pods for Cowalker
 
 end
