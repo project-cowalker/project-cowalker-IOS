@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/joyewon/Desktop/CowalkerFinal/project-cowalker-IOS/Cowalker/-1.Project/0.intro/RecoTableViewCell.swift">
+   </FileRef>
+   <FileRef
       location = "group:Cowalker.xcodeproj">
    </FileRef>
    <FileRef

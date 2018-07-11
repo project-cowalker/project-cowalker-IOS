@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 //////////////// 참여자일 때
 class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
