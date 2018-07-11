@@ -27,7 +27,10 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
         label1.setTitleColor(UIColor.black, for: .normal)
         img2.isHidden = true
         img1.isHidden = false
-        
+        MessageService.getNewAlarm { (NewAlarm) in
+            self.alarm = NewAlarm
+            self.alarmTableView.reloadData()
+        }
         
         self.tabBarController?.tabBar.tintColor = UIColor (red: 100.0/255.0, green: 223.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.tabBarController?.tabBar.items![3].image = #imageLiteral(resourceName: "iconsTabbar4Alarm")
@@ -35,6 +38,7 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         alarmTableView.reloadData()
     }
+    var alarm: [NewAlarm] = [NewAlarm]()
     @IBAction func button1(_ sender: UIButton) {
         num = 0
         
@@ -44,6 +48,11 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
         
         label2.setTitleColor(UIColor.lightGray, for: .normal)
         label1.setTitleColor(UIColor.black, for: .normal)
+        MessageService.getNewAlarm { (NewAlarm) in
+            self.alarm = NewAlarm
+            self.alarmTableView.reloadData()
+            
+        }
         
     }
     @IBAction func button2(_ sender: UIButton) {
@@ -64,13 +73,25 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return message.count
+        if num == 0 {
+            return alarm.count
+        }else {
+            return message.count
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if num == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier:"alarmTableViewCell") as! alarmTableViewCell
+            cell.project_name.text = alarm[indexPath.row].project_name!
+            cell.contents.text = alarm[indexPath.row].contents!
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd HH:mm"
+            cell.create_at.text = dateFormatter.string(from: alarm[indexPath.row].create_at)
+            
+            
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier:"chattingTableViewCell") as! chattingTableViewCell

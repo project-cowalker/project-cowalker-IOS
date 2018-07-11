@@ -24,15 +24,7 @@ class CreateLastViewController: UIViewController,UICollectionViewDelegate,UIColl
         textView.resignFirstResponder()
         return true
     }
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        if textView.text != ""{
-//            finishButton.setBackgroundImage(UIImage(named: "btnFloatNormal"), for: UIControlState.normal)
-//            finishButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: UIControlState.normal)
-//        }else {
-//            finishButton.setBackgroundImage(UIImage(named: "btnFloatNormal"), for: UIControlState.normal)
-//            finishButton.setTitleColor(#colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1), for: UIControlState.normal)
-//        }
-//    }
+
     
     @IBOutlet weak var finishButton: UIButton!
     
@@ -123,19 +115,20 @@ class CreateLastViewController: UIViewController,UICollectionViewDelegate,UIColl
     var department: String!
     var aim: String!
     var explain: String!
-    var img_url: UIImage!
+    var img_url: [UIImage] = [UIImage]()
     
  
     @IBAction func createProjectDone(_ sender: UIButton) {
-        img_url = imageForProject[0]
+        img_url = imageForProject
         explain = explainTextView.text!
        
-        CreateNewProjectService.createNewProject(title: title2, summary: summary, area: area, department: department, aim: aim ,explain: explain, img_url: img_url) {
+        CreateNewProjectService.createNewProject(title: title2, summary: summary, area: area, department: department, aim: aim ,explain: explain, img: img_url) {
            (message) in
            print(message)
             if message == "success"{
                 print("111111111111111111111")
                 self.dismiss(animated: true, completion: nil)
+                
             }else {
                 print("222222222")
                 self.dismiss(animated: true, completion: nil)

@@ -18,9 +18,10 @@ class CreateViewController: UIViewController, UIImagePickerControllerDelegate {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateNaviViewController")
         self.present(vc!, animated: true, completion: nil)
+        
     }
     
-   
+    
     
     
 

@@ -20,7 +20,7 @@ class FilterViewController: UIViewController {
     func funcForNavigationBar(){
         self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.title = "필터"
-        let leftButtonItem = UIBarButtonItem(image: UIImage(named: "darkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(FilterViewController.popAction))
+        let leftButtonItem = UIBarButtonItem(image: UIImage(named: "iconCaretLeftDarkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(FilterViewController.popAction))
         leftButtonItem.tintColor = UIColor.black
         self.navigationItem.leftBarButtonItem = leftButtonItem
     }
@@ -31,28 +31,62 @@ class FilterViewController: UIViewController {
     @IBAction func btnClickAct(_ sender: UIButton) {
         //이 버튼 클릭시 서버 연동
         
-        self.dismiss(animated: true, completion: nil)
-    }
+        
+      
+            self.navigationController?.popViewController(animated: true)
+            
+            
+        }
+       
+        
     
     
+    //    aim=창업&area=서울&position=개발&department=iot
+    static var aim = ""
+    static var area = ""
+    static var position = ""
+    static var department = ""
+
+
     @IBAction func purposeFunc(_ sender: UIButton) {
         
         defineWhichButton(i: 0, button: sender)
+        if sender.currentTitle == "전체"{
+            FilterViewController.aim = ""
+        }else {
+            FilterViewController.aim = sender.currentTitle!
+        }
+        
+        
     }
     
     @IBAction func fieldFunc(_ sender: UIButton) {
         defineWhichButton(i: 1, button: sender)
-        
+        if sender.currentTitle == "전체"{
+            FilterViewController.department = ""
+        }else {
+            FilterViewController.department = sender.currentTitle!
+        }
     }
     
     
     @IBAction func roleFunc(_ sender: UIButton) {
         defineWhichButton(i: 2, button: sender)
+        if sender.currentTitle == "전체"{
+            FilterViewController.position = ""
+        }else {
+            FilterViewController.position = sender.currentTitle!
+        }
     }
     
     
     @IBAction func regionFunc(_ sender: UIButton) {
         defineWhichButton(i: 3, button: sender)
+        if sender.currentTitle == "전체"{
+            FilterViewController.area = ""
+        }else {
+            FilterViewController.area = sender.currentTitle!
+        }
         
     }
     
@@ -65,7 +99,8 @@ class FilterViewController: UIViewController {
     var temp3 = UIButton()
     var firstResponse = true
     var defaultForButton: [UIButton]!
-    
+
+
     @IBOutlet weak var defaultPurpose: UIButton!
     @IBOutlet weak var defaultField: UIButton!
     @IBOutlet weak var defaultRole: UIButton!
@@ -96,6 +131,10 @@ class FilterViewController: UIViewController {
             tempForButton[row] = button
             tempForButton[row].setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
             countForButton[row] = 1
+            //서버 연동시 해당 데이터 여기서 처리
+            
+            
+            
             
         }else if i == 0 {
             defaultForButton[row].setBackgroundImage(UIImage(named: "btnHalfGray"), for: UIControlState.normal)
@@ -113,16 +152,15 @@ class FilterViewController: UIViewController {
             firstResponse = false
             
             // 서버 연동시 해당 데이터 여기서 처리
+           
+            
         }
     }
-    
+
     
     
   
 
-    
-    
-    
     
     
     

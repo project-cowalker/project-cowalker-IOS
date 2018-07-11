@@ -30,7 +30,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconsTabbar1Home" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-RQ-78L">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgAlarmThumbnail" translatesAutoresizingMaskIntoConstraints="NO" id="YPh-RQ-78L">
                                                     <rect key="frame" x="25" y="15" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="Nkc-iK-KCY"/>
@@ -49,9 +49,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이충엽 님이 추천했습니다. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e7-fP-Cui">
-                                                    <rect key="frame" x="95" y="44" width="180" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="이충엽 님이 추천했습니다. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e7-fP-Cui">
+                                                    <rect key="frame" x="95" y="44" width="265" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -70,6 +70,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="fdE-En-bo9" secondAttribute="trailing" constant="5" id="kW8-Se-5qh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contents" destination="0e7-fP-Cui" id="ln0-21-ca6"/>
+                                            <outlet property="create_at" destination="fdE-En-bo9" id="ml7-0T-7gF"/>
+                                            <outlet property="project_name" destination="CuC-Hi-8eD" id="dgm-f2-czM"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChattingTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chattingTableViewCell" rowHeight="80" id="40C-FP-05X" customClass="chattingTableViewCell" customModule="Cowalker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="108" width="375" height="80"/>
@@ -397,7 +402,7 @@
         <image name="btnFloatNormal" width="335" height="52"/>
         <image name="iconCaretLeftDarkgray" width="24" height="24"/>
         <image name="icon_darkgray_letter" width="19" height="23"/>
-        <image name="iconsTabbar1Home" width="48" height="49"/>
         <image name="iconsTabbar2Search" width="48" height="49"/>
+        <image name="imgAlarmThumbnail" width="50" height="50"/>
     </resources>
 </document>
