@@ -157,19 +157,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         imagePicker.sourceType = .photoLibrary
       
         self.present(imagePicker, animated: true, completion: nil)
-//        if imageForMyPage != nil {
-//            MypageService.myPageEdit(profile_img: circleButton.currentBackgroundImage!, background_img: imageForMyPage!, name: nameLabel.text!, position: positionLabel.text!, introduce: introduceLabel.text!, portfolio_url: emailLabel.text!, aim: aimLabel.text!, department: departmentLabel.text!, area: areaLabel.text!) { (message) in
-//                if message == "update success"{
-//                    print("success")
-//
-//                }else {
-//                    print("수정 실패")
-//
-//                }
-//            }
-//
-//            self.mypageInit()
-//        }
         
         //사진 바꾸기
     }
@@ -180,19 +167,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         imagePickerForProfile.sourceType = .photoLibrary
         self.present(imagePickerForProfile, animated: true, completion: nil)
         //사진 바꾸기
-//        if imageForProfile != nil {
-//            MypageService.myPageEdit(profile_img: imageForProfile!, background_img: backgroundImage.currentBackgroundImage!, name: nameLabel.text!, position: positionLabel.text!, introduce: introduceLabel.text!, portfolio_url: emailLabel.text!, aim: aimLabel.text!, department: departmentLabel.text!, area: areaLabel.text!) { (message) in
-//                if message == "update success"{
-//                    print("success")
-//
-//                }else {
-//                    print("수정 실패")
-//                }
-//
-//            }
-//            self.mypageInit()
-//        }
-//      
         
     }
     let imagePicker = UIImagePickerController()
@@ -211,12 +185,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if picker == imagePicker {
+            
+            
             if let selectedImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
                 imageForMyPage = selectedImage
                 if imageForMyPage != nil {
                     MypageService.myPageEdit(profile_img: circleButton.currentBackgroundImage!, background_img: imageForMyPage!, name: nameLabel.text!, position: positionLabel.text!, introduce: introduceLabel.text!, portfolio_url: emailLabel.text!, aim: aimLabel.text!, department: departmentLabel.text!, area: areaLabel.text!) { (message) in
                         if message == "update success"{
                             print("success")
+                            self.mypageInit()
                             
                         }else {
                             print("수정 실패")
@@ -224,26 +201,30 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                         }
                     }
                     
-                    self.mypageInit()
+                    
                 }
-              
+                
             }
+            
+           
+           
         }else {
             if let selectedImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-                
                 imageForProfile = selectedImage
                 if imageForProfile != nil {
                     MypageService.myPageEdit(profile_img: imageForProfile!, background_img: backgroundImage.currentBackgroundImage!, name: nameLabel.text!, position: positionLabel.text!, introduce: introduceLabel.text!, portfolio_url: emailLabel.text!, aim: aimLabel.text!, department: departmentLabel.text!, area: areaLabel.text!) { (message) in
                         if message == "update success"{
                             print("success")
-                            
+                            self.mypageInit()
                         }else {
                             print("수정 실패")
                         }
                         
                     }
-                    self.mypageInit()
+                    
                 }
+                
+
                 
                
             }
