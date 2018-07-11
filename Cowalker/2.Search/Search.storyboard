@@ -178,21 +178,6 @@
             </objects>
             <point key="canvasLocation" x="-335.19999999999999" y="146.17691154422789"/>
         </scene>
-        <!--Search New View Controller-->
-        <scene sceneID="Zq7-FV-zdF">
-            <objects>
-                <viewController restorationIdentifier="SearchNewViewController" storyboardIdentifier="SearchNewViewController" id="8yY-9D-60s" customClass="SearchNewViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JXo-Qe-ebd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="ZEE-rf-AEQ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Alk-0r-yej" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-287" y="865"/>
-        </scene>
         <!--Filter View Controller-->
         <scene sceneID="0Zk-aV-7OY">
             <objects>

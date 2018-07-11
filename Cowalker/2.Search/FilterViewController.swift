@@ -54,6 +54,7 @@ class FilterViewController: UIViewController {
     @IBAction func regionFunc(_ sender: UIButton) {
         defineWhichButton(i: 3, button: sender)
         
+        
     }
     
     
@@ -96,6 +97,10 @@ class FilterViewController: UIViewController {
             tempForButton[row] = button
             tempForButton[row].setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
             countForButton[row] = 1
+            //서버 연동시 해당 데이터 여기서 처리
+            
+            
+            
             
         }else if i == 0 {
             defaultForButton[row].setBackgroundImage(UIImage(named: "btnHalfGray"), for: UIControlState.normal)
@@ -113,6 +118,8 @@ class FilterViewController: UIViewController {
             firstResponse = false
             
             // 서버 연동시 해당 데이터 여기서 처리
+           
+            
         }
     }
     
@@ -120,9 +127,6 @@ class FilterViewController: UIViewController {
     
   
 
-    
-    
-    
     
     
     

@@ -15,6 +15,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.tabBarController?.tabBar.tintColor = UIColor (red: 100.0/255.0, green: 223.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.tabBarController?.tabBar.items![1].image = #imageLiteral(resourceName: "iconsTabbar2Search")
         self.navigationController?.isNavigationBarHidden = true
+        initSearch()
     }
     
     // 임이 데이터
@@ -24,13 +25,16 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var projectCollectionView: UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count
+        return searchData.count
     }
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "projectCollectionViewCell", for: indexPath) as! projectCollectionViewCell
-        cell.imgView.image = imageArray[indexPath.row]
-        cell.labelText1.text = textArray[indexPath.row]
-        cell.labelText2.text = textArray[indexPath.row]
+//        cell.imgView.image = imageArray[indexPath.row]
+        // nill 인거 거르기~~~~~~~~~~~~~~~~~~~~~~~~
+        cell.labelText1.text = searchData[indexPath.row].title!
+        cell.labelText2.text = searchData[indexPath.row].aim!
+//        cell.labelText1.text = textArray[indexPath.row]
+//        cell.labelText2.text = textArray[indexPath.row]
         return cell
     
     }
@@ -62,6 +66,16 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBAction func searchBtnAct(_ sender: UIButton) {
         //서치 뷰
     }
+    
+    var searchData: [Search] = [Search]()
+    func initSearch(){
+        SearchServie.searchInit { (Search) in
+            self.searchData = Search
+            self.projectCollectionView.reloadData()
+            
+        }
+    }
+    
     
 }
 
