@@ -9,7 +9,7 @@
 import UIKit
 
 import Kingfisher
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var myPage: [MyPage] = [MyPage]()
     
@@ -29,16 +29,19 @@ class ProfileViewController: UIViewController {
         whiteCircle.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         whiteCircle.layer.borderWidth = 0.1
         mypageInit()
+        imagePicker.delegate = self
+        imagePickerForProfile.delegate = self
         
         
         
     }
     
-   
+    
     
     override func viewWillAppear(_ animated: Bool) {
         
         self.navigationController?.isNavigationBarHidden = true
+        mypageInit()
     }
 
     
@@ -101,12 +104,15 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var aimLabel: UILabel!
     @IBOutlet weak var departmentLabel: UILabel!
     @IBOutlet weak var areaLabel: UILabel!
+    @IBOutlet weak var numOfSeeds: UILabel!
     
     func mypageInit(){
-        MypageService.myPageInit { (MyPage) in
+        MypageService.myPageInit(tempUrl: "") { (MyPage) in
             
             self.myPage = MyPage
             self.textInit() // 다른 뷰에 다 체크
+            
+            
             
         }
 
@@ -124,12 +130,8 @@ class ProfileViewController: UIViewController {
     var tempForProfile = UIImageView()
     var tempForBackground = UIImageView()
     func textInit(){
-
-        tempForProfile.kf.setImage(with: URL(string: gsno(myPage[0].profile_url)),placeholder: UIImage())
-        tempForBackground.kf.setImage(with: URL(string: gsno(myPage[0].background_url)),placeholder: UIImage())
         
-        circleButton.setBackgroundImage(tempForProfile.image, for: UIControlState.normal)
-        backgroundImage.setBackgroundImage(tempForBackground.image, for: UIControlState.normal)
+     
         checkTheText(textField: nameLabel, temp: myPage[0].name)
         checkTheText(textField: positionLabel, temp: myPage[0].position)
         checkTheText(textField: introduceLabel, temp: myPage[0].introduce)
@@ -138,24 +140,98 @@ class ProfileViewController: UIViewController {
         checkTheText(textField: departmentLabel, temp: myPage[0].department)
         checkTheText(textField: areaLabel, temp: myPage[0].area)
         
+        circleButton.kf.setBackgroundImage(with: URL(string: gsno(myPage[0].profile_url)), for: .normal, placeholder: #imageLiteral(resourceName: "1.png"))
+        backgroundImage.kf.setBackgroundImage(with: URL(string: gsno(myPage[0].background_url)), for: .normal, placeholder: #imageLiteral(resourceName: "1.png"))
+        if myPage[0].point != 0 {
+            numOfSeeds.text = String(myPage[0].point)+" 개"
+        }
+        
     }
 
     @IBOutlet weak var circleButton: UIButton!
     
-    
+    var getPick = false
 
     @IBAction func mainPicFunc(_ sender: UIButton) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
       
+        self.present(imagePicker, animated: true, completion: nil)
+        
         //사진 바꾸기
     }
+    
     
     @IBAction func profilePicFunc(_ sender: UIButton) {
-        
+        imagePickerForProfile.allowsEditing = false
+        imagePickerForProfile.sourceType = .photoLibrary
+        self.present(imagePickerForProfile, animated: true, completion: nil)
         //사진 바꾸기
         
     }
+    let imagePicker = UIImagePickerController()
+    let imagePickerForProfile = UIImagePickerController()
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        self.dismiss(animated: true)
+    }
+   
     
+    var imageForMyPage: UIImage?
+    var imageForProfile: UIImage?
     
+  
+    
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if picker == imagePicker {
+            
+            
+            if let selectedImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                imageForMyPage = selectedImage
+                if imageForMyPage != nil {
+                    MypageService.myPageEdit(profile_img: circleButton.currentBackgroundImage!, background_img: imageForMyPage!, name: nameLabel.text!, position: positionLabel.text!, introduce: introduceLabel.text!, portfolio_url: emailLabel.text!, aim: aimLabel.text!, department: departmentLabel.text!, area: areaLabel.text!) { (message) in
+                        if message == "update success"{
+                            print("success")
+                            self.mypageInit()
+                            
+                        }else {
+                            print("수정 실패")
+                            
+                        }
+                    }
+                    
+                    
+                }
+                
+            }
+            
+           
+           
+        }else {
+            if let selectedImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                imageForProfile = selectedImage
+                if imageForProfile != nil {
+                    MypageService.myPageEdit(profile_img: imageForProfile!, background_img: backgroundImage.currentBackgroundImage!, name: nameLabel.text!, position: positionLabel.text!, introduce: introduceLabel.text!, portfolio_url: emailLabel.text!, aim: aimLabel.text!, department: departmentLabel.text!, area: areaLabel.text!) { (message) in
+                        if message == "update success"{
+                            print("success")
+                            self.mypageInit()
+                        }else {
+                            print("수정 실패")
+                        }
+                        
+                    }
+                    
+                }
+                
+
+                
+               
+            }
+        }
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
     
 }

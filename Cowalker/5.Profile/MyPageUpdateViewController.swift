@@ -95,8 +95,11 @@ class MyPageUpdateViewController: UIViewController, UICollectionViewDelegate,UIC
     }
     
     
-    var intro_idx: String?
+   
     func editInit(){
+        if imageForProject.count != 10 {
+            imageForProject.remove(at: imageForProject.count-1)
+        }
         MypageService.myPageIntroEdit(img: imageForProject, contents: introductionTextView.text) { (message) in
             if message == "update myIntro success"{
                 self.navigationController?.popViewController(animated: true)
