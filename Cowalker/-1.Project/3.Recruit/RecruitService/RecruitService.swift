@@ -27,7 +27,9 @@ struct RecruitService:APIService{
                     do{
                         let recruitListData = try decoder.decode(RecruitListData.self, from: value)
                         if recruitListData.message == "success"{
+                            print(recruitListData.result)
                             completion(recruitListData.result)
+                            
                             print("됐네 시발")
                         }
                   }catch{ print("캐치")}
@@ -40,6 +42,8 @@ struct RecruitService:APIService{
             }
         }
     }
+    
+    
     //////////////////////////// 모집 상세 RecruitDetail
     static func recruitDetail(a:String, b:String, completion: @escaping ([RecruitDetail],String)->Void){
         let URL = url("/project/\(a)/recruit/\(b)")
@@ -54,13 +58,13 @@ struct RecruitService:APIService{
                 if let value = res.result.value{
                     let decoder = JSONDecoder()
                     do{
-                        print("do")
+                       // print("do")
                         let recruitDetailData = try decoder.decode(RecruitDetailData.self, from: value)
-                        print("decodetest")
+                       // print("decodetest")
                         if recruitDetailData.message == "success"{
                             print(22)
                             completion(recruitDetailData.result,recruitDetailData.btnResult)
-                            print("됐네 시발")
+                           // print("됐네 시발")
                         }
                     }catch{ print("캐치22")}
                 }
