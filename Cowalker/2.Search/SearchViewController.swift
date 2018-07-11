@@ -74,8 +74,11 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         if SearchViewController.filterURL == "" {
             if let tempText = searchText.text {
-                SearchServie.searchInit(tempUrl: "?keyword="+tempText, completion: { (Search) in
+                print(tempText)
+//                aim: nil, area: nil, position: nil, department: nil,
+                SearchServie.searchInit2(aim: nil, area: nil, position: nil, department: nil, keyword: tempText, completion: { (Search) in
                     self.searchData = Search
+                    print(Search.count)
                     self.projectCollectionView.reloadData()
                 })
             }
@@ -83,10 +86,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }else {
 //            /search?aim=창업&area=서울&position=개발&department=iot&keyword=검색어
             if let tempText = searchText.text {
-                let temp = SearchViewController.filterURL+"&keyword="+tempText
-                print(temp)
-                SearchServie.searchInit(tempUrl: temp, completion: { (Search) in
-                    
+                
+                SearchServie.searchInit2(aim: FilterViewController.aim, area: FilterViewController.area, position: FilterViewController.position, department: FilterViewController.department, keyword: tempText, completion: { (Search) in
                     self.searchData = Search
                     self.projectCollectionView.reloadData()
                 })

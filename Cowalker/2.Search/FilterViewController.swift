@@ -30,10 +30,9 @@ class FilterViewController: UIViewController {
     
     @IBAction func btnClickAct(_ sender: UIButton) {
         //이 버튼 클릭시 서버 연동
-        let tempURL = "?aim="+aim+"&area="+area+"&position="+position+"&department="+department
-        print(tempURL)
         
-        SearchViewController.filterURL = tempURL
+        
+      
             self.navigationController?.popViewController(animated: true)
             
             
@@ -43,19 +42,19 @@ class FilterViewController: UIViewController {
     
     
     //    aim=창업&area=서울&position=개발&department=iot
-    var aim = ""
-    var area = ""
-    var position = ""
-    var department = ""
+    static var aim = ""
+    static var area = ""
+    static var position = ""
+    static var department = ""
 
 
     @IBAction func purposeFunc(_ sender: UIButton) {
         
         defineWhichButton(i: 0, button: sender)
         if sender.currentTitle == "전체"{
-            aim = ""
+            FilterViewController.aim = ""
         }else {
-            aim = sender.currentTitle!
+            FilterViewController.aim = sender.currentTitle!
         }
         
         
@@ -64,9 +63,9 @@ class FilterViewController: UIViewController {
     @IBAction func fieldFunc(_ sender: UIButton) {
         defineWhichButton(i: 1, button: sender)
         if sender.currentTitle == "전체"{
-            department = ""
+            FilterViewController.department = ""
         }else {
-            department = sender.currentTitle!
+            FilterViewController.department = sender.currentTitle!
         }
     }
     
@@ -74,9 +73,9 @@ class FilterViewController: UIViewController {
     @IBAction func roleFunc(_ sender: UIButton) {
         defineWhichButton(i: 2, button: sender)
         if sender.currentTitle == "전체"{
-            position = ""
+            FilterViewController.position = ""
         }else {
-            position = sender.currentTitle!
+            FilterViewController.position = sender.currentTitle!
         }
     }
     
@@ -84,9 +83,9 @@ class FilterViewController: UIViewController {
     @IBAction func regionFunc(_ sender: UIButton) {
         defineWhichButton(i: 3, button: sender)
         if sender.currentTitle == "전체"{
-            area = ""
+            FilterViewController.area = ""
         }else {
-            area = sender.currentTitle!
+            FilterViewController.area = sender.currentTitle!
         }
         
     }
