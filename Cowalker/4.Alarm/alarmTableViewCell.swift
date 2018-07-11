@@ -9,7 +9,13 @@
 import UIKit
 
 class alarmTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var project_name: UILabel!
+    @IBOutlet weak var contents: UILabel!
+    
+    @IBOutlet weak var create_at: UILabel!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

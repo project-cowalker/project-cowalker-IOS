@@ -1,14 +1,14 @@
 //
-//  IntroPageData.swift
+//  SearchData.swift
 //  Cowalker
 //
-//  Created by 정보영 on 2018. 7. 9..
+//  Created by 정보영 on 2018. 7. 11..
 //  Copyright © 2018년 조예원. All rights reserved.
 //
 
 import Foundation
 
-struct IntroPageData: Codable {
+struct SearchData: Codable {
     let message: String
-    let result: IntroPage
+    let result: [Search]
 }
