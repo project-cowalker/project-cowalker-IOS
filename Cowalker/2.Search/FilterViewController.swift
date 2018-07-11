@@ -32,9 +32,7 @@ class FilterViewController: UIViewController {
         //이 버튼 클릭시 서버 연동
         let tempURL = "?aim="+aim+"&area="+area+"&position="+position+"&department="+department
         print(tempURL)
-        if let beforeVC = storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController{
-               
-        }
+        
         SearchViewController.filterURL = tempURL
             self.navigationController?.popViewController(animated: true)
             

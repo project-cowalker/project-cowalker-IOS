@@ -83,7 +83,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }else {
 //            /search?aim=창업&area=서울&position=개발&department=iot&keyword=검색어
             if let tempText = searchText.text {
-                SearchServie.searchInit(tempUrl: SearchViewController.filterURL+"&keyword="+tempText, completion: { (Search) in
+                let temp = SearchViewController.filterURL+"&keyword="+tempText
+                print(temp)
+                SearchServie.searchInit(tempUrl: temp, completion: { (Search) in
+                    
                     self.searchData = Search
                     self.projectCollectionView.reloadData()
                 })

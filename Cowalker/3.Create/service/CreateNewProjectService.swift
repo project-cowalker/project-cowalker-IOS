@@ -17,7 +17,7 @@ struct CreateNewProjectService: APIService {
    
     // 프로젝트 생성하는 3번째 탭바 API@@@@@@@@@@@@@@@@@
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    static func createNewProject(title: String, summary: String, area: String, department: String, aim: String ,explain: String, img_url: UIImage, completion: @escaping (String) -> Void){
+    static func createNewProject(title: String, summary: String, area: String, department: String, aim: String ,explain: String, img: [UIImage], completion: @escaping (String) -> Void){
         let URL = url("/project")
 //        let userdefault = UserDefaults.standard
         let titleData = title.data(using: .utf8)
@@ -25,22 +25,34 @@ struct CreateNewProjectService: APIService {
         let areaData = area.data(using: .utf8)
         let departmentData = department.data(using: .utf8)
         let aimData = aim.data(using: .utf8)
+        var imgData = [UIImage]()
         let explainData = explain.data(using: .utf8)
-        let img_urlData = UIImageJPEGRepresentation(img_url, 0.3)
-        
+        for  i in 0 ..< img.count{
+            imgData.append(img[i])
+        }
+//        Alamofire.upload(multipartFormData: { (multipartFormData) in
+//            for  i in 0 ..< img_url.count{
+//                let temp = UIImageJPEGRepresentation(imgData[i], 0.3)
+//                multipartFormData.append(temp!, withName: "img_url", fileName: "img_url.jpg", mimeType: "img_url/jpeg")
+//            }
+//        let img_urlData = UIImageJPEGRepresentation(img_url, 0.3)
+//
         //token 처리도 해야함 유저로 가게
         
         let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"
         let header = ["authorization" : token]
         Alamofire.upload(multipartFormData: { (multipartFormData) in
-
+            for  i in 0 ..< img.count{
+                let temp = UIImageJPEGRepresentation(imgData[i], 0.3)
+                multipartFormData.append(temp!, withName: "img", fileName: "img.jpg", mimeType: "img/jpeg")
+            }
             multipartFormData.append(titleData!, withName: "title")
             multipartFormData.append(summaryData!, withName: "summary")
             multipartFormData.append(areaData!, withName: "area")
             multipartFormData.append(departmentData!, withName: "department")
             multipartFormData.append(aimData!, withName: "aim")
             multipartFormData.append(explainData!, withName: "explain")
-            multipartFormData.append(img_urlData!, withName: "img", fileName: "img.jpg" , mimeType: "image/jpeg")
+//            multipartFormData.append(img_urlData!, withName: "img", fileName: "img.jpg" , mimeType: "image/jpeg")
             
         }, to: URL, method: .post, headers: header)
         { (encodingResult) in
