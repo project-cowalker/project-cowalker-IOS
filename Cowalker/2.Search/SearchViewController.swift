@@ -29,12 +29,11 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "projectCollectionViewCell", for: indexPath) as! projectCollectionViewCell
-//        cell.imgView.image = imageArray[indexPath.row]
-        // nill 인거 거르기~~~~~~~~~~~~~~~~~~~~~~~~
-        cell.labelText1.text = searchData[indexPath.row].title!
-        cell.labelText2.text = searchData[indexPath.row].aim!
-//        cell.labelText1.text = textArray[indexPath.row]
-//        cell.labelText2.text = textArray[indexPath.row]
+        cell.imgView.kf.setImage(with: URL(string: gsno(searchData[indexPath.row].img_url)), placeholder: UIImage())
+        
+        cell.labelText1.text = checkTheText(temp: searchData[indexPath.row].title)
+        cell.labelText2.text = checkTheText(temp: searchData[indexPath.row].aim)
+
         return cell
     
     }
@@ -43,11 +42,11 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return 0
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 10
 }
     ////////////////검색필터
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -58,18 +57,49 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBAction func filterBtnAct(_ sender: UIButton) {
         //필터뷰 오픈, 프리젠트
         let storyboard: UIStoryboard = self.storyboard!
-        let nextView = storyboard.instantiateViewController(withIdentifier: "FilterViewController")
+        if let nextView = storyboard.instantiateViewController(withIdentifier: "FilterViewController") as? FilterViewController{
+            self.navigationController?.pushViewController(nextView, animated: true)
+        }
         
-        present(nextView, animated: true, completion: nil)
+      
+            
         
     }
+    @IBOutlet weak var searchText: UITextField!
+    static var filterURL = ""
     @IBAction func searchBtnAct(_ sender: UIButton) {
+        
         //서치 뷰
+        print("91919")
+        
+        if SearchViewController.filterURL == "" {
+            if let tempText = searchText.text {
+                SearchServie.searchInit(tempUrl: "?keyword="+tempText, completion: { (Search) in
+                    self.searchData = Search
+                    self.projectCollectionView.reloadData()
+                })
+            }
+           
+        }else {
+//            /search?aim=창업&area=서울&position=개발&department=iot&keyword=검색어
+            if let tempText = searchText.text {
+                SearchServie.searchInit(tempUrl: SearchViewController.filterURL+"&keyword="+tempText, completion: { (Search) in
+                    self.searchData = Search
+                    self.projectCollectionView.reloadData()
+                })
+            }
+        }
     }
-    
+    func checkTheText(temp: String?) -> String{
+        if temp == nil {
+            return ""
+        }else{
+            return temp!
+        }
+    }
     var searchData: [Search] = [Search]()
     func initSearch(){
-        SearchServie.searchInit { (Search) in
+        SearchServie.searchInit(tempUrl: "") { (Search) in
             self.searchData = Search
             self.projectCollectionView.reloadData()
             

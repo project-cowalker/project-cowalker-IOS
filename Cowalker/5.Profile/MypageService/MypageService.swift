@@ -182,7 +182,7 @@ struct MypageService: APIService {
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     //+++++++++++++++타인이 소개 페이지 보는 경우도 -> url: intro/user_idx
     
-    static func seeMyPageMySelf(urlTemp: String, completion: @escaping([IntroPage]) -> Void){
+    static func seeMyPageMySelf(urlTemp: String, completion: @escaping(IntroPage) -> Void){
         let URL = url("/intro"+urlTemp)
         let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in

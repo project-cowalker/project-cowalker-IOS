@@ -10,5 +10,5 @@ import Foundation
 
 struct IntroPageData: Codable {
     let message: String
-    let result: [IntroPage]
+    let result: IntroPage
 }

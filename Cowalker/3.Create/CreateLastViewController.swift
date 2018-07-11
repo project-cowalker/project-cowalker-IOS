@@ -135,7 +135,8 @@ class CreateLastViewController: UIViewController,UICollectionViewDelegate,UIColl
            print(message)
             if message == "success"{
                 print("111111111111111111111")
-                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
+                
             }else {
                 print("222222222")
                 self.dismiss(animated: true, completion: nil)

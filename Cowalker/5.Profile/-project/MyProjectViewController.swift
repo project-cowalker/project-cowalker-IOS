@@ -83,9 +83,9 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreateCollectionViewCell", for: indexPath) as! CreateCollectionViewCell
             cell.projectName.text = madeProject[indexPath.row].title
             cell.projectPart.text = madeProject[indexPath.row].department
-//            if let temp = madeProject[indexPath.row].img_url![0]{
-//                    cell.projectImage.kf.setImage(with: URL(string: gsno(temp)), placeholder: UIImage())
-//            }
+            if !(madeProject[indexPath.row].img_url?.isEmpty ?? true) {
+                cell.projectImage.kf.setImage(with: URL(string: gsno(madeProject[indexPath.row].img_url?[0])), placeholder: #imageLiteral(resourceName: "1.png"))
+            }
             
             return cell
             
@@ -94,6 +94,9 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
            
             cell.projectName.text = participateProject[indexPath.row].title
             cell.projectPart.text = participateProject[indexPath.row].department
+            if !(participateProject[indexPath.row].img_url?.isEmpty ?? true) {
+                cell.projectImage.kf.setImage(with: URL(string: gsno(participateProject[indexPath.row].img_url?[0])), placeholder: #imageLiteral(resourceName: "1.png"))
+            }
             return cell
             
             
@@ -102,7 +105,9 @@ class MyProjectViewController: UIViewController, UICollectionViewDelegate, UICol
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ApplyingCollectionViewCell", for: indexPath) as! ApplyingCollectionViewCell
             cell.projectName.text = appliedProject[indexPath.row].title
             cell.projectPart.text = appliedProject[indexPath.row].department
-//            cell.projectImage.image = imageArray[indexPath.row]
+            if !(appliedProject[indexPath.row].img_url?.isEmpty ?? true) {
+                cell.projectImage.kf.setImage(with: URL(string: gsno(appliedProject[indexPath.row].img_url?[0])), placeholder: #imageLiteral(resourceName: "1.png"))
+            }
             
             return cell
         }

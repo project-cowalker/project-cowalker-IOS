@@ -48,7 +48,7 @@ class MoreInformationViewController: UIViewController, UICollectionViewDataSourc
     var introPage: [IntroPage] = [IntroPage]()
     func initIntroPage(){
         MypageService.seeMyPageMySelf(urlTemp: "/"+user_idx!) { (IntroPage) in
-            self.introPage = IntroPage
+            self.introPage = [IntroPage]
             
             self.textView.text = self.introPage[0].intro_contents
             self.temp = (self.introPage[0].intro_img_url?.count)!
