@@ -699,8 +699,8 @@
                                                 </constraints>
                                             </tableViewCellContentView>
                                             <connections>
-                                                <outlet property="btnCheck" destination="hKp-tw-nkv" id="NT2-fS-6Ir"/>
-                                                <outlet property="label1" destination="4cZ-xF-kVK" id="VMb-Wu-3ND"/>
+                                                <outlet property="btnCheck" destination="hKp-tw-nkv" id="aRj-iV-xaF"/>
+                                                <outlet property="label1" destination="4cZ-xF-kVK" id="NT9-Wg-s8t"/>
                                             </connections>
                                         </tableViewCell>
                                     </prototypes>
