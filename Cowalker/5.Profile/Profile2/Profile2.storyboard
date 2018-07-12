@@ -79,6 +79,9 @@
                                     <constraint firstAttribute="width" constant="19" id="pU2-P5-RHp"/>
                                 </constraints>
                                 <state key="normal" image="icon_darkgray_letter"/>
+                                <connections>
+                                    <action selector="sendingMessageToOthers:" destination="gkW-qq-7Ie" eventType="touchUpInside" id="1Jg-H1-rAk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 한줄 (다른사람이 보는것)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="eFo-7i-MAO">
                                 <rect key="frame" x="20" y="260" width="335" height="30"/>

@@ -40,6 +40,7 @@ class AlarmSecondViewController: UIViewController, UITableViewDelegate, UITableV
         self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
         self.navigationItem.title = partner_name
         messageTableInit()
+        self.navigationController?.isNavigationBarHidden = false
         
         // Do any additional setup after loading the view.
     }

@@ -18,8 +18,11 @@ struct MypageService: APIService {
 //            "authorization" : UserDefaults.standard.string(forKey: "token")!
         
         let URL = url("/mypage"+tempUrl)
-        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
-        
+//        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+        let header: [String : String] = [
+            "authorization" : UserDefaults.standard.string(forKey: "token")!
+        ]
+        print(UserDefaults.standard.string(forKey: "token"))
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
             switch res.result{
             case .success:

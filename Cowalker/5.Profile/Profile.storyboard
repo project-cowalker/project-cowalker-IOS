@@ -148,6 +148,9 @@
                                     <constraint firstAttribute="width" constant="19" id="q09-sa-xh9"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="icon_darkgray_letter"/>
+                                <connections>
+                                    <segue destination="TTL-ng-lYz" kind="show" id="y0j-6f-70v"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBi-7n-BKJ">
                                 <rect key="frame" x="297" y="210" width="24" height="24"/>
@@ -889,6 +892,14 @@
             </objects>
             <point key="canvasLocation" x="828" y="876.1619190404798"/>
         </scene>
+        <!--AlarmViewController-->
+        <scene sceneID="m9b-yS-ezt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Alarm" referencedIdentifier="AlarmViewController" id="TTL-ng-lYz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uwx-7Y-tvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702" y="-432"/>
+        </scene>
         <!--Profile Edit View Controller-->
         <scene sceneID="kYG-kp-I0D">
             <objects>
@@ -1256,7 +1267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irf-pa-VDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045.5999999999999" y="-294.15292353823088"/>
+            <point key="canvasLocation" x="1132" y="-307"/>
         </scene>
     </scenes>
     <resources>
