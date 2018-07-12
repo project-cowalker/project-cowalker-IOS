@@ -33,6 +33,7 @@
 		9439040220F75F470024B306 /* RecoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9439040120F75F470024B306 /* RecoDetail.swift */; };
 		9439040420F75F540024B306 /* RecoDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9439040320F75F540024B306 /* RecoDetailData.swift */; };
 		9439040620F75F620024B306 /* RecoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9439040520F75F620024B306 /* RecoService.swift */; };
+		9449986C20F799F300EB9BD2 /* GetMoreInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449986B20F799F300EB9BD2 /* GetMoreInformationViewController.swift */; };
 		944A9F4120E8AAF900F5FE80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F4020E8AAF900F5FE80 /* AppDelegate.swift */; };
 		944A9F4820E8AAF900F5FE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944A9F4720E8AAF900F5FE80 /* Assets.xcassets */; };
 		944A9F4B20E8AAF900F5FE80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944A9F4920E8AAF900F5FE80 /* LaunchScreen.storyboard */; };
@@ -114,7 +115,6 @@
 		E4BDC29020F4FC3C00A50966 /* MadeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDC28F20F4FC3C00A50966 /* MadeCollectionViewCell.swift */; };
 		E4BDC29220F4FC5600A50966 /* JoinCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDC29120F4FC5600A50966 /* JoinCollectionViewCell.swift */; };
 		E4BDC29420F4FD9500A50966 /* ProfileProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDC29320F4FD9500A50966 /* ProfileProjectViewController.swift */; };
-		E4BDC29620F5067B00A50966 /* MoreInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDC29520F5067B00A50966 /* MoreInformationViewController.swift */; };
 		E4BDC29820F5098100A50966 /* MoreInformationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDC29720F5098100A50966 /* MoreInformationCollectionViewCell.swift */; };
 		E4C91B6E20F342EB008D81EC /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6D20F342EB008D81EC /* IntroPage.swift */; };
 		E4C91B7020F342F7008D81EC /* IntroPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C91B6F20F342F7008D81EC /* IntroPageData.swift */; };
@@ -157,6 +157,7 @@
 		9439040120F75F470024B306 /* RecoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoDetail.swift; sourceTree = "<group>"; };
 		9439040320F75F540024B306 /* RecoDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoDetailData.swift; sourceTree = "<group>"; };
 		9439040520F75F620024B306 /* RecoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoService.swift; sourceTree = "<group>"; };
+		9449986B20F799F300EB9BD2 /* GetMoreInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreInformationViewController.swift; sourceTree = "<group>"; };
 		944A9F3D20E8AAF900F5FE80 /* Cowalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cowalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944A9F4020E8AAF900F5FE80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		944A9F4720E8AAF900F5FE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -241,7 +242,6 @@
 		E4BDC28F20F4FC3C00A50966 /* MadeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4BDC29120F4FC5600A50966 /* JoinCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4BDC29320F4FD9500A50966 /* ProfileProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProjectViewController.swift; sourceTree = "<group>"; };
-		E4BDC29520F5067B00A50966 /* MoreInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInformationViewController.swift; sourceTree = "<group>"; };
 		E4BDC29720F5098100A50966 /* MoreInformationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInformationCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4C91B6D20F342EB008D81EC /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
 		E4C91B6F20F342F7008D81EC /* IntroPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageData.swift; sourceTree = "<group>"; };
@@ -668,8 +668,8 @@
 				E4BDC28F20F4FC3C00A50966 /* MadeCollectionViewCell.swift */,
 				E4BDC29120F4FC5600A50966 /* JoinCollectionViewCell.swift */,
 				E4BDC29320F4FD9500A50966 /* ProfileProjectViewController.swift */,
-				E4BDC29520F5067B00A50966 /* MoreInformationViewController.swift */,
 				E4BDC29720F5098100A50966 /* MoreInformationCollectionViewCell.swift */,
+				9449986B20F799F300EB9BD2 /* GetMoreInformationViewController.swift */,
 			);
 			path = Profile2;
 			sourceTree = "<group>";
@@ -925,6 +925,7 @@
 				9406D26E20ECF240001B145D /* RecruitNextViewController.swift in Sources */,
 				E4CD827320F0AE8400352A78 /* ProjectDetail.swift in Sources */,
 				9403DD1320E92B340049C497 /* ApplyingCollectionViewCell.swift in Sources */,
+				9449986C20F799F300EB9BD2 /* GetMoreInformationViewController.swift in Sources */,
 				944A9F6F20E8B5CC00F5FE80 /* ProfileViewController.swift in Sources */,
 				944A9F7E20E8DFCA00F5FE80 /* ProfileEditViewController.swift in Sources */,
 				E4372E2820F55937001906B4 /* Search.swift in Sources */,
@@ -964,9 +965,7 @@
 				943903F920F734110024B306 /* ProjectMemData.swift in Sources */,
 				948AEA0020F0971F003CF30F /* RecruitService.swift in Sources */,
 				944A9F5620E8AE8600F5FE80 /* LoginService.swift in Sources */,
-				E4BDC29620F5067B00A50966 /* MoreInformationViewController.swift in Sources */,
 				948AEA2F20F51820003CF30F /* HomeDetail.swift in Sources */,
-				E4BDC29620F5067B00A50966 /* MoreInformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

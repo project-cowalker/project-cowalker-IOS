@@ -96,7 +96,7 @@ class Profile2ViewController: UIViewController {
     }
     
     @IBAction func moreInformation(_ sender: Any) {
-        if let secondVC = storyboard?.instantiateViewController(withIdentifier: "MoreInformationViewController") as? MoreInformationViewController{
+        if let secondVC = storyboard?.instantiateViewController(withIdentifier: "GetMoreInformationViewController") as? GetMoreInformationViewController{
             
             secondVC.user_idx = user_idx!
             

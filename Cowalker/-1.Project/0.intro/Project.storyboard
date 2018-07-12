@@ -105,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hJ-jS-BCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3401" y="-937"/>
+            <point key="canvasLocation" x="2598" y="-797"/>
         </scene>
         <!--ProjectPartDetailViewController-->
         <scene sceneID="qUU-6d-Deq">
@@ -752,7 +752,7 @@
                     <viewLayoutGuide key="safeArea" id="Na2-vi-4VD"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1058" y="-697"/>
+            <point key="canvasLocation" x="809" y="-855"/>
         </scene>
     </scenes>
     <resources>

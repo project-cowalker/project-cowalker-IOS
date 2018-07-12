@@ -19,7 +19,7 @@
         <!--Profile2 View Controller-->
         <scene sceneID="mhz-7r-Aqa">
             <objects>
-                <viewController restorationIdentifier="Profile2Storyboard" storyboardIdentifier="Profile2Storyboard" id="gkW-qq-7Ie" customClass="Profile2ViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Profile2ViewController" storyboardIdentifier="Profile2ViewController" id="gkW-qq-7Ie" customClass="Profile2ViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Axu-xf-aB8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -278,10 +278,10 @@
             </objects>
             <point key="canvasLocation" x="-588" y="-137"/>
         </scene>
-        <!--More Information View Controller-->
+        <!--Get More Information View Controller-->
         <scene sceneID="j4a-DQ-yDN">
             <objects>
-                <viewController restorationIdentifier="MoreInformationViewController" storyboardIdentifier="MoreInformationViewController" id="MLJ-Gl-Rh4" customClass="MoreInformationViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="GetMoreInformationViewController" storyboardIdentifier="GetMoreInformationViewController" id="MLJ-Gl-Rh4" customClass="GetMoreInformationViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zEX-nL-a7m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,8 +342,8 @@
                         <viewLayoutGuide key="safeArea" id="SE2-oE-gN4"/>
                     </view>
                     <connections>
-                        <outlet property="introductionCollectionView" destination="vpV-gE-NZC" id="yGO-IP-9mF"/>
-                        <outlet property="textView" destination="RVO-dP-2qn" id="pbU-7h-EVP"/>
+                        <outlet property="introductionCollectionView" destination="vpV-gE-NZC" id="ld0-J2-HTo"/>
+                        <outlet property="textView" destination="RVO-dP-2qn" id="nvh-MU-Uk9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="786-o7-TaP" userLabel="First Responder" sceneMemberID="firstResponder"/>

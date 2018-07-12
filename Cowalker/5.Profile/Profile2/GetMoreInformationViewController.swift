@@ -1,37 +1,32 @@
 //
-//  MoreInformationViewController.swift
+//  GetMoreInformationViewController.swift
 //  Cowalker
 //
-//  Created by 정보영 on 2018. 7. 11..
+//  Created by 조예원 on 2018. 7. 12..
 //  Copyright © 2018년 조예원. All rights reserved.
 //
 
 import UIKit
 
-class MoreInformationViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
-    var temp = 0
-    var imageArray: [String] = [String]()
+class GetMoreInformationViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if temp != 0 {
-            return temp
-        }else{
-            return 1
-        }
+        return imageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoreInformationCollectionViewCell", for: indexPath) as! MoreInformationCollectionViewCell
-        
-        cell.moreInformationImage.kf.setImage(with: URL(string: gsno(imageArray[indexPath.row])), placeholder: UIImage())
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IntroductionCollectionViewCell", for: indexPath) as! IntroductionCollectionViewCell
+        cell.introductionImage.kf.setImage(with: URL(string: gsno(imageArray[indexPath.row])), placeholder: #imageLiteral(resourceName: "1.png"))
         return cell
     }
     
+    var temp = 0
+    var imageArray: [String] = [String]()
     var user_idx: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initIntroPage()
         funcForNavigationBar()
+
         // Do any additional setup after loading the view.
     }
 
@@ -39,24 +34,20 @@ class MoreInformationViewController: UIViewController, UICollectionViewDataSourc
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     @IBOutlet weak var introductionCollectionView: UICollectionView!
-    
     
     @IBOutlet weak var textView: UITextView!
     
-    var introPage: [IntroPage] = [IntroPage]()
+    var introPage: IntroPage!
+    
     func initIntroPage(){
         MypageService.seeMyPageMySelf(urlTemp: "/"+user_idx!) { (IntroPage) in
-            self.introPage = [IntroPage]
             
-            self.textView.text = self.introPage[0].intro_contents
-            self.temp = (self.introPage[0].intro_img_url?.count)!
-            if let tem_url = self.introPage[0].intro_img_url{
-                self.imageArray = tem_url
-            }
-            print(self.temp)
-            print(self.imageArray)
+            self.introPage = IntroPage
+            self.textView.text = self.introPage.intro_contents!
+            self.introductionCollectionView.reloadData()
+            self.imageArray = IntroPage.intro_img_url!
+            
             self.introductionCollectionView.reloadData()
         }
         
@@ -73,6 +64,15 @@ class MoreInformationViewController: UIViewController, UICollectionViewDataSourc
     @objc func popAction() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+
     
 
 }
