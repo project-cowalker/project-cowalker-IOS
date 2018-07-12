@@ -41,14 +41,21 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     var temp: String = String()
     override func prepare(for segue:UIStoryboardSegue, sender:Any?) {
-        if segue.identifier == "Project",
-            let dest = segue.destination as? ProjectIntroViewController
-        {
-            dest.tempProjectId = temp
-            print(1111111111)
-            print(temp)
+        if let destination = segue.destination as? ProjectIntroViewController{
+            destination.tempProjectId = temp
         }
+//        if segue.identifier == "Project",
+//            let dest = segue.destination as? ProjectIntroViewController
+//        {
+//            dest.tempProjectId = temp
+//            print(1111111111)
+//            print(temp)
+//        }
+       
     }
+   
+    
+    
     //tempProjectId
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
