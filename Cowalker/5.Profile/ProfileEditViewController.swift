@@ -103,40 +103,36 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
         self.navigationController?.popViewController(animated: true)
     }
     
-    
-    var myPageEdit: [MyPageEdit] = [MyPageEdit]()
-    @objc func finishedEditing(){
-        if roleTextField.text == "선택"{
-            roleTextField.text = positionLabel
-        }else if introductionTextField.text == "" {
-            introductionTextField.text = introduceLabel
-        }else if emailTextField.text == "" {
-            emailTextField.text = emailLabel
-        }else if purposeTextField.text == "선택"{
-            purposeTextField.text = aimLabel
-        }else if partTextField.text == "선택" {
-            partTextField.text = departmentLabel
-        }else if regionTextField.text == "선택"{
-            regionTextField.text = areaLabel
+    func checkThePicker(textField: UITextField,label: String){
+        if textField.text == "선택"{
+            textField.text = label
         }
+    }
+    func checkTheText(textField: UITextField, label: String){
+        if textField.text == ""{
+            textField.text = label
+        }
+    }
+    
+
+    @objc func finishedEditing(){
+
+        
+        checkThePicker(textField: roleTextField, label: positionLabel)
+        checkTheText(textField: introductionTextField, label: introduceLabel)
+        checkTheText(textField: emailTextField, label: emailLabel)
+        checkThePicker(textField: purposeTextField, label: aimLabel)
+        checkThePicker(textField: partTextField, label: departmentLabel)
+        checkThePicker(textField: regionTextField, label: areaLabel)
         //  여기서 이제 서버로 넘기기
         MypageService.myPageEdit(profile_img: profileImage, background_img: backgroundImage, name: nameLabel, position: roleTextField.text!, introduce: introductionTextField.text!, portfolio_url: emailTextField.text!, aim: purposeTextField.text!, department: partTextField.text!, area: regionTextField.text!) { (message) in
             if message == "update success"{
                 print("success")
+                print(self.emailTextField.text!)
                 self.navigationController?.popViewController(animated: true)
             }
         }
     
-//        MypageService.myPageEdit(profile_img: profileImage, background_img: backgroundImage, email: emailTextField.text!, name: nameLabel, point: <#T##Int#>, position: roleTextField.text!, introduce: introductionTextField.text!, portfolio_url: <#T##String#>, aim: purposeTextField.text!, department: partTextField.text!, area: regionTextField.text!) { (message) in
-//            if message == "update success"{
-//                self.navigationController?.popViewController(animated: true)
-//            }
-//        }
-        
-//        MypageService.myPageEdit { (myPageEdit) in
-//            self.myPageEdit = myPageEdit
-//        }
-//        self.navigationController?.popViewController(animated: true)
     }
     var profileImage = UIImage()
     var backgroundImage = UIImage()

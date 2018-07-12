@@ -36,7 +36,7 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
         self.tabBarController?.tabBar.items![3].image = #imageLiteral(resourceName: "iconsTabbar4Alarm")
     }
     override func viewWillAppear(_ animated: Bool) {
-        alarmTableView.reloadData()
+        alarmViewControllerInit()
     }
     var alarm: [NewAlarm] = [NewAlarm]()
     @IBAction func button1(_ sender: UIButton) {
@@ -70,7 +70,19 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
         }
         print(message.count)
     }
-    
+    func alarmViewControllerInit(){
+        MessageService.messageInit { (message) in
+            
+            self.message = message
+            self.alarmTableView.reloadData()
+            
+        }
+        MessageService.getNewAlarm { (NewAlarm) in
+            self.alarm = NewAlarm
+            self.alarmTableView.reloadData()
+            
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if num == 0 {

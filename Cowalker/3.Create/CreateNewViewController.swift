@@ -81,8 +81,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     }
     
     @IBAction func closeFunction(_ sender: Any) {
-        //        self.navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MyTabViewController") as! MyTabViewController
+        self.present(vc, animated: false, completion: nil)
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
             if titleTextField.text != "" && commentOfIntro.text != "" && purposeTextField.text != "선택" && departmentTextField.text != "선택" && regionTextField.text != "선택" {

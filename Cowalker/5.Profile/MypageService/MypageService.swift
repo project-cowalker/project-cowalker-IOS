@@ -76,7 +76,7 @@ struct MypageService: APIService {
             multipartFormData.append(nameData!, withName: "name")
             multipartFormData.append(positionData!, withName: "position")
             multipartFormData.append(introduceData!, withName: "introduce")
-            multipartFormData.append(portfolio_urlData!, withName: "portfolio")
+            multipartFormData.append(portfolio_urlData!, withName: "portfolio_url")
             multipartFormData.append(aimData!, withName: "aim")
             multipartFormData.append(departmentData!, withName: "department")
             multipartFormData.append(areaData!, withName: "area")
@@ -196,7 +196,7 @@ struct MypageService: APIService {
     
     static func seeMyPageMySelf(urlTemp: String, completion: @escaping(IntroPage) -> Void){
         let URL = url("/intro"+urlTemp)
-//        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+//        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsImlhdCI6MTUzMTQwMTIzMSwiZXhwIjoxNTMzOTkzMjMxfQ.6Yx78kfxxjnuPJg5DxuMVvCPiojeC7jIPrYmI-isafo"]
         let header: [String : String] = [
             "authorization" : UserDefaults.standard.string(forKey: "token")!
         ]
@@ -232,7 +232,7 @@ struct MypageService: APIService {
         let URL = url("/intro")
         let contentsData = contents.data(using: .utf8)
         var imgData = [UIImage]()
-//        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+//        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxNTAsImlhdCI6MTUzMTQwMTIzMSwiZXhwIjoxNTMzOTkzMjMxfQ.6Yx78kfxxjnuPJg5DxuMVvCPiojeC7jIPrYmI-isafo"]
         let header: [String : String] = [
             "Authorization" : UserDefaults.standard.string(forKey: "token")!
         ]
