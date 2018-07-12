@@ -25,6 +25,7 @@ class AlarmSecondViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        messageTableInit()
         individualMessageTableView.reloadData()
         
     }

@@ -16,6 +16,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.tabBarController?.tabBar.items![1].image = #imageLiteral(resourceName: "iconsTabbar2Search")
         self.navigationController?.isNavigationBarHidden = true
         initSearch()
+        
     }
     
     // 임이 데이터
@@ -33,24 +34,34 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         cell.labelText1.text = checkTheText(temp: searchData[indexPath.row].title)
         cell.labelText2.text = checkTheText(temp: searchData[indexPath.row].aim)
+       
 
         return cell
     
     }
     var temp: String = String()
     override func prepare(for segue:UIStoryboardSegue, sender:Any?) {
-        if segue.identifier == "Project",
-            let dest = segue.destination as? ProjectIntroViewController
-        {
-            dest.tempProjectId = temp
-            print(1111111111)
-            print(temp)
+        if let destination = segue.destination as? ProjectIntroViewController{
+            destination.tempProjectId = temp
         }
+//        if segue.identifier == "Project",
+//            let dest = segue.destination as? ProjectIntroViewController
+//        {
+//            dest.tempProjectId = temp
+//            print(1111111111)
+//            print(temp)
+//        }
+       
     }
+   
+    
+    
     //tempProjectId
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         temp = searchData[indexPath.row].project_idx!
+        print(searchData[indexPath.row].project_idx!)
+        print(temp)
         let storyboard: UIStoryboard = UIStoryboard(name: "Project", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
         
