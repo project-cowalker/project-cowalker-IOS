@@ -8,8 +8,8 @@
 
 import Foundation
 
-
 struct resumeDetailData: Codable{
     let message: String
-    let result: [RecruitDetail]
+    let result: [resumeDetail]
 }
+

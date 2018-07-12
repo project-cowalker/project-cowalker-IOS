@@ -9,8 +9,8 @@
 import Foundation
 
 struct RecruitListData: Codable{
-    let message: String
-    let result: [RecruitList]
+    let message: String!
+    let result: [RecruitList]!
 }
 
 

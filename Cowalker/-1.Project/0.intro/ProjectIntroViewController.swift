@@ -3,26 +3,18 @@ import UIKit
 
 class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate{
     
+    @IBOutlet weak var recoTableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
+        return 3}
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"RecoTableViewCell") as! RecoTableViewCell
-        
-        
-        //
         if indexPath.section == 0{
             cell.label1.text = "전체 프로젝트"
         }else{
             cell.label1.text = "파트"
         }
         cell.btnCheck.setImage(#imageLiteral(resourceName: "check.png"), for: .normal)
-        return cell
-        
-    }
-    
-    @IBOutlet weak var recoTableView: UITableView!
+        return cell}
     
     @IBOutlet weak var projectCollectionView: UICollectionView! // 콜랙션
     @IBOutlet weak var partCollectionView: UICollectionView!
@@ -50,12 +42,13 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var profileImg: UIButton!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
         self.tabBarController?.tabBar.isHidden = true // 하단 탭바 삭제
         let leftButton = UIBarButtonItem(title: "<Home", style: .plain, target: self, action: #selector(self.action)) // 왼쪽 버튼 설정
         self.navigationItem.leftBarButtonItem = leftButton
-        self.popView.layer.cornerRadius = 10
+        self.popView.layer.cornerRadius = 0//////// radius
         constTest.constant = 0
         projectInit()
     }
@@ -78,8 +71,9 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             self.tempRecruitLists = recruitLists
             self.tempList = self.tempRecruitLists.count
             self.const() // 모집컬랙션뷰 크기 처리함수
+            print("규희규희3")
             self.partCollectionView.reloadData()
-           // self.tempRecruitId = recruitLists
+            // self.tempRecruitId = recruitLists
         }
     }
     func btnIs(){
@@ -109,7 +103,15 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         self.profileImg?.kf.setImage(with: URL(string: gsno(tempProjectDetails[0].project_user_profile_url)), for: .normal, placeholder: UIImage())
     }
     func const(){
-        collecViewH.constant = CGFloat((tempList - 1)*88) + collecViewH.constant
+        if tempList == 0{
+            collecViewH.constant = 30
+            print("규희규희1")
+            print(tempList)
+        }
+        else{ collecViewH.constant = CGFloat((tempList - 1)*88) + collecViewH.constant
+        print("규희규희2")
+        print(tempList)
+        }
     }
     ////////////////////////////////
     @IBOutlet weak var labelDetail: UILabel!
@@ -132,16 +134,14 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == projectCollectionView {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProjectCollectionViewCell", for: indexPath) as! ProjectCollectionViewCell
-            
-            //
-            cell.projectImage?.kf.setImage(with: URL(string: gsno(tempProjectDetails[0].img_url![indexPath.row])), placeholder: UIImage()) // 이미지 배열 처리 먹이기
-            
+            cell.projectImage?.kf.setImage(with: URL(string: gsno(tempProjectDetails[0].img_url![indexPath.row])), placeholder: UIImage())
             return cell}
         else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PartCollectionViewCell", for: indexPath) as! PartCollectionViewCell
+            
             cell.partLabel.text = tempRecruitLists[indexPath.row].position
-            cell.partNumLabel.text = String(self.tempRecruitLists[indexPath.row].number)
-            cell.dDayLabel.text =  String(self.tempRecruitLists[indexPath.row].dday)
+            cell.partNumLabel.text = String(self.tempRecruitLists[indexPath.row].number) + "명"
+            cell.dDayLabel.text =  "D - " + String(self.tempRecruitLists[indexPath.row].dday)
             cell.detailLabel.text = self.tempRecruitLists[indexPath.row].task
             return cell}
     }
@@ -190,6 +190,11 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             }
         }else { // 참여하기 페이지로 이동
             let secondVC = UIStoryboard(name: "Apply", bundle:nil ).instantiateViewController(withIdentifier: "ProjectJoinViewController") as! ProjectJoinViewController
+           //
+          secondVC.tempProjectId = self.tempProjectId
+            secondVC.tempRecruitId = self.tempRecruitId
+            
+            
             self.navigationController?.pushViewController(secondVC, animated: true)
         }
     }

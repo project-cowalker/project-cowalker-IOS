@@ -454,7 +454,6 @@
                                                 <subviews>
                                                     <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4r-pp-Pl0">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="20"/>
-                                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="goToProfile:" destination="4ud-ul-aRk" eventType="touchUpInside" id="aKZ-MX-v1z"/>
                                                         </connections>
@@ -473,14 +472,14 @@
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="k3J-Pa-Rys" secondAttribute="trailing" constant="1" id="5FT-nR-FYB"/>
                                                     <constraint firstAttribute="height" constant="20" id="Cxu-Ai-fcK"/>
                                                     <constraint firstAttribute="bottom" secondItem="W4r-pp-Pl0" secondAttribute="bottom" id="OpB-9E-OWj"/>
                                                     <constraint firstAttribute="width" constant="70" id="Rh8-Nf-ccs"/>
+                                                    <constraint firstItem="k3J-Pa-Rys" firstAttribute="centerY" secondItem="WrN-aC-tTA" secondAttribute="centerY" id="Uno-0U-VU8"/>
+                                                    <constraint firstItem="k3J-Pa-Rys" firstAttribute="leading" secondItem="WrN-aC-tTA" secondAttribute="trailing" constant="5" id="VIb-Kl-DF4"/>
                                                     <constraint firstItem="WrN-aC-tTA" firstAttribute="leading" secondItem="tgh-ur-JYa" secondAttribute="leading" constant="1" id="ZO1-9z-Jv5"/>
                                                     <constraint firstItem="WrN-aC-tTA" firstAttribute="centerY" secondItem="W4r-pp-Pl0" secondAttribute="centerY" id="dee-H2-xOr"/>
                                                     <constraint firstAttribute="trailing" secondItem="W4r-pp-Pl0" secondAttribute="trailing" id="i2n-gH-hjU"/>
-                                                    <constraint firstItem="k3J-Pa-Rys" firstAttribute="centerY" secondItem="W4r-pp-Pl0" secondAttribute="centerY" id="tl1-hN-voK"/>
                                                     <constraint firstItem="W4r-pp-Pl0" firstAttribute="top" secondItem="tgh-ur-JYa" secondAttribute="top" id="wkN-Sg-0tz"/>
                                                     <constraint firstItem="W4r-pp-Pl0" firstAttribute="leading" secondItem="tgh-ur-JYa" secondAttribute="leading" id="zO7-Gd-1XC"/>
                                                 </constraints>
@@ -618,6 +617,7 @@
                         <outlet property="popView" destination="kig-wz-wPh" id="eCi-0c-mKe"/>
                         <outlet property="profileImg" destination="XGy-Xq-YAY" id="lRS-Gp-CSW"/>
                         <outlet property="projectCollectionView" destination="Cex-mO-pV2" id="3ma-KR-22S"/>
+                        <outlet property="recoTableView" destination="fyN-Kh-GJC" id="hBH-HP-YiM"/>
                         <outlet property="scrView" destination="ebv-cn-LgW" id="gF9-XR-I3r"/>
                         <outlet property="summaryLabel" destination="gdA-fQ-HSK" id="sHO-4v-s8V"/>
                         <outlet property="titleLabel" destination="PFY-m1-Nht" id="nc3-o1-kfD"/>

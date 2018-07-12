@@ -22,20 +22,25 @@ struct RecruitService:APIService{
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData() {res in
             switch res.result{
             case .success:
+                print("ㅅㅂ1")
                 if let value = res.result.value{
                     let decoder = JSONDecoder()
                     do{
+                        print("ㅅㅂ3")
                         let recruitListData = try decoder.decode(RecruitListData.self, from: value)
+                        print(recruitListData.message)//
                         if recruitListData.message == "success"{
-                            print(recruitListData.result)
+                           // print(recruitListData.result)
                             completion(recruitListData.result)
-                            
-                            print("됐네 시발")
+                            print("ㅅㅂ4")
+                        }else if recruitListData.message == "database failure"{
+                            print("ㅅㅂㅅㅂ")
                         }
-                  }catch{ print("캐치")}
+                  }catch{ }
                 }
                 break
             case .failure(let err):
+                print("ㅅㅂ2")
                 print(err.localizedDescription)
                 print("err")
                 break
@@ -58,13 +63,10 @@ struct RecruitService:APIService{
                 if let value = res.result.value{
                     let decoder = JSONDecoder()
                     do{
-                       // print("do")
                         let recruitDetailData = try decoder.decode(RecruitDetailData.self, from: value)
-                       // print("decodetest")
                         if recruitDetailData.message == "success"{
                             print(22)
-                            completion(recruitDetailData.result,recruitDetailData.btnResult)
-                           // print("됐네 시발")
+                        
                         }
                     }catch{ print("캐치22")}
                 }

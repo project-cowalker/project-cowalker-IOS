@@ -22,11 +22,11 @@
             <objects>
                 <viewController restorationIdentifier="ProjectPartDetailViewController" storyboardIdentifier="ProjectPartDetailViewController" id="wri-X5-ZOc" customClass="ProjectPartDetailViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kwi-ZP-Vbv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1220"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C99-Se-hX7">
-                                <rect key="frame" x="0.0" y="20" width="375" height="1280"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-lO-rea">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1191"/>
@@ -423,11 +423,11 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.39390733509999998" green="0.97824598880000002" blue="0.77966560699999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="MQO-lO-rea" firstAttribute="top" secondItem="C99-Se-hX7" secondAttribute="top" id="Geq-iA-hyo"/>
-                                    <constraint firstAttribute="bottom" secondItem="MQO-lO-rea" secondAttribute="bottom" constant="80" id="X1x-ih-vO1"/>
                                     <constraint firstAttribute="trailing" secondItem="MQO-lO-rea" secondAttribute="trailing" id="YQT-dk-YuT"/>
+                                    <constraint firstAttribute="bottom" secondItem="MQO-lO-rea" secondAttribute="bottom" constant="9" id="bly-Gd-QqW"/>
                                     <constraint firstItem="MQO-lO-rea" firstAttribute="leading" secondItem="C99-Se-hX7" secondAttribute="leading" id="o0J-n6-6Yv"/>
                                 </constraints>
                             </scrollView>
@@ -436,6 +436,7 @@
                         <constraints>
                             <constraint firstItem="C99-Se-hX7" firstAttribute="top" secondItem="CEk-cf-cEn" secondAttribute="top" id="2JJ-LU-dbx"/>
                             <constraint firstItem="C99-Se-hX7" firstAttribute="trailing" secondItem="CEk-cf-cEn" secondAttribute="trailing" id="5JR-OJ-Jqr"/>
+                            <constraint firstItem="C99-Se-hX7" firstAttribute="bottom" secondItem="CEk-cf-cEn" secondAttribute="bottom" id="U8O-2D-zRX"/>
                             <constraint firstItem="CEk-cf-cEn" firstAttribute="bottom" secondItem="C99-Se-hX7" secondAttribute="bottom" id="j4C-BY-gk5"/>
                             <constraint firstItem="C99-Se-hX7" firstAttribute="bottom" secondItem="CEk-cf-cEn" secondAttribute="bottom" id="nDl-bc-LmW"/>
                             <constraint firstItem="C99-Se-hX7" firstAttribute="leading" secondItem="CEk-cf-cEn" secondAttribute="leading" id="sOs-uK-h6o"/>
@@ -443,7 +444,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CEk-cf-cEn"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1300"/>
+                    <size key="freeformSize" width="375" height="1220"/>
                     <connections>
                         <outlet property="abilityLabel" destination="oFu-jV-WMR" id="0Yn-XG-p7j"/>
                         <outlet property="activityLabel" destination="nsM-jX-dWz" id="yO5-dt-dbF"/>
@@ -611,10 +612,8 @@
                                                     </constraints>
                                                     <state key="normal" image="iconResume"/>
                                                     <connections>
+                                                        <action selector="resumeBtnAct:" destination="iVe-cM-6Nr" eventType="touchUpInside" id="IIT-8T-e1j"/>
                                                         <action selector="resumeBtnAct:" destination="Ac9-ES-ybi" eventType="touchUpInside" id="sBo-t0-ox2"/>
-                                                        <segue destination="CAQ-zM-PlU" kind="show" id="9lH-cr-ZcL">
-                                                            <nil key="action"/>
-                                                        </segue>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -640,6 +639,7 @@
                                             <outlet property="memImg" destination="KDB-Ka-DyN" id="uFH-oG-uIa"/>
                                             <outlet property="memName" destination="K2q-BR-DDE" id="TZP-AD-Udt"/>
                                             <outlet property="memPart" destination="IX8-D2-INA" id="aDh-RM-9Pe"/>
+                                            <outlet property="resumeBtn" destination="tzx-8c-SIp" id="Ejb-pP-CTO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -671,14 +671,14 @@
             <objects>
                 <viewController restorationIdentifier="ResumeViewController" storyboardIdentifier="ResumeViewController" id="CAQ-zM-PlU" customClass="ResumeViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a0c-ko-mV3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1170"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYK-wn-knT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1170"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qwd-7w-3bZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1134.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1135.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자기 소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaz-jz-sJu">
                                                 <rect key="frame" x="20" y="158" width="60" height="19.5"/>
@@ -704,20 +704,20 @@
                                                     <constraint firstAttribute="height" constant="10" id="uyM-he-6fA"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자기 소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOT-r2-Vfw">
-                                                <rect key="frame" x="20" y="370" width="60" height="19.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이력서, 포트폴리오 링크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOT-r2-Vfw">
+                                                <rect key="frame" x="20" y="370" width="151" height="20"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cowalker2018@cowalker.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQe-qU-Dar">
-                                                <rect key="frame" x="30" y="409" width="315" height="19.5"/>
+                                                <rect key="frame" x="30" y="410" width="315" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpe-fg-UJu">
-                                                <rect key="frame" x="0.0" y="448.5" width="375" height="10"/>
+                                                <rect key="frame" x="0.0" y="449.5" width="375" height="10"/>
                                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="Sa0-OM-JSc"/>
@@ -726,19 +726,19 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연락처" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="396-29-C0m">
-                                                <rect key="frame" x="20" y="478.5" width="42" height="20"/>
+                                                <rect key="frame" x="20" y="479.5" width="42" height="20"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="010 1234 0665" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLA-gF-mYD">
-                                                <rect key="frame" x="30" y="518.5" width="315" height="20"/>
+                                                <rect key="frame" x="30" y="519.5" width="315" height="20"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="clW-bc-tGc">
-                                                <rect key="frame" x="0.0" y="558.5" width="375" height="20"/>
+                                                <rect key="frame" x="0.0" y="559.5" width="375" height="20"/>
                                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="bLP-1i-qxb"/>
@@ -746,25 +746,25 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="질문 (선택)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfW-Li-AO7">
-                                                <rect key="frame" x="20" y="598.5" width="71" height="20"/>
+                                                <rect key="frame" x="20" y="599.5" width="71" height="20"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. 시간을 얼마나 할애할 수 있습니까?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWk-t1-7iR">
-                                                <rect key="frame" x="30" y="638.5" width="315" height="20"/>
+                                                <rect key="frame" x="30" y="639.5" width="315" height="20"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="010 1234 0665" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rb-3s-zEl">
-                                                <rect key="frame" x="30" y="668.5" width="315" height="20"/>
+                                                <rect key="frame" x="30" y="669.5" width="315" height="20"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtQ-qO-vUi">
-                                                <rect key="frame" x="0.0" y="758.5" width="375" height="3"/>
+                                                <rect key="frame" x="0.0" y="759.5" width="375" height="3"/>
                                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="375" id="0a9-DD-qMW"/>
@@ -772,19 +772,19 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. 어떤 기술을 구현해보고 싶습니까?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvJ-BA-Ys3">
-                                                <rect key="frame" x="20" y="781.5" width="230" height="20"/>
+                                                <rect key="frame" x="20" y="782.5" width="230" height="20"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00기능을 구현해 보고 싶습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kE6-cm-lAQ">
-                                                <rect key="frame" x="30" y="811.5" width="315" height="20"/>
+                                                <rect key="frame" x="30" y="812.5" width="315" height="20"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxJ-CG-aI6">
-                                                <rect key="frame" x="0.0" y="1074.5" width="188" height="60"/>
+                                                <rect key="frame" x="0.0" y="1075.5" width="188" height="60"/>
                                                 <color key="backgroundColor" red="1" green="0.97824598880000002" blue="0.77966560699999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="188" id="CZZ-5Y-uLW"/>
@@ -793,7 +793,7 @@
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1w-42-Brx">
-                                                <rect key="frame" x="187" y="1074.5" width="188" height="60"/>
+                                                <rect key="frame" x="187" y="1075.5" width="188" height="60"/>
                                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="4Ws-DD-zZb"/>
@@ -802,7 +802,7 @@
                                                 <state key="normal" title="Button"/>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEL-ZU-w6P">
-                                                <rect key="frame" x="0.0" y="901.5" width="375" height="173"/>
+                                                <rect key="frame" x="0.0" y="902.5" width="375" height="173"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5e-Aa-gxT">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
@@ -842,7 +842,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.84518398360000002" green="0.94244027139999997" blue="0.91328859780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="p5e-Aa-gxT" firstAttribute="top" secondItem="XEL-ZU-w6P" secondAttribute="top" id="5As-bi-7Gy"/>
                                                     <constraint firstAttribute="height" constant="173" id="5F1-C4-rAE"/>
@@ -968,6 +968,7 @@
                                             <constraint firstItem="XxJ-CG-aI6" firstAttribute="top" secondItem="XEL-ZU-w6P" secondAttribute="bottom" id="Ij9-uK-T4b"/>
                                             <constraint firstItem="v1w-42-Brx" firstAttribute="centerY" secondItem="XxJ-CG-aI6" secondAttribute="centerY" id="KD4-qu-KBP"/>
                                             <constraint firstItem="XEL-ZU-w6P" firstAttribute="leading" secondItem="Qwd-7w-3bZ" secondAttribute="leading" id="KII-tq-dkI"/>
+                                            <constraint firstAttribute="bottom" secondItem="v1w-42-Brx" secondAttribute="bottom" id="Kwd-Xc-cT8"/>
                                             <constraint firstItem="396-29-C0m" firstAttribute="top" secondItem="gpe-fg-UJu" secondAttribute="bottom" constant="20" id="NE5-gf-aUu"/>
                                             <constraint firstItem="JKO-JR-FW4" firstAttribute="leading" secondItem="Qwd-7w-3bZ" secondAttribute="leading" constant="30" id="O7y-nC-gqR"/>
                                             <constraint firstAttribute="trailing" secondItem="clW-bc-tGc" secondAttribute="trailing" id="OVk-pY-lEu"/>
@@ -1004,7 +1005,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.84518398360000002" green="0.94244027139999997" blue="0.91328859780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Qwd-7w-3bZ" firstAttribute="leading" secondItem="IYK-wn-knT" secondAttribute="leading" id="3MV-OG-Tn8"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="5qm-xt-zkI"/>
@@ -1012,7 +1013,7 @@
                                     <constraint firstItem="Qwd-7w-3bZ" firstAttribute="top" secondItem="IYK-wn-knT" secondAttribute="top" id="Pum-Hc-pMf"/>
                                     <constraint firstAttribute="trailing" secondItem="Qwd-7w-3bZ" secondAttribute="trailing" id="Q0S-im-S5G"/>
                                     <constraint firstAttribute="width" constant="375" id="WCc-t9-RyX"/>
-                                    <constraint firstAttribute="bottom" secondItem="Qwd-7w-3bZ" secondAttribute="bottom" constant="55.5" id="hlg-uL-Q1y"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qwd-7w-3bZ" secondAttribute="bottom" constant="20.5" id="i8m-Ha-ZZN"/>
                                     <constraint firstAttribute="trailing" secondItem="Qwd-7w-3bZ" secondAttribute="trailing" id="iy3-F0-Ogb"/>
                                     <constraint firstItem="Qwd-7w-3bZ" firstAttribute="top" secondItem="IYK-wn-knT" secondAttribute="top" id="lBd-BG-28x"/>
                                     <constraint firstItem="Qwd-7w-3bZ" firstAttribute="top" secondItem="IYK-wn-knT" secondAttribute="top" id="zq0-EV-jI4"/>
@@ -1032,14 +1033,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Og-0C-j9X"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1200"/>
+                    <size key="freeformSize" width="375" height="1170"/>
                     <connections>
+                        <outlet property="answer1" destination="4Rb-3s-zEl" id="zgr-c9-1hh"/>
+                        <outlet property="answer2" destination="kE6-cm-lAQ" id="d0t-Tv-DHI"/>
+                        <outlet property="introductLabel" destination="JKO-JR-FW4" id="yp5-qa-bUi"/>
+                        <outlet property="phoneLabel" destination="eLA-gF-mYD" id="Xg3-mw-fAn"/>
+                        <outlet property="portfolioLabel" destination="xQe-qU-Dar" id="WZb-dh-lQB"/>
                         <outlet property="resumePartCollectionView" destination="6TO-Om-FYj" id="s1R-5J-exX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8l-I3-FJC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4678" y="248"/>
+            <point key="canvasLocation" x="4677.6000000000004" y="247.37631184407797"/>
         </scene>
     </scenes>
     <resources>

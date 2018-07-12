@@ -9,11 +9,11 @@
 import Foundation
 
 struct RecruitList: Codable {
-    let recruit_idx: String
-    let position: String
-    let number: Int
-    let task: String
-    let dday: Int
+    let recruit_idx: String!
+    let position: String!
+    let number: Int!
+    let task: String!
+    let dday: Int!
 }
 
 

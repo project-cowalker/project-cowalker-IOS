@@ -24,6 +24,15 @@
 		9406D26E20ECF240001B145D /* RecruitNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406D26D20ECF240001B145D /* RecruitNextViewController.swift */; };
 		9406D27720EDAEE0001B145D /* ApplyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9406D27620EDAEE0001B145D /* ApplyService.swift */; };
 		943903F120F699540024B306 /* RecoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943903F020F699540024B306 /* RecoTableViewCell.swift */; };
+		943903F420F733200024B306 /* ProjectMemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943903F320F733200024B306 /* ProjectMemService.swift */; };
+		943903F720F733910024B306 /* ProjectMem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943903F620F733910024B306 /* ProjectMem.swift */; };
+		943903F920F734110024B306 /* ProjectMemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943903F820F734110024B306 /* ProjectMemData.swift */; };
+		943903FB20F73B8A0024B306 /* ApplyMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943903FA20F73B8A0024B306 /* ApplyMember.swift */; };
+		943903FD20F73B950024B306 /* ApplyMemberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943903FC20F73B950024B306 /* ApplyMemberData.swift */; };
+		943903FF20F74FFC0024B306 /* ResumeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943903FE20F74FFC0024B306 /* ResumeService.swift */; };
+		9439040220F75F470024B306 /* RecoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9439040120F75F470024B306 /* RecoDetail.swift */; };
+		9439040420F75F540024B306 /* RecoDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9439040320F75F540024B306 /* RecoDetailData.swift */; };
+		9439040620F75F620024B306 /* RecoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9439040520F75F620024B306 /* RecoService.swift */; };
 		944A9F4120E8AAF900F5FE80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F4020E8AAF900F5FE80 /* AppDelegate.swift */; };
 		944A9F4820E8AAF900F5FE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944A9F4720E8AAF900F5FE80 /* Assets.xcassets */; };
 		944A9F4B20E8AAF900F5FE80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944A9F4920E8AAF900F5FE80 /* LaunchScreen.storyboard */; };
@@ -57,8 +66,6 @@
 		948AE9EF20F000CA003CF30F /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9EE20F000CA003CF30F /* ResumeViewController.swift */; };
 		948AE9F320F015CC003CF30F /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9F220F015CC003CF30F /* Apply.swift */; };
 		948AE9F520F015EA003CF30F /* ApplyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9F420F015EA003CF30F /* ApplyData.swift */; };
-		948AE9FC20F02C02003CF30F /* Recruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9FB20F02C02003CF30F /* Recruit.swift */; };
-		948AE9FE20F02C0C003CF30F /* RecruitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9FD20F02C0C003CF30F /* RecruitData.swift */; };
 		948AEA0020F0971F003CF30F /* RecruitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9FF20F0971F003CF30F /* RecruitService.swift */; };
 		948AEA0620F09898003CF30F /* Apply.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948AEA0520F09898003CF30F /* Apply.storyboard */; };
 		948AEA0D20F12ADB003CF30F /* RecruitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AEA0C20F12ADB003CF30F /* RecruitList.swift */; };
@@ -141,6 +148,15 @@
 		9406D26D20ECF240001B145D /* RecruitNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitNextViewController.swift; sourceTree = "<group>"; };
 		9406D27620EDAEE0001B145D /* ApplyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyService.swift; sourceTree = "<group>"; };
 		943903F020F699540024B306 /* RecoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoTableViewCell.swift; sourceTree = "<group>"; };
+		943903F320F733200024B306 /* ProjectMemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMemService.swift; sourceTree = "<group>"; };
+		943903F620F733910024B306 /* ProjectMem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMem.swift; sourceTree = "<group>"; };
+		943903F820F734110024B306 /* ProjectMemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMemData.swift; sourceTree = "<group>"; };
+		943903FA20F73B8A0024B306 /* ApplyMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyMember.swift; sourceTree = "<group>"; };
+		943903FC20F73B950024B306 /* ApplyMemberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyMemberData.swift; sourceTree = "<group>"; };
+		943903FE20F74FFC0024B306 /* ResumeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeService.swift; sourceTree = "<group>"; };
+		9439040120F75F470024B306 /* RecoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoDetail.swift; sourceTree = "<group>"; };
+		9439040320F75F540024B306 /* RecoDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoDetailData.swift; sourceTree = "<group>"; };
+		9439040520F75F620024B306 /* RecoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoService.swift; sourceTree = "<group>"; };
 		944A9F3D20E8AAF900F5FE80 /* Cowalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cowalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944A9F4020E8AAF900F5FE80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		944A9F4720E8AAF900F5FE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -176,8 +192,6 @@
 		948AE9EE20F000CA003CF30F /* ResumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
 		948AE9F220F015CC003CF30F /* Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		948AE9F420F015EA003CF30F /* ApplyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyData.swift; sourceTree = "<group>"; };
-		948AE9FB20F02C02003CF30F /* Recruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruit.swift; sourceTree = "<group>"; };
-		948AE9FD20F02C0C003CF30F /* RecruitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitData.swift; sourceTree = "<group>"; };
 		948AE9FF20F0971F003CF30F /* RecruitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitService.swift; sourceTree = "<group>"; };
 		948AEA0520F09898003CF30F /* Apply.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Apply.storyboard; sourceTree = "<group>"; };
 		948AEA0C20F12ADB003CF30F /* RecruitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitList.swift; sourceTree = "<group>"; };
@@ -288,6 +302,26 @@
 				943903F020F699540024B306 /* RecoTableViewCell.swift */,
 			);
 			path = 0.intro;
+			sourceTree = "<group>";
+		};
+		943903F220F733020024B306 /* projectMem */ = {
+			isa = PBXGroup;
+			children = (
+				943903F320F733200024B306 /* ProjectMemService.swift */,
+				943903F620F733910024B306 /* ProjectMem.swift */,
+				943903F820F734110024B306 /* ProjectMemData.swift */,
+			);
+			path = projectMem;
+			sourceTree = "<group>";
+		};
+		9439040020F75F160024B306 /* -recommend */ = {
+			isa = PBXGroup;
+			children = (
+				9439040120F75F470024B306 /* RecoDetail.swift */,
+				9439040320F75F540024B306 /* RecoDetailData.swift */,
+				9439040520F75F620024B306 /* RecoService.swift */,
+			);
+			path = "-recommend";
 			sourceTree = "<group>";
 		};
 		944A9F3420E8AAF900F5FE80 = {
@@ -427,6 +461,8 @@
 			children = (
 				948AE9F220F015CC003CF30F /* Apply.swift */,
 				948AE9F420F015EA003CF30F /* ApplyData.swift */,
+				943903FA20F73B8A0024B306 /* ApplyMember.swift */,
+				943903FC20F73B950024B306 /* ApplyMemberData.swift */,
 			);
 			path = ApplyModel;
 			sourceTree = "<group>";
@@ -447,8 +483,6 @@
 		948AE9F820F02B61003CF30F /* RecruitModel */ = {
 			isa = PBXGroup;
 			children = (
-				948AE9FB20F02C02003CF30F /* Recruit.swift */,
-				948AE9FD20F02C0C003CF30F /* RecruitData.swift */,
 				948AEA0C20F12ADB003CF30F /* RecruitList.swift */,
 				948AEA0E20F12CCB003CF30F /* RecruitListData.swift */,
 				948AEA1420F1EF11003CF30F /* RecruitDetail.swift */,
@@ -510,11 +544,13 @@
 		948AEA0720F09C5B003CF30F /* 1.Detail */ = {
 			isa = PBXGroup;
 			children = (
+				9439040020F75F160024B306 /* -recommend */,
 				94ECBFA120E96776002F9F92 /* ProjectPartDetailViewController.swift */,
 				948AE9E720EFFD34003CF30F /* Detail.storyboard */,
+				948AEA2520F2BB4F003CF30F /* detailPartCollectionViewCell.swift */,
+				943903F220F733020024B306 /* projectMem */,
 				948AE9DE20EFD844003CF30F /* -member */,
 				948AE9ED20F000B4003CF30F /* -resume */,
-				948AEA2520F2BB4F003CF30F /* detailPartCollectionViewCell.swift */,
 			);
 			path = 1.Detail;
 			sourceTree = "<group>";
@@ -556,6 +592,7 @@
 			children = (
 				948AEA2020F28EA1003CF30F /* resumeDetail.swift */,
 				948AEA2220F28EAC003CF30F /* resumeDetailData.swift */,
+				943903FE20F74FFC0024B306 /* ResumeService.swift */,
 			);
 			path = "Service, Model";
 			sourceTree = "<group>";
@@ -840,6 +877,7 @@
 				E4BDC29420F4FD9500A50966 /* ProfileProjectViewController.swift in Sources */,
 				948AE9F520F015EA003CF30F /* ApplyData.swift in Sources */,
 				E4B150C520F4C89700C4BF7E /* NewAlarm.swift in Sources */,
+				943903FB20F73B8A0024B306 /* ApplyMember.swift in Sources */,
 				944A9F6D20E8B5C500F5FE80 /* AlarmViewController.swift in Sources */,
 				948AEA0D20F12ADB003CF30F /* RecruitList.swift in Sources */,
 				E44376D820F295D9009856B8 /* IMadeProject.swift in Sources */,
@@ -851,15 +889,18 @@
 				9403DD1120E92B220049C497 /* DoingCollectionViewCell.swift in Sources */,
 				948AEA2D20F517E9003CF30F /* HomeService.swift in Sources */,
 				E41034A720F224700001EF40 /* MyPageEdit.swift in Sources */,
+				9439040420F75F540024B306 /* RecoDetailData.swift in Sources */,
 				944A9F5E20E8B0D000F5FE80 /* JoinService.swift in Sources */,
 				948AEA1D20F28A90003CF30F /* resumePartCollectionViewCell.swift in Sources */,
 				E4692B2920EC14BB000F4A72 /* AlarmSecondViewController.swift in Sources */,
 				944A9F8220E8DFF700F5FE80 /* MyProjectViewController.swift in Sources */,
 				94057B1A20E9DA85008875C5 /* CreateNaviViewController.swift in Sources */,
 				E4CD827920F0E3A000352A78 /* IndividualMessageData.swift in Sources */,
+				943903FF20F74FFC0024B306 /* ResumeService.swift in Sources */,
 				948AE9E420EFE1C8003CF30F /* applyMemTableViewCell.swift in Sources */,
 				E4B150C720F4C8A100C4BF7E /* NewAlarmData.swift in Sources */,
 				E473A9AB20EA5C8900B51830 /* CreateLastViewController.swift in Sources */,
+				943903F420F733200024B306 /* ProjectMemService.swift in Sources */,
 				E4CD827520F0AE9A00352A78 /* ProjectDetailData.swift in Sources */,
 				E41A8F6E20EA62900009F330 /* CreateImageCollectionViewCell.swift in Sources */,
 				9403DD1820E92F890049C497 /* IntroductionCollectionViewCell.swift in Sources */,
@@ -883,6 +924,7 @@
 				948AEA2320F28EAC003CF30F /* resumeDetailData.swift in Sources */,
 				944A9F5C20E8B0BE00F5FE80 /* APIService.swift in Sources */,
 				E4BDC29020F4FC3C00A50966 /* MadeCollectionViewCell.swift in Sources */,
+				943903F720F733910024B306 /* ProjectMem.swift in Sources */,
 				9406D27720EDAEE0001B145D /* ApplyService.swift in Sources */,
 				944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */,
 				E41034A920F2247E0001EF40 /* MyPageEditData.swift in Sources */,
@@ -896,6 +938,7 @@
 				E4372E2820F55937001906B4 /* Search.swift in Sources */,
 				E4C91B6E20F342EB008D81EC /* IntroPage.swift in Sources */,
 				948AEA1720F1EF20003CF30F /* RecruitDetailData.swift in Sources */,
+				943903FD20F73B950024B306 /* ApplyMemberData.swift in Sources */,
 				94057B1820E9CCCF008875C5 /* CreateNewViewController.swift in Sources */,
 				9403DD0D20E8E4FC0049C497 /* chattingTableViewCell.swift in Sources */,
 				948AE9E220EFE15D003CF30F /* ApplyMemberViewController.swift in Sources */,
@@ -907,7 +950,7 @@
 				94ECBFA420E96A0E002F9F92 /* ProjectMemberViewController.swift in Sources */,
 				940325E020EF6E27005B461A /* PartJoinCollectionViewCell.swift in Sources */,
 				944A9F8020E8DFE100F5FE80 /* MyPageViewController.swift in Sources */,
-				948AE9FE20F02C0C003CF30F /* RecruitData.swift in Sources */,
+				9439040620F75F620024B306 /* RecoService.swift in Sources */,
 				94ECBF9520E95405002F9F92 /* ListCollectionViewCell.swift in Sources */,
 				E41034A220F123B20001EF40 /* MyPageData.swift in Sources */,
 				E4CD826C20EFD59600352A78 /* Message.swift in Sources */,
@@ -917,15 +960,16 @@
 				948AE9F320F015CC003CF30F /* Apply.swift in Sources */,
 				94057B1220E98EE3008875C5 /* FilterViewController.swift in Sources */,
 				E44376DC20F2A7BF009856B8 /* ParticipatedProject.swift in Sources */,
+				9439040220F75F470024B306 /* RecoDetail.swift in Sources */,
 				944A9F7A20E8BB7700F5FE80 /* MyTabViewController.swift in Sources */,
 				9406D26920ECDE31001B145D /* RecruitPartViewController.swift in Sources */,
 				948AEA2120F28EA1003CF30F /* resumeDetail.swift in Sources */,
 				944A9F5A20E8AFE400F5FE80 /* JoinViewController.swift in Sources */,
-				948AE9FC20F02C02003CF30F /* Recruit.swift in Sources */,
 				944A9F6720E8B53200F5FE80 /* HomeViewController.swift in Sources */,
 				E4661BAF20ECECA8009BFE0F /* CreateNewProjectService.swift in Sources */,
 				E4BDC29220F4FC5600A50966 /* JoinCollectionViewCell.swift in Sources */,
 				9403DD0F20E92B130049C497 /* CreateCollectionViewCell.swift in Sources */,
+				943903F920F734110024B306 /* ProjectMemData.swift in Sources */,
 				948AEA0020F0971F003CF30F /* RecruitService.swift in Sources */,
 				944A9F5620E8AE8600F5FE80 /* LoginService.swift in Sources */,
 				948AEA2F20F51820003CF30F /* HomeDetail.swift in Sources */,

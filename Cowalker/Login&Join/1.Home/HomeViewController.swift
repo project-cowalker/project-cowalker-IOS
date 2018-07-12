@@ -31,7 +31,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return homeDetails.count}
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as! ListCollectionViewCell
-      // cell.listImageView?.kf.setImage(with: URL(string: gsno(homeDetails[indexPath.row].img_url?[0])), placeholder: UIImage())
+    //cell.listImageView?.kf.setImage(with: URL(string: gsno(homeDetails[indexPath.row].img_url?[0])), placeholder: UIImage())
             cell.nameLabel.text = homeDetails[indexPath.row].title
             cell.partLabel.text = homeDetails[indexPath.row].area
             return cell

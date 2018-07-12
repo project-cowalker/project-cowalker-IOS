@@ -352,6 +352,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="1100"/>
                     <connections>
+                        <outlet property="collecViewH" destination="qGd-X3-PFZ" id="sL1-eL-osw"/>
                         <outlet property="collectiViewH" destination="qGd-X3-PFZ" id="k9I-Yw-Dhi"/>
                         <outlet property="introTf" destination="sNz-MD-E8T" id="zJn-zV-rXJ"/>
                         <outlet property="partCollectionView" destination="waR-lB-8VV" id="ZYV-OL-tCR"/>

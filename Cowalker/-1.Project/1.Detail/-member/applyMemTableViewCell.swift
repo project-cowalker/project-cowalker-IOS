@@ -9,13 +9,11 @@
 import UIKit
 
 class applyMemTableViewCell: UITableViewCell {
-
     
     @IBOutlet weak var memImg: UIImageView!
-    
     @IBOutlet weak var memName: UILabel!
     @IBOutlet weak var memPart: UILabel!
-    
+    @IBOutlet weak var resumeBtn: UIButton!
     
     @IBAction func resumeBtnAct(_ sender: UIButton) {
         // 이력서 화면으로 이동
@@ -28,10 +26,7 @@ class applyMemTableViewCell: UITableViewCell {
         }else{ // 수락일 때
             
         }
-        
     }
-    
-
 }
 
 

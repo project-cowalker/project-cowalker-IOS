@@ -9,16 +9,13 @@
 
 import Foundation
 
-struct ResumeDetail: Codable {
+struct resumeDetail: Codable {
     
     let apply_idx: String
     let introduce: String
     let portfolio_url: String
     let phone: String
     let recruit_idx: String
-    let project_idx: String
-    
-    let position: String
     let applicant_idx: String
     let recruit_at: String
     let answers: [String]
