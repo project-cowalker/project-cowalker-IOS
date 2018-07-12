@@ -58,8 +58,6 @@
 		944A9F8020E8DFE100F5FE80 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F7F20E8DFE100F5FE80 /* MyPageViewController.swift */; };
 		944A9F8220E8DFF700F5FE80 /* MyProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8120E8DFF700F5FE80 /* MyProjectViewController.swift */; };
 		944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8320E8E00E00F5FE80 /* MyPageUpdateViewController.swift */; };
-		944A9F8820E8E03D00F5FE80 /* MyBagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F8720E8E03D00F5FE80 /* MyBagViewController.swift */; };
-		94737D1F20F67BE4000FA65E /* RecoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94737D1E20F67BE4000FA65E /* RecoTableViewCell.swift */; };
 		948AE9E020EFDC50003CF30F /* memTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9DF20EFDC50003CF30F /* memTableViewCell.swift */; };
 		948AE9E220EFE15D003CF30F /* ApplyMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9E120EFE15D003CF30F /* ApplyMemberViewController.swift */; };
 		948AE9E420EFE1C8003CF30F /* applyMemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948AE9E320EFE1C8003CF30F /* applyMemTableViewCell.swift */; };
@@ -84,7 +82,6 @@
 		948AEA3520F66A70003CF30F /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948AEA3420F66A70003CF30F /* KakaoOpenSDK.framework */; };
 		948AEA3820F673D9003CF30F /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948AEA3620F673D7003CF30F /* FBSDKCoreKit.framework */; };
 		948AEA3920F673D9003CF30F /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948AEA3720F673D8003CF30F /* FBSDKLoginKit.framework */; };
-		94EA8FEE20EB8263006EC50A /* SearchNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA8FED20EB8263006EC50A /* SearchNewViewController.swift */; };
 		94EA8FF020EBB055006EC50A /* ExtensionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA8FEF20EBB055006EC50A /* ExtensionController.swift */; };
 		94ECBF9520E95405002F9F92 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBF9420E95405002F9F92 /* ListCollectionViewCell.swift */; };
 		94ECBF9820E95E34002F9F92 /* ProjectIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ECBF9720E95E34002F9F92 /* ProjectIntroViewController.swift */; };
@@ -187,8 +184,6 @@
 		944A9F7F20E8DFE100F5FE80 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		944A9F8120E8DFF700F5FE80 /* MyProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjectViewController.swift; sourceTree = "<group>"; };
 		944A9F8320E8E00E00F5FE80 /* MyPageUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageUpdateViewController.swift; sourceTree = "<group>"; };
-		944A9F8720E8E03D00F5FE80 /* MyBagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBagViewController.swift; sourceTree = "<group>"; };
-		94737D1E20F67BE4000FA65E /* RecoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecoTableViewCell.swift; path = "/Users/joyewon/Desktop/CowalkerFinal/project-cowalker-IOS/Cowalker/-1.Project/0.intro/RecoTableViewCell.swift"; sourceTree = "<absolute>"; };
 		948AE9DF20EFDC50003CF30F /* memTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memTableViewCell.swift; sourceTree = "<group>"; };
 		948AE9E120EFE15D003CF30F /* ApplyMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyMemberViewController.swift; sourceTree = "<group>"; };
 		948AE9E320EFE1C8003CF30F /* applyMemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applyMemTableViewCell.swift; sourceTree = "<group>"; };
@@ -213,7 +208,6 @@
 		948AEA3420F66A70003CF30F /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		948AEA3620F673D7003CF30F /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		948AEA3720F673D8003CF30F /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		94EA8FED20EB8263006EC50A /* SearchNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewViewController.swift; sourceTree = "<group>"; };
 		94EA8FEF20EBB055006EC50A /* ExtensionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionController.swift; sourceTree = "<group>"; };
 		94ECBF9420E95405002F9F92 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		94ECBF9720E95E34002F9F92 /* ProjectIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectIntroViewController.swift; sourceTree = "<group>"; };
@@ -542,7 +536,6 @@
 				948AE9E920EFFE9C003CF30F /* Recruit.storyboard */,
 				9406D26820ECDE31001B145D /* RecruitPartViewController.swift */,
 				9406D26D20ECF240001B145D /* RecruitNextViewController.swift */,
-				948AEA2420F2B0AF003CF30F /* -modify */,
 			);
 			path = 3.Recruit;
 			sourceTree = "<group>";
@@ -601,13 +594,6 @@
 				943903FE20F74FFC0024B306 /* ResumeService.swift */,
 			);
 			path = "Service, Model";
-			sourceTree = "<group>";
-		};
-		948AEA2420F2B0AF003CF30F /* -modify */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "-modify";
 			sourceTree = "<group>";
 		};
 		948AEA2B20F517D4003CF30F /* service&model */ = {
@@ -903,7 +889,6 @@
 				94057B1A20E9DA85008875C5 /* CreateNaviViewController.swift in Sources */,
 				E4CD827920F0E3A000352A78 /* IndividualMessageData.swift in Sources */,
 				943903FF20F74FFC0024B306 /* ResumeService.swift in Sources */,
-				9406D26120ECB3C9001B145D /* FullEditViewController.swift in Sources */,
 				948AE9E420EFE1C8003CF30F /* applyMemTableViewCell.swift in Sources */,
 				E4B150C720F4C8A100C4BF7E /* NewAlarmData.swift in Sources */,
 				E473A9AB20EA5C8900B51830 /* CreateLastViewController.swift in Sources */,
@@ -922,7 +907,6 @@
 				948AEA3320F51839003CF30F /* HomeDetailData.swift in Sources */,
 				94057B1420E9959F008875C5 /* ProjectCollectionViewCell.swift in Sources */,
 				E4BDC28E20F4EF5A00A50966 /* Profile2ViewController.swift in Sources */,
-				94ECBF9C20E962CD002F9F92 /* ProjectFullViewController.swift in Sources */,
 				944A9F6920E8B58B00F5FE80 /* SearchViewController.swift in Sources */,
 				94ECBFA220E96776002F9F92 /* ProjectPartDetailViewController.swift in Sources */,
 				94ECBF9820E95E34002F9F92 /* ProjectIntroViewController.swift in Sources */,
@@ -976,7 +960,6 @@
 				944A9F6720E8B53200F5FE80 /* HomeViewController.swift in Sources */,
 				E4661BAF20ECECA8009BFE0F /* CreateNewProjectService.swift in Sources */,
 				E4BDC29220F4FC5600A50966 /* JoinCollectionViewCell.swift in Sources */,
-				9406D25F20ECB386001B145D /* FullPlusViewController.swift in Sources */,
 				9403DD0F20E92B130049C497 /* CreateCollectionViewCell.swift in Sources */,
 				943903F920F734110024B306 /* ProjectMemData.swift in Sources */,
 				948AEA0020F0971F003CF30F /* RecruitService.swift in Sources */,
