@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Recruit One View Controller-->
         <scene sceneID="DNr-hn-YrM">
             <objects>
-                <viewController id="LeA-6h-OZH" sceneMemberID="viewController">
+                <viewController restorationIdentifier="RecruitOneViewController" storyboardIdentifier="RecruitOneViewController" id="LeA-6h-OZH" customClass="RecruitOneViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EuK-9g-JKC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,13 +51,22 @@
                                         <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="progress1" translatesAutoresizingMaskIntoConstraints="NO" id="QiU-WM-70D">
+                                        <rect key="frame" x="88" y="39.5" width="199" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="4h4-JX-KHp"/>
+                                            <constraint firstAttribute="width" constant="199" id="ksB-SF-2BE"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="M1u-RG-f7q" firstAttribute="leading" secondItem="VTk-ok-WYu" secondAttribute="leading" constant="20" id="8fC-Il-E7V"/>
                                     <constraint firstAttribute="bottom" secondItem="Eld-Q6-WL0" secondAttribute="bottom" constant="20" id="Blh-VB-aNm"/>
+                                    <constraint firstItem="QiU-WM-70D" firstAttribute="leading" secondItem="M1u-RG-f7q" secondAttribute="trailing" constant="44" id="L3f-2E-kPU"/>
                                     <constraint firstItem="Eld-Q6-WL0" firstAttribute="leading" secondItem="VTk-ok-WYu" secondAttribute="leading" constant="20" id="Q9E-fj-Klz"/>
                                     <constraint firstAttribute="height" constant="140" id="XdX-VK-dm5"/>
+                                    <constraint firstItem="QiU-WM-70D" firstAttribute="centerY" secondItem="M1u-RG-f7q" secondAttribute="centerY" id="ca8-ED-aQi"/>
                                     <constraint firstItem="Eld-Q6-WL0" firstAttribute="top" secondItem="M1u-RG-f7q" secondAttribute="bottom" constant="40" id="oUq-FG-krf"/>
                                     <constraint firstItem="M1u-RG-f7q" firstAttribute="top" secondItem="VTk-ok-WYu" secondAttribute="top" constant="40" id="pJc-OY-d6s"/>
                                     <constraint firstAttribute="width" constant="375" id="xxC-7l-7Pn"/>
@@ -78,6 +87,9 @@
                                 <state key="normal" title="PM" backgroundImage="btnFloatNormal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="positionBtnAct:" destination="LeA-6h-OZH" eventType="touchUpInside" id="VkA-QM-ABN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3D7-53-jfU">
                                 <rect key="frame" x="135" y="194.5" width="105" height="48"/>
@@ -231,6 +243,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="51E-Pe-Psv"/>
                     </view>
+                    <connections>
+                        <outlet property="numberTf" destination="9rp-rR-TSh" id="GAS-nT-7kG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ryt-Av-FgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -697,10 +712,10 @@
             </objects>
             <point key="canvasLocation" x="2382" y="386"/>
         </scene>
-        <!--View Controller-->
+        <!--Recruit Two View Controller-->
         <scene sceneID="Wyf-Wu-zPk">
             <objects>
-                <viewController id="3Mc-UR-hz1" sceneMemberID="viewController">
+                <viewController restorationIdentifier="RecruitTwoViewController" storyboardIdentifier="RecruitTwoViewController" id="3Mc-UR-hz1" customClass="RecruitTwoViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ffr-Wn-evg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -732,15 +747,24 @@
                                         <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="progress2" translatesAutoresizingMaskIntoConstraints="NO" id="Nkn-tD-0bc">
+                                        <rect key="frame" x="88" y="39.5" width="199" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="199" id="8i5-6Z-HuZ"/>
+                                            <constraint firstAttribute="height" constant="25" id="a2N-4n-eB2"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Nkn-tD-0bc" firstAttribute="leading" secondItem="U3i-ga-p0t" secondAttribute="trailing" constant="44" id="7SB-BD-L3V"/>
                                     <constraint firstAttribute="width" constant="375" id="NfZ-rH-aeA"/>
                                     <constraint firstAttribute="bottom" secondItem="KHn-xL-1LX" secondAttribute="bottom" constant="20" id="Rbb-IZ-zue"/>
                                     <constraint firstItem="U3i-ga-p0t" firstAttribute="top" secondItem="mbM-eL-ZM7" secondAttribute="top" constant="40" id="SuB-4g-o6k"/>
                                     <constraint firstItem="U3i-ga-p0t" firstAttribute="leading" secondItem="mbM-eL-ZM7" secondAttribute="leading" constant="20" id="ULB-gU-PUp"/>
                                     <constraint firstItem="KHn-xL-1LX" firstAttribute="top" secondItem="U3i-ga-p0t" secondAttribute="bottom" constant="40" id="XAH-uz-Udl"/>
                                     <constraint firstItem="KHn-xL-1LX" firstAttribute="leading" secondItem="mbM-eL-ZM7" secondAttribute="leading" constant="20" id="bX1-Bk-d0P"/>
+                                    <constraint firstItem="Nkn-tD-0bc" firstAttribute="centerY" secondItem="U3i-ga-p0t" secondAttribute="centerY" id="hhv-dZ-3Mu"/>
                                     <constraint firstAttribute="height" constant="140" id="lJ4-ZD-57M"/>
                                 </constraints>
                             </view>
@@ -890,10 +914,10 @@
             </objects>
             <point key="canvasLocation" x="52" y="1726"/>
         </scene>
-        <!--View Controller-->
+        <!--Recruit Four View Controller-->
         <scene sceneID="Pgb-Oy-rRX">
             <objects>
-                <viewController id="e6t-mf-ogn" sceneMemberID="viewController">
+                <viewController restorationIdentifier="RecruitFourViewController" storyboardIdentifier="RecruitFourViewController" id="e6t-mf-ogn" customClass="RecruitFourViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Go-Df-01H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -925,15 +949,24 @@
                                         <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="progress4" translatesAutoresizingMaskIntoConstraints="NO" id="CkX-Eb-3DL">
+                                        <rect key="frame" x="88" y="39.5" width="199" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="199" id="6Xm-Ce-nUD"/>
+                                            <constraint firstAttribute="height" constant="25" id="Cml-QB-A08"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="lO1-3B-Py1" firstAttribute="leading" secondItem="2Fg-CI-5DB" secondAttribute="leading" constant="20" id="3hR-8j-l6K"/>
                                     <constraint firstItem="PSB-V8-sma" firstAttribute="top" secondItem="lO1-3B-Py1" secondAttribute="bottom" constant="40" id="IRY-sM-Hph"/>
                                     <constraint firstAttribute="height" constant="140" id="JUE-nC-fmD"/>
+                                    <constraint firstItem="CkX-Eb-3DL" firstAttribute="leading" secondItem="lO1-3B-Py1" secondAttribute="trailing" constant="44" id="WA9-4c-byq"/>
                                     <constraint firstItem="lO1-3B-Py1" firstAttribute="top" secondItem="2Fg-CI-5DB" secondAttribute="top" constant="40" id="XiD-uu-TqM"/>
                                     <constraint firstAttribute="bottom" secondItem="PSB-V8-sma" secondAttribute="bottom" constant="20" id="ff7-g6-Xky"/>
                                     <constraint firstAttribute="width" constant="375" id="jfq-1Q-wyO"/>
+                                    <constraint firstItem="CkX-Eb-3DL" firstAttribute="centerY" secondItem="lO1-3B-Py1" secondAttribute="centerY" id="pr9-1q-CKh"/>
                                     <constraint firstItem="PSB-V8-sma" firstAttribute="leading" secondItem="2Fg-CI-5DB" secondAttribute="leading" constant="20" id="z9K-mG-MPG"/>
                                 </constraints>
                             </view>
@@ -1083,10 +1116,10 @@
             </objects>
             <point key="canvasLocation" x="1394" y="1726"/>
         </scene>
-        <!--View Controller-->
+        <!--Recruit Three View Controller-->
         <scene sceneID="wk8-7m-Mk2">
             <objects>
-                <viewController id="07g-h1-geU" sceneMemberID="viewController">
+                <viewController restorationIdentifier="RecruitThreeViewController" storyboardIdentifier="RecruitThreeViewController" id="07g-h1-geU" customClass="RecruitThreeViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MDJ-4Q-ETJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1118,15 +1151,24 @@
                                         <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="progress3" translatesAutoresizingMaskIntoConstraints="NO" id="foB-EO-MlQ">
+                                        <rect key="frame" x="88" y="39.5" width="199" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="199" id="Ql9-e7-hr5"/>
+                                            <constraint firstAttribute="height" constant="25" id="kPL-US-Q1N"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="foB-EO-MlQ" firstAttribute="centerY" secondItem="Cpd-w9-wkQ" secondAttribute="centerY" id="2sH-Kp-QEd"/>
                                     <constraint firstItem="Cpd-w9-wkQ" firstAttribute="leading" secondItem="I8B-rE-w8H" secondAttribute="leading" constant="20" id="6bc-SJ-yQz"/>
                                     <constraint firstItem="Cpd-w9-wkQ" firstAttribute="top" secondItem="I8B-rE-w8H" secondAttribute="top" constant="40" id="CXD-Qh-V8Z"/>
                                     <constraint firstItem="ocN-rW-f1a" firstAttribute="top" secondItem="Cpd-w9-wkQ" secondAttribute="bottom" constant="40" id="Ucu-iK-jPR"/>
                                     <constraint firstAttribute="height" constant="140" id="bNV-HW-NLi"/>
                                     <constraint firstItem="ocN-rW-f1a" firstAttribute="leading" secondItem="I8B-rE-w8H" secondAttribute="leading" constant="20" id="fbh-AV-FhQ"/>
                                     <constraint firstAttribute="bottom" secondItem="ocN-rW-f1a" secondAttribute="bottom" constant="20" id="ko3-KI-McG"/>
+                                    <constraint firstItem="foB-EO-MlQ" firstAttribute="leading" secondItem="Cpd-w9-wkQ" secondAttribute="trailing" constant="44" id="v4D-Tt-ndl"/>
                                     <constraint firstAttribute="width" constant="375" id="wWJ-ds-9ra"/>
                                 </constraints>
                             </view>
@@ -1502,5 +1544,9 @@
         <image name="btnHalfBlue" width="163" height="56"/>
         <image name="btnHalfGray" width="163" height="56"/>
         <image name="iconClose" width="24" height="24"/>
+        <image name="progress1" width="199" height="25"/>
+        <image name="progress2" width="199" height="25"/>
+        <image name="progress3" width="199" height="25"/>
+        <image name="progress4" width="199" height="25"/>
     </resources>
 </document>

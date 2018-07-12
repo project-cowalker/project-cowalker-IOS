@@ -43,8 +43,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
             
                 secondVC.tempProjectId = homeDetails[indexPath.row]._id!
-            print("시바지짜")
-            print(homeDetails[indexPath.row]._id!)
             self.navigationController?.pushViewController(secondVC, animated: true) 
         }
     }

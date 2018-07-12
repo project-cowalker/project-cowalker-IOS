@@ -214,34 +214,34 @@
                                                     </barButtonItem>
                                                 </items>
                                             </toolbar>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDJ-vd-Z3p">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDJ-vd-Z3p">
                                                 <rect key="frame" x="0.0" y="999" width="375" height="60"/>
-                                                <color key="backgroundColor" red="1" green="0.97824598880000002" blue="0.77966560699999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="375" id="3mY-j3-5Fo"/>
                                                     <constraint firstAttribute="height" constant="60" id="8Ib-G5-7Uz"/>
                                                 </constraints>
-                                                <state key="normal" title="지원멤버"/>
+                                                <state key="normal" image="btnApply"/>
                                                 <connections>
                                                     <action selector="applyBtnAct:" destination="wri-X5-ZOc" eventType="touchUpInside" id="V7s-W5-7mB"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJJ-tC-qDb">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJJ-tC-qDb">
                                                 <rect key="frame" x="0.0" y="1059" width="375" height="60"/>
-                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="0mh-hR-d1m"/>
                                                     <constraint firstAttribute="width" constant="375" id="6On-Ub-N9k"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="VSg-a3-A9S"/>
                                                 </constraints>
-                                                <state key="normal" title="참여멤버"/>
+                                                <state key="normal" image="btnMember"/>
                                                 <connections>
                                                     <action selector="participateBtnAct:" destination="wri-X5-ZOc" eventType="touchUpInside" id="BnZ-jm-NTu"/>
                                                 </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ckU-DT-CFh">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
-                                                <color key="backgroundColor" red="0.84518398360000002" green="0.94244027139999997" blue="0.91328859780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="138" id="JR0-my-qLO"/>
                                                     <constraint firstAttribute="width" constant="375" id="Yq7-p7-fgm"/>
@@ -1050,7 +1050,9 @@
     </scenes>
     <resources>
         <image name="btnAccept" width="129" height="36"/>
+        <image name="btnApply" width="375" height="52"/>
         <image name="btnFloatNormal" width="335" height="52"/>
+        <image name="btnMember" width="375" height="52"/>
         <image name="btnProjectManage" width="215" height="52"/>
         <image name="btnRejection" width="129" height="36"/>
         <image name="iconLikeDarkgray-1" width="50" height="50"/>
