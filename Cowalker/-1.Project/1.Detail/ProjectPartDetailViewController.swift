@@ -42,16 +42,21 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
         // 통신해서 자료 뿌리기
         RecruitService.recruitDetail(a: self.tempProjectId, b: self.tempRecruitId){ (recruitDetails, userData) in
             self.recruitDetails = recruitDetails
+            self.tempUser = userData
             self.dataInit()
             self.btnInit()
+            // 개발자 개설자 저장
+            print("heretq")
+            print(self.tempUser)
             self.detailPartCollectionView.reloadData()
+            
         }
     }
     func dataInit(){ // 데이터 입력
         print(recruitDetails[0])
         self.positionLabel.text = self.recruitDetails[0].position
         self.startLabel.text = self.recruitDetails[0].start_date
-        self.numberLabel.text = String(self.recruitDetails[0].number)
+        self.numberLabel.text = String(describing: self.recruitDetails[0].number)//
         self.taskLabel.text = self.recruitDetails[0].task
         self.activityLabel.text = self.recruitDetails[0].activity
         self.areaLabel.text = self.recruitDetails[0].area
@@ -125,7 +130,7 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
                 self.present(dialog, animated: true, completion: nil)
         }
         }
-        else{ // 참여하기인경우
+        else{ // 참여자인 경우
             let secondVC = UIStoryboard(name: "Apply", bundle:nil ).instantiateViewController(withIdentifier: "ProjectJoinViewController") as! ProjectJoinViewController
             
             secondVC.tempProjectId = self.tempProjectId
@@ -136,7 +141,7 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
         }
     }
     
-    @IBAction func applyBtnAct(_ sender: UIButton) { // 지원멤버 이동
+    @IBAction func applyBtnAct(_ sender: UIButton) {// 지원멤버 이동
         let secondVC = UIStoryboard(name: "Detail", bundle:nil ).instantiateViewController(withIdentifier: "ApplyMemberViewController") as! ApplyMemberViewController
         secondVC.tempRecruitIdx = tempRecruitId
         secondVC.temp1 = self.temp1
@@ -148,7 +153,9 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
     }
     @IBAction func participateBtnAct(_ sender: UIButton) { // 참여멤버 // 항상 보이기
         let secondVC = UIStoryboard(name: "Detail", bundle:nil ).instantiateViewController(withIdentifier: "ProjectMemberViewController") as! ProjectMemberViewController
-        secondVC.add = tempProjectId
+        
+        secondVC.add = "5b4214e17042192fed3d1d0c"// tempProjectId
+        
         self.navigationController?.pushViewController(secondVC, animated: true)
         
         // 프로젝트 id 넘겨줘야 한다.

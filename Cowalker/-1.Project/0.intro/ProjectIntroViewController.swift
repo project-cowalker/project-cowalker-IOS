@@ -24,6 +24,9 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profileImg: UIButton!
     
+    override func viewWillAppear(_ animated: Bool) {
+        projectInit()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
@@ -58,18 +61,13 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     }
     func btnIs(){
         
-        if tempIsUser == "개발자"{
+        if tempIsUser == "개설자"{
             plusPartBtn.isHidden = false
             longBtn.image = #imageLiteral(resourceName: "btnProjectManage.png")
-           
-            print("user")
-            print(tempIsUser)
         }else{
             plusPartBtn.isHidden = true
             if tempIsUser == "참여하기"{
                 longBtn.image = #imageLiteral(resourceName: "btnJoinProject")
-                print("user")
-                print(tempIsUser)
             }else if tempIsUser == "참여대기"{
                 longBtn.image = #imageLiteral(resourceName: "btnJoinProjectWaiting")
                 longBtn.isEnabled = false
@@ -131,18 +129,11 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         if collectionView == partCollectionView {
             let secondVC = UIStoryboard(name: "Detail", bundle:nil ).instantiateViewController(withIdentifier: "ProjectPartDetailViewController") as! ProjectPartDetailViewController
             self.navigationController?.pushViewController(secondVC, animated: true)
+            
             // 자료 전달 // 프로젝트아이디, 리크룻아이디 전송
-            secondVC.tempRecruitId = self.tempRecruitLists[indexPath.section].recruit_idx// 다음 뷰로 모집아이디 전송
+            secondVC.tempRecruitId = self.tempRecruitLists[indexPath.section].recruit_idx // 다음 뷰로 모집아이디 전송
             secondVC.tempProjectId = self.tempProjectId
-            
-            secondVC.tempUser = tempIsUser
-            /*
-            if tempIsUser == "개발자"{
-                secondVC.tempUser = "개발자"
-            }else{
-                secondVC.tempUser = "참여자"
-            }*/
-            
+    
             secondVC.temp1 = self.tempRecruitLists[indexPath.section].position
             secondVC.temp2 = String(self.tempRecruitLists[indexPath.section].number)
             secondVC.temp3 = self.tempRecruitLists[indexPath.section].task
@@ -150,7 +141,7 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     @IBAction func tabBtnACt(_ sender: UIBarButtonItem) {
-        if tempIsUser == "개발자" {
+        if tempIsUser == "개설자" {
             // 알림 창 띄우기
             let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             let firstAction: UIAlertAction = UIAlertAction(title: "프로젝트 수정", style: .default) { action -> Void in
@@ -175,8 +166,6 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
            //
           secondVC.tempProjectId = self.tempProjectId
             secondVC.tempRecruitId = self.tempRecruitId
-            
-            
         self.navigationController?.pushViewController(secondVC, animated: true)
         }
     }
@@ -191,7 +180,6 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "RecruitPartViewController") as! RecruitPartViewController
         self.present(secondVC, animated: false, completion: nil)
     }
-    
     @IBAction func shareBtnAct(_ sender: UIBarButtonItem) { // 공유버튼
         let shareTxt = "텍스트"
         let shareImg = #imageLiteral(resourceName: "iconsTabbar2Search")

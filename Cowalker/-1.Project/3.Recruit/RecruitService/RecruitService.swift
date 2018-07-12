@@ -22,32 +22,25 @@ struct RecruitService:APIService{
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData() {res in
             switch res.result{
             case .success:
-                print("ㅅㅂ1")
                 if let value = res.result.value{
                     let decoder = JSONDecoder()
                     do{
-                        print("ㅅㅂ3")
                         let recruitListData = try decoder.decode(RecruitListData.self, from: value)
                         print(recruitListData.message)//
                         if recruitListData.message == "success"{
-                           // print(recruitListData.result)
                             completion(recruitListData.result)
-                            print("ㅅㅂ4")
                         }else if recruitListData.message == "database failure"{
-                            print("ㅅㅂㅅㅂ")
                         }
                   }catch{ }
                 }
                 break
             case .failure(let err):
-                print("ㅅㅂ2")
                 print(err.localizedDescription)
                 print("err")
                 break
             }
         }
     }
-    
     
     //////////////////////////// 모집 상세 RecruitDetail
     static func recruitDetail(a:String, b:String, completion: @escaping ([RecruitDetail],String)->Void){
@@ -65,10 +58,9 @@ struct RecruitService:APIService{
                     do{
                         let recruitDetailData = try decoder.decode(RecruitDetailData.self, from: value)
                         if recruitDetailData.message == "success"{
-                            print(22)
-                        
+                            completion(recruitDetailData.result!, recruitDetailData.btnResult!)
                         }
-                    }catch{ print("캐치22")}
+                    }catch{ print("캐치22")}//////
                 }
                 break
             case .failure(let err):
@@ -79,14 +71,14 @@ struct RecruitService:APIService{
         }
     }
     
-}
-    /*
-    /////////////////////////////
-    static func recruitInit(position:String, start_date:String, end_date:String, number:Int, task:String, activity:String, reward:String, area:String, ability:String, career:String, preference:String, comment:String, question:[String], completion : @escaping (String)->Void) {
-                let URL = url("/recruit")
-        //var headers = UserDefaults.standard.string(forKey: "token")
+    static func recruitInit(project_idx:String, position:String, start_date:String, end_date:String, number:Int, task:String, activity:String, reward:String, area:String, ability:String, career:String, preference:String, comment:String, question:[String], completion : @escaping (String)->Void){
         
+        let URL = url("/project/recruit")
+        let header: [String : String] = [
+            "authorization" : UserDefaults.standard.string(forKey: "token")!
+        ]
         let body: [String : Any] = [
+            "project_idx" : project_idx,
             "position" : position,
             "start_date" : start_date,
             "end_date" : end_date,
@@ -99,37 +91,22 @@ struct RecruitService:APIService{
             "career": career,
             "preference": preference,
             "comment" : comment,
-            "question" : question/////////////
-        ]
-        
-        let header: [String : String] = [
-            "authorization" : UserDefaults.standard.string(forKey: "token")!
+            "question_list" : question///
         ]
         
         Alamofire.request(URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseData() {res in
-            //print(0)
             switch res.result{
-                
             case .success:
                 if let value = res.result.value{
-                    print(1)
-                    //print()
                     if let message = JSON(value)["message"].string {
-                        //   print("33333")
                         completion(message)
-                        
                     }
                 }
                 break
             case .failure(let err):
-                print("fail")
                 print(err.localizedDescription)
                 break
             }
         }
     }
-            case .failure(_):
-                <#code#>
-}
-
-*/
+    }
