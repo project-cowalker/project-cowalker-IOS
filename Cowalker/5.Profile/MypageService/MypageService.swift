@@ -66,7 +66,10 @@ struct MypageService: APIService {
         let aimData = aim.data(using: .utf8)
         let departmentData = department.data(using: .utf8)
         let areaData = area.data(using: .utf8)
-        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+//        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+        let header: [String : String] = [
+            "authorization" : UserDefaults.standard.string(forKey: "token")!
+        ]
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             multipartFormData.append(profile_imgData!, withName: "profile_img", fileName: "profile_img.jpg", mimeType: "image/jpeg")
             multipartFormData.append(background_imgData!, withName: "background_img", fileName: "background_img.jpg", mimeType: "image/jpeg")
@@ -116,7 +119,10 @@ struct MypageService: APIService {
     static func iMadeProject(urlTemp: String, completion: @escaping([IMadeProject]) -> Void ){
         
         let URL = url("/user/project"+urlTemp)
-        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+//        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+        let header: [String : String] = [
+            "authorization" : UserDefaults.standard.string(forKey: "token")!
+        ]
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
             switch res.result {
             case .success:
@@ -148,7 +154,10 @@ struct MypageService: APIService {
     // 타인 마이페이지 보는 경우에 url = /user_idx 추가 하기
     static func participateProject(urlTemp: String,completion: @escaping ([ParticipatedProject]) -> Void){
         let URL = url(urlTemp)
-        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+//        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+        let header: [String : String] = [
+            "authorization" : UserDefaults.standard.string(forKey: "token")!
+        ]
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
             switch res.result {
             case .success:
@@ -187,7 +196,10 @@ struct MypageService: APIService {
     
     static func seeMyPageMySelf(urlTemp: String, completion: @escaping(IntroPage) -> Void){
         let URL = url("/intro"+urlTemp)
-        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+//        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+        let header: [String : String] = [
+            "authorization" : UserDefaults.standard.string(forKey: "token")!
+        ]
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
             switch res.result {
             case .success:
@@ -220,7 +232,10 @@ struct MypageService: APIService {
         let URL = url("/intro")
         let contentsData = contents.data(using: .utf8)
         var imgData = [UIImage]()
-        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+//        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+        let header: [String : String] = [
+            "authorization" : UserDefaults.standard.string(forKey: "token")!
+        ]
         for  i in 0 ..< img.count{
             imgData.append(img[i])
         }
