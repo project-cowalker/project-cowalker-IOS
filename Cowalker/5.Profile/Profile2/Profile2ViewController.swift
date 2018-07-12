@@ -106,6 +106,28 @@ class Profile2ViewController: UIViewController {
         }
     }
     
+    @IBAction func sendingMessageToOthers(_ sender: Any) {
+        
+        if let secondVC = storyboard?.instantiateViewController(withIdentifier: "SendingMessageViewController") as? SendingMessageViewController{
+            
+            secondVC.partner_idx = myPage[0].user_idx!
+            //더 보기로 이동
+            
+            self.navigationController?.pushViewController(secondVC, animated: true)
+            
+            
+        }
+        
+        
+       
+        
+
+        
+        
+        
+        
+    }
+    
     
     
 

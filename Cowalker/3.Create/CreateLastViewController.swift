@@ -121,13 +121,17 @@ class CreateLastViewController: UIViewController,UICollectionViewDelegate,UIColl
     @IBAction func createProjectDone(_ sender: UIButton) {
         img_url = imageForProject
         explain = explainTextView.text!
-       
+        if img_url.count < 10 {
+            img_url.remove(at: img_url.count-1)
+        }
         CreateNewProjectService.createNewProject(title: title2, summary: summary, area: area, department: department, aim: aim ,explain: explain, img: img_url) {
            (message) in
            print(message)
             if message == "success"{
                 print("111111111111111111111")
-                self.dismiss(animated: true, completion: nil)
+                let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "MyTabViewController") as! MyTabViewController
+                self.present(vc, animated: false, completion: nil)//////
                 
             }else {
                 print("222222222")

@@ -94,8 +94,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         message.addAction(action)
         self.present(message, animated: true, completion: nil)
     }
-    
 
+    
+    
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
