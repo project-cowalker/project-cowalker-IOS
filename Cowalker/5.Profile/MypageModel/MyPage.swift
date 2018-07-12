@@ -11,6 +11,7 @@ import Foundation
 struct MyPage: Codable {
     let profile_url: String?
     let background_url: String?
+    let user_idx: Int?
 //    let user_email: String?
     let name: String?
 //    let point: Int

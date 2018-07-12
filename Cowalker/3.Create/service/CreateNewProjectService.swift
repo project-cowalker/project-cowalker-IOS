@@ -38,9 +38,13 @@ struct CreateNewProjectService: APIService {
 //        let img_urlData = UIImageJPEGRepresentation(img_url, 0.3)
 //
         //token 처리도 해야함 유저로 가게
-        
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"
-        let header = ["authorization" : token]
+        let header: [String : String] = [
+            "authorization" : UserDefaults.standard.string(forKey: "token")!
+        ]
+        print(UserDefaults.standard.string(forKey: "email"))
+        print(UserDefaults.standard.string(forKey: "token"))
+//        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"
+//        let header = ["authorization" : token]
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             for  i in 0 ..< img.count{
                 let temp = UIImageJPEGRepresentation(imgData[i], 0.3)
@@ -76,6 +80,7 @@ struct CreateNewProjectService: APIService {
                             print(2)
                             
                             if message == "success"{
+                                print(UserDefaults.standard.string(forKey: "token"))
                                 print(3)
                                 completion(message!)
                             }else if message == "fail"{
@@ -111,9 +116,12 @@ struct CreateNewProjectService: APIService {
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     
     static func getProjectDeatil(project_idx: String,completion: @escaping ([ProjectDetail],String) -> Void){
+        let header: [String : String] = [
+            "authorization" : UserDefaults.standard.string(forKey: "token")!
+        ]
 
         let URL = url("/project/"+project_idx)
-        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData() { res in
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
             switch res.result {
             case .success:
                 if let value = res.result.value {
