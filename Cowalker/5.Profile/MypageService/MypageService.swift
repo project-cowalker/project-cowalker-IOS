@@ -234,7 +234,7 @@ struct MypageService: APIService {
         var imgData = [UIImage]()
 //        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
         let header: [String : String] = [
-            "authorization" : UserDefaults.standard.string(forKey: "token")!
+            "Authorization" : UserDefaults.standard.string(forKey: "token")!
         ]
         for  i in 0 ..< img.count{
             imgData.append(img[i])
@@ -258,7 +258,7 @@ struct MypageService: APIService {
                     switch res.result{
                     case .success:
                         if let value = res.result.value {
-                            
+                            print(value)
                             let message = JSON(value)["message"].string
                             
                             if message == "update myIntro success"{

@@ -9,7 +9,7 @@
 import Foundation
 
 struct ProjectDetail: Codable {
-    
+    let user_idx: Int?
     let title: String?
     let summary: String?
     let area: String?
