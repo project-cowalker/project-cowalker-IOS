@@ -5,6 +5,8 @@
 //  Created by 조예원 on 2018. 7. 1..
 //  Copyright © 2018년 조예원. All rights reserved.
 //
+//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& reload 처리
+
 import UIKit
 import Kingfisher
 
@@ -31,7 +33,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return homeDetails.count}
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as! ListCollectionViewCell
-    //cell.listImageView?.kf.setImage(with: URL(string: gsno(homeDetails[indexPath.row].img_url?[0])), placeholder: UIImage())
+  //  cell.listImageView?.kf.setImage(with: URL(string: gsno(homeDetails[indexPath.row].img_url?[0])), placeholder: UIImage())
             cell.nameLabel.text = homeDetails[indexPath.row].title
             cell.partLabel.text = homeDetails[indexPath.row].area
             return cell
@@ -39,7 +41,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == listCollectionView{
             let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
+            
                 secondVC.tempProjectId = homeDetails[indexPath.row]._id!
+            print("시바지짜")
+            print(homeDetails[indexPath.row]._id!)
             self.navigationController?.pushViewController(secondVC, animated: true) 
         }
     }
