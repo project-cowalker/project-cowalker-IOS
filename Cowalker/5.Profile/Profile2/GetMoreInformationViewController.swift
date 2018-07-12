@@ -19,6 +19,7 @@ class GetMoreInformationViewController: UIViewController, UICollectionViewDataSo
         return cell
     }
     //asdasdsadss
+    //asdasdasdss
     var temp = 0
     var imageArray: [String] = [String]()
     var user_idx: String?
