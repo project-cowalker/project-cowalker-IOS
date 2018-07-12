@@ -297,8 +297,9 @@
                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저희 크레용은 역사적 사실을 콘텐츠로 풀어내는 소셜 크리에이션 그룹입니다.  현재 KU석KU석 프로젝트를 진행하고..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYr-Ac-9tf">
-                                                <rect key="frame" x="23" y="683.5" width="329" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYr-Ac-9tf">
+                                                <rect key="frame" x="23" y="683.5" width="329" height="67.5"/>
+                                                <string key="text">저희 크레용은 역사적 사실을 콘텐츠로 풀어내는 소셜 크리에이션 그룹입니다.  현재 KU석KU석 프로젝트를 진행하고... 저희 크레용은 역사적 사실을 콘텐츠로 풀어내는 소셜 크리에이션 그룹입니다.  현재 KU석KU석 프로젝트를 진행하고...</string>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -602,10 +603,8 @@
                         <outlet property="aimLabel" destination="aie-mk-J08" id="kUU-PM-XP6"/>
                         <outlet property="areaLabel" destination="KKx-Za-0Bv" id="5IO-op-kdp"/>
                         <outlet property="collecViewH" destination="UMs-eo-10z" id="nNo-z2-zRm"/>
-                        <outlet property="constBtn" destination="bZy-dz-75I" id="b6p-Fb-jcV"/>
-                        <outlet property="constLabel" destination="oYr-Ac-9tf" id="fnA-nt-JYS"/>
+                        <outlet property="commentTv" destination="d0U-8V-lvt" id="vrn-t8-iOx"/>
                         <outlet property="constTest" destination="bZy-dz-75I" id="peC-dM-kaU"/>
-                        <outlet property="constTest2" destination="90v-4A-GeZ" id="Woj-n6-jFe"/>
                         <outlet property="departmentLabel" destination="pp0-I7-bmM" id="78B-NA-GGY"/>
                         <outlet property="explainLabel" destination="oYr-Ac-9tf" id="lWj-xh-GpB"/>
                         <outlet property="labelDetail" destination="oYr-Ac-9tf" id="7Df-Cq-z2K"/>
@@ -618,10 +617,10 @@
                         <outlet property="profileImg" destination="XGy-Xq-YAY" id="lRS-Gp-CSW"/>
                         <outlet property="projectCollectionView" destination="Cex-mO-pV2" id="3ma-KR-22S"/>
                         <outlet property="recoTableView" destination="fyN-Kh-GJC" id="hBH-HP-YiM"/>
-                        <outlet property="scrView" destination="ebv-cn-LgW" id="gF9-XR-I3r"/>
                         <outlet property="summaryLabel" destination="gdA-fQ-HSK" id="sHO-4v-s8V"/>
                         <outlet property="titleLabel" destination="PFY-m1-Nht" id="nc3-o1-kfD"/>
                         <outlet property="underBar" destination="har-vG-55d" id="Gog-Fh-Jgk"/>
+                        <outlet property="whiteView" destination="LGO-aT-Zsm" id="iUS-EE-lH2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grS-k2-i8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -718,6 +717,9 @@
                                     <color key="textColor" red="0.7725490196" green="0.7725490196" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="4ud-ul-aRk" id="o6r-qY-PoL"/>
+                                    </connections>
                                 </textView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

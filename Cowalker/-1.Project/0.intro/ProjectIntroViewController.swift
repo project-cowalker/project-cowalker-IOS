@@ -3,31 +3,14 @@ import UIKit
 
 class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate{
     
-    @IBOutlet weak var recoTableView: UITableView!
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3}
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"RecoTableViewCell") as! RecoTableViewCell
-        if indexPath.section == 0{
-            cell.label1.text = "전체 프로젝트"
-        }else{
-            cell.label1.text = "파트"
-        }
-        cell.btnCheck.setImage(#imageLiteral(resourceName: "check.png"), for: .normal)
-        return cell}
-    
     @IBOutlet weak var projectCollectionView: UICollectionView! // 콜랙션
     @IBOutlet weak var partCollectionView: UICollectionView!
     @IBOutlet weak var underBar: UIToolbar! // 하단탭
     @IBOutlet weak var longBtn: UIBarButtonItem!
     @IBOutlet weak var plusPartBtn: UIButton!
-    //
-    @IBOutlet weak var constBtn: NSLayoutConstraint! // 상세 소개 제약
-    @IBOutlet weak var constLabel: UILabel!
+
     @IBOutlet weak var collecViewH: NSLayoutConstraint!
-    @IBOutlet weak var scrView: UIScrollView!
     @IBOutlet weak var constTest: NSLayoutConstraint!
-    @IBOutlet weak var constTest2: NSLayoutConstraint!
     //
     @IBOutlet weak var plusBtn: UIButton! // 더보기 버튼
     var isOpencheck = 0
@@ -42,13 +25,11 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var profileImg: UIButton!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
         self.tabBarController?.tabBar.isHidden = true // 하단 탭바 삭제
         let leftButton = UIBarButtonItem(title: "<Home", style: .plain, target: self, action: #selector(self.action)) // 왼쪽 버튼 설정
         self.navigationItem.leftBarButtonItem = leftButton
-        self.popView.layer.cornerRadius = 0//////// radius
         constTest.constant = 0
         projectInit()
     }
@@ -71,19 +52,24 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             self.tempRecruitLists = recruitLists
             self.tempList = self.tempRecruitLists.count
             self.const() // 모집컬랙션뷰 크기 처리함수
-            print("규희규희3")
             self.partCollectionView.reloadData()
-            // self.tempRecruitId = recruitLists
+            self.recoTableView.reloadData()
         }
     }
     func btnIs(){
+        
         if tempIsUser == "개발자"{
             plusPartBtn.isHidden = false
             longBtn.image = #imageLiteral(resourceName: "btnProjectManage.png")
+           
+            print("user")
+            print(tempIsUser)
         }else{
             plusPartBtn.isHidden = true
             if tempIsUser == "참여하기"{
                 longBtn.image = #imageLiteral(resourceName: "btnJoinProject")
+                print("user")
+                print(tempIsUser)
             }else if tempIsUser == "참여대기"{
                 longBtn.image = #imageLiteral(resourceName: "btnJoinProjectWaiting")
                 longBtn.isEnabled = false
@@ -104,21 +90,17 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     }
     func const(){
         if tempList == 0{
-            collecViewH.constant = 30
-            print("규희규희1")
-            print(tempList)
-        }
+            collecViewH.constant = 30        }
         else{ collecViewH.constant = CGFloat((tempList - 1)*88) + collecViewH.constant
-        print("규희규희2")
-        print(tempList)
         }
     }
     ////////////////////////////////
     @IBOutlet weak var labelDetail: UILabel!
+    
     @IBAction func btnClickAct(_ sender: UIButton) {// 더보기 버튼
         if isOpencheck == 0 { //// 닫->여
             isOpencheck = 1
-            constTest.constant = labelDetail.bounds.size.height
+            constTest.constant = labelDetail.bounds.size.height + 20
             plusBtn.setImage(#imageLiteral(resourceName: "iconReadMoreClose"), for: .normal)
         }else {
             isOpencheck = 0
@@ -195,7 +177,7 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             secondVC.tempRecruitId = self.tempRecruitId
             
             
-            self.navigationController?.pushViewController(secondVC, animated: true)
+        self.navigationController?.pushViewController(secondVC, animated: true)
         }
     }
     @objc func action(){ // 뒤로가기 버튼
@@ -203,12 +185,13 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         self.tabBarController?.tabBar.isHidden = false
     }
     @IBAction func goToProfile(_ sender: UIButton) {// 사진,이름 클릭 프로필이동
-       
+       // 프로필로이동
     }
     @IBAction func plusBtnAct(_ sender: UIButton) {// 플러스 버튼
         let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "RecruitPartViewController") as! RecruitPartViewController
         self.present(secondVC, animated: false, completion: nil)
     }
+    
     @IBAction func shareBtnAct(_ sender: UIBarButtonItem) { // 공유버튼
         let shareTxt = "텍스트"
         let shareImg = #imageLiteral(resourceName: "iconsTabbar2Search")
@@ -217,20 +200,31 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         self.present(activityController, animated: true, completion:  nil)
         // 페이스북,카카오 추가하기 ---------------------------------------------//
     }
-    
-    //
     @IBOutlet var popView: UIView!
+    @IBOutlet weak var whiteView: UIView!
     @IBAction func recommendAct(_ sender: UIBarButtonItem) {
-     //   let dimAlphaRedColor =  UIColor.red.withAlphaComponent(0.7)
-       // self.view.backgroundColor =  dimAlphaRedColor
-        
         self.view.addSubview(popView)
+        self.whiteView.layer.cornerRadius = 20
         popView.center.x = self.view.center.x
         popView.center.y = self.view.center.y + CGFloat(100)
-        
     }
     @IBAction func popDoneAct(_ sender: Any) {
+        // 데이터 전송하기
         self.popView.removeFromSuperview()
+    }
+    @IBOutlet weak var commentTv: UITextView!
+    @IBOutlet weak var recoTableView: UITableView!
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tempRecruitLists.count+1 }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier:"RecoTableViewCell") as! RecoTableViewCell
+        if indexPath.row == 0{
+            cell.label1.text = "전체 프로젝트"
+        }else{
+            cell.label1.text = tempRecruitLists[indexPath.row-1].position
+        }
+        cell.btnCheck.setImage(#imageLiteral(resourceName: "check.png"), for: .normal)
+        return cell
     }
 }
 

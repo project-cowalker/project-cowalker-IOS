@@ -293,8 +293,7 @@
 		9406D25C20ECB115001B145D /* 0.intro */ = {
 			isa = PBXGroup;
 			children = (
-				948AEA0B20F0A42B003CF30F /* Model */,
-				948AEA0A20F0A421003CF30F /* Service */,
+				9449986D20F7B4C300EB9BD2 /* recto */,
 				9406D26320ECCC33001B145D /* Project.storyboard */,
 				94057B1520E99758008875C5 /* PartCollectionViewCell.swift */,
 				94ECBF9720E95E34002F9F92 /* ProjectIntroViewController.swift */,
@@ -322,6 +321,13 @@
 				9439040520F75F620024B306 /* RecoService.swift */,
 			);
 			path = "-recommend";
+			sourceTree = "<group>";
+		};
+		9449986D20F7B4C300EB9BD2 /* recto */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = recto;
 			sourceTree = "<group>";
 		};
 		944A9F3420E8AAF900F5FE80 = {
@@ -563,20 +569,6 @@
 			);
 			name = "1.지원하기 버튼";
 			path = "1.지원하기 버튼";
-			sourceTree = "<group>";
-		};
-		948AEA0A20F0A421003CF30F /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		948AEA0B20F0A42B003CF30F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		948AEA1E20F28C42003CF30F /* Service,Model */ = {
