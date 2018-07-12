@@ -131,17 +131,17 @@ struct CreateNewProjectService: APIService {
                     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSS'Z"
                     decoder.dateDecodingStrategy = .formatted(dateFormatter)
                     do {
-                       // print("dodododo")
+                        print("dodododo")
                         let projectDetailData = try decoder.decode(ProjectDetailData.self, from: value)
-                        //print("2222")
+                        print("2222")
                         if projectDetailData.message == "success"{
-                           // print("success")
+                            print("success")
                             completion(projectDetailData.result, projectDetailData.user)
                         }
                         
                     }catch let err{
                         print(err)
-                       // print("catch")
+                        print("catch")
                     }
                 }
                 break

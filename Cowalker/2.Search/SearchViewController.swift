@@ -37,6 +37,27 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         return cell
     
     }
+    var temp: String = String()
+    override func prepare(for segue:UIStoryboardSegue, sender:Any?) {
+        if segue.identifier == "Project",
+            let dest = segue.destination as? ProjectIntroViewController
+        {
+            dest.tempProjectId = temp
+            print(1111111111)
+            print(temp)
+        }
+    }
+    //tempProjectId
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        temp = searchData[indexPath.row].project_idx!
+        let storyboard: UIStoryboard = UIStoryboard(name: "Project", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
+        
+        self.present(vc, animated: false, completion: nil)
+        
+        
+    }
      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width:180*self.view.frame.width/375   , height: 180*self.view.frame.height/667 )
     }
