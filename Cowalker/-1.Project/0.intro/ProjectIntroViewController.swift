@@ -25,23 +25,22 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var profileImg: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
         projectInit()
     }
-    var tempProjectId2 = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
+        self.navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
         self.tabBarController?.tabBar.isHidden = true // 하단 탭바 삭제
         let leftButton = UIBarButtonItem(title: "<Home", style: .plain, target: self, action: #selector(self.action)) // 왼쪽 버튼 설정
         self.navigationItem.leftBarButtonItem = leftButton
         constTest.constant = 0
-        
-        if tempProjectId2 != "" {
-            tempProjectId = tempProjectId2
-        }
+
         
         projectInit()
+        self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
+
     }
     var tempProjectId = "" // 이전뷰에서 값 전달받는다.
     var tempRecruitId = ""
