@@ -29,7 +29,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tfI-xn-6rI">
                                 <rect key="frame" x="0.0" y="267" width="375" height="400"/>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="O7f-iN-OvQ"/>
                                     <constraint firstAttribute="width" constant="375" id="VjE-yz-EQJ"/>
@@ -101,75 +101,99 @@
                                     <outlet property="delegate" destination="sPB-dO-AWK" id="X3C-7T-GqH"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탐색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8q-SA-eO8">
-                                <rect key="frame" x="20" y="80" width="45" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="8dF-4g-xNz"/>
-                                    <constraint firstAttribute="width" constant="45" id="lKq-qS-5gW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="26"/>
-                                <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6A-P5-1Gb">
-                                <rect key="frame" x="331" y="133.5" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="XBx-tD-uTT"/>
-                                    <constraint firstAttribute="width" constant="24" id="kt4-aZ-ckN"/>
-                                </constraints>
-                                <state key="normal" title="But" image="gray"/>
-                                <connections>
-                                    <action selector="searchBtnAct:" destination="sPB-dO-AWK" eventType="touchUpInside" id="vHV-Qt-TLC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYw-Bs-ty2">
-                                <rect key="frame" x="331" y="78.5" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="hrF-PY-8Lr"/>
-                                    <constraint firstAttribute="height" constant="24" id="x2q-nO-yof"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="FilterGray"/>
-                                <connections>
-                                    <action selector="filterBtnAct:" destination="sPB-dO-AWK" eventType="touchUpInside" id="2do-Ht-5of"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="프로젝트, 분야, 역할, 검색" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WX0-gD-j64">
-                                <rect key="frame" x="20" y="125" width="254" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="254" id="D2f-sh-XtR"/>
-                                    <constraint firstAttribute="height" constant="41" id="IIZ-lT-DUN"/>
-                                </constraints>
-                                <color key="textColor" red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이런 프로젝트는 어떠세요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvF-4V-ttx">
-                                <rect key="frame" x="20" y="216" width="170" height="20"/>
+                                <rect key="frame" x="20" y="235" width="170" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="1tf-22-uM5"/>
                                     <constraint firstAttribute="height" constant="20" id="mut-fG-K7E"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zto-Uq-JWo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탐색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8q-SA-eO8">
+                                        <rect key="frame" x="20" y="60" width="45" height="31.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="Cy1-wu-3AE"/>
+                                            <constraint firstAttribute="height" constant="31.5" id="y5m-ZP-XZx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6A-P5-1Gb">
+                                        <rect key="frame" x="325" y="114" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="OE3-sc-ZWg"/>
+                                            <constraint firstAttribute="width" constant="30" id="h08-Dr-qVt"/>
+                                        </constraints>
+                                        <state key="normal" title="But" image="gray"/>
+                                        <connections>
+                                            <action selector="searchBtnAct:" destination="sPB-dO-AWK" eventType="touchUpInside" id="vHV-Qt-TLC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYw-Bs-ty2">
+                                        <rect key="frame" x="331" y="64" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="UBs-Jj-LMA"/>
+                                            <constraint firstAttribute="height" constant="24" id="bfc-9o-UaB"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="FilterGray"/>
+                                        <connections>
+                                            <action selector="filterBtnAct:" destination="sPB-dO-AWK" eventType="touchUpInside" id="2do-Ht-5of"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="프로젝트, 분야, 역할, 검색" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WX0-gD-j64">
+                                        <rect key="frame" x="20" y="115" width="243.5" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="B3L-gZ-ZZN"/>
+                                            <constraint firstAttribute="width" constant="243.5" id="di5-Wt-BfG"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="sPB-dO-AWK" id="r5S-v4-0dl"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="T6A-P5-1Gb" firstAttribute="trailing" secondItem="gYw-Bs-ty2" secondAttribute="trailing" id="2qW-yc-yf3"/>
+                                    <constraint firstAttribute="height" constant="172" id="Btl-Qm-iYy"/>
+                                    <constraint firstAttribute="trailing" secondItem="gYw-Bs-ty2" secondAttribute="trailing" constant="20" id="F7M-G0-fdw"/>
+                                    <constraint firstItem="gYw-Bs-ty2" firstAttribute="centerY" secondItem="X8q-SA-eO8" secondAttribute="centerY" id="Rze-lZ-CSm"/>
+                                    <constraint firstItem="X8q-SA-eO8" firstAttribute="top" secondItem="zto-Uq-JWo" secondAttribute="top" constant="60" id="TNS-IJ-pEb"/>
+                                    <constraint firstItem="X8q-SA-eO8" firstAttribute="leading" secondItem="zto-Uq-JWo" secondAttribute="leading" constant="20" id="UFt-9t-0jE"/>
+                                    <constraint firstAttribute="width" constant="375" id="Wil-Vi-wCo"/>
+                                    <constraint firstItem="T6A-P5-1Gb" firstAttribute="centerY" secondItem="WX0-gD-j64" secondAttribute="centerY" id="r6X-NQ-JIL"/>
+                                    <constraint firstItem="WX0-gD-j64" firstAttribute="top" secondItem="X8q-SA-eO8" secondAttribute="bottom" constant="23.5" id="v6t-ba-14D"/>
+                                    <constraint firstItem="WX0-gD-j64" firstAttribute="leading" secondItem="zto-Uq-JWo" secondAttribute="leading" constant="20" id="yPs-vW-zf4"/>
+                                </constraints>
+                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="imgSearchGradient" translatesAutoresizingMaskIntoConstraints="NO" id="UhT-Er-PY0">
+                                <rect key="frame" x="0.0" y="159" width="375" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="7T5-89-2vb"/>
+                                    <constraint firstAttribute="width" constant="375" id="CfQ-Xu-ldA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="T6A-P5-1Gb" firstAttribute="centerY" secondItem="WX0-gD-j64" secondAttribute="centerY" id="2WM-Up-0tn"/>
-                            <constraint firstItem="gSq-mc-fmu" firstAttribute="trailing" secondItem="gYw-Bs-ty2" secondAttribute="trailing" constant="20" id="Cy5-AI-9PI"/>
-                            <constraint firstItem="hvF-4V-ttx" firstAttribute="leading" secondItem="WX0-gD-j64" secondAttribute="leading" id="GHg-ZZ-AQO"/>
+                            <constraint firstItem="zto-Uq-JWo" firstAttribute="trailing" secondItem="gSq-mc-fmu" secondAttribute="trailing" id="8eG-HZ-UMv"/>
+                            <constraint firstItem="zto-Uq-JWo" firstAttribute="top" secondItem="K3j-Vv-mTo" secondAttribute="top" id="Ay3-XJ-T7u"/>
                             <constraint firstItem="tfI-xn-6rI" firstAttribute="trailing" secondItem="gSq-mc-fmu" secondAttribute="trailing" id="HbL-nd-g3C"/>
                             <constraint firstItem="tfI-xn-6rI" firstAttribute="bottom" secondItem="gSq-mc-fmu" secondAttribute="bottom" id="KJr-KX-vev"/>
-                            <constraint firstItem="X8q-SA-eO8" firstAttribute="top" secondItem="gSq-mc-fmu" secondAttribute="top" constant="60" id="KjQ-35-J6R"/>
-                            <constraint firstItem="hvF-4V-ttx" firstAttribute="top" secondItem="WX0-gD-j64" secondAttribute="bottom" constant="50" id="LK4-rW-b3B"/>
-                            <constraint firstItem="gYw-Bs-ty2" firstAttribute="centerY" secondItem="X8q-SA-eO8" secondAttribute="centerY" id="SEO-2P-bwm"/>
-                            <constraint firstItem="X8q-SA-eO8" firstAttribute="leading" secondItem="gSq-mc-fmu" secondAttribute="leading" constant="20" id="VJW-W1-Cfw"/>
-                            <constraint firstItem="WX0-gD-j64" firstAttribute="top" secondItem="X8q-SA-eO8" secondAttribute="bottom" constant="24" id="X6g-Dx-QUb"/>
-                            <constraint firstItem="WX0-gD-j64" firstAttribute="leading" secondItem="X8q-SA-eO8" secondAttribute="leading" id="Y7H-vM-G1F"/>
+                            <constraint firstItem="hvF-4V-ttx" firstAttribute="leading" secondItem="gSq-mc-fmu" secondAttribute="leading" constant="20" id="LOO-hQ-LW0"/>
+                            <constraint firstItem="UhT-Er-PY0" firstAttribute="leading" secondItem="gSq-mc-fmu" secondAttribute="leading" id="aV6-Tt-ryu"/>
                             <constraint firstItem="tfI-xn-6rI" firstAttribute="leading" secondItem="gSq-mc-fmu" secondAttribute="leading" id="dVG-dO-C4t"/>
-                            <constraint firstItem="T6A-P5-1Gb" firstAttribute="trailing" secondItem="gYw-Bs-ty2" secondAttribute="trailing" id="dzL-0I-YP9"/>
-                            <constraint firstItem="tfI-xn-6rI" firstAttribute="top" secondItem="hvF-4V-ttx" secondAttribute="bottom" constant="31" id="f9h-qx-s1E"/>
+                            <constraint firstItem="tfI-xn-6rI" firstAttribute="top" secondItem="hvF-4V-ttx" secondAttribute="bottom" constant="12" id="f9h-qx-s1E"/>
+                            <constraint firstItem="zto-Uq-JWo" firstAttribute="leading" secondItem="gSq-mc-fmu" secondAttribute="leading" id="nmo-FT-mhk"/>
+                            <constraint firstItem="UhT-Er-PY0" firstAttribute="top" secondItem="WX0-gD-j64" secondAttribute="bottom" constant="15" id="oKK-UN-awO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gSq-mc-fmu"/>
                     </view>
@@ -224,7 +248,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                 <state key="normal" title="전체" backgroundImage="btnHalfBlue">
-                                                    <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="purposeFunc:" destination="hNQ-ah-8A7" eventType="touchUpInside" id="yfp-eX-lOp"/>
@@ -304,7 +328,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <state key="normal" title="전체" backgroundImage="btnHalfBlue">
-                                                    <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="fieldFunc:" destination="hNQ-ah-8A7" eventType="touchUpInside" id="wAI-Dl-7M3"/>
@@ -384,7 +408,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <state key="normal" title="전체" backgroundImage="btnHalfBlue">
-                                                    <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="roleFunc:" destination="hNQ-ah-8A7" eventType="touchUpInside" id="3UA-vx-bf9"/>
@@ -464,7 +488,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                 <state key="normal" title="전체" backgroundImage="btnHalfBlue">
-                                                    <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="regionFunc:" destination="hNQ-ah-8A7" eventType="touchUpInside" id="01V-Ku-QTP"/>
@@ -645,8 +669,8 @@
                                                     <constraint firstAttribute="width" constant="375" id="lO8-tY-NuZ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <state key="normal" title="완료" backgroundImage="btnFloatNormal">
-                                                    <color key="titleColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="완료" backgroundImage="btnFixedNormal">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="btnClickAct:" destination="hNQ-ah-8A7" eventType="touchUpInside" id="F9P-WB-11O"/>
@@ -765,9 +789,10 @@
     </scenes>
     <resources>
         <image name="FilterGray" width="24" height="24"/>
-        <image name="btnFloatNormal" width="335" height="52"/>
+        <image name="btnFixedNormal" width="375" height="60"/>
         <image name="btnHalfBlue" width="163" height="56"/>
         <image name="btnHalfGray" width="163" height="56"/>
         <image name="gray" width="24" height="24"/>
+        <image name="imgSearchGradient" width="375" height="29"/>
     </resources>
 </document>

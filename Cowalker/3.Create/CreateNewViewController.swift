@@ -88,7 +88,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     func textFieldDidEndEditing(_ textField: UITextField) {
             if titleTextField.text != "" && commentOfIntro.text != "" && purposeTextField.text != "선택" && departmentTextField.text != "선택" && regionTextField.text != "선택" {
         
-                buttonForNext.setBackgroundImage(UIImage(named: "btnFloatNormal"), for: UIControlState.normal)
+                buttonForNext.setBackgroundImage(UIImage(named: "btnFixedNormal"), for: UIControlState.normal)
                 buttonForNext.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: UIControlState.normal)
         
             }else {

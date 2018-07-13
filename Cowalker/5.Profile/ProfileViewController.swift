@@ -149,8 +149,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         checkTheText(textField: departmentLabel, temp: myPage[0].department)
         checkTheText(textField: areaLabel, temp: myPage[0].area)
         
-        circleButton.kf.setBackgroundImage(with: URL(string: gsno(myPage[0].profile_url)), for: .normal, placeholder: #imageLiteral(resourceName: "1.png"))
-        backgroundImage.kf.setBackgroundImage(with: URL(string: gsno(myPage[0].background_url)), for: .normal, placeholder: #imageLiteral(resourceName: "1.png"))
+        circleButton.kf.setBackgroundImage(with: URL(string: gsno(myPage[0].profile_url)), for: .normal, placeholder: UIImage(named: "imgProfileDefault"))
+        backgroundImage.kf.setBackgroundImage(with: URL(string: gsno(myPage[0].background_url)), for: .normal, placeholder: UIImage(named: "imgCoverDefault"))
         if myPage[0].point != 0 {
             numOfSeeds.text = String(myPage[0].point)+" 개"
         }
