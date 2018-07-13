@@ -401,19 +401,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ql5-x2-Zan">
                                 <rect key="frame" x="0.0" y="286" width="375" height="249"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vsv-3U-q6Z">
-                                        <rect key="frame" x="0.0" y="26" width="375" height="223"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="223" id="TIZ-gm-xoT"/>
-                                            <constraint firstAttribute="width" constant="375" id="tzB-0O-DFN"/>
-                                        </constraints>
-                                        <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="GKh-Um-wtz" id="0lr-Ng-iEY"/>
-                                        </connections>
-                                    </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프로젝트 소개" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cc2-MG-NkB">
                                         <rect key="frame" x="20" y="8" width="88" height="19"/>
                                         <constraints>
@@ -424,14 +411,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vsv-3U-q6Z">
+                                        <rect key="frame" x="20" y="35" width="335" height="223"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="335" id="OcL-hA-LZ2"/>
+                                            <constraint firstAttribute="height" constant="223" id="uhH-Mb-zbh"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="GKh-Um-wtz" id="0lr-Ng-iEY"/>
+                                        </connections>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Vsv-3U-q6Z" secondAttribute="bottom" id="8Zd-6S-sYY"/>
-                                    <constraint firstItem="Vsv-3U-q6Z" firstAttribute="leading" secondItem="Ql5-x2-Zan" secondAttribute="leading" id="Ak3-vB-fUu"/>
                                     <constraint firstItem="cc2-MG-NkB" firstAttribute="top" secondItem="Ql5-x2-Zan" secondAttribute="top" constant="8" id="C7Z-8P-tJM"/>
-                                    <constraint firstAttribute="trailing" secondItem="Vsv-3U-q6Z" secondAttribute="trailing" id="KoY-iV-Leg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vsv-3U-q6Z" secondAttribute="trailing" constant="20" id="N4m-Ax-7wX"/>
+                                    <constraint firstItem="Vsv-3U-q6Z" firstAttribute="leading" secondItem="cc2-MG-NkB" secondAttribute="leading" id="VNl-yh-noE"/>
                                     <constraint firstAttribute="width" constant="375" id="f2N-J6-iZq"/>
+                                    <constraint firstItem="Vsv-3U-q6Z" firstAttribute="top" secondItem="cc2-MG-NkB" secondAttribute="bottom" constant="8" id="r1f-U9-rDu"/>
                                     <constraint firstAttribute="height" constant="249" id="x9A-RM-SWx"/>
                                 </constraints>
                             </view>
