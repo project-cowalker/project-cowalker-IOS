@@ -20,19 +20,32 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.tabBarController?.tabBar.items![0].image = #imageLiteral(resourceName: "iconsTabbar1Home")
         self.navigationController?.isNavigationBarHidden = true // 상단 없애기
         homeInit()
-        collectionConst.constant = collectionConst.constant + 2*(251)} // 길이조정
+        //collectionConst.constant = collectionConst.constant + 6*(251)} // 길이조정
+    }
     var homeDetails: [HomeDetail] = [HomeDetail]()
     func homeInit(){
         HomeService.getHomeDeatil{ (homeDetails) in
             self.homeDetails = homeDetails
-            self.listCollectionView.reloadData()}} // 콜랙션
+            self.listCollectionView.reloadData()
+            if (homeDetails.count%2 == 0) {
+                self.collectionConst.constant = CGFloat(homeDetails.count)/2*251
+            }else{
+                self.collectionConst.constant = CGFloat(homeDetails.count+1)/2*251
+            }
+        }
+    }
+    // 콜랙션
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return homeDetails.count}
+        if homeDetails.count > 20{
+            return 20
+        }else{
+            return homeDetails.count
+        }}
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as! ListCollectionViewCell
-   // cell.listImageView?.kf.setImage(with: URL(string: gsno(homeDetails[indexPath.row].img_url?[0])), placeholder: UIImage())
+    cell.listImageView?.kf.setImage(with: URL(string: gsno(homeDetails[indexPath.row].img_url?[0])), placeholder: UIImage())
             cell.nameLabel.text = homeDetails[indexPath.row].title
-        cell.partLabel.text = homeDetails[indexPath.row].aim! + " • " + homeDetails[indexPath.row].department! + " • " + homeDetails[indexPath.row].area!
+        cell.partLabel.text = homeDetails[indexPath.row].aim! + "•" + homeDetails[indexPath.row].department! + "•" + homeDetails[indexPath.row].area!
             return cell
     } // 클릭
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -42,19 +55,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             self.navigationController?.pushViewController(secondVC, animated: true)
         }
     }
-    
     //
-    
     @IBAction func testBtnClick(_ sender: UIButton) {
         let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
-       // secondVC.tempProjectId = homeDetails[indexPath.row]._id!
+      // secondVC.tempProjectId = homeDetails[indexPath.row]._id!
         self.navigationController?.pushViewController(secondVC, animated: true)
     }
-    //
 }
-// 기존 셀 4개 = 2줄
-// reload ->2줄, 2줄, 2줄, 2줄 // 총 10줄 까지
-
-
-
 

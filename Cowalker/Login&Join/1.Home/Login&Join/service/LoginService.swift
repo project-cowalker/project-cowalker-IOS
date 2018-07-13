@@ -26,8 +26,6 @@ struct LoginService:APIService{
                    
                     var arr = ["",""]
                     if let message = JSON(value)["message"].string {
-                         //print(message)
-                        //completion(message)
                         arr[0] = message
                     }
                     if let token = JSON(value)["token"].string{
