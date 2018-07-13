@@ -22,7 +22,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.tabBarController?.tabBar.tintColor = UIColor (red: 100.0/255.0, green: 223.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.tabBarController?.tabBar.items![0].image = #imageLiteral(resourceName: "iconsTabbar1Home")
         self.navigationController?.isNavigationBarHidden = true // 상단 없애기
-        homeInit()
+        homeInit() //
         collectionConst.constant = collectionConst.constant + 2*(251) // 길이조정
         //
         
@@ -43,12 +43,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.partLabel.text = homeDetails[indexPath.row].area
             return cell
     } // 클릭
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("여기는됨")
         if collectionView == listCollectionView{
             let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
             
-                secondVC.tempProjectId = homeDetails[indexPath.row]._id!
-            self.navigationController?.pushViewController(secondVC, animated: true) 
+            secondVC.tempProjectId = homeDetails[indexPath.row]._id!
+            
+            self.navigationController?.pushViewController(secondVC, animated: true)
         }
     }
 }

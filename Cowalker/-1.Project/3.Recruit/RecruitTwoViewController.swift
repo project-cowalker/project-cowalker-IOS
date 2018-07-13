@@ -18,6 +18,8 @@ class RecruitTwoViewController: UIViewController {
     
     @IBOutlet weak var rewardLabel: UITextField!
     
+    var tempPI = ""
+    
     var tempPosition = ""
     var tempStart = ""
     var tempEnd = ""
@@ -33,6 +35,8 @@ class RecruitTwoViewController: UIViewController {
         if (taskLabel.text != "") && (activityLabel.text != "") && (areaLabel.text != "") && (rewardLabel.text != ""){
             
             let secondVC = UIStoryboard(name: "Recruit", bundle:nil ).instantiateViewController(withIdentifier: "RecruitThreeViewController") as! RecruitThreeViewController
+            
+            secondVC.tempPI = self.tempPI
             
             secondVC.tempPosition = self.tempPosition
             secondVC.tempStart = self.tempStart

@@ -10,6 +10,8 @@ import UIKit
 
 class RecruitOneViewController: UIViewController, UITextFieldDelegate ,UITextViewDelegate {
 
+    var tempPI = ""
+    
     var tempRole = "PM"
     var tempDay = ""
     
@@ -49,6 +51,7 @@ class RecruitOneViewController: UIViewController, UITextFieldDelegate ,UITextVie
             self.navigationController?.pushViewController(secondVC, animated: true)
             // 값 전달
             
+            secondVC.tempPI = self.tempPI
             secondVC.tempPosition = tempRole
             secondVC.tempStart = ""
             secondVC.tempEnd = ""

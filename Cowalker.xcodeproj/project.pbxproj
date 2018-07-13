@@ -38,6 +38,7 @@
 		9449987520F7D9CC00EB9BD2 /* RecruitFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449987420F7D9CC00EB9BD2 /* RecruitFourViewController.swift */; };
 		9449987720F7DA6900EB9BD2 /* Recruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449987620F7DA6900EB9BD2 /* Recruit.swift */; };
 		9449987B20F8682100EB9BD2 /* RecruitNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449987A20F8682100EB9BD2 /* RecruitNaviViewController.swift */; };
+		9449987D20F8BB7C00EB9BD2 /* Profile2NaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449987C20F8BB7C00EB9BD2 /* Profile2NaviViewController.swift */; };
 		944A9F4120E8AAF900F5FE80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F4020E8AAF900F5FE80 /* AppDelegate.swift */; };
 		944A9F4820E8AAF900F5FE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944A9F4720E8AAF900F5FE80 /* Assets.xcassets */; };
 		944A9F4B20E8AAF900F5FE80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944A9F4920E8AAF900F5FE80 /* LaunchScreen.storyboard */; };
@@ -166,6 +167,7 @@
 		9449987420F7D9CC00EB9BD2 /* RecruitFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitFourViewController.swift; sourceTree = "<group>"; };
 		9449987620F7DA6900EB9BD2 /* Recruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruit.swift; sourceTree = "<group>"; };
 		9449987A20F8682100EB9BD2 /* RecruitNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitNaviViewController.swift; sourceTree = "<group>"; };
+		9449987C20F8BB7C00EB9BD2 /* Profile2NaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile2NaviViewController.swift; sourceTree = "<group>"; };
 		944A9F3D20E8AAF900F5FE80 /* Cowalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cowalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944A9F4020E8AAF900F5FE80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		944A9F4720E8AAF900F5FE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 				E4BDC29320F4FD9500A50966 /* ProfileProjectViewController.swift */,
 				E4BDC29720F5098100A50966 /* MoreInformationCollectionViewCell.swift */,
 				9449986B20F799F300EB9BD2 /* GetMoreInformationViewController.swift */,
+				9449987C20F8BB7C00EB9BD2 /* Profile2NaviViewController.swift */,
 			);
 			path = Profile2;
 			sourceTree = "<group>";
@@ -939,6 +942,7 @@
 				943903FD20F73B950024B306 /* ApplyMemberData.swift in Sources */,
 				94057B1820E9CCCF008875C5 /* CreateNewViewController.swift in Sources */,
 				9403DD0D20E8E4FC0049C497 /* chattingTableViewCell.swift in Sources */,
+				9449987D20F8BB7C00EB9BD2 /* Profile2NaviViewController.swift in Sources */,
 				948AE9E220EFE15D003CF30F /* ApplyMemberViewController.swift in Sources */,
 				E4692B2B20EC14F7000F4A72 /* messageTableViewCell.swift in Sources */,
 				E4BDC29820F5098100A50966 /* MoreInformationCollectionViewCell.swift in Sources */,

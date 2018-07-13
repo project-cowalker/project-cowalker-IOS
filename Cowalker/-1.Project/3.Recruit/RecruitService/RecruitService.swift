@@ -78,41 +78,36 @@ struct RecruitService:APIService{
             "authorization" : UserDefaults.standard.string(forKey: "token")!
         ]
         let body: [String : Any] = [
-            "project_idx" : "5b4723d2a92c52665a28b99b", //project_idx,
-            "position" : "PM",// position,
-            "start_date" : "2018-07-03" ,//start_date,
-            "end_date" : "2018-07-03", // end_date,
-            "number" : 1, //number,///////////
-            "task": "3", //task,
-            "activitiy" : "3", //activity,
-            "reward" : "3", //reward,
-            "area" : "3", //area,
-            "ability" : "3", //ability,
-            "career": "3", //career,
-            "preference": "3", //preference,
-            "comment" : "3", //comment,
-            "question_list" : ["3", "3"] //question///
+            "project_idx" : project_idx,
+            "position" : position,
+            "start_date" : start_date,
+            "end_date" : end_date,
+            "number" : number,///////////
+            "task": task,
+            "activitiy" : activity,
+            "reward" : reward,
+            "area" : area,
+            "ability" : ability,
+            "career": career,
+            "preference": preference,
+            "comment" : comment,
+            "question_list" : question///
         ]
         
         Alamofire.request(URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseData() {res in
             
-            print("구일아 만나줘~~10")
             switch res.result{
             case .success:
                 if let value = res.result.value{
-                    print("구일아 만나줘~~0")
                     if let message = JSON(value)["message"].string {
                         completion(message)
-                        print("구일아 만나줘~~1")
                     }
-                    print("구일아 만나줘~~2")
                 }
                 break
             case .failure(let err):
                 print(err.localizedDescription)
-                print("구일아 만나줘~~3")
                 break
             }
         }
     }
-    }
+}
