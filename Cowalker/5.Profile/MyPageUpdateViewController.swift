@@ -129,6 +129,7 @@ class MyPageUpdateViewController: UIViewController, UICollectionViewDelegate,UIC
         imagePicker.delegate = self
         funcForNavigationBar()
         super.viewDidLoad()
+        introductionTextView.placeholder = "내 소개 입력 해주세요."
 
         // Do any additional setup after loading the view.
     }

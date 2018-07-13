@@ -87,15 +87,24 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let cancel = UIAlertAction(title:"취소", style: UIAlertActionStyle.default)
         let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){
             (UIAlertAction) in
-            self.dismiss(animated: true, completion: nil)
+            UserDefaults.standard.removeObject(forKey: "email")
+            UserDefaults.standard.removeObject(forKey: "pwd")
+//            Switcher.updateRootVC()
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            
+            self.present(vc, animated: true,completion: nil)
+           
+
             
         }
         message.addAction(cancel)
         message.addAction(action)
         self.present(message, animated: true, completion: nil)
     }
-    
 
+    
+    
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
@@ -140,8 +149,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         checkTheText(textField: departmentLabel, temp: myPage[0].department)
         checkTheText(textField: areaLabel, temp: myPage[0].area)
         
-        circleButton.kf.setBackgroundImage(with: URL(string: gsno(myPage[0].profile_url)), for: .normal, placeholder: #imageLiteral(resourceName: "1.png"))
-        backgroundImage.kf.setBackgroundImage(with: URL(string: gsno(myPage[0].background_url)), for: .normal, placeholder: #imageLiteral(resourceName: "1.png"))
+        circleButton.kf.setBackgroundImage(with: URL(string: gsno(myPage[0].profile_url)), for: .normal, placeholder: UIImage(named: "imgProfileDefault"))
+        backgroundImage.kf.setBackgroundImage(with: URL(string: gsno(myPage[0].background_url)), for: .normal, placeholder: UIImage(named: "imgCoverDefault"))
         if myPage[0].point != 0 {
             numOfSeeds.text = String(myPage[0].point)+" 개"
         }

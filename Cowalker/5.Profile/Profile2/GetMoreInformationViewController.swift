@@ -18,7 +18,7 @@ class GetMoreInformationViewController: UIViewController, UICollectionViewDataSo
         cell.introductionImage.kf.setImage(with: URL(string: gsno(imageArray[indexPath.row])), placeholder: #imageLiteral(resourceName: "1.png"))
         return cell
     }
-    //asdasdsadss
+
     var temp = 0
     var imageArray: [String] = [String]()
     var user_idx: String?

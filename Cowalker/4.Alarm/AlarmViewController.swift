@@ -36,7 +36,7 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
         self.tabBarController?.tabBar.items![3].image = #imageLiteral(resourceName: "iconsTabbar4Alarm")
     }
     override func viewWillAppear(_ animated: Bool) {
-        alarmTableView.reloadData()
+        alarmViewControllerInit()
     }
     var alarm: [NewAlarm] = [NewAlarm]()
     @IBAction func button1(_ sender: UIButton) {
@@ -70,7 +70,19 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
         }
         print(message.count)
     }
-    
+    func alarmViewControllerInit(){
+        MessageService.messageInit { (message) in
+            
+            self.message = message
+            self.alarmTableView.reloadData()
+            
+        }
+        MessageService.getNewAlarm { (NewAlarm) in
+            self.alarm = NewAlarm
+            self.alarmTableView.reloadData()
+            
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if num == 0 {
@@ -87,9 +99,10 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
             let cell = tableView.dequeueReusableCell(withIdentifier:"alarmTableViewCell") as! alarmTableViewCell
             cell.project_name.text = alarm[indexPath.row].project_name!
             cell.contents.text = alarm[indexPath.row].contents!
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM/dd HH:mm"
-            cell.create_at.text = dateFormatter.string(from: alarm[indexPath.row].create_at)
+            cell.create_at.text = alarm[indexPath.row].time!
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "MM/dd HH:mm"
+//            cell.create_at.text = dateFormatter.string(from: alarm[indexPath.row].create_at)
             
             
             return cell
@@ -99,10 +112,11 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
             // 이때 partner_idx 받을 수 있다~~~~~~~ 이거 체크하기@@@@@@@@@@@@
             // 쪽지 보낼때 필요한 값
 
-            cell.profileImage.kf.setImage(with: URL(string: gsno(message[indexPath.row].partner_profile_url)), placeholder: UIImage())
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM/dd HH:mm"
-            cell.timeLabel.text = dateFormatter.string(from: message[indexPath.row].create_at)
+            cell.profileImage.kf.setImage(with: URL(string: gsno(message[indexPath.row].partner_profile_url)), placeholder: #imageLiteral(resourceName: "imgProfileDefault.png"))
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "MM/dd HH:mm"
+//            cell.timeLabel.text = dateFormatter.string(from: message[indexPath.row].create_at)
+            cell.timeLabel.text = message[indexPath.row].time!
             cell.messageFromLabel.text = message[indexPath.row].partner_name
             cell.messageLabel.text = message[indexPath.row].contents
             

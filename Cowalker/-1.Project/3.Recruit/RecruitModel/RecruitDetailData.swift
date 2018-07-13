@@ -10,7 +10,7 @@ import Foundation
 
 
 struct RecruitDetailData: Codable{
-    let message: String
-    let result: [RecruitDetail]
-    let btnResult: String
+    let message: String?
+    let result: [RecruitDetail]?
+    let btnResult: String?
 }

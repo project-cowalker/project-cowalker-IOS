@@ -137,6 +137,7 @@
                                     <constraint firstAttribute="width" constant="375" id="LcY-jl-nAc"/>
                                     <constraint firstAttribute="height" constant="200" id="kRa-j9-r4e"/>
                                 </constraints>
+                                <state key="normal" backgroundImage="imgCoverDefault"/>
                                 <connections>
                                     <action selector="mainPicFunc:" destination="uQh-Mt-RHl" eventType="touchUpInside" id="Qbm-NU-VoZ"/>
                                 </connections>
@@ -148,6 +149,9 @@
                                     <constraint firstAttribute="width" constant="19" id="q09-sa-xh9"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="icon_darkgray_letter"/>
+                                <connections>
+                                    <segue destination="TTL-ng-lYz" kind="show" id="y0j-6f-70v"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBi-7n-BKJ">
                                 <rect key="frame" x="297" y="210" width="24" height="24"/>
@@ -169,7 +173,7 @@
                                             <constraint firstAttribute="height" constant="81" id="Nbj-Yb-3u8"/>
                                             <constraint firstAttribute="width" constant="81" id="hIC-iQ-0GN"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="btnAddPic"/>
+                                        <state key="normal" backgroundImage="imgProfileDefault"/>
                                         <connections>
                                             <action selector="profilePicFunc:" destination="uQh-Mt-RHl" eventType="touchUpInside" id="QQz-gf-2ez"/>
                                         </connections>
@@ -415,7 +419,6 @@
                                     <constraint firstAttribute="height" constant="300" id="J9I-8r-KTo"/>
                                     <constraint firstAttribute="width" constant="315" id="dZd-6s-TLN"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -477,7 +480,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wQa-53-rNc">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnAddPic" translatesAutoresizingMaskIntoConstraints="NO" id="wQa-53-rNc">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
                                             </subviews>
@@ -516,7 +519,6 @@
                                             <constraint firstAttribute="height" constant="178" id="8Av-sZ-9ke"/>
                                             <constraint firstAttribute="width" constant="315" id="eJA-uk-PiX"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <connections>
@@ -540,7 +542,7 @@
                                     <constraint firstAttribute="width" constant="375" id="49x-Tv-2wV"/>
                                     <constraint firstAttribute="height" constant="60" id="q53-FX-KwG"/>
                                 </constraints>
-                                <state key="normal" title="완료" backgroundImage="btnFloatNormal">
+                                <state key="normal" title="완료" backgroundImage="btnFixedNormal">
                                     <color key="titleColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -888,6 +890,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CaC-5A-J7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="828" y="876.1619190404798"/>
+        </scene>
+        <!--AlarmViewController-->
+        <scene sceneID="m9b-yS-ezt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Alarm" referencedIdentifier="AlarmViewController" id="TTL-ng-lYz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uwx-7Y-tvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702" y="-432"/>
         </scene>
         <!--Profile Edit View Controller-->
         <scene sceneID="kYG-kp-I0D">
@@ -1256,12 +1266,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irf-pa-VDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045.5999999999999" y="-294.15292353823088"/>
+            <point key="canvasLocation" x="1132" y="-307"/>
         </scene>
     </scenes>
     <resources>
         <image name="btnAddPic" width="100" height="100"/>
-        <image name="btnFloatNormal" width="335" height="52"/>
+        <image name="btnFixedNormal" width="375" height="60"/>
         <image name="btnLogout" width="375" height="50"/>
         <image name="darkgray" width="24" height="24"/>
         <image name="iconDropdownDownDarkgray" width="24" height="24"/>
@@ -1269,6 +1279,8 @@
         <image name="iconProjectDarkgray" width="24" height="24"/>
         <image name="iconSeedDarkgray" width="24" height="24"/>
         <image name="icon_darkgray_letter" width="19" height="23"/>
+        <image name="imgCoverDefault" width="375" height="200"/>
+        <image name="imgProfileDefault" width="81" height="81"/>
         <image name="line" width="375" height="1"/>
     </resources>
 </document>

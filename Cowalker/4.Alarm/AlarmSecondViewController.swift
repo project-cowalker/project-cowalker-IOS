@@ -17,14 +17,16 @@ class AlarmSecondViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "messageTableViewCell") as! messageTableViewCell
         cell.userLabel.text = individualMessage[indexPath.row].from_user_name
         cell.messageLabel.text = individualMessage[indexPath.row].contents
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd HH:mm"
-        cell.timeLabel.text = dateFormatter.string(from: individualMessage[indexPath.row].create_at)
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MM/dd HH:mm"
+//        cell.timeLabel.text = dateFormatter.string(from: individualMessage[indexPath.row].create_at)
+        cell.timeLabel.text = individualMessage[indexPath.row].time
         
         return cell
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        messageTableInit()
         individualMessageTableView.reloadData()
         
     }
@@ -40,6 +42,7 @@ class AlarmSecondViewController: UIViewController, UITableViewDelegate, UITableV
         self.navigationItem.rightBarButtonItem?.tintColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
         self.navigationItem.title = partner_name
         messageTableInit()
+        self.navigationController?.isNavigationBarHidden = false
         
         // Do any additional setup after loading the view.
     }

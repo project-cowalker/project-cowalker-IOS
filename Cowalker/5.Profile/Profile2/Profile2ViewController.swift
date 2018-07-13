@@ -106,6 +106,19 @@ class Profile2ViewController: UIViewController {
         }
     }
     
+    @IBAction func sendingMessageToOthers(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Alarm", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SendingMessageViewController") as! SendingMessageViewController
+//        vc.tempProjectId = temp
+        vc.partner_idx = myPage[0].user_idx!
+        self.present(vc, animated: true,completion: nil)
+        
+        
+        
+        
+        
+    }
+    
     
     
 

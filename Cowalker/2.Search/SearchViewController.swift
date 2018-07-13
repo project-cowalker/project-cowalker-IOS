@@ -16,6 +16,10 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.tabBarController?.tabBar.items![1].image = #imageLiteral(resourceName: "iconsTabbar2Search")
         self.navigationController?.isNavigationBarHidden = true
         initSearch()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     // 임이 데이터
@@ -33,9 +37,33 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         cell.labelText1.text = checkTheText(temp: searchData[indexPath.row].title)
         cell.labelText2.text = checkTheText(temp: searchData[indexPath.row].aim)
+       
 
         return cell
     
+    }
+    var temp: String = String()
+//    override func prepare(for segue:UIStoryboardSegue, sender:Any?) {
+//        if segue.identifier == "Project"{
+//            let secondVC = segue.destination as! ProjectIntroViewController
+//            secondVC.tempProjectId = temp
+//        }
+//
+//    }
+   
+    
+    
+    //tempProjectId
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        temp = searchData[indexPath.row].project_idx!
+
+        let storyboard: UIStoryboard = UIStoryboard(name: "Project", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
+        vc.tempProjectId = temp
+        self.present(vc, animated: true,completion: nil)
+        
+        
     }
      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width:180*self.view.frame.width/375   , height: 180*self.view.frame.height/667 )
@@ -50,6 +78,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 }
     ////////////////검색필터
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.textColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
         textField.resignFirstResponder()
         return true
     }

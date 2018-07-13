@@ -82,7 +82,26 @@ class ProfileProjectViewController: UIViewController, UICollectionViewDelegate, 
     @objc func popAction() {
         self.navigationController?.popViewController(animated: true)
     }
-
+    
+    var temp: String = String()
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == createCollectionView {
+            
+            temp = madeProject[indexPath.row].project_idx!
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "Project", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
+            vc.tempProjectId = temp
+            self.present(vc, animated: true,completion: nil)
+        }else {
+            
+            temp = participateProject[indexPath.row]._id!
+            let storyboard: UIStoryboard = UIStoryboard(name: "Project", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
+            vc.tempProjectId = temp
+            self.present(vc, animated: true,completion: nil)
+        }
+    }
     
 
 }

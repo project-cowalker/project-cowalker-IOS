@@ -381,7 +381,7 @@
                                     <constraint firstAttribute="height" constant="52" id="CNy-zi-wWB"/>
                                     <constraint firstAttribute="width" constant="375" id="FV8-KG-E9a"/>
                                 </constraints>
-                                <state key="normal" title="완료" backgroundImage="btnFloatNormal">
+                                <state key="normal" title="완료" backgroundImage="btnFixedNormal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -501,7 +501,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btnFloatNormal" width="335" height="52"/>
+        <image name="btnFixedNormal" width="375" height="60"/>
         <image name="btnHalfGray" width="163" height="56"/>
         <image name="iconClose" width="24" height="24"/>
         <image name="iconDropdownDownDarkgray" width="24" height="24"/>

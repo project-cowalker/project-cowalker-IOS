@@ -130,6 +130,7 @@ class FilterViewController: UIViewController {
         if button == defaultForButton[row] && firstResponse {
             tempForButton[row] = button
             tempForButton[row].setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
+            tempForButton[row].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
             countForButton[row] = 1
             //서버 연동시 해당 데이터 여기서 처리
             
@@ -138,8 +139,10 @@ class FilterViewController: UIViewController {
             
         }else if i == 0 {
             defaultForButton[row].setBackgroundImage(UIImage(named: "btnHalfGray"), for: UIControlState.normal)
+            defaultForButton[row].setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
             tempForButton[row] = button
             button.setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
+            button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
             countForButton[row] = 1
             
             firstResponse = false
@@ -147,7 +150,9 @@ class FilterViewController: UIViewController {
             
         }else {
             tempForButton[row].setBackgroundImage(UIImage(named: "btnHalfGray"), for: UIControlState.normal)
+            tempForButton[row].setTitleColor(#colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1), for: .normal)
             button.setBackgroundImage(UIImage(named: "btnHalfBlue"), for: UIControlState.normal)
+            button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
             tempForButton[row] = button
             firstResponse = false
             
