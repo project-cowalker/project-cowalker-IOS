@@ -13,7 +13,7 @@ struct RecruitList: Codable {
     let position: String!
     let number: Int!
     let task: String!
-    let dday: Int!
+    let dday: String!////
 }
 
 

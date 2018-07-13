@@ -33,6 +33,7 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         funcForNavigationBar()
         constTest.constant = 0
         projectInit()
+        //print(tempProjectId)
     }
     func funcForNavigationBar(){
         self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
@@ -40,6 +41,7 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         let leftButtonItem = UIBarButtonItem(image: UIImage(named: "iconCaretLeftDarkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(popAction))
         leftButtonItem.tintColor = UIColor.black
         self.navigationItem.leftBarButtonItem = leftButtonItem}
+    
     @objc func popAction(){ // 뒤로가기 버튼
         self.navigationController?.popViewController(animated: true)
         self.tabBarController?.tabBar.isHidden = false
@@ -66,6 +68,8 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             self.const() // 모집컬랙션뷰 크기 처리함수
             self.partCollectionView.reloadData()
             self.recoTableView.reloadData()
+            print("testhere")
+            print(self.tempList)
         }}
     func btnIs(){
         if tempIsUser == "개설자"{
@@ -89,13 +93,15 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         self.aimLabel.text = tempProjectDetails[0].aim
         self.explainLabel.text = tempProjectDetails[0].explain
         self.nameLabel.text = tempProjectDetails[0].project_user_name
-        //  self.profileImg.image = tempProjectDetails[0].project_user_profile_url
         self.profileImg?.kf.setImage(with: URL(string: gsno(tempProjectDetails[0].project_user_profile_url)), for: .normal, placeholder: UIImage())
     }
     func const(){
         if tempList == 0{
             collecViewH.constant = 30        }
-        else{ collecViewH.constant = CGFloat((tempList - 1)*88) + collecViewH.constant
+        else{
+            
+            collecViewH.constant = CGFloat(tempList*110)
+            //collecViewH.constant = CGFloat((tempList - 1)*88) + collecViewH.constant
         }
     }
     //
@@ -124,7 +130,7 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PartCollectionViewCell", for: indexPath) as! PartCollectionViewCell
             cell.partLabel.text = tempRecruitLists[indexPath.row].position
             cell.partNumLabel.text = String(self.tempRecruitLists[indexPath.row].number) + "명"
-            cell.dDayLabel.text =  "D - " + String(self.tempRecruitLists[indexPath.row].dday)
+            cell.dDayLabel.text =  "D " + self.tempRecruitLists[indexPath.row].dday
             cell.detailLabel.text = self.tempRecruitLists[indexPath.row].task
             return cell}}
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {//셀클릭
@@ -132,14 +138,12 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             let secondVC = UIStoryboard(name: "Detail", bundle:nil ).instantiateViewController(withIdentifier: "ProjectPartDetailViewController") as! ProjectPartDetailViewController
             self.navigationController?.pushViewController(secondVC, animated: true)
             // 자료 전달 // 프로젝트아이디, 리크룻아이디 전송
-            secondVC.tempRecruitId = self.tempRecruitLists[indexPath.section].recruit_idx // 다음 뷰로 모집아이디 전송
+            secondVC.tempRecruitId = self.tempRecruitLists[indexPath.row].recruit_idx // 다음 뷰로 모집아이디 전송
             secondVC.tempProjectId = self.tempProjectId
-            /*
-            secondVC.temp1 = self.tempRecruitLists[indexPath.section].position
-            secondVC.temp2 = String(self.tempRecruitLists[indexPath.section].number)
-            secondVC.temp3 = self.tempRecruitLists[indexPath.section].task
-            secondVC.temp4 = String(self.tempRecruitLists[indexPath.section].dday)
- */
+            secondVC.tempIndex = indexPath.row
+            print("ㅅㅂㅅㅂ구일")
+            print(secondVC.tempIndex)
+
         }}
     @IBAction func tabBtnACt(_ sender: UIBarButtonItem) {
         if tempIsUser == "개설자" {
@@ -156,12 +160,27 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             actionSheetController.addAction(cancelAction)
             present(actionSheetController, animated: true, completion: nil)
             func editAct(){// 프로젝트 수정
+                
             }
             func deleteAct(){// 프로젝트 삭제
                 let dialog = UIAlertController(title: "프로젝트 삭제", message: "삭제하겠습니다.", preferredStyle: .alert)
-                let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
+                let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){ action -> Void in
+                    deleteComplete()
+                }
                 dialog.addAction(action)
                 self.present(dialog, animated: true, completion: nil)
+                func deleteComplete(){
+                    CreateNewProjectService.projectDelete(tempURL: tempProjectId){ (message) in
+                        if message == "delete success"{
+                            print("delete sucess")
+                            let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+                            let vc = storyboard.instantiateViewController(withIdentifier: "MyTabViewController") as! MyTabViewController
+                            self.present(vc, animated: false, completion: nil)
+                        }
+                    }
+                    // 화면전환
+                    
+                }
             }
         }else { // 참여하기 페이지로 이동,
             if tempIsUser == "참여하기"{

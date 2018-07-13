@@ -10,7 +10,9 @@ import UIKit
 
 class detailPartCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var partLabel: UILabel!
+    
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var todoLabel: UILabel!
+    
     @IBOutlet weak var dayLabel: UILabel!
 }

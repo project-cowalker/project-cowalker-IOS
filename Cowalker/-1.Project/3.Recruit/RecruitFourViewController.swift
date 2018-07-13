@@ -40,9 +40,7 @@ class RecruitFourViewController: UIViewController, UITextFieldDelegate ,UITextVi
     @IBAction func nextBtnAct(_ sender: UIButton) {
             RecruitService.recruitInit(project_idx:tempPI, position: self.tempPosition, start_date: self.tempStart, end_date: self.tempEnd, number: self.tempNum, task: self.tempTask, activity: self.tempActivity, reward: self.tempReward, area: self.tempArea, ability: self.tempAbility, career: self.tempCareer, preference: self.tempPreference, comment: self.tempComment, question: [self.questionLabel1.text!, self.questionLabel2.text!]) { (message) in
                 if message == "success"{
-                    print("모집성공예예")
                 }else{
-                     print("모집실패흑흑")
                 }
                 self.dismiss(animated: true, completion: nil)
                 // 하단 업데이트 하기

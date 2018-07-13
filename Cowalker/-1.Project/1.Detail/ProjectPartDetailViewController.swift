@@ -37,24 +37,59 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
         super.viewDidLoad()
         self.title = "모집 상세"
         partDetailLoad()
+        listDetailLoad()
+        funcForNavigationBar()
     }
+    
+    
+    func funcForNavigationBar(){
+        self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
+        self.tabBarController?.tabBar.isHidden = true // 하단 탭바 삭제
+        let leftButtonItem = UIBarButtonItem(image: UIImage(named: "iconCaretLeftDarkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(popAction))
+        leftButtonItem.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem = leftButtonItem}
+    
+    @objc func popAction(){ // 뒤로가기 버튼
+        self.navigationController?.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false}
+    
+    
+    
+    var tempIndex = 0
+    var tempRecruitLists : [RecruitList] = [RecruitList]()
+    
+    var te1 = ""
+    var te2 = ""
+    var te3 = ""
+    var te4 = ""
+    
+    func listDetailLoad(){
+        RecruitService.recruitList(add: tempProjectId){ (recruitLists) in
+            self.tempRecruitLists = recruitLists
+            print(self.tempRecruitLists[0])
+            self.detailPartCollectionView.reloadData()
+            self.te1 = self.tempRecruitLists[0].position
+            self.te2 = String(self.tempRecruitLists[0].number)
+            self.te3 = self.tempRecruitLists[0].task
+            self.te4 = self.tempRecruitLists[0].dday
+        }
+    }
+    
     func partDetailLoad(){
         RecruitService.recruitDetail(a: self.tempProjectId, b: self.tempRecruitId){ (recruitDetails, userData) in
             self.recruitDetails = recruitDetails
             self.tempUser = userData/////
-            self.dataInit()
-            self.btnInit()
+            self.dataInit() //
+            self.btnInit() //
             // 개발자 개설자 저장
-            print("heretq")
-            print(self.tempUser)
             self.detailPartCollectionView.reloadData()
         }
     }
     func dataInit(){ // 데이터 입력
-        print(recruitDetails[0])
         self.positionLabel.text = self.recruitDetails[0].position
         self.startLabel.text = self.recruitDetails[0].start_date
-        self.numberLabel.text = String(describing: self.recruitDetails[0].number)//
+        self.numberLabel.text = String(describing: self.recruitDetails[0].number!)/////////
         self.taskLabel.text = self.recruitDetails[0].task
         self.activityLabel.text = self.recruitDetails[0].activity
         self.areaLabel.text = self.recruitDetails[0].area
@@ -65,7 +100,8 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
         self.commentLabel.text = self.recruitDetails[0].comment
     }
     func btnInit(){
-        if self.tempUser == "개발자"{
+        print(tempUser)
+        if self.tempUser == "개설자"{
             self.longBtn.image = #imageLiteral(resourceName: "btnProjectManage.png") // 프로젝트 관리
             self.applyBtn.isHidden = false// 지원멤버 보이기
             self.btnConst.constant = 60
@@ -86,19 +122,19 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
-    var temp1 = ""
-    var temp2 = ""
-    var temp3 = ""
-    var temp4 = ""
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailPartCollectionViewCell", for: indexPath) as! detailPartCollectionViewCell
-        cell.partLabel.text = temp1 //recruitDetails[indexPath.row].position
-        cell.numberLabel.text = temp2 + "명"//String(recruitDetails[indexPath.row].number)
-        cell.todoLabel.text =  "D - " + temp4//recruitDetails[indexPath.row].position
-        cell.dayLabel.text = temp3//recruitDetails[indexPath.row].position
+        
+        
+        cell.partLabel.text = te1 //tempRecruitLists[0].position
+        cell.numberLabel.text = te2 //String(tempRecruitLists[0].number) + "명"
+        cell.todoLabel.text =  te3//"D - " + tempRecruitLists[0].task
+        cell.dayLabel.text = te4//tempRecruitLists[0].dday
         return cell}
+    
     @IBAction func btnClicAct(_ sender: UIButton) {
-        if self.tempUser == "개발자"{// 프로젝트 관리
+        if self.tempUser == "개설자"{// 프로젝트 관리
             let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             let firstAction: UIAlertAction = UIAlertAction(title: "프로젝트 수정", style: .default) { action -> Void in
                 editAct()}
@@ -111,12 +147,28 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
             present(actionSheetController, animated: true, completion: nil)
             func editAct(){// 수정
             }
-            func deleteAct(){// 삭제
+            func deleteAct(){// 프로젝트 삭제
                 let dialog = UIAlertController(title: "프로젝트 삭제", message: "삭제하겠습니다.", preferredStyle: .alert)
-                let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
+                let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){ action -> Void in
+                    deleteComplete()
+                }
                 dialog.addAction(action)
                 self.present(dialog, animated: true, completion: nil)
-        }}
+                func deleteComplete(){
+                    CreateNewProjectService.projectDelete(tempURL: tempProjectId){ (message) in
+                        if message == "delete success"{
+                            print("delete sucess")
+                            let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+                            let vc = storyboard.instantiateViewController(withIdentifier: "MyTabViewController") as! MyTabViewController
+                            self.present(vc, animated: false, completion: nil)
+                        }
+                    }
+                    // 화면전환
+                    
+                }
+            }
+            
+        }
         else{ // 참여자인 경우
             let secondVC = UIStoryboard(name: "Apply", bundle:nil ).instantiateViewController(withIdentifier: "ProjectJoinViewController") as! ProjectJoinViewController
             secondVC.tempProjectId = self.tempProjectId
@@ -129,10 +181,10 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
     @IBAction func applyBtnAct(_ sender: UIButton) {// 지원멤버 이동
         let secondVC = UIStoryboard(name: "Detail", bundle:nil ).instantiateViewController(withIdentifier: "ApplyMemberViewController") as! ApplyMemberViewController
         secondVC.tempRecruitIdx = tempRecruitId
-        secondVC.temp1 = self.temp1
-        secondVC.temp2 = self.temp2
-        secondVC.temp3 = self.temp3
-        secondVC.temp4 = self.temp4
+        //secondVC.temp1 = self.temp1
+        //secondVC.temp2 = self.temp2
+       // secondVC.temp3 = self.temp3
+        //secondVC.temp4 = self.temp4
         
         self.navigationController?.pushViewController(secondVC, animated: true)
     }

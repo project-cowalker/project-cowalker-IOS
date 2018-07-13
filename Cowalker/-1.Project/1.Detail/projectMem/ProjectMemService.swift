@@ -26,8 +26,7 @@ struct ProjectMemService:APIService{
                     do{
                         let projectMemData = try decoder.decode(ProjectMemData.self, from: value)
                         if  projectMemData.message == "success"{
-                            //print(recruitListData.result)
-                            completion(projectMemData.member)
+                             completion(projectMemData.member)
                         }
                     }catch{ }
                 }
