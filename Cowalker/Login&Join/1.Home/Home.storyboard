@@ -159,8 +159,8 @@
                                                                         <constraint firstAttribute="width" constant="162" id="xF0-vN-jiL"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgN-DK-ej4">
-                                                                    <rect key="frame" x="15" y="174" width="41" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgN-DK-ej4">
+                                                                    <rect key="frame" x="15" y="174" width="132" height="21"/>
                                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -178,6 +178,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="pMK-gl-URn" secondAttribute="bottom" constant="10" id="2pw-2M-cDg"/>
                                                             <constraint firstItem="Nf5-q4-AoX" firstAttribute="top" secondItem="djG-T3-IhY" secondAttribute="top" id="364-5B-TGJ"/>
                                                             <constraint firstItem="pMK-gl-URn" firstAttribute="leading" secondItem="djG-T3-IhY" secondAttribute="leading" constant="15" id="IOA-SU-AFW"/>
+                                                            <constraint firstAttribute="trailing" secondItem="BgN-DK-ej4" secondAttribute="trailing" constant="15" id="LIJ-E2-pFO"/>
                                                             <constraint firstItem="BgN-DK-ej4" firstAttribute="top" secondItem="Nf5-q4-AoX" secondAttribute="bottom" constant="12" id="az9-9T-6SK"/>
                                                             <constraint firstItem="Nf5-q4-AoX" firstAttribute="leading" secondItem="djG-T3-IhY" secondAttribute="leading" id="bqg-1u-671"/>
                                                             <constraint firstItem="BgN-DK-ej4" firstAttribute="leading" secondItem="djG-T3-IhY" secondAttribute="leading" constant="15" id="dnO-sK-1t6"/>

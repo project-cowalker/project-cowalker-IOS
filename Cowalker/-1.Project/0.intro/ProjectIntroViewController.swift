@@ -27,6 +27,8 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     override func viewWillAppear(_ animated: Bool) {
         projectInit()
     }
+    var tempProjectId2 = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
@@ -34,6 +36,11 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         let leftButton = UIBarButtonItem(title: "<Home", style: .plain, target: self, action: #selector(self.action)) // 왼쪽 버튼 설정
         self.navigationItem.leftBarButtonItem = leftButton
         constTest.constant = 0
+        
+        if tempProjectId2 != "" {
+            tempProjectId = tempProjectId2
+        }
+        
         projectInit()
     }
     var tempProjectId = "" // 이전뷰에서 값 전달받는다.
@@ -177,7 +184,7 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
        // 프로필로이동
     }
     @IBAction func plusBtnAct(_ sender: UIButton) {// 플러스 버튼
-        let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "RecruitPartViewController") as! RecruitPartViewController
+        let secondVC = UIStoryboard(name: "Recruit", bundle:nil ).instantiateViewController(withIdentifier: "RecruitNaviViewController") as! RecruitNaviViewController
         self.present(secondVC, animated: false, completion: nil)
     }
     @IBAction func shareBtnAct(_ sender: UIBarButtonItem) { // 공유버튼
@@ -214,6 +221,8 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         cell.btnCheck.setImage(#imageLiteral(resourceName: "check.png"), for: .normal)
         return cell
     }
+    
+ 
 }
 
 

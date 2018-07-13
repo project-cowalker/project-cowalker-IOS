@@ -136,7 +136,6 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
             secondVC.tempProjectId = self.tempProjectId
             secondVC.tempRecruitId = self.tempRecruitId
             
-            
             self.navigationController?.pushViewController(secondVC, animated: true)
         }
     }
