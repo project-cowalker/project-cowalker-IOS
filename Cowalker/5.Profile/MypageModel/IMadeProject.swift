@@ -8,6 +8,7 @@
 
 import Foundation
 struct IMadeProject: Codable {
+    let project_idx: String?
     let title: String?
     let summary: String?
     let area: String?

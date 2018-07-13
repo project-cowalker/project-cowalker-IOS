@@ -87,7 +87,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let cancel = UIAlertAction(title:"취소", style: UIAlertActionStyle.default)
         let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){
             (UIAlertAction) in
-            self.dismiss(animated: true, completion: nil)
+            UserDefaults.standard.removeObject(forKey: "email")
+            UserDefaults.standard.removeObject(forKey: "pwd")
+//            Switcher.updateRootVC()
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            
+            self.present(vc, animated: true,completion: nil)
+           
+
             
         }
         message.addAction(cancel)
