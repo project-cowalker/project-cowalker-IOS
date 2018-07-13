@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 class CreateViewController: UIViewController, UIImagePickerControllerDelegate {
 
     override func viewDidLoad() {
@@ -18,6 +18,14 @@ class CreateViewController: UIViewController, UIImagePickerControllerDelegate {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateNaviViewController")
         self.present(vc!, animated: true, completion: nil)
+        let badgeCount: Int = 2
+        let application = UIApplication.shared
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
+        application.applicationIconBadgeNumber = badgeCount
         
     }
     

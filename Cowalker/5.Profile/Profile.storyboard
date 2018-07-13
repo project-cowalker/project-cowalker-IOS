@@ -434,7 +434,7 @@
                     </view>
                     <connections>
                         <outlet property="introductionCollectionView" destination="ayP-cH-CC6" id="zKi-0p-R7S"/>
-                        <outlet property="textView" destination="XzC-es-Jpt" id="XzB-n4-AcE"/>
+                        <outlet property="textView" destination="XzC-es-Jpt" id="FZ5-Ii-Jbl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OvL-BL-zRX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1022,7 +1022,7 @@
                                                         <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex) www.gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jLL-aq-MOo">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex) www.gmail.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jLL-aq-MOo">
                                                         <rect key="frame" x="30" y="59" width="315" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="AGI-K3-Y8i"/>
@@ -1266,7 +1266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irf-pa-VDU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1132" y="-307"/>
+            <point key="canvasLocation" x="1172" y="-316"/>
         </scene>
     </scenes>
     <resources>

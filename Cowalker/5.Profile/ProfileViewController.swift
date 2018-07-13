@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 import Kingfisher
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -31,7 +31,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         mypageInit()
         imagePicker.delegate = self
         imagePickerForProfile.delegate = self
-        
+        let badgeCount: Int = 2
+        let application = UIApplication.shared
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
+        application.applicationIconBadgeNumber = badgeCount
         
         
     }
