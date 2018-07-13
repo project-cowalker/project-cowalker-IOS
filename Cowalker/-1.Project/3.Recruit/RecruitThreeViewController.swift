@@ -38,6 +38,8 @@ class RecruitThreeViewController: UIViewController {
             
             let secondVC = UIStoryboard(name: "Recruit", bundle:nil ).instantiateViewController(withIdentifier: "RecruitFourViewController") as! RecruitFourViewController
             
+            secondVC.tempPI = self.tempPI
+            
             secondVC.tempPosition = self.tempPosition
             secondVC.tempStart = self.tempStart
             secondVC.tempEnd = self.tempEnd

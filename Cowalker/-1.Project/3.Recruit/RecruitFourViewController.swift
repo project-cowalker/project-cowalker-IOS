@@ -36,15 +36,15 @@ class RecruitFourViewController: UIViewController {
         if (questionLabel1.text != "") && (questionLabel2.text != ""){
     
             
-            RecruitService.recruitInit(project_idx:"5b4723d2a92c52665a28b99b", position: self.tempPosition, start_date: "2018-07-03", end_date: "2018-07-03", number: self.tempNum, task: self.tempTask, activity: self.tempActivity, reward: self.tempReward, area: self.tempArea, ability: self.tempAbility, career: self.tempCareer, preference: self.tempPreference, comment: self.tempComment, question: [self.questionLabel1.text!, self.questionLabel2.text!]) { (message) in
+            RecruitService.recruitInit(project_idx:tempPI, position: self.tempPosition, start_date: "2018-07-03", end_date: "2018-07-03", number: self.tempNum, task: self.tempTask, activity: self.tempActivity, reward: self.tempReward, area: self.tempArea, ability: self.tempAbility, career: self.tempCareer, preference: self.tempPreference, comment: self.tempComment, question: [self.questionLabel1.text!, self.questionLabel2.text!]) { (message) in
                 
                 if message == "success"{
                     print("모집성공예예")
+                    print()
                 }else{
                      print("모집실패흑흑")
                 }
                 
-                // 서버 통신
                 self.dismiss(animated: true, completion: nil)
                 
                 

@@ -181,9 +181,14 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
     }
     @IBAction func goToProfile(_ sender: UIButton) {// 사진,이름 클릭 프로필이동
        // 프로필로이동
+        let secondVC = UIStoryboard(name: "Profile2", bundle:nil ).instantiateViewController(withIdentifier: "Profile2NaviViewController") as! Profile2NaviViewController
+        self.present(secondVC, animated: false, completion: nil)
+        
+        
     }
     @IBAction func plusBtnAct(_ sender: UIButton) {// 플러스 버튼
         let secondVC = UIStoryboard(name: "Recruit", bundle:nil ).instantiateViewController(withIdentifier: "RecruitNaviViewController") as! RecruitNaviViewController
+        secondVC.tempPI =  tempProjectId
         self.present(secondVC, animated: false, completion: nil)
     }
     @IBAction func shareBtnAct(_ sender: UIBarButtonItem) { // 공유버튼
