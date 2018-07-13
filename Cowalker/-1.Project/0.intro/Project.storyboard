@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="956" y="-85"/>
         </scene>
-        <!--RecruitPartViewController-->
+        <!--RecruitOneViewController-->
         <scene sceneID="OKF-tw-rzb">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="RecruitPartViewController" storyboardName="Recruit" referencedIdentifier="RecruitPartViewController" id="mlZ-8F-iwy" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="RecruitOneViewController" storyboardName="Recruit" referencedIdentifier="RecruitOneViewController" id="mlZ-8F-iwy" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5VP-f3-8jf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1614" y="-730"/>

@@ -37,6 +37,22 @@ class RecruitThreeViewController: UIViewController {
         if (abilityLabel.text != "") && (careerLabel.text != "") && (preferenceLabel.text != "") && (commentLabel.text != ""){
             
             let secondVC = UIStoryboard(name: "Recruit", bundle:nil ).instantiateViewController(withIdentifier: "RecruitFourViewController") as! RecruitFourViewController
+            
+            secondVC.tempPosition = self.tempPosition
+            secondVC.tempStart = self.tempStart
+            secondVC.tempEnd = self.tempEnd
+            secondVC.tempNum = self.tempNum
+            
+            secondVC.tempTask = self.tempTask
+            secondVC.tempActivity = self.tempActivity
+            secondVC.tempArea = self.tempArea
+            secondVC.tempReward = self.tempReward
+            
+            secondVC.tempAbility = abilityLabel.text!
+            secondVC.tempCareer = careerLabel.text!
+            secondVC.tempPreference = preferenceLabel.text!
+            secondVC.tempComment = commentLabel.text!
+            
             self.navigationController?.pushViewController(secondVC, animated: true)
             
             

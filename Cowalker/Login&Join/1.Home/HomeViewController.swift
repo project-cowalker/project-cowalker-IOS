@@ -14,6 +14,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var listCollectionView: UICollectionView!
     @IBOutlet weak var collectionConst: NSLayoutConstraint!
     
+    
+    var refreshControl: UIRefreshControl!
+    
     override func viewDidLoad() {
      super.viewDidLoad()
         self.tabBarController?.tabBar.tintColor = UIColor (red: 100.0/255.0, green: 223.0/255.0, blue: 255.0/255.0, alpha: 1.0)
@@ -21,6 +24,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.navigationController?.isNavigationBarHidden = true // 상단 없애기
         homeInit()
         collectionConst.constant = collectionConst.constant + 2*(251) // 길이조정
+        //
+        
     }
     var homeDetails: [HomeDetail] = [HomeDetail]()
     func homeInit(){
