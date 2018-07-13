@@ -34,19 +34,21 @@ class RecruitTwoViewController: UIViewController {
             
             let secondVC = UIStoryboard(name: "Recruit", bundle:nil ).instantiateViewController(withIdentifier: "RecruitThreeViewController") as! RecruitThreeViewController
             
-            
-            self.navigationController?.pushViewController(secondVC, animated: true)
-            
             secondVC.tempPosition = self.tempPosition
-            secondVC.tempStart = ""
-            secondVC.tempEnd = ""
+            secondVC.tempStart = self.tempStart
+            secondVC.tempEnd = self.tempEnd
             secondVC.tempNum = self.tempNum
             
             secondVC.tempTask = taskLabel.text!
             secondVC.tempActivity = activityLabel.text!
+            secondVC.tempArea = areaLabel.text!
+            secondVC.tempReward = rewardLabel.text!
+            
+            self.navigationController?.pushViewController(secondVC, animated: true)
+            
         }
-        
         
     }
     
     }
+

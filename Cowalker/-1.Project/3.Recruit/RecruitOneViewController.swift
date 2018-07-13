@@ -48,6 +48,7 @@ class RecruitOneViewController: UIViewController, UITextFieldDelegate ,UITextVie
         
             self.navigationController?.pushViewController(secondVC, animated: true)
             // 값 전달
+            
             secondVC.tempPosition = tempRole
             secondVC.tempStart = ""
             secondVC.tempEnd = ""
