@@ -44,13 +44,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         if let destination = segue.destination as? ProjectIntroViewController{
             destination.tempProjectId = temp
         }
-//        if segue.identifier == "Project",
-//            let dest = segue.destination as? ProjectIntroViewController
-//        {
-//            dest.tempProjectId = temp
-//            print(1111111111)
-//            print(temp)
-//        }
        
     }
    
@@ -65,7 +58,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         let storyboard: UIStoryboard = UIStoryboard(name: "Project", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
         
-        self.present(vc, animated: false, completion: nil)
+        self.present(vc, animated: true,completion: nil)
         
         
     }
