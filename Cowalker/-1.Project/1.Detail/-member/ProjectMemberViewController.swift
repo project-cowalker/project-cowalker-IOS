@@ -17,7 +17,20 @@ class ProjectMemberViewController: UIViewController, UITableViewDataSource,UITab
         super.viewDidLoad()
         self.title = "참여 멤버"
         memberInit()
+        funcForNavigationBar()
     }
+    func funcForNavigationBar(){
+        self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
+        self.tabBarController?.tabBar.isHidden = true // 하단 탭바 삭제
+        let leftButtonItem = UIBarButtonItem(image: UIImage(named: "iconCaretLeftDarkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(popAction))
+        leftButtonItem.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem = leftButtonItem}
+    @objc func popAction(){ // 뒤로가기 버튼
+        self.navigationController?.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false}
+    
+    
     var add = "" // 이전 뷰에서 아이디 값 가져온다.
     
     var projectMembers: [ProjectMem] = [ProjectMem]()
@@ -25,6 +38,8 @@ class ProjectMemberViewController: UIViewController, UITableViewDataSource,UITab
         ProjectMemService.projectMemInit(add: add) { (members) in
             self.projectMembers = members
             self.memberTable.reloadData()
+            print("ddd")
+            print(members)
         }
     }
     
@@ -33,10 +48,9 @@ class ProjectMemberViewController: UIViewController, UITableViewDataSource,UITab
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"memTableViewCell") as! memTableViewCell
-        //
-        cell.memImg?.kf.setImage(with: URL(string: gsno(projectMembers[indexPath.section].profile_url)), placeholder: UIImage())
-        cell.nameLabel.text = projectMembers[indexPath.section].name
-        cell.partLabel.text = projectMembers[indexPath.section].position
+        cell.memImg?.kf.setImage(with: URL(string: gsno(projectMembers[indexPath.row].profile_url)), placeholder: UIImage())
+        cell.nameLabel.text = projectMembers[indexPath.row].name
+        cell.partLabel.text = projectMembers[indexPath.row].position
         return cell
     }
 }
