@@ -25,7 +25,7 @@ class Profile2ViewController: UIViewController {
     @IBOutlet weak var areaLabel: UILabel!
     
     
-    var user_idx: String?
+    var user_idx: Int = Int()
     override func viewDidLoad() {
         super.viewDidLoad()
         whiteView.layer.masksToBounds = true
@@ -37,13 +37,29 @@ class Profile2ViewController: UIViewController {
         profileImage.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         profileImage.layer.borderWidth = 0.1
         mypageInit()
+        print(user_idx)
+        funcForNavigationBar()
         // Do any additional setup after loading the view.
     }
+    func funcForNavigationBar(){
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.title = "타인의 마이페이지"
+        let leftButtonItem = UIBarButtonItem(image: UIImage(named: "iconCaretLeftDarkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(Profile2ViewController.popAction))
+        leftButtonItem.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem = leftButtonItem
+    }
+    @objc func popAction() {
+        self.navigationController?.popViewController(animated: true)
+    }
+   
+    
+        
+        
     
     
-    var myPage: [MyPage] = [MyPage]()
+    var myPage: [OtherMyPage] = [OtherMyPage]()
     func mypageInit(){
-        MypageService.myPageInit(tempUrl: "") { (MyPage) in
+        MypageService.otherMyPageInit(tempUrl: "/"+String(user_idx)) { (MyPage) in
             
             self.myPage = MyPage
             self.textInit() // 다른 뷰에 다 체크
@@ -63,12 +79,14 @@ class Profile2ViewController: UIViewController {
     var tempForProfile = UIImageView()
     var tempForBackground = UIImageView()
     func textInit(){
+        profileImage.kf.setBackgroundImage(with: URL(string: gsno(myPage[0].profile_url)), for: .normal, placeholder: UIImage(named: "imgProfileDefault"))
+        backgroundImage.kf.setBackgroundImage(with: URL(string: gsno(myPage[0].background_url)), for: .normal, placeholder: UIImage(named: "imgCoverDefault"))
         
-        tempForProfile.kf.setImage(with: URL(string: gsno(myPage[0].profile_url)),placeholder:#imageLiteral(resourceName: "cowalker.png") )
-        tempForBackground.kf.setImage(with: URL(string: gsno(myPage[0].background_url)),placeholder: #imageLiteral(resourceName: "cowalker.png"))
-        
-        profileImage.setBackgroundImage(tempForProfile.image, for: UIControlState.normal)
-        backgroundImage.setBackgroundImage(tempForBackground.image, for: UIControlState.normal)
+//        tempForProfile.kf.setImage(with: URL(string: gsno(myPage[0].profile_url)),placeholder:#imageLiteral(resourceName: "cowalker.png") )
+//        tempForBackground.kf.setImage(with: URL(string: gsno(myPage[0].background_url)),placeholder: #imageLiteral(resourceName: "cowalker.png"))
+//
+//        profileImage.setBackgroundImage(tempForProfile.image, for: UIControlState.normal)
+//        backgroundImage.setBackgroundImage(tempForBackground.image, for: UIControlState.normal)
         checkTheText(textField: nameLabel, temp: myPage[0].name)
         checkTheText(textField: positionLabel, temp: myPage[0].position)
         checkTheText(textField: commentLabel, temp: myPage[0].introduce)
@@ -86,7 +104,7 @@ class Profile2ViewController: UIViewController {
     
     @IBAction func pushToProject(_ sender: Any) {
         if let secondVC = storyboard?.instantiateViewController(withIdentifier: "ProfileProjectViewController") as? ProfileProjectViewController{
-        
+            secondVC.user_idx = user_idx
             
             self.navigationController?.pushViewController(secondVC, animated: true)
             
@@ -97,20 +115,26 @@ class Profile2ViewController: UIViewController {
     
     @IBAction func moreInformation(_ sender: Any) {
         if let secondVC = storyboard?.instantiateViewController(withIdentifier: "GetMoreInformationViewController") as? GetMoreInformationViewController{
-            
-            secondVC.user_idx = user_idx!
-            
+
+            secondVC.user_idx = user_idx
+
             self.navigationController?.pushViewController(secondVC, animated: true)
-            
-            
+
+
         }
+//        let storyboard: UIStoryboard = UIStoryboard(name: "Profile2", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "GetMoreInformationViewController") as! GetMoreInformationViewController
+//        //        vc.tempProjectId = temp
+//        vc.user_idx = user_idx
+//        self.present(vc, animated: true,completion: nil)
+        
     }
     
     @IBAction func sendingMessageToOthers(_ sender: Any) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Alarm", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "SendingMessageViewController") as! SendingMessageViewController
 //        vc.tempProjectId = temp
-        vc.partner_idx = myPage[0].user_idx!
+        vc.partner_idx = user_idx
         self.present(vc, animated: true,completion: nil)
         
         

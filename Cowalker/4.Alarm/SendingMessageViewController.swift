@@ -12,6 +12,7 @@ class SendingMessageViewController: UIViewController {
     var partner_idx = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isToolbarHidden = false
         messageTextView.placeholder = "내용 입력"
         self.navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
         // Do any additional setup after loading the view.

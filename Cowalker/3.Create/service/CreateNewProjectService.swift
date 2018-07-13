@@ -225,7 +225,6 @@ struct CreateNewProjectService: APIService {
                     if message == "delete success" {
                         completion(message!)
                     }
-                    
                 }
                 break
             case .failure(let err):

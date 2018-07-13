@@ -331,10 +331,10 @@
                                                         </constraints>
                                                         <size key="customSize" width="338" height="88"/>
                                                         <connections>
-                                                            <outlet property="dayLabel" destination="hLs-My-EgA" id="isU-0a-hxH"/>
+                                                            <outlet property="dayLabel" destination="qNV-dH-rX6" id="FY4-z2-WOd"/>
                                                             <outlet property="numberLabel" destination="R6A-Eo-zqW" id="zy6-BH-vuT"/>
                                                             <outlet property="partLabel" destination="5dM-c3-SOm" id="I9U-Zv-rV0"/>
-                                                            <outlet property="todoLabel" destination="qNV-dH-rX6" id="tIl-Ee-GRG"/>
+                                                            <outlet property="todoLabel" destination="hLs-My-EgA" id="6C2-Tn-eWu"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>

@@ -21,7 +21,7 @@ class GetMoreInformationViewController: UIViewController, UICollectionViewDataSo
 
     var temp = 0
     var imageArray: [String] = [String]()
-    var user_idx: String?
+    var user_idx: Int = Int()
     override func viewDidLoad() {
         super.viewDidLoad()
         initIntroPage()
@@ -41,7 +41,7 @@ class GetMoreInformationViewController: UIViewController, UICollectionViewDataSo
     var introPage: IntroPage!
     
     func initIntroPage(){
-        MypageService.seeMyPageMySelf(urlTemp: "/"+user_idx!) { (IntroPage) in
+        MypageService.seeMyPageMySelf(urlTemp: "/"+String(user_idx)) { (IntroPage) in
             
             self.introPage = IntroPage
             self.textView.text = self.introPage.intro_contents!

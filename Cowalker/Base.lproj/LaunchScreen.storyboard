@@ -18,18 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cowalker" translatesAutoresizingMaskIntoConstraints="NO" id="1BB-Cw-qOG">
-                                <rect key="frame" x="112.5" y="268.5" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="07S-lV-MVx"/>
-                                    <constraint firstAttribute="height" constant="150" id="3CO-W5-LD3"/>
-                                </constraints>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="imgSplash" translatesAutoresizingMaskIntoConstraints="NO" id="mno-IP-3X6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1BB-Cw-qOG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4nR-2S-Mam"/>
-                            <constraint firstItem="1BB-Cw-qOG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iJj-7w-rYw"/>
+                            <constraint firstItem="mno-IP-3X6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3Xy-jl-Feh"/>
+                            <constraint firstItem="mno-IP-3X6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="K6a-Oe-8QH"/>
+                            <constraint firstItem="mno-IP-3X6" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="fvG-9z-vI6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mno-IP-3X6" secondAttribute="bottom" id="zwK-mq-DEA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cowalker" width="3064" height="3064"/>
+        <image name="imgSplash" width="375" height="667"/>
     </resources>
 </document>

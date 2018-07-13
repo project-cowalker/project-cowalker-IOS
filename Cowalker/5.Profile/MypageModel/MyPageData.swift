@@ -11,6 +11,4 @@ import Foundation
 struct MyPageData: Codable {
     let message: String
     let data: [MyPage]
-    
-    
 }

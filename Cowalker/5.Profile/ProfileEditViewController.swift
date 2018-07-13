@@ -60,7 +60,7 @@ class ProfileEditViewController: UIViewController, UIPickerViewDataSource,UIPick
     
     let roleArray = ["PM","기획자","디자이너","개발자","기타"]
     let regionArray = ["서울","경기도","인천","강원도","충청도","전라도","경상도","제주도"]
-    let partArray = ["블록체인","IOT","인공지능","디자인","콘텐츠","기타"]
+    let partArray = ["블록체인","IoT","인공지능","디자인","콘텐츠","기타"]
     let purposeArray = ["창업","공모전 참여","스터디","사이드 프로젝트","창작","기타"]
 
 

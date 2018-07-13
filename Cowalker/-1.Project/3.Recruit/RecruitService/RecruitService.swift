@@ -26,7 +26,6 @@ struct RecruitService:APIService{
                     let decoder = JSONDecoder()
                     do{
                         let recruitListData = try decoder.decode(RecruitListData.self, from: value)
-                        print(recruitListData.message)//
                         if recruitListData.message == "success"{
                             completion(recruitListData.result)
                         }else if recruitListData.message == "database failure"{
@@ -60,7 +59,7 @@ struct RecruitService:APIService{
                         if recruitDetailData.message == "success"{
                             completion(recruitDetailData.result!, recruitDetailData.btnResult!)
                         }
-                    }catch{ print("캐치22")}//////
+                    }catch{}//////
                 }
                 break
             case .failure(let err):

@@ -10,14 +10,10 @@ import UIKit
 
 class RecruitNaviViewController: UINavigationController {
 
-    var tempPI = ""
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let secondVC = UIStoryboard(name: "Recruit", bundle:nil ).instantiateViewController(withIdentifier: "RecruitOneViewController") as! RecruitOneViewController
         
         
-        secondVC.tempPI = self.tempPI
     }
 
 }

@@ -8,15 +8,15 @@
 
 import UIKit
 
-class RecruitFourViewController: UIViewController {
+class RecruitFourViewController: UIViewController, UITextFieldDelegate ,UITextViewDelegate {
 
     @IBOutlet weak var questionLabel1: UITextField!
     @IBOutlet weak var questionLabel2: UITextField!
     
     var tempPI = ""
     var tempPosition = ""
-    var tempStart = "2018-07-03"
-    var tempEnd = "2018-07-03"
+    var tempStart = ""
+    var tempEnd = ""
     var tempNum = 0
     var tempTask = ""
     var tempActivity = ""
@@ -27,28 +27,24 @@ class RecruitFourViewController: UIViewController {
     var tempPreference = ""
     var tempComment = ""
     
+    @IBAction func backBtnAct(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     @IBAction func nextBtnAct(_ sender: UIButton) {
-        
-        if (questionLabel1.text != "") && (questionLabel2.text != ""){
-    
-            
-            RecruitService.recruitInit(project_idx:tempPI, position: self.tempPosition, start_date: "2018-07-03", end_date: "2018-07-03", number: self.tempNum, task: self.tempTask, activity: self.tempActivity, reward: self.tempReward, area: self.tempArea, ability: self.tempAbility, career: self.tempCareer, preference: self.tempPreference, comment: self.tempComment, question: [self.questionLabel1.text!, self.questionLabel2.text!]) { (message) in
-                
+            RecruitService.recruitInit(project_idx:tempPI, position: self.tempPosition, start_date: self.tempStart, end_date: self.tempEnd, number: self.tempNum, task: self.tempTask, activity: self.tempActivity, reward: self.tempReward, area: self.tempArea, ability: self.tempAbility, career: self.tempCareer, preference: self.tempPreference, comment: self.tempComment, question: [self.questionLabel1.text!, self.questionLabel2.text!]) { (message) in
                 if message == "success"{
-                    print("모집성공예예")
-                    print()
                 }else{
-                     print("모집실패흑흑")
                 }
-                
                 self.dismiss(animated: true, completion: nil)
+                // 하단 업데이트 하기
                 
-                
-            }
         }
     }
 }

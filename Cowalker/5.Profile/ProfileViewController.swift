@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 import Kingfisher
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.tintColor = UIColor (red: 100.0/255.0, green: 223.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        self.tabBarController?.tabBar.tintColor = UIColor (red: 69.0/255.0, green: 182.0/255.0, blue: 255.0/255.0, alpha: 1.0)
 
         self.tabBarController?.tabBar.items![4].image = #imageLiteral(resourceName: "iconsTabbar5Mypage")
         self.navigationController?.isNavigationBarHidden = true
@@ -31,7 +31,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         mypageInit()
         imagePicker.delegate = self
         imagePickerForProfile.delegate = self
-        
+        let badgeCount: Int = 2
+        let application = UIApplication.shared
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
+        application.applicationIconBadgeNumber = badgeCount
         
         
     }
@@ -89,7 +96,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             (UIAlertAction) in
             UserDefaults.standard.removeObject(forKey: "email")
             UserDefaults.standard.removeObject(forKey: "pwd")
-//            Switcher.updateRootVC()
+
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             
