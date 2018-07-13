@@ -10,26 +10,43 @@ import UIKit
 
 class RecruitTwoViewController: UIViewController {
 
+    @IBOutlet weak var taskLabel: UITextField!
+    
+    @IBOutlet weak var activityLabel: UITextField!
+    
+    @IBOutlet weak var areaLabel: UITextField!
+    
+    @IBOutlet weak var rewardLabel: UITextField!
+    
+    var tempPosition = ""
+    var tempStart = ""
+    var tempEnd = ""
+    var tempNum = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func nextBtnAct(_ sender: UIButton) {
+        
+        if (taskLabel.text != "") && (activityLabel.text != "") && (areaLabel.text != "") && (rewardLabel.text != ""){
+            
+            let secondVC = UIStoryboard(name: "Recruit", bundle:nil ).instantiateViewController(withIdentifier: "RecruitThreeViewController") as! RecruitThreeViewController
+            
+            
+            self.navigationController?.pushViewController(secondVC, animated: true)
+            
+            secondVC.tempPosition = self.tempPosition
+            secondVC.tempStart = ""
+            secondVC.tempEnd = ""
+            secondVC.tempNum = self.tempNum
+            
+            secondVC.tempTask = taskLabel.text!
+            secondVC.tempActivity = activityLabel.text!
+        }
+        
+        
     }
-    */
-
-}
+    
+    }

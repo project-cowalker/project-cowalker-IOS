@@ -39,6 +39,7 @@
 		9449987320F7D9C300EB9BD2 /* RecruitThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449987220F7D9C300EB9BD2 /* RecruitThreeViewController.swift */; };
 		9449987520F7D9CC00EB9BD2 /* RecruitFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449987420F7D9CC00EB9BD2 /* RecruitFourViewController.swift */; };
 		9449987720F7DA6900EB9BD2 /* Recruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449987620F7DA6900EB9BD2 /* Recruit.swift */; };
+		9449987B20F8682100EB9BD2 /* RecruitNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449987A20F8682100EB9BD2 /* RecruitNaviViewController.swift */; };
 		944A9F4120E8AAF900F5FE80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A9F4020E8AAF900F5FE80 /* AppDelegate.swift */; };
 		944A9F4820E8AAF900F5FE80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944A9F4720E8AAF900F5FE80 /* Assets.xcassets */; };
 		944A9F4B20E8AAF900F5FE80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944A9F4920E8AAF900F5FE80 /* LaunchScreen.storyboard */; };
@@ -168,6 +169,7 @@
 		9449987220F7D9C300EB9BD2 /* RecruitThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitThreeViewController.swift; sourceTree = "<group>"; };
 		9449987420F7D9CC00EB9BD2 /* RecruitFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitFourViewController.swift; sourceTree = "<group>"; };
 		9449987620F7DA6900EB9BD2 /* Recruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recruit.swift; sourceTree = "<group>"; };
+		9449987A20F8682100EB9BD2 /* RecruitNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitNaviViewController.swift; sourceTree = "<group>"; };
 		944A9F3D20E8AAF900F5FE80 /* Cowalker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cowalker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		944A9F4020E8AAF900F5FE80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		944A9F4720E8AAF900F5FE80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 				9449987020F7D9BB00EB9BD2 /* RecruitTwoViewController.swift */,
 				9449987220F7D9C300EB9BD2 /* RecruitThreeViewController.swift */,
 				9449987420F7D9CC00EB9BD2 /* RecruitFourViewController.swift */,
+				9449987A20F8682100EB9BD2 /* RecruitNaviViewController.swift */,
 			);
 			path = 3.Recruit;
 			sourceTree = "<group>";
@@ -928,6 +931,7 @@
 				9406D27720EDAEE0001B145D /* ApplyService.swift in Sources */,
 				944A9F8420E8E00E00F5FE80 /* MyPageUpdateViewController.swift in Sources */,
 				E41034A920F2247E0001EF40 /* MyPageEditData.swift in Sources */,
+				9449987B20F8682100EB9BD2 /* RecruitNaviViewController.swift in Sources */,
 				E44376DE20F2A7CC009856B8 /* ParticipatedProjectData.swift in Sources */,
 				E4372E2520F55836001906B4 /* SearchService.swift in Sources */,
 				9406D26E20ECF240001B145D /* RecruitNextViewController.swift in Sources */,

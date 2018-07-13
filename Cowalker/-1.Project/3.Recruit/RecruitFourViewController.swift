@@ -10,26 +10,36 @@ import UIKit
 
 class RecruitFourViewController: UIViewController {
 
+    @IBOutlet weak var questionLabel1: UITextField!
+    @IBOutlet weak var questionLabel2: UITextField!
+    
+    var tempPI = ""
+    var tempPosition = ""
+    var tempStart = ""
+    var tempEnd = ""
+    var tempNum = 0
+    var tempTask = ""
+    var tempActivity = ""
+    var tempReward = ""
+    var tempArea = ""
+    var tempAbility = ""
+    var tempCareer = ""
+    var tempPreference = ""
+    var tempComment = ""
+    var tempQuestion = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func nextBtnAct(_ sender: UIButton) {
+        
+        if (questionLabel1.text != "") && (questionLabel2.text != ""){
+     
+            self.dismiss(animated: true, completion: nil)
+        }
     }
-    */
-
 }
+
+
+

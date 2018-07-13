@@ -20,7 +20,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.tabBarController?.tabBar.items![0].image = #imageLiteral(resourceName: "iconsTabbar1Home")
         self.navigationController?.isNavigationBarHidden = true // 상단 없애기
         homeInit()
-        collectionConst.constant = collectionConst.constant + 8*(251) // 길이조정
+        collectionConst.constant = collectionConst.constant + 2*(251) // 길이조정
     }
     var homeDetails: [HomeDetail] = [HomeDetail]()
     func homeInit(){
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return homeDetails.count}
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCollectionViewCell", for: indexPath) as! ListCollectionViewCell
-  //  cell.listImageView?.kf.setImage(with: URL(string: gsno(homeDetails[indexPath.row].img_url?[0])), placeholder: UIImage())
+    cell.listImageView?.kf.setImage(with: URL(string: gsno(homeDetails[indexPath.row].img_url?[0])), placeholder: UIImage())
             cell.nameLabel.text = homeDetails[indexPath.row].title
             cell.partLabel.text = homeDetails[indexPath.row].area
             return cell
