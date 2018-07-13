@@ -13,6 +13,7 @@ struct IndividualMessage: Codable {
     let from_user_name: String?
     let contents: String?
     let create_at: Date
+    let time: String?
 }
 
 //"to_user_name": "김가영",

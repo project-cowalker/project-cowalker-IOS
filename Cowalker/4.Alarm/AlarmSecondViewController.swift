@@ -17,9 +17,10 @@ class AlarmSecondViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "messageTableViewCell") as! messageTableViewCell
         cell.userLabel.text = individualMessage[indexPath.row].from_user_name
         cell.messageLabel.text = individualMessage[indexPath.row].contents
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd HH:mm"
-        cell.timeLabel.text = dateFormatter.string(from: individualMessage[indexPath.row].create_at)
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MM/dd HH:mm"
+//        cell.timeLabel.text = dateFormatter.string(from: individualMessage[indexPath.row].create_at)
+        cell.timeLabel.text = individualMessage[indexPath.row].time
         
         return cell
         

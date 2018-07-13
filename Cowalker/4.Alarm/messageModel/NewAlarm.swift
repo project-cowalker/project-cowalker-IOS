@@ -12,5 +12,6 @@ struct NewAlarm: Codable  {
     let project_name: String?
     let contents: String?
     let create_at: Date
+    let time: String?
 
 }

@@ -99,9 +99,10 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
             let cell = tableView.dequeueReusableCell(withIdentifier:"alarmTableViewCell") as! alarmTableViewCell
             cell.project_name.text = alarm[indexPath.row].project_name!
             cell.contents.text = alarm[indexPath.row].contents!
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM/dd HH:mm"
-            cell.create_at.text = dateFormatter.string(from: alarm[indexPath.row].create_at)
+            cell.create_at.text = alarm[indexPath.row].time!
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "MM/dd HH:mm"
+//            cell.create_at.text = dateFormatter.string(from: alarm[indexPath.row].create_at)
             
             
             return cell
@@ -111,10 +112,11 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
             // 이때 partner_idx 받을 수 있다~~~~~~~ 이거 체크하기@@@@@@@@@@@@
             // 쪽지 보낼때 필요한 값
 
-            cell.profileImage.kf.setImage(with: URL(string: gsno(message[indexPath.row].partner_profile_url)), placeholder: UIImage())
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM/dd HH:mm"
-            cell.timeLabel.text = dateFormatter.string(from: message[indexPath.row].create_at)
+            cell.profileImage.kf.setImage(with: URL(string: gsno(message[indexPath.row].partner_profile_url)), placeholder: #imageLiteral(resourceName: "imgProfileDefault.png"))
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "MM/dd HH:mm"
+//            cell.timeLabel.text = dateFormatter.string(from: message[indexPath.row].create_at)
+            cell.timeLabel.text = message[indexPath.row].time!
             cell.messageFromLabel.text = message[indexPath.row].partner_name
             cell.messageLabel.text = message[indexPath.row].contents
             
