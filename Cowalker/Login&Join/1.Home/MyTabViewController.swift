@@ -18,6 +18,5 @@ class MyTabViewController: UITabBarController {
         tabBarImg.items![2].image = #imageLiteral(resourceName: "iconsTabbar3Create")
         tabBarImg.items![3].image = #imageLiteral(resourceName: "iconsTabbar4Alarm")
         tabBarImg.items![4].image = #imageLiteral(resourceName: "iconsTabbar5Mypage")
-        
     }
 }

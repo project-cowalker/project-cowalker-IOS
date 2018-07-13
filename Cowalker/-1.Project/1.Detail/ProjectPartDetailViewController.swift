@@ -11,7 +11,7 @@ import UIKit
 class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     var tempProjectId = ""
     var tempRecruitId = ""
-    var tempUser = ""
+    var tempUser = ""////
     
     @IBOutlet weak var detailPartCollectionView: UICollectionView!
     @IBOutlet weak var longBtn: UIBarButtonItem!
@@ -39,17 +39,15 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
         partDetailLoad()
     }
     func partDetailLoad(){
-        // 통신해서 자료 뿌리기
         RecruitService.recruitDetail(a: self.tempProjectId, b: self.tempRecruitId){ (recruitDetails, userData) in
             self.recruitDetails = recruitDetails
-            self.tempUser = userData
+            self.tempUser = userData/////
             self.dataInit()
             self.btnInit()
             // 개발자 개설자 저장
             print("heretq")
             print(self.tempUser)
             self.detailPartCollectionView.reloadData()
-            
         }
     }
     func dataInit(){ // 데이터 입력
@@ -67,18 +65,14 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
         self.commentLabel.text = self.recruitDetails[0].comment
     }
     func btnInit(){
-        if self.tempUser == "개발자"{               // 개설자
-            // 롱버튼 바꾸기
+        if self.tempUser == "개발자"{
             self.longBtn.image = #imageLiteral(resourceName: "btnProjectManage.png") // 프로젝트 관리
-            // 지원멤버 보이기
-            self.applyBtn.isHidden = false
+            self.applyBtn.isHidden = false// 지원멤버 보이기
             self.btnConst.constant = 60
-        }else {                                // 손님
-            // 지원멤버 지우기
-            self.applyBtn.isHidden = true
+        }else {
+            self.applyBtn.isHidden = true // 지원멤버 지우기
             self.btnConst.constant = 0
-            //롱버튼 바꾸기
-            if self.tempUser == "참여하기"{
+            if self.tempUser == "참여하기"{//롱버튼 바꾸기
                 self.longBtn.image = #imageLiteral(resourceName: "btnJoinProject.png")
             }else if self.tempUser == "참여대기"{
                 self.longBtn.image = #imageLiteral(resourceName: "btnJoinProjectWaiting.png")
@@ -88,9 +82,7 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
                 self.longBtn.image = #imageLiteral(resourceName: "btnJoinProjectDone")
                 self.longBtn.tintColor = UIColor.lightGray
                 self.longBtn.isEnabled = false
-            }
-        }
-    }
+            }}}
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
@@ -98,19 +90,15 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
     var temp2 = ""
     var temp3 = ""
     var temp4 = ""
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailPartCollectionViewCell", for: indexPath) as! detailPartCollectionViewCell
         cell.partLabel.text = temp1 //recruitDetails[indexPath.row].position
         cell.numberLabel.text = temp2 + "명"//String(recruitDetails[indexPath.row].number)
         cell.todoLabel.text =  "D - " + temp4//recruitDetails[indexPath.row].position
         cell.dayLabel.text = temp3//recruitDetails[indexPath.row].position
-        return cell
-    }
+        return cell}
     @IBAction func btnClicAct(_ sender: UIButton) {
-        if self.tempUser == "개발자"{
-            // 프로젝트 관리 코드
-            // 알림 창 띄우기
+        if self.tempUser == "개발자"{// 프로젝트 관리
             let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             let firstAction: UIAlertAction = UIAlertAction(title: "프로젝트 수정", style: .default) { action -> Void in
                 editAct()}
@@ -128,11 +116,9 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
                 let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
                 dialog.addAction(action)
                 self.present(dialog, animated: true, completion: nil)
-        }
-        }
+        }}
         else{ // 참여자인 경우
             let secondVC = UIStoryboard(name: "Apply", bundle:nil ).instantiateViewController(withIdentifier: "ProjectJoinViewController") as! ProjectJoinViewController
-            
             secondVC.tempProjectId = self.tempProjectId
             secondVC.tempRecruitId = self.tempRecruitId
             

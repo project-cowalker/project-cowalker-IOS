@@ -25,7 +25,7 @@ class Profile2ViewController: UIViewController {
     @IBOutlet weak var areaLabel: UILabel!
     
     
-    var user_idx: String?
+    var user_idx: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         whiteView.layer.masksToBounds = true
@@ -86,7 +86,7 @@ class Profile2ViewController: UIViewController {
     
     @IBAction func pushToProject(_ sender: Any) {
         if let secondVC = storyboard?.instantiateViewController(withIdentifier: "ProfileProjectViewController") as? ProfileProjectViewController{
-        
+            secondVC.user_idx = user_idx!
             
             self.navigationController?.pushViewController(secondVC, animated: true)
             
