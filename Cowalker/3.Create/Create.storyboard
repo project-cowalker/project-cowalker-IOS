@@ -411,27 +411,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vsv-3U-q6Z">
-                                        <rect key="frame" x="20" y="35" width="335" height="223"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a3x-I1-29g">
+                                        <rect key="frame" x="20" y="30" width="347" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="335" id="OcL-hA-LZ2"/>
-                                            <constraint firstAttribute="height" constant="223" id="uhH-Mb-zbh"/>
+                                            <constraint firstAttribute="height" constant="30" id="5xk-nr-yEL"/>
+                                            <constraint firstAttribute="width" constant="347" id="xI9-Wn-9qa"/>
                                         </constraints>
-                                        <color key="textColor" red="0.2666666667" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <outlet property="delegate" destination="GKh-Um-wtz" id="0lr-Ng-iEY"/>
+                                            <outlet property="delegate" destination="GKh-Um-wtz" id="mmR-IW-I3s"/>
                                         </connections>
-                                    </textView>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="cc2-MG-NkB" firstAttribute="top" secondItem="Ql5-x2-Zan" secondAttribute="top" constant="8" id="C7Z-8P-tJM"/>
-                                    <constraint firstAttribute="trailing" secondItem="Vsv-3U-q6Z" secondAttribute="trailing" constant="20" id="N4m-Ax-7wX"/>
-                                    <constraint firstItem="Vsv-3U-q6Z" firstAttribute="leading" secondItem="cc2-MG-NkB" secondAttribute="leading" id="VNl-yh-noE"/>
+                                    <constraint firstItem="a3x-I1-29g" firstAttribute="leading" secondItem="Ql5-x2-Zan" secondAttribute="leading" constant="20" id="Cgb-kf-YYW"/>
                                     <constraint firstAttribute="width" constant="375" id="f2N-J6-iZq"/>
-                                    <constraint firstItem="Vsv-3U-q6Z" firstAttribute="top" secondItem="cc2-MG-NkB" secondAttribute="bottom" constant="8" id="r1f-U9-rDu"/>
+                                    <constraint firstItem="a3x-I1-29g" firstAttribute="top" secondItem="cc2-MG-NkB" secondAttribute="bottom" constant="3" id="se1-j6-t8b"/>
                                     <constraint firstAttribute="height" constant="249" id="x9A-RM-SWx"/>
                                 </constraints>
                             </view>
@@ -464,7 +463,7 @@
                         <viewLayoutGuide key="safeArea" id="4It-PT-rcQ"/>
                     </view>
                     <connections>
-                        <outlet property="explainTextView" destination="Vsv-3U-q6Z" id="8Z5-TN-hh6"/>
+                        <outlet property="explainTextView" destination="a3x-I1-29g" id="2dr-y6-69v"/>
                         <outlet property="finishButton" destination="IGx-8J-PDI" id="xEC-4T-qwd"/>
                         <outlet property="viewForProject" destination="WAn-8D-NK8" id="sXd-dn-LOh"/>
                     </connections>

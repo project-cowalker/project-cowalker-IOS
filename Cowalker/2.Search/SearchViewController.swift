@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
     
     override func viewDidLoad() {
@@ -16,6 +16,14 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.tabBarController?.tabBar.items![1].image = #imageLiteral(resourceName: "iconsTabbar2Search")
         self.navigationController?.isNavigationBarHidden = true
         initSearch()
+        let badgeCount: Int = 2
+        let application = UIApplication.shared
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
+        application.applicationIconBadgeNumber = badgeCount
         
     }
     override func viewWillAppear(_ animated: Bool) {

@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import UserNotifications
 class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var alarmTableView: UITableView!
@@ -34,6 +35,15 @@ class AlarmViewController: UIViewController, UITableViewDataSource,UITableViewDe
         
         self.tabBarController?.tabBar.tintColor = UIColor (red: 69.0/255.0, green: 182.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         self.tabBarController?.tabBar.items![3].image = #imageLiteral(resourceName: "iconsTabbar4Alarm")
+        
+        let badgeCount: Int = 0
+        let application = UIApplication.shared
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
+        application.applicationIconBadgeNumber = badgeCount
     }
     override func viewWillAppear(_ animated: Bool) {
         alarmViewControllerInit()

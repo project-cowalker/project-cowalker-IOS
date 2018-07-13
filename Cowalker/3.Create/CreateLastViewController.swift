@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateLastViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate {
+class CreateLastViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate,UITextFieldDelegate {
     var imageForProject =  [#imageLiteral(resourceName: "btnAddPic")]
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageForProject.count
@@ -24,13 +24,18 @@ class CreateLastViewController: UIViewController,UICollectionViewDelegate,UIColl
         textView.resignFirstResponder()
         return true
     }
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     @IBOutlet weak var finishButton: UIButton!
     
     @IBOutlet weak var viewForProject: UICollectionView!
     
-    @IBOutlet weak var explainTextView: UITextView!
+    @IBOutlet weak var explainTextView: UITextField!
+    
+    
     
     override func viewDidLoad() {
        
