@@ -8,11 +8,10 @@
 
 import UIKit
 
-class RecruitThreeViewController: UIViewController {
-
+class RecruitThreeViewController: UIViewController, UITextFieldDelegate ,UITextViewDelegate {
     
+    @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var abilityLabel: UITextField!
-
     @IBOutlet weak var careerLabel: UITextField!
     @IBOutlet weak var preferenceLabel: UITextField!
     @IBOutlet weak var commentLabel: UITextField!
@@ -27,40 +26,39 @@ class RecruitThreeViewController: UIViewController {
     var tempReward = ""
     var tempArea = ""
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    @IBAction func backBtnAct(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextBtn.isEnabled = false
     }
-    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        if (abilityLabel.text != "") && (careerLabel.text != ""){
+            nextBtn.isEnabled = true
+        }else{
+            nextBtn.isEnabled = false
+        }
+    }
     @IBAction func nextBtnAct(_ sender: UIButton) {
-    
-        if (abilityLabel.text != "") && (careerLabel.text != "") && (preferenceLabel.text != "") && (commentLabel.text != ""){
-            
             let secondVC = UIStoryboard(name: "Recruit", bundle:nil ).instantiateViewController(withIdentifier: "RecruitFourViewController") as! RecruitFourViewController
-            
             secondVC.tempPI = self.tempPI
-            
             secondVC.tempPosition = self.tempPosition
             secondVC.tempStart = self.tempStart
             secondVC.tempEnd = self.tempEnd
             secondVC.tempNum = self.tempNum
-            
             secondVC.tempTask = self.tempTask
             secondVC.tempActivity = self.tempActivity
             secondVC.tempArea = self.tempArea
             secondVC.tempReward = self.tempReward
-            
             secondVC.tempAbility = abilityLabel.text!
             secondVC.tempCareer = careerLabel.text!
             secondVC.tempPreference = preferenceLabel.text!
             secondVC.tempComment = commentLabel.text!
-            
             self.navigationController?.pushViewController(secondVC, animated: true)
-            
-            
-        }
-        
     }
-    
-
 }
