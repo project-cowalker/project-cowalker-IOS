@@ -57,11 +57,11 @@ class ProfileProjectViewController: UIViewController, UICollectionViewDelegate, 
             
         }
     }
-    var user_idx: String?
+    var user_idx: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
-        putMadeProject(url: user_idx!)
-        putDoingProject(url: user_idx!)
+        putMadeProject(url: String(user_idx!))
+        putDoingProject(url: String(user_idx!))
         funcForNavigationBar()
 
         // Do any additional setup after loading the view.
