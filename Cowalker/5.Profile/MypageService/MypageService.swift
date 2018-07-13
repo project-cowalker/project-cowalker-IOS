@@ -14,15 +14,14 @@ struct MypageService: APIService {
     // 타인이 보거나 내가 보거나 둘다 된다@@@@@@@@@@@@@@@@@@@@
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     static func myPageInit(tempUrl: String, completion: @escaping([MyPage]) -> Void){
-//        let header: [String : String] = [
-//            "authorization" : UserDefaults.standard.string(forKey: "token")!
+     
         
         let URL = url("/mypage"+tempUrl)
-//        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"]
+
         let header: [String : String] = [
             "authorization" : UserDefaults.standard.string(forKey: "token")!
         ]
-        print(UserDefaults.standard.string(forKey: "token"))
+        
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
             switch res.result{
             case .success:
@@ -54,7 +53,45 @@ struct MypageService: APIService {
     
     }
 
-    
+    static func otherMyPageInit(tempUrl: String, completion: @escaping([OtherMyPage]) -> Void){
+        
+        
+        let URL = url("/mypage"+tempUrl)
+        
+        let header: [String : String] = [
+            "authorization" : UserDefaults.standard.string(forKey: "token")!
+        ]
+        
+        Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
+            switch res.result{
+            case .success:
+                if let value = res.result.value {
+                    let decoder = JSONDecoder()
+                    do {
+                        print(11111)
+                        let myPageData = try decoder.decode(OtherMyPageData.self, from: value)
+                        if myPageData.message == "success"{
+                            print("가져옴")
+                            completion(myPageData.data)
+                            
+                        }
+                        
+                    }catch let err{
+                        print(err)
+                        
+                    }
+                    
+                }
+                break
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+                break
+                
+            }
+        }
+        
+    }
     static func myPageEdit(profile_img: UIImage, background_img: UIImage, name: String, position: String, introduce: String, portfolio_url: String, aim: String, department: String, area: String, completion: @escaping (String) -> Void){
         let URL = url("/mypage")
         let profile_imgData = UIImageJPEGRepresentation(profile_img, 0.3)

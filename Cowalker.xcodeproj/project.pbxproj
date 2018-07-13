@@ -101,6 +101,8 @@
 		E41034A920F2247E0001EF40 /* MyPageEditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41034A820F2247E0001EF40 /* MyPageEditData.swift */; };
 		E41A8F6E20EA62900009F330 /* CreateImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41A8F6D20EA62900009F330 /* CreateImageCollectionViewCell.swift */; };
 		E41BC9F320EE411800DAD27F /* Profile2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41BC9F220EE411800DAD27F /* Profile2.storyboard */; };
+		E43055CD20F93F2400D7D94F /* OtherMyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43055CC20F93F2400D7D94F /* OtherMyPage.swift */; };
+		E43055CF20F93FB300D7D94F /* OtherMyPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43055CE20F93FB300D7D94F /* OtherMyPageData.swift */; };
 		E4372E2520F55836001906B4 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4372E2420F55836001906B4 /* SearchService.swift */; };
 		E4372E2820F55937001906B4 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4372E2720F55937001906B4 /* Search.swift */; };
 		E4372E2A20F5593F001906B4 /* SearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4372E2920F5593F001906B4 /* SearchData.swift */; };
@@ -233,6 +235,8 @@
 		E41034A820F2247E0001EF40 /* MyPageEditData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageEditData.swift; sourceTree = "<group>"; };
 		E41A8F6D20EA62900009F330 /* CreateImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		E41BC9F220EE411800DAD27F /* Profile2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile2.storyboard; sourceTree = "<group>"; };
+		E43055CC20F93F2400D7D94F /* OtherMyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherMyPage.swift; sourceTree = "<group>"; };
+		E43055CE20F93FB300D7D94F /* OtherMyPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherMyPageData.swift; sourceTree = "<group>"; };
 		E4372E2420F55836001906B4 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		E4372E2720F55937001906B4 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		E4372E2920F5593F001906B4 /* SearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchData.swift; sourceTree = "<group>"; };
@@ -654,6 +658,8 @@
 				E44376DD20F2A7CC009856B8 /* ParticipatedProjectData.swift */,
 				E4C91B6D20F342EB008D81EC /* IntroPage.swift */,
 				E4C91B6F20F342F7008D81EC /* IntroPageData.swift */,
+				E43055CC20F93F2400D7D94F /* OtherMyPage.swift */,
+				E43055CE20F93FB300D7D94F /* OtherMyPageData.swift */,
 			);
 			path = MypageModel;
 			sourceTree = "<group>";
@@ -872,6 +878,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94ECBFA020E964A3002F9F92 /* ProjectJoinViewController.swift in Sources */,
+				E43055CD20F93F2400D7D94F /* OtherMyPage.swift in Sources */,
 				E4C91B7020F342F7008D81EC /* IntroPageData.swift in Sources */,
 				E4BDC29420F4FD9500A50966 /* ProfileProjectViewController.swift in Sources */,
 				948AE9F520F015EA003CF30F /* ApplyData.swift in Sources */,
@@ -897,6 +904,7 @@
 				E4CD827920F0E3A000352A78 /* IndividualMessageData.swift in Sources */,
 				943903FF20F74FFC0024B306 /* ResumeService.swift in Sources */,
 				948AE9E420EFE1C8003CF30F /* applyMemTableViewCell.swift in Sources */,
+				E43055CF20F93FB300D7D94F /* OtherMyPageData.swift in Sources */,
 				E4B150C720F4C8A100C4BF7E /* NewAlarmData.swift in Sources */,
 				E473A9AB20EA5C8900B51830 /* CreateLastViewController.swift in Sources */,
 				943903F420F733200024B306 /* ProjectMemService.swift in Sources */,
