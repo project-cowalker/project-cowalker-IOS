@@ -13,6 +13,7 @@ struct Message: Codable {
     let partner_profile_url: String?
     let contents: String?
     let create_at: Date
+    let time: String?
     
 //
 //    "partner_idx": 4,

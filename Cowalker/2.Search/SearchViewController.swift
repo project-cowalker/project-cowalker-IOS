@@ -18,6 +18,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         initSearch()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
     
     // 임이 데이터
     let imageArray = [#imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar1Home"), #imageLiteral(resourceName: "iconsTabbar5Mypage"), #imageLiteral(resourceName: "iconsTabbar5Mypage"), #imageLiteral(resourceName: "iconsTabbar5Mypage")]
@@ -75,6 +78,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
 }
     ////////////////검색필터
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.textColor = #colorLiteral(red: 0.2666666667, green: 0.2666666667, blue: 0.2666666667, alpha: 1)
         textField.resignFirstResponder()
         return true
     }
