@@ -9,6 +9,8 @@
 import UIKit
 
 class RecruitOneViewController: UIViewController, UITextFieldDelegate ,UITextViewDelegate {
+  
+    
     var tempPI = ""
     var tempRole = "PM"
     var tempDay = ""
@@ -86,6 +88,27 @@ class RecruitOneViewController: UIViewController, UITextFieldDelegate ,UITextVie
             secondVC.tempNum = Int(numberTf.text!)!
         }
     }
+    
+    @IBOutlet weak var startDateText: UITextField!
+    
+    @IBOutlet weak var lastDateText: UITextField!
+    let startPicker = UIDatePicker()
+    let endPicker = UIDatePicker()
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 
