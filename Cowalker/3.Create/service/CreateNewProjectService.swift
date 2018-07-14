@@ -38,9 +38,10 @@ struct CreateNewProjectService: APIService {
 //        let img_urlData = UIImageJPEGRepresentation(img_url, 0.3)
 //
         //token 처리도 해야함 유저로 가게
-        let header: [String : String] = [
-            "authorization" : UserDefaults.standard.string(forKey: "token")!
-        ]
+//        let header: [String : String] = [
+//            "authorization" : UserDefaults.standard.string(forKey: "token")!
+//        ]
+        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNCwiaWF0IjoxNTMwODkzOTEyLCJleHAiOjE1MzM0ODU5MTJ9.mgiKKWAUaCYiqn2hC77-T9VWYJdE2N8tpLNqw3MAVWA"]
 //        print(UserDefaults.standard.string(forKey: "email"))
 //        print(UserDefaults.standard.string(forKey: "token"))
 //        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE1MzA2NzAxNTMsImV4cCI6MTUzMzI2MjE1M30.BdRb0yary7AY8_yi8MDRDXuXrW19QSqRJI-9Xin3SXs"
@@ -116,10 +117,10 @@ struct CreateNewProjectService: APIService {
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     
     static func getProjectDeatil(project_idx: String,completion: @escaping ([ProjectDetail],String) -> Void){
-        let header: [String : String] = [
-            "authorization" : UserDefaults.standard.string(forKey: "token")!
-        ]
-
+//        let header: [String : String] = [
+//            "authorization" : UserDefaults.standard.string(forKey: "token")!
+//        ]
+        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNCwiaWF0IjoxNTMwODkzOTEyLCJleHAiOjE1MzM0ODU5MTJ9.mgiKKWAUaCYiqn2hC77-T9VWYJdE2N8tpLNqw3MAVWA"]
         let URL = url("/project/"+project_idx)
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() { res in
             switch res.result {

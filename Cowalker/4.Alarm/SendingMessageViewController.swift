@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SendingMessageViewController: UIViewController {
+class SendingMessageViewController: UIViewController,UITextFieldDelegate {
     var partner_idx = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,10 @@ class SendingMessageViewController: UIViewController {
         self.navigationItem.leftBarButtonItem?.tintColor = #colorLiteral(red: 0.3364960849, green: 0.3365047574, blue: 0.3365000486, alpha: 1)
         // Do any additional setup after loading the view.
     }
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,7 +32,7 @@ class SendingMessageViewController: UIViewController {
     
     
     @IBAction func sendingMessage(_ sender: UIButton) {
-        MessageService.sendingMessageToPartner(partner_idx: partner_idx, contents: messageTextView.text, completion: popAction)
+        MessageService.sendingMessageToPartner(partner_idx: partner_idx, contents: messageTextView.text!, completion: popAction)
         
         
     }
@@ -37,9 +40,10 @@ class SendingMessageViewController: UIViewController {
         
         self.navigationController?.popViewController(animated: true)
     }
-    @IBOutlet weak var messageTextView: UITextView!
     
     
+    
+    @IBOutlet weak var messageTextView: UITextField!
     
     
     
