@@ -240,7 +240,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGt-pB-yAY">
                                                                     <rect key="frame" x="275" y="21" width="42" height="18"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnFloatNormal" translatesAutoresizingMaskIntoConstraints="NO" id="tqs-ja-e6y">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnFixedNormal" translatesAutoresizingMaskIntoConstraints="NO" id="tqs-ja-e6y">
                                                                             <rect key="frame" x="0.0" y="0.0" width="42" height="18"/>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D - 9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaZ-BQ-PSx">
@@ -250,7 +250,6 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" red="0.84518398360000002" green="0.94244027139999997" blue="0.91328859780000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="42" id="4Cq-zh-Vak"/>
                                                                         <constraint firstAttribute="height" constant="18" id="4lJ-h8-jYV"/>
@@ -452,7 +451,7 @@
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="swX-1B-VQw"/>
                                     <barButtonItem image="btnProjectManage" id="Kbt-qg-vda">
-                                        <color key="tintColor" red="0.3921568627" green="0.87450980389999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="0.27058823529999998" green="0.71372549019999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="tabBtnACt:" destination="4ud-ul-aRk" id="FP6-O9-pCw"/>
                                         </connections>
@@ -632,6 +631,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btnFixedNormal" width="375" height="60"/>
         <image name="btnFloatNormal" width="335" height="52"/>
         <image name="btnProjectManage" width="215" height="52"/>
         <image name="check" width="25" height="25"/>

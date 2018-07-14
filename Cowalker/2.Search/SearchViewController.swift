@@ -64,12 +64,17 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     //tempProjectId
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        temp = searchData[indexPath.row].project_idx!
-
-        let storyboard: UIStoryboard = UIStoryboard(name: "Project", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
-        vc.tempProjectId = temp
-        self.present(vc, animated: true,completion: nil)
+//        temp = searchData[indexPath.row].project_idx!
+//        
+//        
+//        let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
+//        
+////        ProjectIntroViewController.plusTempPi = temp
+//        vc.tempProjectId = temp
+//        //self.navigationController?.pushViewController(vc, animated: true)
+//        
+//        self.present(vc, animated: true,completion: nil)
         
         
     }

@@ -26,10 +26,11 @@ struct ApplyService:APIService{
             case .success:
                 if let value = res.result.value{
                     let decoder = JSONDecoder()
-                    do{
+                    do{print("tt1")
                         let applyMemData = try decoder.decode(ApplyMemberData.self, from: value)
+                        print("tt2")
                         if  applyMemData.message == "success"{
-                            
+                            print("tt3")
                             completion(applyMemData.result)
                         }
                     }catch{ }
@@ -50,8 +51,8 @@ struct ApplyService:APIService{
             "introduce" : introduce,
             "portfolio_url" : portfolio_url,
             "phone" : phone,
-            "recruit_idx" : "11",
-            "project_idx" : "5b3f3f28a989031a3ef84e3c",
+            "recruit_idx" : recruit_idx,
+            "project_idx" : project_idx,
             "position" : position,
             "answers" : answers
         ]
@@ -74,6 +75,34 @@ struct ApplyService:APIService{
             }
         }
     }
+    
+    
+    static func applySelect(a: String, b: String, c: String, completion: @escaping (String)->Void){
+        
+        
+        let URL = url("/apply/\(a)/\(b)/join/\(c)")
+        
+        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNCwiaWF0IjoxNTMwODkzOTEyLCJleHAiOjE1MzM0ODU5MTJ9.mgiKKWAUaCYiqn2hC77-T9VWYJdE2N8tpLNqw3MAVWA"]
+        
+        Alamofire.request(URL, method: .put, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() {res in
+            switch res.result{
+                
+            case .success:
+                
+                if let value = res.result.value{
+                if let message = JSON(value)["message"].string {
+                    completion(message)
+                    
+                }
+            }
+                break
+            case .failure(let err):
+                print(err.localizedDescription)
+                break
+            }
+        }
+    }
+    
 }
 
 
