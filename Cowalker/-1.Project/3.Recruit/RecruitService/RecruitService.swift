@@ -45,9 +45,10 @@ struct RecruitService:APIService{
     static func recruitDetail(a:String, b:String, completion: @escaping ([RecruitDetail],String)->Void){
         let URL = url("/project/\(a)/recruit/\(b)")
         
-        let header: [String : String] = [
-            "authorization" : UserDefaults.standard.string(forKey: "token")!
-        ]
+//        let header: [String : String] = [
+//            "authorization" : UserDefaults.standard.string(forKey: "token")!
+//        ]
+        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNCwiaWF0IjoxNTMwODkzOTEyLCJleHAiOjE1MzM0ODU5MTJ9.mgiKKWAUaCYiqn2hC77-T9VWYJdE2N8tpLNqw3MAVWA"]
         
         Alamofire.request(URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseData() {res in
             switch res.result{
@@ -73,9 +74,10 @@ struct RecruitService:APIService{
     static func recruitInit(project_idx:String, position:String, start_date:String, end_date:String, number:Int, task:String, activity:String, reward:String, area:String, ability:String, career:String, preference:String, comment:String, question:[String], completion : @escaping (String)->Void){
         
         let URL = url("/project/recruit")
-        let header: [String : String] = [
-            "authorization" : UserDefaults.standard.string(forKey: "token")!
-        ]
+//        let header: [String : String] = [
+//            "authorization" : UserDefaults.standard.string(forKey: "token")!
+//        ]
+        let header = ["Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozNCwiaWF0IjoxNTMwODkzOTEyLCJleHAiOjE1MzM0ODU5MTJ9.mgiKKWAUaCYiqn2hC77-T9VWYJdE2N8tpLNqw3MAVWA"]
         let body: [String : Any] = [
             "project_idx" : project_idx,
             "position" : position,
