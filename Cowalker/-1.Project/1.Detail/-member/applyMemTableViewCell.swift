@@ -27,6 +27,19 @@ class applyMemTableViewCell: UITableViewCell {
             
         }
     }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        memImg.layer.masksToBounds = true
+        memImg.layer.cornerRadius = memImg.layer.frame.width/2
+        memImg.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        memImg.layer.borderWidth = 0.1
+        
+        
+        
+        
+        // Configure the view for the selected state
+    }
 }
 
 
