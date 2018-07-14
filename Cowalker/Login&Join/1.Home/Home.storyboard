@@ -20,10 +20,12 @@
         <!--ProjectIntroViewController-->
         <scene sceneID="cgc-HB-cim">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ProjectIntroViewController" storyboardName="Project" referencedIdentifier="ProjectIntroViewController" id="QH4-P5-eKJ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="ProjectIntroViewController" storyboardName="Project" referencedIdentifier="ProjectIntroViewController" id="QH4-P5-eKJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Dam-t9-ZiB"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTG-bl-faM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1440" y="-878"/>
+            <point key="canvasLocation" x="2094.4000000000001" y="-1063.2683658170915"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="iJ6-bx-hpf">
@@ -49,13 +51,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLE-KO-2XZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="524"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="N2y-rZ-B16">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="524"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="375" id="Az1-mm-oPM"/>
-                                                            <constraint firstAttribute="height" constant="524" id="f4Y-7A-ECh"/>
-                                                        </constraints>
-                                                    </imageView>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKv-4U-aEA">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="524"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -108,6 +103,13 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="17" id="5sq-yx-Ag9"/>
                                                             <constraint firstAttribute="width" constant="100" id="6jQ-y0-tpG"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgMain" translatesAutoresizingMaskIntoConstraints="NO" id="N2y-rZ-B16">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="524"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="375" id="Az1-mm-oPM"/>
+                                                            <constraint firstAttribute="height" constant="524" id="f4Y-7A-ECh"/>
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
@@ -409,15 +411,33 @@
             </objects>
             <point key="canvasLocation" x="-990" y="787"/>
         </scene>
+        <!--Sec Navi View Controller-->
+        <scene sceneID="lh6-ig-d0D">
+            <objects>
+                <navigationController restorationIdentifier="SecNaviViewController" storyboardIdentifier="SecNaviViewController" automaticallyAdjustsScrollViewInsets="NO" id="VT5-yO-eJS" customClass="SecNaviViewController" customModule="Cowalker" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xsr-Yb-wSQ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QH4-P5-eKJ" kind="relationship" relationship="rootViewController" id="C2k-rF-KmF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qA2-8P-ehs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1583" y="-533"/>
+        </scene>
     </scenes>
     <resources>
         <image name="darkgray" width="24" height="24"/>
-        <image name="default" width="533" height="399"/>
         <image name="iconsTabbar1HomeSelected" width="48" height="49"/>
         <image name="iconsTabbar2SearchSelected" width="48" height="49"/>
         <image name="iconsTabbar3CreateSelected" width="48" height="49"/>
         <image name="iconsTabbar4AlarmSelected" width="48" height="49"/>
         <image name="iconsTabbar5MypageSelected" width="48" height="49"/>
         <image name="imgLogoWhite" width="100" height="17"/>
+        <image name="imgMain" width="375" height="524"/>
     </resources>
 </document>

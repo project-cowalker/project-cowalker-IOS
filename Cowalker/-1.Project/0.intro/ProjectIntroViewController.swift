@@ -34,6 +34,7 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
         constTest.constant = 0
         projectInit()
         //print(tempProjectId)
+        
     }
     func funcForNavigationBar(){
         self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
@@ -61,6 +62,9 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             self.tempIsUser = temp // 사용자 값 저장
             self.btnIs() // 사용자값에 따라서장
             self.projectCollectionView.reloadData()
+            
+            print("존나떨려")
+            print(self.tempIsUser)
         }
         RecruitService.recruitList(add: tempProjectId){ (recruitLists) in
             self.tempRecruitLists = recruitLists
@@ -150,12 +154,12 @@ class ProjectIntroViewController: UIViewController, UICollectionViewDelegate, UI
             sender.isEnabled = true
             // 알림 창 띄우기
             let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-            let firstAction: UIAlertAction = UIAlertAction(title: "프로젝트 수정", style: .default) { action -> Void in
-                editAct()}
+           /* let firstAction: UIAlertAction = UIAlertAction(title: "프로젝트 수정", style: .default) { action -> Void in
+                editAct()}*/
             let secondAction: UIAlertAction = UIAlertAction(title: "프로젝트 삭제", style: UIAlertActionStyle.destructive) { action -> Void in
                 deleteAct()}
             let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
-            actionSheetController.addAction(firstAction)
+           // actionSheetController.addAction(firstAction)
             actionSheetController.addAction(secondAction)
             actionSheetController.addAction(cancelAction)
             present(actionSheetController, animated: true, completion: nil)

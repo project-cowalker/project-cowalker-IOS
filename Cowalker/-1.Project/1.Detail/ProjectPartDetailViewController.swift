@@ -129,26 +129,27 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
         
         cell.partLabel.text = te1 //tempRecruitLists[0].position
         cell.numberLabel.text = te2 //String(tempRecruitLists[0].number) + "명"
-        cell.todoLabel.text =  te3//"D - " + tempRecruitLists[0].task
-        cell.dayLabel.text = te4//tempRecruitLists[0].dday
+        cell.todoLabel.text =    te3 //tempRecruitLists[0].task
+        cell.dayLabel.text = "D" + te4//tempRecruitLists[0].dday
+        
+        
+        
         return cell}
     
     @IBAction func btnClicAct(_ sender: UIButton) {
         if self.tempUser == "개설자"{// 프로젝트 관리
             let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-            let firstAction: UIAlertAction = UIAlertAction(title: "프로젝트 수정", style: .default) { action -> Void in
-                editAct()}
             let secondAction: UIAlertAction = UIAlertAction(title: "프로젝트 삭제", style: UIAlertActionStyle.destructive) { action -> Void in
                 deleteAct()}
             let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
-            actionSheetController.addAction(firstAction)
+            //actionSheetController.addAction(firstAction)
             actionSheetController.addAction(secondAction)
             actionSheetController.addAction(cancelAction)
             present(actionSheetController, animated: true, completion: nil)
             func editAct(){// 수정
             }
             func deleteAct(){// 프로젝트 삭제
-                let dialog = UIAlertController(title: "프로젝트 삭제", message: "삭제하겠습니다.", preferredStyle: .alert)
+                let dialog = UIAlertController(title: "프로젝트 삭제", message: "삭제합니다.", preferredStyle: .alert)
                 let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){ action -> Void in
                     deleteComplete()
                 }
@@ -178,14 +179,20 @@ class ProjectPartDetailViewController: UIViewController, UICollectionViewDelegat
         }
     }
     
+    var temp1 = ""
+    var temp2 = ""
+    var temp3 = ""
+    var temp4 = ""
+    
     @IBAction func applyBtnAct(_ sender: UIButton) {// 지원멤버 이동
         let secondVC = UIStoryboard(name: "Detail", bundle:nil ).instantiateViewController(withIdentifier: "ApplyMemberViewController") as! ApplyMemberViewController
         secondVC.tempRecruitIdx = tempRecruitId
-        //secondVC.temp1 = self.temp1
-        //secondVC.temp2 = self.temp2
-       // secondVC.temp3 = self.temp3
-        //secondVC.temp4 = self.temp4
-        
+        secondVC.temp1 = self.te1
+        secondVC.temp2 = self.te2
+        secondVC.temp3 = self.te3
+        secondVC.temp4 = self.te4
+        print("여기다여기")
+        print(secondVC.tempRecruitIdx)
         self.navigationController?.pushViewController(secondVC, animated: true)
     }
     @IBAction func participateBtnAct(_ sender: UIButton) { // 참여멤버 // 항상 보이기

@@ -57,9 +57,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     //
     @IBAction func testBtnClick(_ sender: UIButton) {
+        /*
         let secondVC = UIStoryboard(name: "Project", bundle:nil ).instantiateViewController(withIdentifier: "ProjectIntroViewController") as! ProjectIntroViewController
       // secondVC.tempProjectId = homeDetails[indexPath.row]._id!
         self.navigationController?.pushViewController(secondVC, animated: true)
-    }
-}
+    }*/
+    }}
 

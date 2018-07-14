@@ -9,7 +9,7 @@
 import UIKit
 
 //////////////// 참여자일 때
-class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate , UITextFieldDelegate{
 
     @IBOutlet weak var partCollectionView: UICollectionView!
     
@@ -21,23 +21,34 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
     @IBOutlet weak var questionTf: UITextField!
     @IBOutlet weak var question2Tf: UITextField!
     
-    var partList = ["개발자","디자이너","기획자","디자이너"]//,"개발자", "디자이너"]
-    var numList = ["1명", "2명", "3명", "4명", "5명", "6명"]
-    var ddayList = ["D - 1", "D - 2", "D - 3", "D - 4", "D - 5", "D - 6"]
-    var detailList = ["웹,앱 서비스 개발", "로고 및 앱 디자인", "웹,앱 서비스 개발", "웹,앱 서비스 개발", "웹,앱 서비스 개발"]
-
     @IBOutlet weak var collectiViewH: NSLayoutConstraint!
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "지원하기"
         introTf.text = ""
         portfolioTf.text = ""
         phoneTf.text = ""
         questionTf.text = ""
         question2Tf.text = ""
         collectionInit()
-        
+        funcForNavigationBar()
     }
+    
+    func funcForNavigationBar(){
+        //self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
+        //self.tabBarController?.tabBar.isHidden = true // 하단 탭바 삭제
+        let leftButtonItem = UIBarButtonItem(image: UIImage(named: "iconCaretLeftDarkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(popAction))
+        leftButtonItem.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem = leftButtonItem}
+    
+    @objc func popAction(){ // 뒤로가기 버튼
+        self.navigationController?.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false}
+    
+    
+    
     var tempRecruitLists : [RecruitList] = [RecruitList]()
     var tempList = 0
     
@@ -59,6 +70,10 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true}
+    
     // 컬랙션 뷰
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return tempList
@@ -68,7 +83,7 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
         
         cell.partLabel.text = tempRecruitLists[indexPath.row].position
         cell.partNumLabel.text = String(self.tempRecruitLists[indexPath.row].number) + "명"
-        cell.dDayLabel.text =  "D - " + String(self.tempRecruitLists[indexPath.row].dday)
+        cell.dDayLabel.text =  "D " + self.tempRecruitLists[indexPath.row].dday
         cell.detailLabel.text = self.tempRecruitLists[indexPath.row].task
         
         if selectedIndex == indexPath.row
@@ -107,6 +122,7 @@ class ProjectJoinViewController: UIViewController, UICollectionViewDataSource, U
         // 서버 통신
         ApplyService.applyWrite(introduce: introTf.text!, portfolio_url: portfolioTf.text!, phone: phoneTf.text!, recruit_idx: tempRecruitId, project_idx: tempProjectId, position: tempRole , answers: [questionTf.text!,question2Tf.text!] ) { (message) in
             if message == "success"{
+                print("ㅅㅂ됐다")
             }else if message == "database failure"{
             }else{
             }
