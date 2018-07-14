@@ -11,7 +11,7 @@ import Foundation
 struct ApplyMember: Codable {
     
     let applicant_idx: String
-    let profile_urle: String
+    let profile_url: String
     let user_name: String
     let position: String
     let apply_idx: String

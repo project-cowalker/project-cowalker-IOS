@@ -76,7 +76,7 @@ class RecruitOneViewController: UIViewController, UITextFieldDelegate ,UITextVie
     }
     //역할, 기간, 인원 모두 채워지면 다음 뷰로 이동, 값 전달해야
     @IBAction func nextBtnAct(_ sender: UIButton) {
-        if (numberTf.text != "") {
+        if (numberTf.text != "")&&(tf1.text != "")&&(tf2.text != "") {
             let secondVC = UIStoryboard(name: "Recruit", bundle:nil ).instantiateViewController(withIdentifier: "RecruitTwoViewController") as! RecruitTwoViewController
             self.navigationController?.pushViewController(secondVC, animated: true)
             
@@ -88,6 +88,10 @@ class RecruitOneViewController: UIViewController, UITextFieldDelegate ,UITextVie
             secondVC.tempNum = Int(numberTf.text!)!
         }
     }
+    
+    
+    @IBOutlet weak var tf1: UITextField!
+    @IBOutlet weak var tf2: UITextField!
     
     @IBOutlet weak var startDateText: UITextField!
     

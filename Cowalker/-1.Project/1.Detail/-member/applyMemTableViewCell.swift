@@ -15,8 +15,13 @@ class applyMemTableViewCell: UITableViewCell {
     @IBOutlet weak var memPart: UILabel!
     @IBOutlet weak var resumeBtn: UIButton!
     
+    //var check = 0
+    
     @IBAction func resumeBtnAct(_ sender: UIButton) {
         // 이력서 화면으로 이동
+        
+        
+        
         
     }
     

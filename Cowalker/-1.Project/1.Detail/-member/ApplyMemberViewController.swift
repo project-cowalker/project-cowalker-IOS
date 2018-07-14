@@ -27,14 +27,30 @@ class ApplyMemberViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         self.title = "지원 멤버"
         applyInit()
+        funcForNavigationBar()
     }
     func applyInit(){
         ApplyService.applyMemInit(add: tempRecruitIdx) { (members) in
             self.applyMembers = members
             self.applyTableView.reloadData()
             self.tempApplyIdx = members[0].apply_idx
+            print("성공")
+            print(self.applyMembers[0].position)
         }
     }
+    
+    func funcForNavigationBar(){
+        self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
+        self.tabBarController?.tabBar.isHidden = true // 하단 탭바 삭제
+        let leftButtonItem = UIBarButtonItem(image: UIImage(named: "iconCaretLeftDarkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(popAction))
+        leftButtonItem.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem = leftButtonItem}
+    @objc func popAction(){ // 뒤로가기 버튼
+        self.navigationController?.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false}
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return applyMembers.count
@@ -43,10 +59,16 @@ class ApplyMemberViewController: UIViewController, UITableViewDelegate, UITableV
         
         let cell = tableView.dequeueReusableCell(withIdentifier:"applyMemTableViewCell") as! applyMemTableViewCell
         
-        cell.memImg?.kf.setImage(with: URL(string: gsno(applyMembers[indexPath.row].profile_urle)), placeholder: UIImage())
+        cell.memImg?.kf.setImage(with: URL(string: gsno(applyMembers[indexPath.row].profile_url)), placeholder: UIImage())
         cell.memName.text = applyMembers[indexPath.row].user_name
         cell.memPart.text = applyMembers[indexPath.row].position
         cell.resumeBtn.tag = Int(applyMembers[indexPath.row].applicant_idx)!
+        //
+        
+        
+        
+        //
+        
         return cell
     }
     
@@ -65,13 +87,51 @@ class ApplyMemberViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.navigationController?.pushViewController(secondVC, animated: true)
     }
+    
+    var num1 = 0
+    var num2 = 0
+    
+    var te1 = ""
+    var te2 = ""
+    var te3 = 0
+    
+    
+    @IBOutlet weak var btn1: UIButton!
+    @IBOutlet weak var btn2: UIButton!
+    
+    var cc = 0
+    
     // 프로젝트 수락, 거절 버튼 
     @IBAction func replyBtnAct(_ sender: UIButton) {
+        /*
+        if sender == btn1 {
+            cc = 2
+        }else {
+            cc = 1
+        }
+        
+        //
+        apply_idx : 지원 고유 idx
+        applicant_idx : 지원자 idx
+        join : 참여 여부 (수락 : 1, 거절 : 2 | default : 0)
+        //
+        
+        
+        ApplyService.applySelect(a: <#T##String#>, b: <#T##String#>, c: cc){ (message) in
+            if message == "success"{
+                
+                }else{
+                
+            }
+        }
+        
         if sender.tag == 0{
             // 거절 버튼
+            
         }else{
             // 수락 버튼
-        }
+            
+        }*/
     }
 }
 

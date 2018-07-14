@@ -28,7 +28,21 @@ class ResumeViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.title = "이력서"
         resumeInit()
         recommendInit()
+        funcForNavigationBar()
     }
+    
+    func funcForNavigationBar(){
+        self.navigationController?.isNavigationBarHidden = false // 상단 바 보이게
+        self.tabBarController?.tabBar.isHidden = true // 하단 탭바 삭제
+        let leftButtonItem = UIBarButtonItem(image: UIImage(named: "iconCaretLeftDarkgray"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(popAction))
+        leftButtonItem.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem = leftButtonItem}
+    @objc func popAction(){ // 뒤로가기 버튼
+        self.navigationController?.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = false}
+    
+    
     
     func resumeInit(){
         ResumeService.resumeInit(a: tempApplyId, b: tempApplicantId){ (resumedetails) in
@@ -63,8 +77,32 @@ class ResumeViewController: UIViewController, UICollectionViewDelegate, UICollec
        cell.partLabel.text = temp1
         cell.numberLabel.text = temp2
         cell.todoLabel.text = temp3
-        cell.dayLabel.text = temp4
+        cell.dayLabel.text = "D" + temp4
         
         return cell
     }
+    
+    
+    
+    @IBAction func btnAct(_ sender: UIButton) {
+        // 페이지 이동
+        
+        
+        self.popBack(toControllerType: ProjectIntroViewController.self)
+        
+    }
+    
+    
+    func popBack<T: UIViewController>(toControllerType: T.Type) {
+        if var viewControllers: [UIViewController] = self.navigationController?.viewControllers {
+            viewControllers = viewControllers.reversed()
+            for currentViewController in viewControllers {
+                if currentViewController .isKind(of: toControllerType) {
+                    self.navigationController?.popToViewController(currentViewController, animated: true)
+                    break
+                }
+            }
+        }
+    }
+    
 }
