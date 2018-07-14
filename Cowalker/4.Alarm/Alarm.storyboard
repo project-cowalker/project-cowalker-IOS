@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Alarm View Controller-->
         <scene sceneID="uuf-p3-Aia">
@@ -326,16 +331,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="COU-M7-w0o">
-                                <rect key="frame" x="20" y="52" width="336" height="278"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="336" id="alK-gS-noK"/>
-                                    <constraint firstAttribute="height" constant="278" id="g4r-cR-0fm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30G-Ck-LWp">
                                 <rect key="frame" x="0.0" y="613" width="375" height="54"/>
                                 <constraints>
@@ -349,12 +344,25 @@
                                     <action selector="sendingMessage:" destination="DRH-Nu-Fq8" eventType="touchUpInside" id="BdM-Qt-BNQ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="내용을 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tWo-YY-xT8">
+                                <rect key="frame" x="30" y="100" width="319" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="319" id="rXm-Oe-ZIZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="uTj-NK-wfL"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DRH-Nu-Fq8" id="t41-jm-PID"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tWo-YY-xT8" firstAttribute="top" secondItem="Adh-4H-1X9" secondAttribute="top" constant="80" id="4fh-Hk-JIq"/>
                             <constraint firstItem="Adh-4H-1X9" firstAttribute="bottom" secondItem="30G-Ck-LWp" secondAttribute="bottom" id="5MP-Rm-MFo"/>
-                            <constraint firstItem="COU-M7-w0o" firstAttribute="centerX" secondItem="Adh-4H-1X9" secondAttribute="centerX" id="Cf2-DB-8DK"/>
-                            <constraint firstItem="COU-M7-w0o" firstAttribute="top" secondItem="Adh-4H-1X9" secondAttribute="top" constant="32" id="Iih-ER-cua"/>
+                            <constraint firstItem="tWo-YY-xT8" firstAttribute="leading" secondItem="Adh-4H-1X9" secondAttribute="leading" constant="30" id="PlA-57-giC"/>
                             <constraint firstItem="30G-Ck-LWp" firstAttribute="leading" secondItem="Adh-4H-1X9" secondAttribute="leading" id="Rdx-W4-OFC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Adh-4H-1X9"/>
@@ -367,7 +375,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="messageTextView" destination="COU-M7-w0o" id="gtJ-0V-u5L"/>
+                        <outlet property="messageTextView" destination="tWo-YY-xT8" id="Gca-cK-FBG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vb2-wZ-td8" userLabel="First Responder" sceneMemberID="firstResponder"/>
